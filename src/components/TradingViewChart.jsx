@@ -1,15 +1,17 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 
 const TradingViewChart = () => {
   const chartContainerRef = useRef(null);
 
   useEffect(() => {
-    if (chartContainerRef.current.children.length > 0) return;
+    if (!chartContainerRef.current) return;
+
+    // Prevent duplicate widget
+    chartContainerRef.current.innerHTML = "";
 
     const script = document.createElement("script");
     script.src =
       "https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js";
-    script.type = "text/javascript";
     script.async = true;
 
     script.innerHTML = JSON.stringify({
@@ -26,19 +28,20 @@ const TradingViewChart = () => {
       hide_top_toolbar: false,
       hide_legend: false,
       save_image: false,
-      container_id: "tradingview_chart",
     });
 
     chartContainerRef.current.appendChild(script);
+
+    return () => {
+      if (chartContainerRef.current) {
+        chartContainerRef.current.innerHTML = "";
+      }
+    };
   }, []);
 
   return (
     <div className="w-full h-[calc(100vh-80px)] bg-black rounded-xl overflow-hidden border border-slate-800">
-      <div
-        id="tradingview_chart"
-        ref={chartContainerRef}
-        className="w-full h-full"
-      />
+      <div ref={chartContainerRef} className="w-full h-full" />
     </div>
   );
 };

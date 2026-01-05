@@ -46,7 +46,6 @@ const WhyWealthUs = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
 
-  /* Intersection Observer */
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => entry.isIntersecting && setIsVisible(true),
@@ -62,15 +61,15 @@ const WhyWealthUs = () => {
       className="relative py-28 bg-gradient-to-br from-white via-blue-50 to-white overflow-hidden"
     >
       {/* Background blur */}
-      <div className="absolute -top-40 -right-40 w-96 h-96 bg-blue-200/30 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute top-1/2 -left-40 w-96 h-96 bg-cyan-200/30 rounded-full blur-3xl animate-pulse delay-700" />
+      <div className="absolute -top-40 -right-40 w-96 h-96 bg-blue-200/30 rounded-full blur-3xl animate-float" />
+      <div className="absolute top-1/2 -left-40 w-96 h-96 bg-cyan-200/30 rounded-full blur-3xl animate-float delay-700" />
 
       {/* Floating sparkles */}
       <Sparkles className="absolute top-10 left-10 w-6 h-6 text-blue-400/40 animate-float" />
       <Sparkles className="absolute bottom-20 right-16 w-5 h-5 text-cyan-400/40 animate-float delay-1000" />
 
       <div className="relative max-w-7xl mx-auto px-6">
-        {/* ================= HEADER ================= */}
+        {/* HEADER */}
         <div
           className={`text-center max-w-4xl mx-auto transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
@@ -94,11 +93,10 @@ const WhyWealthUs = () => {
           </p>
         </div>
 
-        {/* ================= CARDS ================= */}
+        {/* CARDS */}
         <div className="mt-24 grid grid-cols-1 md:grid-cols-3 gap-10">
           {features.map((item, index) => {
             const Icon = item.icon;
-
             return (
               <div
                 key={index}
@@ -114,7 +112,6 @@ const WhyWealthUs = () => {
                   onMouseLeave={handleMouseLeave}
                   className="relative rounded-3xl bg-white/90 backdrop-blur-sm p-8 border border-slate-200 shadow-lg hover:shadow-2xl transition-transform duration-300 group"
                 >
-                  {/* Icon */}
                   <div
                     className={`w-16 h-16 rounded-2xl flex items-center justify-center bg-gradient-to-r ${item.gradient} shadow-lg animate-icon-float`}
                   >
@@ -129,7 +126,6 @@ const WhyWealthUs = () => {
                     {item.desc}
                   </p>
 
-                  {/* underline */}
                   <div className="mt-6 h-1 w-0 group-hover:w-16 bg-gradient-to-r from-blue-500 to-cyan-500 transition-all duration-500" />
                 </div>
               </div>
@@ -137,7 +133,7 @@ const WhyWealthUs = () => {
           })}
         </div>
 
-        {/* ================= STATS ================= */}
+        {/* STATS */}
         <div
           className={`mt-24 grid grid-cols-2 md:grid-cols-4 gap-6 text-center transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
@@ -163,48 +159,6 @@ const WhyWealthUs = () => {
           ))}
         </div>
       </div>
-
-      {/* ================= ANIMATIONS ================= */}
-      <style jsx>{`
-        @keyframes float {
-          0%,
-          100% {
-            transform: translateY(0);
-          }
-          50% {
-            transform: translateY(-10px);
-          }
-        }
-        .animate-float {
-          animation: float 3s ease-in-out infinite;
-        }
-
-        @keyframes gradient {
-          0%,
-          100% {
-            background-position: 0% 50%;
-          }
-          50% {
-            background-position: 100% 50%;
-          }
-        }
-        .animate-gradient {
-          animation: gradient 3s ease infinite;
-        }
-
-        @keyframes iconFloat {
-          0%,
-          100% {
-            transform: translateY(0);
-          }
-          50% {
-            transform: translateY(-6px);
-          }
-        }
-        .animate-icon-float {
-          animation: iconFloat 4s ease-in-out infinite;
-        }
-      `}</style>
     </section>
   );
 };
