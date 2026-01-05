@@ -6,11 +6,12 @@ const Navbar = () => {
 
   const menuItems = [
     { label: "Home", href: "/" },
-    { label: "Blogs", href: "#blogs" },
-    { label: "Charts", href: "#charts" },
+    { label: "Blogs", href: "/blogs" },
+    { label: "Charts", href: "/charts" },
     { label: "About", href: "/about-us" },
+    { label: "Pricing", path: "/pricing" },
     { label: "Policies", path: "/policies" },
-    { label: "Contact", href: "#contact" },
+    { label: "Contact", href: "/contact" },
   ];
 
   return (
@@ -55,7 +56,6 @@ const Navbar = () => {
             )}
 
             <div className="flex items-center space-x-12">
-              <button className="btn-secondary">Log In</button>
               <button className="btn-primary">Start Trading</button>
             </div>
           </div>

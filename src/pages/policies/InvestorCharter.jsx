@@ -26,7 +26,7 @@ export default function InvestorCharter() {
           </div>
 
           <div className="flex gap-3">
-            <CheckCircle className="text-green-700 mt-1" />
+            <CheckCircle className="w-6 h-6 text-green-700 mt-1 flex-shrink-0" />
             <p>
               <strong>Mission:</strong> Every investor should be able to invest
               in the right investment products based on their needs, manage and

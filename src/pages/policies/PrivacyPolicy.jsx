@@ -1,8 +1,8 @@
 export default function PrivacyPolicy() {
   return (
-    <div className="text-slate-200 leading-relaxed space-y-10">
+    <div className="text-slate-200  leading-relaxed space-y-10">
       {/* HEADER */}
-      <header className="border-b border-slate-700 pb-6 space-y-3">
+      <header className="border-b  border-slate-700 pb-6 space-y-3">
         <h1 className="text-3xl font-bold text-white">Privacy Policy</h1>
 
         <p className="text-slate-400 text-sm">

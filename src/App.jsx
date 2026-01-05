@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -33,6 +33,10 @@ import ConflictOfInterestPolicy from "./pages/policies/ConflictOfInterestPolicy"
 import ProPointsPolicy from "./pages/policies/ProPointsPolicy";
 import DataDeletionPolicy from "./pages/policies/DataDeletionPolicy";
 import AboutPage from "./components/AboutPage";
+import BlogPage from "./components/BlogPage";
+import ContactPage from "./components/ContactPage";
+import Pricing from "./components/Pricing";
+import Charts from "./components/Charts";
 
 export default function App() {
   return (
@@ -53,19 +57,19 @@ export default function App() {
               <About />
               <Services />
               <WhyChooseUs />
-              <FeedbackPage />
+              {/* <FeedbackPage /> */}
             </>
           }
         />
 
         {/* POLICIES PAGE */}
         <Route path="/policies" element={<PoliciesLayout />}>
+          <Route index element={<Navigate to="terms-conditions" replace />} />
           <Route path="investor-charter" element={<InvestorCharter />} />
           <Route path="terms-conditions" element={<TermsConditions />} />
           <Route path="privacy-policy" element={<PrivacyPolicy />} />
           <Route path="client-term" element={<ClientTerm />} />
           <Route path="code-of-conduct" element={<CodeOfConduct />} />
-          <Route path="investor-charter" element={<InvestorCharter />} />
           <Route path="disclosure-user-kyc" element={<DisclosureUserKYC />} />
           <Route path="complaints-board" element={<ComplaintsBoard />} />
           <Route path="pmla-policy" element={<PMLAPolicy />} />
@@ -95,6 +99,10 @@ export default function App() {
         </Route>
 
         <Route path="/about-us" element={<AboutPage />} />
+        <Route path="/blogs" element={<BlogPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/pricing" element={<Pricing />} />
+        <Route path="/charts" element={<Charts />} />
       </Routes>
 
       <Footer />
