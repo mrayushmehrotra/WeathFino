@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation(); // Get current path
 
   const menuItems = [
     { label: "Home", path: "/" },
@@ -13,6 +14,17 @@ const Navbar = () => {
     { label: "Policies", path: "/policies" },
     { label: "Contact", path: "/contact" },
   ];
+
+  // Function to check if a link is active
+  const isActive = (path) => {
+    if (path === "/" && location.pathname === "/") {
+      return true;
+    }
+    if (path !== "/" && location.pathname.startsWith(path)) {
+      return true;
+    }
+    return false;
+  };
 
   return (
     <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-trading-border">
@@ -39,9 +51,19 @@ const Navbar = () => {
               <Link
                 key={item.label}
                 to={item.path}
-                className="text-gray-600 hover:text-trading-blue font-medium transition-colors"
+                className={`font-medium transition-colors relative group ${
+                  isActive(item.path)
+                    ? "text-trading-blue"
+                    : "text-gray-600 hover:text-trading-blue"
+                }`}
               >
                 {item.label}
+                {/* Active indicator line */}
+                {isActive(item.path) && (
+                  <div className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-trading-green to-trading-cyan rounded-full" />
+                )}
+                {/* Hover effect line */}
+                <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-trading-green to-trading-cyan rounded-full group-hover:w-full transition-all duration-300" />
               </Link>
             ))}
 
@@ -80,7 +102,11 @@ const Navbar = () => {
                   key={item.label}
                   to={item.path}
                   onClick={() => setIsOpen(false)}
-                  className="block py-2 text-gray-600 hover:text-trading-blue"
+                  className={`block py-2 pl-4 border-l-2 transition-all ${
+                    isActive(item.path)
+                      ? "border-trading-blue text-trading-blue font-medium bg-blue-50"
+                      : "border-transparent text-gray-600 hover:text-trading-blue"
+                  }`}
                 >
                   {item.label}
                 </Link>
