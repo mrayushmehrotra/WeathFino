@@ -2,11 +2,11 @@ import React from "react";
 
 const WebsiteDisclaimer = () => {
   return (
-    <section className="  from-[#0b0f14] to-[#111827] text-gray-200 py-16 px-4">
-      <div className="max-w-6xl mx-auto bg-[#0f172a]/80 backdrop-blur rounded-2xl shadow-xl p-6 md:p-10">
+    <section className="  from-[#0b0f14] to-[#111827] text-gray-200 py-2">
+      <div className="max-w-6xl mx-auto  bg-[#0b0f19]  backdrop-blur rounded-2xl shadow-xl p-6 md:p-10">
         {/* TITLE */}
-        <h1 className="text-3xl md:text-4xl font-bold text-white mb-6">
-          Disclaimer for Website
+        <h1 className="text-xl md:text-2xl font-bold text-white mb-3">
+          DISCLAIMER FOR WEBSITE
         </h1>
 
         {/* MAIN DISCLAIMER POINTS */}
@@ -15,88 +15,107 @@ const WebsiteDisclaimer = () => {
             <strong className="text-white">Krishna Kumar Pathak</strong> is
             registered with SEBI as an Individual Research Analyst vide
             Registration No. <strong>INH300009914</strong> dated 22-06-2022 and
-            provides Research Analyst services to clients in accordance with
-            SEBI regulations.
+            provides Research Analyst services to its clients
+          </li>
+
+          <li className="font-bold">
+            Investment in securities market is subject to market risks. Read all
+            the related documents carefully before investing.
+          </li>
+
+          <li className="font-bold">
+            Registration granted by SEBI and certification from NISM is no way
+            guarantee performance of the intermediary or provide any assurance
+            of returns to investors.
           </li>
 
           <li>
-            Investment in securities markets is subject to market risks. Read
-            all related documents carefully before investing.
+            I am not affiliated with any other intermediaries or receive any
+            brokerage or commission from any third party.
           </li>
 
           <li>
-            Registration granted by SEBI and certification from NISM do not
-            guarantee the performance of the intermediary or provide any
-            assurance of returns to investors.
+            The SEBI has issued no penalties/directions under the SEBI Act or
+            any other regulatory body.
           </li>
 
           <li>
-            Krishna Kumar Pathak is not affiliated with any intermediary and
-            does not receive brokerage, commission, or remuneration from any
-            third party.
+            I do not recommend any stock broker or other intermediary to a
+            client, nor do I receive any consideration by way of remuneration or
+            compensation or in any other form whatsoever from the stock broker
+            or another intermediary.
           </li>
 
           <li>
-            No penalties or directions have been issued by SEBI or any other
-            regulatory authority against Krishna Kumar Pathak.
+            Investment in equity shares has its own risks. Sincere efforts have
+            been made to present the right investment perspective. The
+            information contained herein is based on analysis and on sources
+            that I consider reliable. I, however does not vouch for the
+            consistency or the completeness thereof. This material is for
+            personal information and I am not responsible for any loss incurred
+            due to it & take no responsibility whatsoever for any financial
+            profits or loss which may arise from the recommendations above.
           </li>
 
           <li>
-            No stock broker or intermediary is recommended to any client, nor
-            is any consideration received from such intermediary.
+            I do not provide any promise or assurance of favourable view for a
+            particular industry or sector or business group in any manner. The
+            investor is requested to take into consideration all the risk
+            factors including their financial condition and suitability to risk
+            return profile before investing.
           </li>
 
           <li>
-            Investment in equity shares carries inherent risks. While sincere
-            efforts are made to present accurate research, information is based
-            on analysis and sources believed to be reliable. Completeness or
-            consistency is not guaranteed.
+            I or any other person related to me might be holding positions in
+            the stocks recommended.
           </li>
 
           <li>
-            The content is for personal informational purposes only. Krishna
-            Kumar Pathak does not take responsibility for any financial loss
-            arising from use of this information and does not assure profits or
-            returns.
+            The research recommendations are provided to all our clients who are
+            entitled to receive the research reports. Any Client (Paid or
+            Unpaid), any third party or anyone else have no rights to forward or
+            share our calls or SMS or Reports or Any Information Provided by us
+            to/with anyone (through any medium) which is received directly or
+            indirectly by them. If found so, then serious legal actions can be
+            taken.
           </li>
 
           <li>
-            No promise or assurance is given for any industry, sector, or
-            business group. Investors should evaluate all risk factors
-            including financial condition and suitability before investing.
+            I ensure that the individuals employed as research analyst are
+            separate from other employees who are performing sales trading,
+            dealing, corporate finance advisory or any other activity that may
+            affect the independence of our research report/ recommendations.
+            However, these individuals may receive feedback from sales or
+            trading personnel of brokerage division to ascertain the impact of
+            research report/ recommendations.
           </li>
 
           <li>
-            Krishna Kumar Pathak or related persons may hold positions in the
-            securities recommended.
+            I also ensure that if a client wants an opinion on a specific
+            position, such suggestion/ view under any circumstances shall be
+            considered as an opinion (not advice). I am not liable for any
+            losses whatsoever the client may incur in accepting this opinion.
           </li>
 
           <li>
-            Research recommendations are provided only to entitled clients.
-            Any client or third party is prohibited from forwarding, sharing,
-            or redistributing reports, calls, SMS, or content. Legal action
-            may be initiated for violations.
+            I do not have any association in any manner with any issuer of
+            products/securities; this ensures that there are no actual or
+            potential conflicts of interest. This also ensures that objectivity
+            or independence in the carrying on research services is not
+            compromised.
           </li>
 
           <li>
-            Research analysts are functionally independent from sales,
-            trading, or corporate finance activities to ensure objectivity.
+            Stock trading is inherently risky, and you agree to assume complete
+            and full responsibility for the outcomes of all trading decisions
+            that you make.
           </li>
 
           <li>
-            Any opinion provided shall be treated as an opinion and not
-            investment advice. No liability shall arise from reliance on such
-            opinion.
-          </li>
-
-          <li>
-            There is no association with issuers of securities, ensuring no
-            conflict of interest and maintaining independence.
-          </li>
-
-          <li>
-            Stock trading is inherently risky. Users assume full
-            responsibility for all trading decisions and outcomes.
+            Unlike an actual performance record, simulated results do not
+            represent actual trading. No representation is being made that any
+            account will or is likely to achieve profits or losses similar to
+            those shown.
           </li>
 
           <li>
@@ -106,50 +125,79 @@ const WebsiteDisclaimer = () => {
           </li>
 
           <li>
-            Users bear the entire risk and cost of investment decisions.
-            Krishna Kumar Pathak and employees are not liable for actions
-            taken based on the provided information.
+            Users bear the entire risk and cost of investment decisions. Krishna
+            Kumar Pathak and employees are not liable for actions taken based on
+            the provided information.
           </li>
 
           <li>
-            Investors are encouraged to use the platform as a research
-            resource and to conduct independent analysis.
+            You, and not me, assume the entire cost and risk of any trading you
+            choose to undertake. You are solely responsible for making your own
+            investment decisions. If you choose to engage in transactions with
+            or without seeking advice from a licensed and qualified financial
+            advisor or entity, then such decision and any consequences flowing
+            therefrom are your sole responsibility. I or any employees are in no
+            way liable for the use of the information by others in investing or
+            trading in investment vehicles.
           </li>
 
           <li>
-            Content shared on social media platforms (Twitter, Facebook,
-            Telegram, YouTube, etc.) is for educational and illustrative
-            purposes only and shall not be treated as investment advice.
+            I also encourage all investors to use the services as a resource to
+            further their own research on all featured companies, stocks,
+            sectors, markets and information presented on the site.
+          </li>
+          <li>
+            Everything posted on social media (Twitter/Facebook/Telegram/YouTube
+            channel) is for education / illustration purposes and should not be
+            counted as recommendations or investment advice.
           </li>
         </ul>
 
         {/* FINAL DISCLAIMER */}
         <div className="mt-10 border-t border-slate-700 pt-6">
-          <h2 className="text-xl font-semibold text-white mb-3">
-            Final Disclaimer
-          </h2>
+          <h2 className="italic ">Disclaimer:</h2>
 
           <p className="text-gray-300 leading-relaxed mb-4">
-            Krishna Kumar Pathak and <strong>WealthFino</strong> shall not be
-            liable for any direct, indirect, incidental, special, or
-            consequential losses including trading losses, data inaccuracies,
-            missed opportunities, technical failures, or reputational harm
-            arising from:
+            <strong>
+              Krishna Kumar Pathak and WealthFino shall not be liable
+            </strong>
+            for any direct, indirect, incidental, special, or consequential
+            losses or damages—including but not limited to trading losses, data
+            inaccuracies, missed opportunities, technology failures, or
+            reputational harm—arising from:
           </p>
 
           <ul className="list-disc pl-6 space-y-2 text-gray-300">
-            <li>Reliance on any research report, opinion, or recommendation</li>
-            <li>Client-supplied KYC errors or outdated information</li>
-            <li>Third-party API or technical disruptions</li>
-            <li>Misuse, misinterpretation, or unauthorized sharing of content</li>
+            <li>
+              Reliance on any research report, opinion, or recommendation;
+            </li>
+            <li>
+              Client-supplied KYC errors, omissions, or outdated information;
+            </li>
+            <li>
+              Technical disruptions including third-party API failures, data
+              loss, or connectivity issues;
+            </li>
+            <li>
+              Misuse, forwarding, or misinterpretation of any content shared.
+            </li>
           </ul>
 
-          <p className="mt-4 text-sm text-gray-400 italic">
-            The sole responsibility for investment decisions lies with the
-            user. By using the website, services, or content, the user
-            acknowledges full acceptance of this disclaimer and agrees to
-            indemnify and hold harmless Krishna Kumar Pathak and WealthFino
-            from any resulting liability or claims.
+          <p className="mt-4 text-sm text-gray-400  ">
+            The sole responsibility for all investment decisions lies with the
+            user.
+            <strong>
+              No legal claim, complaint, or liability shall arise against
+              Krishna Kumar Pathak or WealthFino
+            </strong>
+            in connection with the use of any research or content provided.
+          </p>
+          <p>
+            By using the research, services, website, or mobile application, the
+            user acknowledges, understands, and fully accepts this disclaimer,
+            and further agrees to indemnify and hold harmless{" "}
+            <strong> Krishna Kumar Pathak and WealthFino </strong> from any
+            resulting liability or claim.
           </p>
         </div>
       </div>

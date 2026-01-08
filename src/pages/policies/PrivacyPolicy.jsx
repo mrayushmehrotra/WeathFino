@@ -1,8 +1,8 @@
 export default function PrivacyPolicy() {
   return (
-    <div className="text-slate-200  leading-relaxed space-y-10">
+    <div className="text-slate-200 rounded-2xl bg-[#0b0f19] rounded-2xl px-5 py-5 leading-relaxed space-y-10">
       {/* HEADER */}
-      <header className="border-b  border-slate-700 pb-6 space-y-3">
+      <header className="  border-slate-700 pb-6 space-y-3">
         <h1 className="text-3xl font-bold text-white">Privacy Policy</h1>
       </header>
 
@@ -166,7 +166,7 @@ export default function PrivacyPolicy() {
             Transaction ID, payment method, billing info (processed via
             PCI-DSS–compliant payment gateways)
           </li>
-          <li>We do not store card numbers, CVV, UPI PIN</li>
+          <li>We do not store card numbers, CVV, UPI PINs</li>
         </ul>
         <p className="italic">
           Purpose: Subscription billing & statutory reporting.

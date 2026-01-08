@@ -12,11 +12,11 @@ import {
 
 export default function TermsConditions() {
   return (
-    <section className="  from-[#0b0f14] to-[#111827] text-slate-200 py-16 px-4">
-      <div className="max-w-6xl mx-auto bg-[#0f172a]/80 backdrop-blur rounded-2xl shadow-xl p-6 md:p-10 space-y-10">
+    <section className="  from-[#0b0f14] to-[#111827] text-slate-200 ">
+      <div className="max-w-6xl mx-auto  bg-[#0b0f19]  backdrop-blur rounded-2xl shadow-xl p-6 md:p-10 space-y-10">
         {/* ================= HEADER ================= */}
         <header className="space-y-3 border-b border-slate-700 pb-6">
-          <h1 className="text-3xl md:text-4xl font-bold text-white">
+          <h1 className="text-xl md:text-2xl font-bold text-white">
             TERMS AND CONDITIONS FOR RESEARCH ANALYST SERVICES
           </h1>
 

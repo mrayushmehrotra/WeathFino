@@ -1,18 +1,18 @@
 export default function RedressalOfGrievance() {
   return (
-    <div className="min-h-screen   from-slate-950 to-slate-900 py-16 px-4">
+    <div className="min-h-screen rounded-2xl bg-[#0b0f19]   from-slate-950 to-slate-900 py-5 px-4">
       <div className="max-w-6xl mx-auto text-slate-200 space-y-12">
         {/* PAGE TITLE */}
         <header className="space-y-4">
-          <h1 className="text-3xl md:text-4xl font-bold text-white">
-            Redressal of Grievance / Escalation Matrix
+          <h1 className="text-xl md:text-2xl font-bold text-white">
+            REDRESSAL OF GRIEVANCE / ESCALATION MATRIX
           </h1>
 
+          <p>Grievance Redressal Process</p>
           <p className="text-slate-400 max-w-4xl">
             We value your trust and are committed to resolving all concerns in a
-            fair, transparent, and timely manner. If you have any grievance or
-            feedback regarding our services, please follow the process outlined
-            below.
+            fair and timely manner. If you have any grievance or feedback
+            regarding our services, you may follow the steps below:
           </p>
         </header>
 
@@ -24,20 +24,15 @@ export default function RedressalOfGrievance() {
           <p>
             If you are dissatisfied with any service, please first contact the
             Research Analyst department representative or consultant assigned to
-            you. You may discuss your concerns directly with them.
-          </p>
-          <p>
-            We will strive to resolve your issue within{" "}
-            <b>7 to 10 working days</b> on a best-effort basis.
+            you. You may discuss your concerns directly with them. We will
+            strive to resolve your issue within 7 to 10 working days on a
+            best-effort basis.
           </p>
         </Section>
 
         {/* STEP 2 */}
         <Section title="Step 2: Reach Out via Call or Email">
-          <p>
-            You may also contact your assigned representative using the
-            following details:
-          </p>
+          <p>You may also contact your assigned representative by</p>
 
           <ul className="list-disc ml-6 space-y-2">
             <li>
@@ -58,7 +53,7 @@ export default function RedressalOfGrievance() {
         {/* STEP 3 */}
         <Section title="Step 3: Submit a Formal Complaint">
           <p>
-            If the issue remains unresolved, you may submit your complaint in
+            If the issue remains unresolved, you may send your complaint in
             writing or by email to:
           </p>
 
@@ -87,9 +82,7 @@ export default function RedressalOfGrievance() {
           </p>
 
           <div className="bg-slate-800 border border-slate-700 rounded-lg p-5 space-y-2">
-            <p>
-              <b>Name:</b> Mr. Krishna Pathak (Compliance Officer)
-            </p>
+            <p>Mr. Krishna Pathak (Compliance Officer)</p>
             <p>
               <b>Email:</b>{" "}
               <a
@@ -114,7 +107,7 @@ export default function RedressalOfGrievance() {
           <p>
             If your complaint remains unresolved for more than one month, you
             may escalate it to the regulator, the Securities and Exchange Board
-            of India (SEBI), through the SCORES platform:
+            of India (SEBI) through the SCORES platform:
           </p>
 
           <a
@@ -130,9 +123,9 @@ export default function RedressalOfGrievance() {
         {/* STEP 6 */}
         <Section title="Step 6: SEBI-Supported ODR Platform">
           <p>
-            If the issue remains unresolved even after approaching SCORES, you
-            may initiate dispute resolution through SEBI’s Online Dispute
-            Resolution (ODR) portal:
+            If the issue remains unresolved even on SCORES, you can initiate
+            dispute resolution through SEBI's Online Dispute Resolution (ODR)
+            portal:
           </p>
 
           <a
@@ -178,6 +171,15 @@ export default function RedressalOfGrievance() {
                 </tr>
 
                 <tr>
+                  <td className="px-4 py-3">Head Customer Care</td>
+                  <td className="px-4 py-3"> - </td>
+                  <td className="px-4 py-3">-</td>
+                  <td className="px-4 py-3">-</td>
+                  <td className="px-4 py-3">-</td>
+                  <td className="px-4 py-3">-</td>
+                </tr>
+
+                <tr>
                   <td className="px-4 py-3">Compliance Officer</td>
                   <td className="px-4 py-3">Krishna Pathak</td>
                   <td className="px-4 py-3">
@@ -187,6 +189,15 @@ export default function RedressalOfGrievance() {
                   <td className="px-4 py-3">+91 98834 55700</td>
                   <td className="px-4 py-3">wealthfino@gmail.com</td>
                   <td className="px-4 py-3">10:00 AM – 6:00 PM</td>
+                </tr>
+
+                <tr>
+                  <td className="px-4 py-3">Chief Executive Officer (CEO)</td>
+                  <td className="px-4 py-3"> - </td>
+                  <td className="px-4 py-3">-</td>
+                  <td className="px-4 py-3">-</td>
+                  <td className="px-4 py-3">-</td>
+                  <td className="px-4 py-3">-</td>
                 </tr>
 
                 <tr>
@@ -205,11 +216,7 @@ export default function RedressalOfGrievance() {
           </div>
         </section>
 
-        {/* FOOTER NOTE */}
-        <footer className="border-t border-slate-700 pt-6 text-sm text-slate-400">
-          We are committed to resolving grievances ethically, transparently, and
-          in accordance with SEBI regulations.
-        </footer>
+       
       </div>
     </div>
   );
@@ -220,9 +227,9 @@ export default function RedressalOfGrievance() {
 ----------------------------- */
 function Section({ title, children }) {
   return (
-    <section className="bg-slate-900 border border-slate-700 rounded-xl p-6 md:p-8 space-y-4">
-      <h2 className="text-xl md:text-2xl font-semibold text-white">{title}</h2>
-      <div className="space-y-3 text-slate-300 leading-relaxed">{children}</div>
+    <section className="   rounded-xl  md:p-2 space-y-2">
+      <h2 className="text-xl md:text-xl font-semibold text-white">{title}</h2>
+      <div className="space-y-1 text-slate-300 leading-relaxed">{children}</div>
     </section>
   );
 }

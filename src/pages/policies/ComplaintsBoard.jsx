@@ -1,10 +1,10 @@
 export default function ComplaintsBoard() {
   return (
-    <div className="min-h-screen  text-slate-200 py-16 px-4">
+    <div className="min-h-screen rounded-2xl bg-[#0b0f19]   text-slate-200 py-16 px-4">
       <div className="max-w-7xl mx-auto space-y-14">
         {/* ================= HEADER ================= */}
         <div className="text-center space-y-4">
-          <h1 className="text-3xl md:text-4xl font-bold text-white">
+          <h1 className="text-2xl md:text-3xl font-bold text-white">
             ANNEXURE – B
           </h1>
           <div className="border-t border-slate-700 max-w-xl mx-auto" />
@@ -15,7 +15,7 @@ export default function ComplaintsBoard() {
         </div>
 
         {/* ================= TABLE 1 ================= */}
-        <Section title="Complaints received during the month">
+        <Section title=" ">
           <Table>
             <thead>
               <Tr head>
@@ -100,6 +100,9 @@ export default function ComplaintsBoard() {
                 ["Sep 25", 0, 0, 0, 0],
                 ["Oct 25", 0, 0, 0, 0],
                 ["Nov 25", 0, 0, 0, 0],
+                ["Dec 25", 0, 0, 0, 0],
+                ["Jan 26", 0, 0, 0, 0],
+
               ].map((row, i) => (
                 <Tr key={i} alt={i % 2 !== 0}>
                   <Td>{i + 1}</Td>
@@ -121,7 +124,7 @@ export default function ComplaintsBoard() {
             </tbody>
           </Table>
 
-          <FootNote />
+          <FootNote2 />
         </Section>
 
         {/* ================= TABLE 3 ================= */}
@@ -180,7 +183,7 @@ export default function ComplaintsBoard() {
             </tbody>
           </Table>
 
-          <FootNote />
+          <FootNote2 />
         </Section>
       </div>
     </div>
@@ -232,10 +235,20 @@ function FootNote() {
   return (
     <div className="text-xs text-slate-400 space-y-1">
       <p>
-        * Inclusive of complaints of previous periods resolved in the current
-        period.
+        * Inclusive of complaints of previous months resolved in the current
+        month.
       </p>
-      <p># Inclusive of complaints pending as on the last day of the period.</p>
+      <p># Inclusive of complaints pending as on the last day of the month.</p>
+    </div>
+  );
+}
+function FootNote2() {
+  return (
+    <div className="text-xs text-slate-400 space-y-1">
+      <p>
+        *Inclusive of complaints of previous years resolved in the current year.
+      </p>
+      <p>#Inclusive of complaints pending as on the last day of the year.</p>
     </div>
   );
 }
