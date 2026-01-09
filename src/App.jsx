@@ -3,6 +3,8 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
+import Hero from "./components/Hero";
+
 import UHome from "./updatedComponets/UHome";
 import FeaturesSection from "./updatedComponets/FeaturesSection";
 import MarketTicker from "./components/MarketTicker";
@@ -49,7 +51,7 @@ export default function App() {
           path="/"
           element={
             <>
-              <UHome />
+              <Hero />
               <FeaturesSection />
               <MarketTicker />
               <ChartPage />

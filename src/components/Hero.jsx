@@ -1,154 +1,129 @@
 import React from "react";
+import phone from "../assets/phone.png";
 
-const Hero = () => {
+const UHomeLightBlue = () => {
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-trading-navy via-trading-navy to-trading-blue overflow-hidden">
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0">
-        {/* Grid Pattern */}
+    <section
+      className="relative min-h-screen w-full overflow-hidden text-gray-900"
+      style={{
+        background: `
+          radial-gradient(70% 70% at 15% 15%, rgba(59, 130, 246, 0.08), transparent 60%),
+          radial-gradient(60% 60% at 85% 30%, rgba(96, 165, 250, 0.05), transparent 65%),
+          linear-gradient(180deg, #ffffff 0%, #f8fafc 45%, #f1f5f9 100%)
+        `,
+      }}
+    >
+      {/* BLUE DIAGONAL TEXTURE */}
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.03]"
+        style={{
+          background:
+            "linear-gradient(120deg, transparent 40%, rgba(59, 130, 246, 0.15) 50%, transparent 60%)",
+          backgroundSize: "420px 420px",
+        }}
+      />
 
-        <div
-          className="absolute inset-0 opacity-10"
-          style={{
-            backgroundImage: `linear-gradient(to right, #22C55E 1px, transparent 1px),
-                             linear-gradient(to bottom, #22C55E 1px, transparent 1px)`,
-            backgroundSize: "40px 40px",
-          }}
-        />
+      {/* CONTENT */}
+      <div className="relative max-w-7xl mx-auto px-10 pt-18 grid md:grid-cols-2 gap-20 items-center">
+        {/* LEFT CONTENT */}
+        <div>
+          <h1 className="text-4xl md:text-5xl font-bold leading-tight">
+            Master the Markets <br />
+            <span className="text-blue-700">with Certified Expertise.</span>
+          </h1>
 
-        {/* Animated Dots */}
-        <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-trading-cyan rounded-full animate-ping"></div>
-        <div className="absolute top-1/3 right-1/3 w-3 h-3 bg-trading-green rounded-full animate-pulse"></div>
-        <div className="absolute bottom-1/4 left-1/3 w-2 h-2 bg-trading-orange rounded-full animate-ping"></div>
-      </div>
+          <p className="mt-6 text-gray-600 max-w-lg">
+            Your path to professional trading, backed by SEBI-registered
+            analysts and a thriving global community.
+          </p>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 py-20 md:py-32">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left Column */}
-          <div>
-            <div className="inline-flex items-center space-x-2 bg-trading-blue/20 px-4 py-2 rounded-full mb-8">
-              <div className="w-2 h-2 bg-trading-green rounded-full animate-pulse"></div>
-              <span className="text-trading-cyan font-medium">
-                Real-time Trading Now Live
-              </span>
-            </div>
-
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-              <span className="text-white">Trade Smarter</span>
-              <br />
-              <span className="bg-gradient-to-r from-trading-green to-trading-cyan bg-clip-text text-transparent">
-                Grow Faster
-              </span>
-            </h1>
-
-            <p className="text-xl text-gray-300 mb-10 max-w-2xl">
-              Access institutional-grade trading tools with AI-powered insights.
-              Execute strategies that adapt to market conditions in real-time.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4">
-              <button className="group relative bg-gradient-to-r from-trading-green to-trading-cyan text-white px-8 py-4 rounded-xl font-semibold text-lg overflow-hidden">
-                <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500"></div>
-                <span className="relative">Start Free Trial</span>
-              </button>
-              <button className="border-2 border-trading-cyan text-trading-cyan px-8 py-4 rounded-xl font-semibold text-lg hover:bg-trading-cyan/10 transition-colors">
-                <span className="flex items-center">
-                  <span className="mr-2">▶</span>
-                  Platform Demo
-                </span>
-              </button>
-            </div>
-
-            {/* Trust Badges */}
-            <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6">
-              {[
-                { value: "<1ms", label: "Order Execution" },
-                { value: "99.9%", label: "Uptime" },
-                { value: "256-bit", label: "Encryption" },
-                { value: "24/7", label: "Support" },
-              ].map((item) => (
+          {/* FEATURE CARDS */}
+          <div className="grid grid-cols-2 gap-4 mt-10 max-w-lg">
+            {[
+              "SEBI Registered Analyst (INH100001234)",
+              "Certified Financial Technician",
+              "Global Markets Expert",
+              "Premium Mentorship",
+            ].map((item, i) => (
+              <div
+                key={i}
+                className="
+                  flex items-center gap-3 p-4 rounded-xl
+                  bg-white/95 backdrop-blur-sm
+                  border border-blue-200
+                  hover:border-blue-300
+                  shadow-sm hover:shadow-md
+                  transition-all duration-300
+                "
+              >
                 <div
-                  key={item.label}
-                  className="text-center p-4 bg-white/5 rounded-xl backdrop-blur-sm"
+                  className="
+                    w-9 h-9 rounded-full
+                    bg-gradient-to-br from-blue-500 to-blue-600
+                    text-white font-bold
+                    flex items-center justify-center
+                    shadow-sm
+                  "
                 >
-                  <div className="text-2xl font-bold text-trading-green mb-2">
-                    {item.value}
-                  </div>
-                  <div className="text-sm text-gray-400">{item.label}</div>
+                  {i === 0 ? "✓" : i === 1 ? "★" : i === 2 ? "🌍" : "👨‍🏫"}
                 </div>
-              ))}
-            </div>
+                <p className="text-sm text-gray-700">{item}</p>
+              </div>
+            ))}
           </div>
 
-          {/* Right Column - Trading Chart Visualization */}
-          <div className="bg-trading-navy/50 backdrop-blur-sm rounded-2xl p-8 border border-trading-blue/30">
-            <div className="flex justify-between items-center mb-6">
-              <div>
-                <div className="text-2xl font-bold text-white">
-                  NASDAQ: AAPL
-                </div>
-                <div className="text-trading-green text-lg">
-                  $185.25 <span className="text-sm">(+1.25%)</span>
-                </div>
-              </div>
-              <div className="flex space-x-2">
-                {["1D", "1W", "1M", "1Y"].map((period) => (
-                  <button
-                    key={period}
-                    className="px-3 py-1 rounded-lg bg-trading-blue/30 text-sm"
-                  >
-                    {period}
-                  </button>
-                ))}
-              </div>
-            </div>
+          {/* CTA */}
+          <div className="mt-12 flex flex-wrap gap-5 items-center">
+            <button
+              className="
+                px-8 py-3 rounded-full
+                bg-gradient-to-r from-blue-600 to-blue-700
+                text-white font-semibold
+                shadow-[0_8px_25px_rgba(59,130,246,0.35)]
+                hover:shadow-[0_15px_40px_rgba(59,130,246,0.5)]
+                hover:brightness-105
+                transition-all duration-300
+              "
+            >
+              Start Your Pro Journey
+            </button>
 
-            {/* Simplified Chart */}
-            <div className="h-64 relative">
-              <div className="absolute inset-0 flex items-end space-x-px">
-                {[
-                  40, 45, 50, 55, 60, 65, 70, 75, 80, 75, 70, 65, 70, 75, 80,
-                  85, 90, 85, 80, 75,
-                ].map((height, i) => (
-                  <div
-                    key={i}
-                    className="flex-1 bg-gradient-to-t from-trading-green to-trading-cyan/50 rounded-t"
-                    style={{ height: `${height}%` }}
-                  />
-                ))}
-              </div>
-            </div>
-
-            {/* Trading Stats */}
-            <div className="grid grid-cols-3 gap-4 mt-8">
-              {[
-                { label: "Volume", value: "45.2M" },
-                { label: "High", value: "$186.50" },
-                { label: "Low", value: "$183.80" },
-              ].map((stat) => (
-                <div
-                  key={stat.label}
-                  className="text-center p-3 bg-white/5 rounded-lg"
-                >
-                  <div className="text-sm text-gray-400">{stat.label}</div>
-                  <div className="font-bold text-white">{stat.value}</div>
-                </div>
-              ))}
+            <div className="flex gap-3">
+              <img
+                src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                alt="App Store"
+                className="h-11"
+              />
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                alt="Google Play"
+                className="h-11"
+              />
             </div>
           </div>
         </div>
-      </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2">
-        <div className="animate-bounce">
-          <div className="w-6 h-10 border-2 border-trading-cyan rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-trading-cyan rounded-full mt-2"></div>
-          </div>
+        {/* RIGHT PHONE */}
+        <div className="relative flex justify-center">
+          <img
+            src={phone}
+            alt="Trading App"
+            className="
+              w-[320px] md:w-[380px]
+              rotate-6
+              drop-shadow-[0_25px_50px_rgba(59,130,246,0.15)]
+            "
+          />
+
+          {/* BLUE GLOW */}
+          <div className="absolute -z-10 w-[460px] h-[460px] bg-blue-400/10 blur-[160px] rounded-full" />
         </div>
       </div>
+
+      {/* Bottom decorative gradient */}
+      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-blue-50/50 to-transparent" />
     </section>
   );
 };
 
-export default Hero;
+export default UHomeLightBlue;

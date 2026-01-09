@@ -3,7 +3,7 @@ export default function CodeOfConduct() {
     <div className="min-h-screen rounded-2xl bg-[#0b0f19]  from-slate-950 to-slate-900 py-16 px-4">
       <div className="max-w-5xl mx-auto">
         {/* PAGE HEADER */}
-        <h1 className="text-xl md:text-3xl font-bold text-white text-center mb-4">
+        <h1 className="text-xl md:text-2xl font-bold text-white text-center mb-4">
           CODE OF CONDUCT FOR RESEARCH ANALYST
         </h1>
 

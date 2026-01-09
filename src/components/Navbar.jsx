@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
+import WealthFino_Logo from "../assets/WealthFino_Logo.png"
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation(); // Get current path
@@ -27,22 +29,20 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-trading-border">
+    <nav className="sticky top-0 z-50 bg-white  border-b border-trading-border">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex justify-between items-center h-16">
           {/* ================= LOGO ================= */}
           <Link to="/" className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-trading-green to-trading-cyan rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-xl">W</span>
+            <div className="w-12 h-12  from-trading-green to-trading-cyan rounded-lg flex items-center justify-center">
+               <img src={WealthFino_Logo} alt="" />
             </div>
-            <div>
-              <div className="text-2xl font-bold text-trading-navy">
-                WealthFino
+           
+              <div className="w-10">
+             
               </div>
-              <div className="text-xs text-trading-blue font-medium">
-                TRADING
-              </div>
-            </div>
+               
+             
           </Link>
 
           {/* ================= DESKTOP MENU ================= */}

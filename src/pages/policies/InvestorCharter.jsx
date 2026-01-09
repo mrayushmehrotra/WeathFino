@@ -140,7 +140,6 @@ export default function InvestorCharter() {
               </ul>
             </div>
 
-            {/* Individual items */}
             <div className="space-y-4">
               <div className="flex items-center gap-3">
                 <CheckCircle className="text-emerald-600" size={24} />
@@ -211,7 +210,6 @@ export default function InvestorCharter() {
             Details of grievance redressal mechanism and how to access it
           </h2>
 
-          {/* Point 1 */}
           <div className="flex gap-3">
             <CheckCircle className="text-emerald-600" size={24} />
             <p>
@@ -220,7 +218,6 @@ export default function InvestorCharter() {
             </p>
           </div>
 
-          {/* Filing with Research Analyst */}
           <div className="pl-6 space-y-2">
             <p className="font-semibold">
               Mode of filing the complaint with research analyst:
@@ -233,7 +230,6 @@ export default function InvestorCharter() {
             </p>
           </div>
 
-          {/* SCORES / RAASB */}
           <div className="pl-6 space-y-3">
             <p className="font-semibold">
               Mode of filing the complaint on SCORES or with Research Analyst
@@ -340,7 +336,7 @@ export default function InvestorCharter() {
 
         <div className="">
           <div className="space-y-6 border border-rose-500 rounded-lg p-4 bg-rose-100">
-            <h3 className="font-semibold mb-2 ">DO's</h3>
+            <h3 className="font-semibold mb-2 ">Do's</h3>
             <ul className="space-y-2">
               {[
                 "Always deal with SEBI registered Research Analysts.",
@@ -372,7 +368,7 @@ export default function InvestorCharter() {
                 "Do not provide funds for investment to the Research Analyst.",
                 "Don't fall prey to luring advertisements or market rumours.",
                 "Do not get attracted to limited period discount or other incentive, gifts, etc. offered by Research Analyst.",
-                "Do not share login credentials and password of your trading and demat accounts with the Research Analyst."
+                "Do not share login credentials and password of your trading and demat accounts with the Research Analyst.",
               ].map((item, index) => (
                 <li key={index} className="flex gap-3">
                   <CheckCircle className="text-red-700 mt-1" />

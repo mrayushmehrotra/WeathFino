@@ -1,4 +1,5 @@
 import React from "react";
+import WealthFino_Logo from "../assets/WealthFino_Logo.png";
 
 const Footer = () => {
   const year = new Date().getFullYear();
@@ -12,9 +13,9 @@ const Footer = () => {
           <div>
             <div className="mb-6">
               <img
-                src="/wealthfino-logo.png"
+                src={WealthFino_Logo}
                 alt="WealthFino"
-                className="w-14 mb-4"
+                className="w-14 mb-4 rounded-xl"
               />
             </div>
 
@@ -24,9 +25,19 @@ const Footer = () => {
             </p>
 
             {/* APP STORE */}
-            <div className="flex items-center gap-4 mb-8">
-              <img src="/apple-store.svg" alt="App Store" className="h-10" />
-              <img src="/google-play.svg" alt="Google Play" className="h-10" />
+            <div className="flex items-center gap-2 mb-4">
+              <div className="flex gap-3">
+                <img
+                  src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                  alt="App Store"
+                  className="h-11"
+                />
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                  alt="Google Play"
+                  className="h-11"
+                />
+              </div>
             </div>
 
             {/* DISCLAIMER */}
