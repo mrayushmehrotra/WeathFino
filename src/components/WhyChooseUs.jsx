@@ -58,28 +58,46 @@ const WhyWealthUs = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative py-28 bg-gradient-to-br from-white via-blue-50 to-white overflow-hidden"
+      className="
+        relative py-28 overflow-hidden
+        bg-gradient-to-br
+        from-white via-blue-50 to-white
+        dark:from-slate-950 dark:via-slate-900 dark:to-slate-950
+        transition-colors duration-300
+      "
     >
-      {/* Background blur */}
-      <div className="absolute -top-40 -right-40 w-96 h-96 bg-blue-200/30 rounded-full blur-3xl animate-float" />
-      <div className="absolute top-1/2 -left-40 w-96 h-96 bg-cyan-200/30 rounded-full blur-3xl animate-float delay-700" />
+      {/* BACKGROUND BLOBS */}
+      <div className="absolute -top-40 -right-40 w-96 h-96 bg-blue-200/30 dark:bg-blue-500/20 rounded-full blur-3xl animate-float" />
+      <div className="absolute top-1/2 -left-40 w-96 h-96 bg-cyan-200/30 dark:bg-cyan-400/20 rounded-full blur-3xl animate-float delay-700" />
 
-      {/* Floating sparkles */}
-      <Sparkles className="absolute top-10 left-10 w-6 h-6 text-blue-400/40 animate-float" />
-      <Sparkles className="absolute bottom-20 right-16 w-5 h-5 text-cyan-400/40 animate-float delay-1000" />
+      {/* SPARKLES */}
+      <Sparkles className="absolute top-10 left-10 w-6 h-6 text-blue-400/40 dark:text-blue-400/30 animate-float" />
+      <Sparkles className="absolute bottom-20 right-16 w-5 h-5 text-cyan-400/40 dark:text-cyan-400/30 animate-float delay-1000" />
 
       <div className="relative max-w-7xl mx-auto px-6">
-        {/* HEADER */}
+        {/* ================= HEADER ================= */}
         <div
           className={`text-center max-w-4xl mx-auto transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          <span className="inline-block px-6 py-2 rounded-full bg-blue-100 text-blue-600 font-semibold">
+          <span
+            className="
+              inline-block px-6 py-2 rounded-full
+              bg-blue-100 dark:bg-blue-500/15
+              text-blue-600 dark:text-blue-400
+              font-semibold
+            "
+          >
             Why Choose Us
           </span>
 
-          <h2 className="mt-6 text-5xl font-bold text-slate-900">
+          <h2
+            className="
+              mt-6 text-5xl font-bold
+              text-slate-900 dark:text-white
+            "
+          >
             Why{" "}
             <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent animate-gradient bg-[length:200%]">
               WealthFino
@@ -87,13 +105,18 @@ const WhyWealthUs = () => {
             ?
           </h2>
 
-          <p className="mt-6 text-xl text-slate-600">
+          <p
+            className="
+              mt-6 text-xl
+              text-slate-600 dark:text-slate-300
+            "
+          >
             Research-backed strategies under SEBI RA guidelines with disciplined
             investing principles.
           </p>
         </div>
 
-        {/* CARDS */}
+        {/* ================= FEATURE CARDS ================= */}
         <div className="mt-24 grid grid-cols-1 md:grid-cols-3 gap-10">
           {features.map((item, index) => {
             const Icon = item.icon;
@@ -110,7 +133,16 @@ const WhyWealthUs = () => {
                 <div
                   onMouseMove={handleMouseMove}
                   onMouseLeave={handleMouseLeave}
-                  className="relative rounded-3xl bg-white/90 backdrop-blur-sm p-8 border border-slate-200 shadow-lg hover:shadow-2xl transition-transform duration-300 group"
+                  className="
+                    relative rounded-3xl p-8
+                    bg-white/90 dark:bg-slate-900/90
+                    backdrop-blur-sm
+                    border border-slate-200 dark:border-slate-800
+                    shadow-lg dark:shadow-none
+                    hover:shadow-2xl
+                    transition-transform duration-300
+                    group
+                  "
                 >
                   <div
                     className={`w-16 h-16 rounded-2xl flex items-center justify-center bg-gradient-to-r ${item.gradient} shadow-lg animate-icon-float`}
@@ -118,11 +150,21 @@ const WhyWealthUs = () => {
                     <Icon className="w-8 h-8 text-white" />
                   </div>
 
-                  <h3 className="mt-8 text-2xl font-bold text-slate-900">
+                  <h3
+                    className="
+                      mt-8 text-2xl font-bold
+                      text-slate-900 dark:text-white
+                    "
+                  >
                     {item.title}
                   </h3>
 
-                  <p className="mt-4 text-slate-600 leading-relaxed">
+                  <p
+                    className="
+                      mt-4 leading-relaxed
+                      text-slate-600 dark:text-slate-300
+                    "
+                  >
                     {item.desc}
                   </p>
 
@@ -133,7 +175,7 @@ const WhyWealthUs = () => {
           })}
         </div>
 
-        {/* STATS */}
+        {/* ================= STATS ================= */}
         <div
           className={`mt-24 grid grid-cols-2 md:grid-cols-4 gap-6 text-center transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
@@ -147,12 +189,18 @@ const WhyWealthUs = () => {
           ].map((stat, idx) => (
             <div
               key={idx}
-              className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-md transition"
+              className="
+                p-6 rounded-2xl
+                bg-white dark:bg-slate-900
+                border border-slate-200 dark:border-slate-800
+                shadow-sm dark:shadow-none
+                transition
+              "
             >
-              <div className="text-4xl font-bold text-blue-600">
+              <div className="text-4xl font-bold text-blue-600 dark:text-blue-400">
                 {isVisible ? stat.value : "0"}
               </div>
-              <div className="mt-2 text-sm text-slate-600 font-medium">
+              <div className="mt-2 text-sm font-medium text-slate-600 dark:text-slate-400">
                 {stat.label}
               </div>
             </div>

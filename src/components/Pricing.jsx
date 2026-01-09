@@ -46,13 +46,13 @@ const plans = [
 
 const Pricing = () => {
   return (
-    <div className="bg-[#F3F8FF] py-20 px-6">
+    <div className="bg-[#F3F8FF] dark:bg-gray-900 py-20 px-6">
       {/* Heading */}
       <div className="text-center mb-16">
-        <h1 className="text-4xl md:text-5xl font-bold text-slate-900">
+        <h1 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white">
           Skip The Hype. <span className="text-blue-500">Learn The Why!</span>
         </h1>
-        <p className="text-slate-600 mt-6 max-w-2xl mx-auto">
+        <p className="text-slate-600 dark:text-gray-400 mt-6 max-w-2xl mx-auto">
           Helping the next generation of traders with educational insights and
           learning tools. Join now to access premium features.
         </p>
@@ -63,7 +63,7 @@ const Pricing = () => {
         {plans.map((plan, index) => (
           <div
             key={index}
-            className="bg-white border-2 border-black rounded-2xl shadow-xl p-8 md:p-10 flex flex-col md:flex-row gap-10"
+            className="bg-white dark:bg-gray-800 border-2 border-black dark:border-gray-700 rounded-2xl shadow-xl p-8 md:p-10 flex flex-col md:flex-row gap-10"
           >
             {/* Left Features */}
             <div className="flex-1 space-y-4">
@@ -72,14 +72,16 @@ const Pricing = () => {
                   key={i}
                   className={`flex items-center gap-3 px-5 py-4 rounded-xl shadow ${
                     item.gold
-                      ? "bg-gradient-to-r from-yellow-300 to-yellow-600"
-                      : "bg-gradient-to-r from-gray-700 to-black text-yellow-400"
+                      ? "bg-gradient-to-r from-yellow-300 to-yellow-600 dark:from-yellow-500 dark:to-yellow-700"
+                      : "bg-gradient-to-r from-gray-700 to-black dark:from-gray-800 dark:to-gray-900 text-yellow-400 dark:text-yellow-300"
                   }`}
                 >
-                  <CheckCircle className="w-6 h-6 text-black" />
+                  <CheckCircle className="w-6 h-6 text-black dark:text-white" />
                   <span
                     className={`font-medium ${
-                      item.gold ? "text-black" : "text-yellow-400"
+                      item.gold
+                        ? "text-black dark:text-white"
+                        : "text-yellow-400 dark:text-yellow-300"
                     }`}
                   >
                     {item.text}
@@ -91,22 +93,28 @@ const Pricing = () => {
             {/* Right Pricing */}
             <div className="flex-1 flex flex-col justify-center relative">
               {/* Logo placeholder */}
-              <div className="absolute top-0 right-0 text-slate-400 font-bold">
+              <div className="absolute top-0 right-0 text-slate-400 dark:text-gray-500 font-bold">
                 WEALTHFINO
               </div>
 
-              <h2 className="text-2xl font-bold mb-4">{plan.title}</h2>
+              <h2 className="text-2xl font-bold mb-4 dark:text-white">
+                {plan.title}
+              </h2>
 
-              <p className="text-slate-600 mb-2">Subscription fees:</p>
+              <p className="text-slate-600 dark:text-gray-400 mb-2">
+                Subscription fees:
+              </p>
 
               <div className="flex items-center gap-4 mb-4">
-                <span className="line-through text-gray-400 text-xl">
+                <span className="line-through text-gray-400 dark:text-gray-600 text-xl">
                   {plan.oldPrice}
                 </span>
-                <span className="text-4xl font-bold">{plan.price}</span>
+                <span className="text-4xl font-bold dark:text-white">
+                  {plan.price}
+                </span>
               </div>
 
-              <span className="inline-block bg-yellow-200 text-black px-4 py-1 rounded-md text-sm mb-6 w-fit">
+              <span className="inline-block bg-yellow-200 dark:bg-yellow-600 text-black dark:text-white px-4 py-1 rounded-md text-sm mb-6 w-fit">
                 Validity = {plan.validity}
               </span>
 
@@ -114,7 +122,7 @@ const Pricing = () => {
                 <span className="absolute -top-4 left-6 bg-red-600 text-white text-xs px-4 py-1 rounded-full">
                   {plan.badge}
                 </span>
-                <button className="w-full border-2 border-black py-4 rounded-xl text-xl font-bold hover:bg-black hover:text-white transition">
+                <button className="w-full border-2 border-black dark:border-gray-600 py-4 rounded-xl text-xl font-bold hover:bg-black dark:hover:bg-gray-700 hover:text-white transition dark:text-white">
                   Buy Now
                 </button>
               </div>

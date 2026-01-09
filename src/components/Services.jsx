@@ -29,33 +29,79 @@ const Services = () => {
   ];
 
   return (
-    <section className="py-20 px-6 bg-gray-50">
+    <section
+      className="
+        py-20 px-6
+        bg-gray-50 dark:bg-slate-950
+        transition-colors duration-300
+      "
+    >
       <div className="max-w-6xl mx-auto">
-        {/* Header */}
+        {/* ================= HEADER ================= */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">
+          <h2
+            className="
+              text-4xl font-bold mb-4
+              text-slate-900 dark:text-white
+            "
+          >
             Comprehensive
             <span className="gradient-text"> Financial Solutions</span>
           </h2>
-          <p className="text-gray-600">
+
+          <p
+            className="
+              text-slate-600 dark:text-slate-300
+            "
+          >
             End-to-end services for modern investors
           </p>
         </div>
 
-        {/* Services Grid */}
+        {/* ================= SERVICES GRID ================= */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service) => (
             <div
               key={service.title}
-              className="bg-white p-8 rounded-2xl shadow-sm card-hover"
+              className="
+                p-8 rounded-2xl
+                bg-white dark:bg-slate-900
+                border border-slate-200 dark:border-slate-800
+                shadow-sm dark:shadow-none
+                transition-all duration-300
+                hover:-translate-y-1 hover:shadow-md
+              "
             >
+              {/* ICON */}
               <div
-                className={`text-4xl mb-6 w-16 h-16 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center text-white`}
+                className={`
+                  text-4xl mb-6 w-16 h-16 rounded-xl
+                  bg-gradient-to-br ${service.color}
+                  flex items-center justify-center
+                  text-white
+                `}
               >
                 {service.icon}
               </div>
-              <h3 className="text-xl font-bold mb-3">{service.title}</h3>
-              <p className="text-gray-600">{service.description}</p>
+
+              {/* TITLE */}
+              <h3
+                className="
+                  text-xl font-bold mb-3
+                  text-slate-900 dark:text-white
+                "
+              >
+                {service.title}
+              </h3>
+
+              {/* DESCRIPTION */}
+              <p
+                className="
+                  text-slate-600 dark:text-slate-300
+                "
+              >
+                {service.description}
+              </p>
             </div>
           ))}
         </div>

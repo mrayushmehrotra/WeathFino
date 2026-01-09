@@ -4,7 +4,6 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
 import Hero from "./components/Hero";
-
 import UHome from "./updatedComponets/UHome";
 import FeaturesSection from "./updatedComponets/FeaturesSection";
 import MarketTicker from "./components/MarketTicker";
@@ -34,6 +33,7 @@ import CancellationPolicy from "./pages/policies/CancellationPolicy";
 import ConflictOfInterestPolicy from "./pages/policies/ConflictOfInterestPolicy";
 import ProPointsPolicy from "./pages/policies/ProPointsPolicy";
 import DataDeletionPolicy from "./pages/policies/DataDeletionPolicy";
+
 import AboutPage from "./components/AboutPage";
 import BlogPage from "./components/BlogPage";
 import ContactPage from "./components/ContactPage";
@@ -42,11 +42,11 @@ import Charts from "./components/Charts";
 
 export default function App() {
   return (
-    <>
+    // 🌍 GLOBAL THEME WRAPPER
+    <div className="min-h-screen bg-trading-light dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
       <Navbar />
 
       <Routes>
-        {/* HOME PAGE */}
         <Route
           path="/"
           element={
@@ -59,12 +59,10 @@ export default function App() {
               <About />
               <Services />
               <WhyChooseUs />
-              {/* <FeedbackPage /> */}
             </>
           }
         />
 
-        {/* POLICIES PAGE */}
         <Route path="/policies" element={<PoliciesLayout />}>
           <Route index element={<Navigate to="terms-conditions" replace />} />
           <Route path="investor-charter" element={<InvestorCharter />} />
@@ -84,7 +82,6 @@ export default function App() {
             path="legal-risk-disclosure"
             element={<LegalRiskDisclosure />}
           />
-
           <Route path="refund-policy" element={<RefundPolicy />} />
           <Route path="cancellation-policy" element={<CancellationPolicy />} />
           <Route
@@ -93,7 +90,6 @@ export default function App() {
           />
           <Route path="pro-points-policy" element={<ProPointsPolicy />} />
           <Route path="data-deletion" element={<DataDeletionPolicy />} />
-
           <Route
             path="redressal-of-grievance"
             element={<RedressalOfGrievance />}
@@ -108,6 +104,6 @@ export default function App() {
       </Routes>
 
       <Footer />
-    </>
+    </div>
   );
 }

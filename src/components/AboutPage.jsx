@@ -2,9 +2,9 @@ import React from "react";
 
 const AboutPage = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100">
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-950">
       {/* Hero Section */}
-      <section className="py-12 md:py-20 bg-gradient-to-r from-blue-900 to-indigo-900 text-white">
+      <section className="py-12 md:py-20 bg-gradient-to-r from-blue-900 to-indigo-900 text-white dark:from-blue-950 dark:to-indigo-950">
         <div className="container mx-auto px-4 md:px-8 max-w-6xl">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center">
             About Krishna Pathak
@@ -19,24 +19,26 @@ const AboutPage = () => {
       {/* Main Content */}
       <div className="container mx-auto px-4 md:px-8 py-12 max-w-6xl">
         {/* About Me Section */}
-        <section className="mb-16 bg-white rounded-2xl shadow-lg p-6 md:p-8">
-          <h2 className="text-3xl font-bold text-gray-800 mb-6">About Me</h2>
-          <p className="text-lg text-gray-700 mb-6">
+        <section className="mb-16 bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 md:p-8">
+          <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-6">
+            About Me
+          </h2>
+          <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
             Learn and trade with simple tools and Research Based Insights.
           </p>
 
-          <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-6 md:p-8 border border-blue-100">
-            <h3 className="text-2xl font-bold text-gray-800 mb-4">
+          <div className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/30 dark:to-indigo-900/30 rounded-xl p-6 md:p-8 border border-blue-100 dark:border-blue-800/30">
+            <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-4">
               Unlock Research Based Insights With Krishna Pathak
             </h3>
-            <p className="text-gray-700 mb-4">
+            <p className="text-gray-700 dark:text-gray-300 mb-4">
               Welcome to Krishna Pathak's Insight Hub, where we combine valuable
               knowledge with trading insights. We don't just offer
               recommendations; we explain the reasoning behind every trade and
               provide chart explanations with clear logic, making it easy for
               anyone to learn, regardless of age or background.
             </p>
-            <p className="text-gray-700">
+            <p className="text-gray-700 dark:text-gray-300">
               Join us to keep learning, expand your understanding, and take the
               first step in your Learning journey.
             </p>
@@ -44,14 +46,14 @@ const AboutPage = () => {
         </section>
 
         {/* SEBI Registration Section */}
-        <section className="mb-16 bg-white rounded-2xl shadow-lg p-6 md:p-8">
-          <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">
+        <section className="mb-16 bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 md:p-8">
+          <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-8 text-center">
             Meet Krishna Pathak - Your SEBI Registered Research Analyst
           </h2>
 
           <div className="flex flex-col lg:flex-row gap-8 items-center">
             <div className="lg:w-2/3">
-              <p className="text-gray-700 mb-6">
+              <p className="text-gray-700 dark:text-gray-300 mb-6">
                 Krishna Pathak is a SEBI Registered Research Analyst and the
                 founder of WealthFino Capital, a platform dedicated to promoting
                 financial education, disciplined investing, and research-driven
@@ -60,48 +62,48 @@ const AboutPage = () => {
 
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center">
+                  <div className="w-6 h-6 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center">
                     <div className="w-3 h-3 rounded-full bg-green-600"></div>
                   </div>
-                  <span className="text-gray-700">
+                  <span className="text-gray-700 dark:text-gray-300">
                     <strong>SEBI Registered Research Analyst:</strong>{" "}
                     INH300009914
                   </span>
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center">
+                  <div className="w-6 h-6 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center">
                     <div className="w-3 h-3 rounded-full bg-green-600"></div>
                   </div>
-                  <span className="text-gray-700">
+                  <span className="text-gray-700 dark:text-gray-300">
                     Certifications in NISM Series XV: Research Analyst, NSE Goal
                     Planning
                   </span>
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center">
+                  <div className="w-6 h-6 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center">
                     <div className="w-3 h-3 rounded-full bg-green-600"></div>
                   </div>
-                  <span className="text-gray-700">
+                  <span className="text-gray-700 dark:text-gray-300">
                     Post Graduate Diploma in Management (PGDM)
                   </span>
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center">
+                  <div className="w-6 h-6 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center">
                     <div className="w-3 h-3 rounded-full bg-green-600"></div>
                   </div>
-                  <span className="text-gray-700">
+                  <span className="text-gray-700 dark:text-gray-300">
                     BSE Enlistment No - 5590
                   </span>
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center">
+                  <div className="w-6 h-6 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center">
                     <div className="w-3 h-3 rounded-full bg-green-600"></div>
                   </div>
-                  <span className="text-gray-700">
+                  <span className="text-gray-700 dark:text-gray-300">
                     Founder - WealthFino Capital
                   </span>
                 </div>
@@ -109,7 +111,7 @@ const AboutPage = () => {
             </div>
 
             <div className="lg:w-1/3 flex justify-center">
-              <div className="bg-gradient-to-br from-blue-500 to-indigo-700 text-white rounded-xl p-6 text-center shadow-lg">
+              <div className="bg-gradient-to-br from-blue-500 to-indigo-700 dark:from-blue-600 dark:to-indigo-800 text-white rounded-xl p-6 text-center shadow-lg">
                 <div className="text-4xl font-bold mb-2">SEBI</div>
                 <div className="text-sm mb-4">Registered</div>
                 <div className="text-lg font-semibold">Research Analyst</div>
@@ -120,107 +122,113 @@ const AboutPage = () => {
         </section>
 
         {/* Transparency Section */}
-        <section className="mb-16 bg-white rounded-2xl shadow-lg p-6 md:p-8">
-          <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">
+        <section className="mb-16 bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 md:p-8">
+          <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-8 text-center">
             Commitment to Transparency and Investor Awareness
           </h2>
 
           <div className="mb-10">
-            <p className="text-gray-700 mb-6">
+            <p className="text-gray-700 dark:text-gray-300 mb-6">
               As a professional regulated by the Securities and Exchange Board
               of India (SEBI), Krishna provides:
             </p>
 
             <div className="grid md:grid-cols-3 gap-6">
-              <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
-                <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mb-4">
-                  <span className="text-blue-600 font-bold">✓</span>
+              <div className="bg-gray-50 dark:bg-gray-700/50 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
+                <div className="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mb-4">
+                  <span className="text-blue-600 dark:text-blue-400 font-bold">
+                    ✓
+                  </span>
                 </div>
-                <h4 className="font-bold text-lg text-gray-800 mb-2">
+                <h4 className="font-bold text-lg text-gray-800 dark:text-white mb-2">
                   Equity Research
                 </h4>
-                <p className="text-gray-700">
+                <p className="text-gray-700 dark:text-gray-300">
                   Based on publicly available information
                 </p>
               </div>
 
-              <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
-                <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center mb-4">
-                  <span className="text-green-600 font-bold">✓</span>
+              <div className="bg-gray-50 dark:bg-gray-700/50 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
+                <div className="w-10 h-10 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center mb-4">
+                  <span className="text-green-600 dark:text-green-400 font-bold">
+                    ✓
+                  </span>
                 </div>
-                <h4 className="font-bold text-lg text-gray-800 mb-2">
+                <h4 className="font-bold text-lg text-gray-800 dark:text-white mb-2">
                   Market Insights
                 </h4>
-                <p className="text-gray-700">
+                <p className="text-gray-700 dark:text-gray-300">
                   Grounded in technical and fundamental analysis
                 </p>
               </div>
 
-              <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
-                <div className="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center mb-4">
-                  <span className="text-purple-600 font-bold">✓</span>
+              <div className="bg-gray-50 dark:bg-gray-700/50 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
+                <div className="w-10 h-10 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center mb-4">
+                  <span className="text-purple-600 dark:text-purple-400 font-bold">
+                    ✓
+                  </span>
                 </div>
-                <h4 className="font-bold text-lg text-gray-800 mb-2">
+                <h4 className="font-bold text-lg text-gray-800 dark:text-white mb-2">
                   Stock Recommendations
                 </h4>
-                <p className="text-gray-700">
+                <p className="text-gray-700 dark:text-gray-300">
                   Research-based and SEBI compliant
                 </p>
               </div>
             </div>
 
-            <p className="text-gray-700 mt-8 text-center">
+            <p className="text-gray-700 dark:text-gray-300 mt-8 text-center">
               His research is developed independently and shared in accordance
               with SEBI's guidelines to promote awareness, transparency, and
               investor understanding.
             </p>
           </div>
 
-          <div className="border-t pt-8">
-            <h3 className="text-2xl font-bold text-gray-800 mb-6">
+          <div className="border-t border-gray-200 dark:border-gray-700 pt-8">
+            <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-6">
               What an SEBI Registered Research Analyst Can Do
             </h3>
-            <p className="text-gray-700 mb-6">
+            <p className="text-gray-700 dark:text-gray-300 mb-6">
               As per SEBI (Research Analyst) Regulations, Krishna Pathak is
               authorized to:
             </p>
 
             <div className="grid md:grid-cols-2 gap-4">
               <div className="flex items-start gap-3">
-                <div className="w-6 h-6 rounded-full bg-green-100 flex-shrink-0 flex items-center justify-center mt-1">
+                <div className="w-6 h-6 rounded-full bg-green-100 dark:bg-green-900/30 flex-shrink-0 flex items-center justify-center mt-1">
                   <div className="w-3 h-3 rounded-full bg-green-600"></div>
                 </div>
-                <span className="text-gray-700">
+                <span className="text-gray-700 dark:text-gray-300">
                   Publish independent research reports and views on securities
                   and market trends
                 </span>
               </div>
 
               <div className="flex items-start gap-3">
-                <div className="w-6 h-6 rounded-full bg-green-100 flex-shrink-0 flex items-center justify-center mt-1">
+                <div className="w-6 h-6 rounded-full bg-green-100 dark:bg-green-900/30 flex-shrink-0 flex items-center justify-center mt-1">
                   <div className="w-3 h-3 rounded-full bg-green-600"></div>
                 </div>
-                <span className="text-gray-700">
+                <span className="text-gray-700 dark:text-gray-300">
                   Share non-advisory insights based on objective analysis and
                   research
                 </span>
               </div>
 
               <div className="flex items-start gap-3">
-                <div className="w-6 h-6 rounded-full bg-green-100 flex-shrink-0 flex items-center justify-center mt-1">
+                <div className="w-6 h-6 rounded-full bg-green-100 dark:bg-green-900/30 flex-shrink-0 flex items-center justify-center mt-1">
                   <div className="w-3 h-3 rounded-full bg-green-600"></div>
                 </div>
-                <span className="text-gray-700">
+                <span className="text-gray-700 dark:text-gray-300">
                   Promote financial literacy and help investors understand
                   market dynamics
                 </span>
               </div>
 
               <div className="flex items-start gap-3">
-                <div className="w-6 h-6 rounded-full bg-green-100 flex-shrink-0 flex items-center justify-center mt-1">
+                <div className="w-6 h-6 rounded-full bg-green-100 dark:bg-green-900/30 flex-shrink-0 flex items-center justify-center mt-1">
                   <div className="w-3 h-3 rounded-full bg-green-600"></div>
                 </div>
-                <span className="text-gray-700">
+                <span className="text-gray-700 dark:text-gray-300">
                   Support clients through well-researched, non-discretionary
                   recommendations
                 </span>
@@ -230,16 +238,16 @@ const AboutPage = () => {
         </section>
 
         {/* Education Mission Section */}
-        <section className="mb-16 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl shadow-lg p-6 md:p-8 border border-blue-100">
-          <h2 className="text-3xl font-bold text-gray-800 mb-6">
+        <section className="mb-16 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/30 dark:to-indigo-900/30 rounded-2xl shadow-lg p-6 md:p-8 border border-blue-100 dark:border-blue-800/30">
+          <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-6">
             Beyond Research - A Mission to Educate
           </h2>
 
           <div className="mb-8">
-            <p className="text-gray-700 mb-6">
+            <p className="text-gray-700 dark:text-gray-300 mb-6">
               Krishna has been featured in leading financial and news platforms
               such as
-              <span className="font-semibold">
+              <span className="font-semibold dark:text-gray-200">
                 {" "}
                 The Economic Times, CNBC, MSM, Indverts, Investing.com, Against
                 News, Stockwits, and Moreycontrol
@@ -248,7 +256,7 @@ const AboutPage = () => {
               his financial insights.
             </p>
 
-            <p className="text-gray-700">
+            <p className="text-gray-700 dark:text-gray-300">
               More than just a market researcher, Krishna Kumar Pathak is a
               mentor and educator focused on promoting financial literacy and he
               encourages beginners to:
@@ -256,45 +264,45 @@ const AboutPage = () => {
           </div>
 
           <div className="grid md:grid-cols-2 gap-6 mb-8">
-            <div className="flex items-center gap-3 bg-white rounded-lg p-4 shadow-sm">
-              <div className="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
+            <div className="flex items-center gap-3 bg-white dark:bg-gray-800 rounded-lg p-4 shadow-sm">
+              <div className="w-8 h-8 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center flex-shrink-0">
                 <div className="w-4 h-4 rounded-full bg-green-600"></div>
               </div>
-              <span className="text-gray-700 font-medium">
+              <span className="text-gray-700 dark:text-gray-300 font-medium">
                 Start with education and awareness
               </span>
             </div>
 
-            <div className="flex items-center gap-3 bg-white rounded-lg p-4 shadow-sm">
-              <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
+            <div className="flex items-center gap-3 bg-white dark:bg-gray-800 rounded-lg p-4 shadow-sm">
+              <div className="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center flex-shrink-0">
                 <div className="w-4 h-4 rounded-full bg-blue-600"></div>
               </div>
-              <span className="text-gray-700 font-medium">
+              <span className="text-gray-700 dark:text-gray-300 font-medium">
                 Set clear investment goals
               </span>
             </div>
 
-            <div className="flex items-center gap-3 bg-white rounded-lg p-4 shadow-sm">
-              <div className="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center flex-shrink-0">
+            <div className="flex items-center gap-3 bg-white dark:bg-gray-800 rounded-lg p-4 shadow-sm">
+              <div className="w-8 h-8 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center flex-shrink-0">
                 <div className="w-4 h-4 rounded-full bg-purple-600"></div>
               </div>
-              <span className="text-gray-700 font-medium">
+              <span className="text-gray-700 dark:text-gray-300 font-medium">
                 Practice risk management and diversification
               </span>
             </div>
 
-            <div className="flex items-center gap-3 bg-white rounded-lg p-4 shadow-sm">
-              <div className="w-8 h-8 rounded-full bg-amber-100 flex items-center justify-center flex-shrink-0">
+            <div className="flex items-center gap-3 bg-white dark:bg-gray-800 rounded-lg p-4 shadow-sm">
+              <div className="w-8 h-8 rounded-full bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center flex-shrink-0">
                 <div className="w-4 h-4 rounded-full bg-amber-600"></div>
               </div>
-              <span className="text-gray-700 font-medium">
+              <span className="text-gray-700 dark:text-gray-300 font-medium">
                 Focus on long-term learning and patience
               </span>
             </div>
           </div>
 
-          <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
-            <p className="text-gray-700 text-center italic">
+          <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm border border-gray-200 dark:border-gray-700">
+            <p className="text-gray-700 dark:text-gray-300 text-center italic">
               Through research-based insights and educational content, Krishna
               aims to empower individuals to make informed financial decisions —
               without relying on tips or speculation.
@@ -303,12 +311,12 @@ const AboutPage = () => {
         </section>
 
         {/* Disclaimer Section */}
-        <section className="bg-red-50 border border-red-200 rounded-2xl shadow-lg p-6 md:p-8">
-          <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
+        <section className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800/30 rounded-2xl shadow-lg p-6 md:p-8">
+          <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-6 text-center">
             DISCLAIMER
           </h2>
 
-          <div className="space-y-4 text-gray-700">
+          <div className="space-y-4 text-gray-700 dark:text-gray-300">
             <p>
               Investment in the securities market is subject to market risks.
               Please read all related documents carefully before investing.
@@ -324,12 +332,12 @@ const AboutPage = () => {
               indicative of future results.
             </p>
 
-            <div className="bg-white p-4 rounded-lg border border-gray-300 mt-6">
-              <p className="font-bold text-gray-800 mb-2">
+            <div className="bg-white dark:bg-gray-800 p-4 rounded-lg border border-gray-300 dark:border-gray-700 mt-6">
+              <p className="font-bold text-gray-800 dark:text-white mb-2">
                 Dear Members, it is mandatory to read and understand all Terms &
                 Conditions, including:
               </p>
-              <ul className="list-disc pl-5 space-y-1 text-gray-700">
+              <ul className="list-disc pl-5 space-y-1 text-gray-700 dark:text-gray-300">
                 <li>SEBI Guidelines</li>
                 <li>Research Disclaimers</li>
                 <li>User Guidelines</li>
@@ -339,14 +347,14 @@ const AboutPage = () => {
             </div>
 
             <div className="text-center mt-8">
-              <p className="font-bold text-gray-800 mb-4">
+              <p className="font-bold text-gray-800 dark:text-white mb-4">
                 For more details, visit:
               </p>
               <a
                 href="https://www.krishnapathak.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300"
+                className="inline-block bg-blue-600 hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-800 text-white font-semibold py-3 px-6 rounded-lg transition duration-300"
               >
                 www.krishnapathak.com
               </a>

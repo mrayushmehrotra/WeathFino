@@ -1,48 +1,102 @@
-import React from 'react';
+import React from "react";
 
 const About = () => {
   return (
-    <section className="py-20 px-6 bg-white">
+    <section
+      className="
+        py-20 px-6
+        bg-white dark:bg-slate-950
+        transition-colors duration-300
+      "
+    >
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Left Column */}
+          {/* ================= LEFT COLUMN ================= */}
           <div>
-            <h2 className="text-4xl font-bold mb-6">
+            <h2
+              className="
+                text-4xl font-bold mb-6
+                text-slate-900 dark:text-white
+              "
+            >
               Trust-Driven
               <br />
               <span className="gradient-text">Wealth Management</span>
             </h2>
-            <p className="text-gray-600 mb-8">
-              We combine institutional expertise with cutting-edge technology to deliver personalized wealth solutions for modern investors.
+
+            <p
+              className="
+                mb-8 text-lg
+                text-slate-600 dark:text-slate-300
+              "
+            >
+              We combine institutional expertise with cutting-edge technology to
+              deliver personalized wealth solutions for modern investors.
             </p>
-            
-            {/* Feature List */}
+
+            {/* FEATURE LIST */}
             <div className="space-y-4">
               {[
-                'AI-Powered Analytics',
-                'Real-time Market Insights',
-                'Risk-Managed Strategies',
-                'Transparent Pricing'
+                "AI-Powered Analytics",
+                "Real-time Market Insights",
+                "Risk-Managed Strategies",
+                "Transparent Pricing",
               ].map((feature) => (
                 <div key={feature} className="flex items-center">
-                  <div className="w-2 h-2 bg-accent rounded-full mr-3"></div>
-                  <span className="text-gray-700">{feature}</span>
+                  <div
+                    className="
+                      w-2 h-2 rounded-full mr-3
+                      bg-blue-600 dark:bg-blue-400
+                    "
+                  ></div>
+
+                  <span
+                    className="
+                      text-slate-700 dark:text-slate-300
+                    "
+                  >
+                    {feature}
+                  </span>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Right Column - Stats */}
+          {/* ================= RIGHT COLUMN – STATS ================= */}
           <div className="grid grid-cols-2 gap-6">
             {[
-              { value: '15+', label: 'Years Experience' },
-              { value: '98%', label: 'Client Retention' },
-              { value: '$2.5B+', label: 'Assets Managed' },
-              { value: '24/7', label: 'Monitoring' }
+              { value: "15+", label: "Years Experience" },
+              { value: "98%", label: "Client Retention" },
+              { value: "$2.5B+", label: "Assets Managed" },
+              { value: "24/7", label: "Monitoring" },
             ].map((stat) => (
-              <div key={stat.label} className="bg-gradient-to-br from-gray-50 to-white p-6 rounded-2xl shadow-sm">
-                <div className="text-3xl font-bold gradient-text mb-2">{stat.value}</div>
-                <div className="text-gray-600">{stat.label}</div>
+              <div
+                key={stat.label}
+                className="
+                  p-6 rounded-2xl
+                  bg-gradient-to-br
+                  from-gray-50 to-white
+                  dark:from-slate-900 dark:to-slate-800
+                  border border-slate-200 dark:border-slate-700
+                  shadow-sm dark:shadow-none
+                "
+              >
+                <div
+                  className="
+                    text-3xl font-bold mb-2
+                    gradient-text
+                  "
+                >
+                  {stat.value}
+                </div>
+
+                <div
+                  className="
+                    text-slate-600 dark:text-slate-400
+                  "
+                >
+                  {stat.label}
+                </div>
               </div>
             ))}
           </div>

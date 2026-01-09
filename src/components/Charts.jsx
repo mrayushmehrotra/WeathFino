@@ -21,10 +21,6 @@ import {
   PolarGrid,
   PolarAngleAxis,
   PolarRadiusAxis,
-  ScatterChart,
-  Scatter,
-  ZAxis,
-  ReferenceLine,
 } from "recharts";
 import {
   TrendingUp,
@@ -151,24 +147,26 @@ const StockAnalysis = () => {
   const CustomTooltip = ({ active, payload, label }) => {
     if (active && payload && payload.length) {
       return (
-        <div className="bg-gray-900/95 backdrop-blur-sm p-4 rounded-lg border border-gray-700 shadow-2xl">
-          <p className="text-gray-300 font-medium mb-2">{label}</p>
+        <div className="bg-white dark:bg-gray-900/95 backdrop-blur-sm p-4 rounded-lg border border-gray-200 dark:border-gray-700 shadow-2xl">
+          <p className="text-gray-800 dark:text-gray-300 font-medium mb-2">
+            {label}
+          </p>
           <div className="space-y-1">
-            <p className="text-white text-sm">
+            <p className="text-gray-900 dark:text-white text-sm">
               Price:{" "}
-              <span className="text-green-400 font-bold">
+              <span className="text-green-600 dark:text-green-400 font-bold">
                 ₹{payload[0].value}
               </span>
             </p>
-            <p className="text-gray-400 text-sm">
+            <p className="text-gray-600 dark:text-gray-400 text-sm">
               Volume:{" "}
-              <span className="text-blue-400">
+              <span className="text-blue-600 dark:text-blue-400">
                 {payload[1]?.value || payload[0].payload.volume}
               </span>
             </p>
-            <p className="text-gray-400 text-sm">
+            <p className="text-gray-600 dark:text-gray-400 text-sm">
               MA:{" "}
-              <span className="text-purple-400">
+              <span className="text-purple-600 dark:text-purple-400">
                 ₹{payload[0].payload.movingAvg}
               </span>
             </p>
@@ -183,11 +181,11 @@ const StockAnalysis = () => {
     <>
       {/* Landing Page */}
       {!showCharts ? (
-        <div className="min-h-screen w-full flex items-center justify-center bg-gradient-to-r from-indigo-900 via-gray-900 to-black relative overflow-hidden">
+        <div className="min-h-screen w-full flex items-center justify-center bg-gradient-to-r from-indigo-900 via-gray-900 to-black relative overflow-hidden dark:from-gray-950 dark:via-gray-900 dark:to-black">
           {/* Animated Background Elements */}
-          <div className="absolute -left-40 top-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-purple-500/20 rounded-full blur-[160px] opacity-60 animate-pulse"></div>
-          <div className="absolute -right-40 top-1/3 w-[400px] h-[400px] bg-blue-500/10 rounded-full blur-[120px] opacity-40"></div>
-          <div className="absolute left-1/2 bottom-20 w-[300px] h-[300px] bg-indigo-500/15 rounded-full blur-[100px] opacity-50"></div>
+          <div className="absolute -left-40 top-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-purple-500/20 dark:bg-purple-900/30 rounded-full blur-[160px] opacity-60 animate-pulse"></div>
+          <div className="absolute -right-40 top-1/3 w-[400px] h-[400px] bg-blue-500/10 dark:bg-blue-900/20 rounded-full blur-[120px] opacity-40"></div>
+          <div className="absolute left-1/2 bottom-20 w-[300px] h-[300px] bg-indigo-500/15 dark:bg-indigo-900/20 rounded-full blur-[100px] opacity-50"></div>
 
           {/* Content */}
           <div className="relative z-10 max-w-5xl w-full px-6 text-center">
@@ -197,11 +195,11 @@ const StockAnalysis = () => {
             </h1>
 
             {/* Description */}
-            <p className="text-gray-300 text-xl leading-relaxed mb-12 max-w-3xl mx-auto">
+            <p className="text-gray-300 dark:text-gray-300 text-xl leading-relaxed mb-12 max-w-3xl mx-auto">
               Unlock powerful analytics for NSE and BSE listed stocks. Track
               real-time trends, technical patterns, and fundamental metrics to
               make informed investment decisions.
-              <span className="block text-blue-400 font-semibold mt-2">
+              <span className="block text-blue-400 dark:text-blue-400 font-semibold mt-2">
                 Powered By ScanX.
               </span>
             </p>
@@ -209,14 +207,14 @@ const StockAnalysis = () => {
             {/* Search Bar */}
             <div
               onClick={redirectToScanX}
-              className="group flex items-center gap-4 bg-gray-900/60 backdrop-blur-xl border-2 border-gray-700/50 rounded-2xl px-8 py-5 cursor-pointer hover:border-purple-500 transition-all duration-300 max-w-2xl mx-auto mb-12 hover:shadow-2xl hover:shadow-purple-500/20"
+              className="group flex items-center gap-4 bg-gray-900/60 dark:bg-gray-900/80 backdrop-blur-xl border-2 border-gray-700/50 dark:border-gray-800 rounded-2xl px-8 py-5 cursor-pointer hover:border-purple-500 transition-all duration-300 max-w-2xl mx-auto mb-12 hover:shadow-2xl hover:shadow-purple-500/20 dark:hover:shadow-purple-900/30"
             >
-              <Search className="text-gray-400 group-hover:text-purple-400 w-6 h-6 transition-colors" />
+              <Search className="text-gray-400 dark:text-gray-400 group-hover:text-purple-400 w-6 h-6 transition-colors" />
               <input
                 type="text"
                 placeholder="Search Stock by Name or Symbol"
                 onKeyDown={handleKeyDown}
-                className="bg-transparent outline-none text-white w-full placeholder-gray-500 cursor-pointer text-lg font-medium"
+                className="bg-transparent outline-none text-white dark:text-white w-full placeholder-gray-500 cursor-pointer text-lg font-medium"
                 readOnly
               />
               <div className="px-4 py-2 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg text-white text-sm font-medium">
@@ -230,7 +228,7 @@ const StockAnalysis = () => {
                 <button
                   key={stock}
                   onClick={() => redirectToStock(stock)}
-                  className="group px-8 py-4 rounded-xl border-2 border-gray-700 bg-gray-900/40 backdrop-blur-sm text-white font-semibold hover:border-purple-500 hover:bg-purple-900/20 hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-300 flex items-center gap-3"
+                  className="group px-8 py-4 rounded-xl border-2 border-gray-700 dark:border-gray-800 bg-gray-900/40 dark:bg-gray-900/60 backdrop-blur-sm text-white font-semibold hover:border-purple-500 hover:bg-purple-900/20 dark:hover:bg-purple-900/30 hover:shadow-2xl hover:shadow-purple-500/20 dark:hover:shadow-purple-900/30 transition-all duration-300 flex items-center gap-3"
                 >
                   <Zap className="w-5 h-5 text-yellow-400 group-hover:animate-pulse" />
                   {stock}
@@ -255,12 +253,12 @@ const StockAnalysis = () => {
         </div>
       ) : (
         /* Charts Page - Modern Design */
-        <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50 text-gray-800 p-4 md:p-8">
+        <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950 text-gray-800 dark:text-gray-200 p-4 md:p-8">
           {/* Back Button */}
           <div className="max-w-8xl mx-auto mb-6">
             <button
               onClick={() => setShowCharts(false)}
-              className="group px-5 py-3 bg-gradient-to-r from-gray-100 to-gray-50 hover:from-gray-200 hover:to-gray-100 rounded-xl flex items-center gap-2 transition-all duration-300 text-gray-700 border border-gray-200 hover:border-gray-300 shadow-sm hover:shadow-md"
+              className="group px-5 py-3 bg-gradient-to-r from-gray-100 to-gray-50 dark:from-gray-900 dark:to-gray-800 hover:from-gray-200 hover:to-gray-100 dark:hover:from-gray-800 dark:hover:to-gray-700 rounded-xl flex items-center gap-2 transition-all duration-300 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 shadow-sm hover:shadow-md dark:shadow-lg dark:hover:shadow-xl"
             >
               <ChevronRight className="w-5 h-5 transform rotate-180 group-hover:-translate-x-1 transition-transform" />
               Back to Home
@@ -276,11 +274,11 @@ const StockAnalysis = () => {
                     <Activity className="w-8 h-8 text-white" />
                   </div>
                   <div>
-                    <h1 className="text-4xl font-bold bg-gradient-to-r from-gray-900 via-blue-800 to-purple-800 bg-clip-text text-transparent">
+                    <h1 className="text-4xl font-bold bg-gradient-to-r from-gray-900 via-blue-800 to-purple-800 dark:from-gray-100 dark:via-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
                       Market Intelligence Dashboard
                     </h1>
-                    <p className="text-gray-600 mt-2 flex items-center gap-2">
-                      <span className="flex items-center gap-1 text-green-600 font-medium">
+                    <p className="text-gray-600 dark:text-gray-400 mt-2 flex items-center gap-2">
+                      <span className="flex items-center gap-1 text-green-600 dark:text-green-400 font-medium">
                         <Eye className="w-4 h-4" />
                         Real-time data streaming
                       </span>
@@ -290,7 +288,7 @@ const StockAnalysis = () => {
                 </div>
               </div>
               <div className="flex flex-wrap gap-3">
-                <button className="px-5 py-3 bg-gradient-to-r from-blue-50 to-blue-100 hover:from-blue-100 hover:to-blue-200 rounded-xl flex items-center gap-3 transition-all duration-300 border border-blue-200 text-blue-700 font-medium shadow-sm hover:shadow">
+                <button className="px-5 py-3 bg-gradient-to-r from-blue-50 to-blue-100 dark:from-gray-900 dark:to-gray-800 hover:from-blue-100 hover:to-blue-200 dark:hover:from-gray-800 dark:hover:to-gray-700 rounded-xl flex items-center gap-3 transition-all duration-300 border border-blue-200 dark:border-gray-800 text-blue-700 dark:text-gray-300 font-medium shadow-sm hover:shadow dark:shadow-lg dark:hover:shadow-xl">
                   <RefreshCw className="w-5 h-5" />
                   Refresh Data
                 </button>
@@ -298,7 +296,7 @@ const StockAnalysis = () => {
                   <Download className="w-5 h-5" />
                   Export Report
                 </button>
-                <button className="px-5 py-3 bg-gradient-to-r from-gray-900 to-gray-800 hover:from-gray-800 hover:to-gray-700 rounded-xl flex items-center gap-3 transition-all duration-300 text-white font-medium shadow-lg">
+                <button className="px-5 py-3 bg-gradient-to-r from-gray-900 to-gray-800 dark:from-gray-800 dark:to-gray-900 hover:from-gray-800 hover:to-gray-700 dark:hover:from-gray-700 dark:hover:to-gray-800 rounded-xl flex items-center gap-3 transition-all duration-300 text-white font-medium shadow-lg hover:shadow-xl dark:border dark:border-gray-800">
                   <Settings className="w-5 h-5" />
                   Settings
                 </button>
@@ -314,7 +312,7 @@ const StockAnalysis = () => {
                   className={`px-5 py-3 rounded-xl transition-all duration-300 font-medium border ${
                     activeTimeframe === timeframe
                       ? "bg-gradient-to-r from-purple-600 to-blue-600 text-white border-transparent shadow-lg"
-                      : "bg-white/80 hover:bg-white text-gray-700 border-gray-200 hover:border-gray-300 hover:shadow-md"
+                      : "bg-white/80 dark:bg-gray-900/80 hover:bg-white dark:hover:bg-gray-800 text-gray-700 dark:text-gray-300 border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 hover:shadow-md"
                   }`}
                 >
                   {timeframe}
@@ -326,71 +324,83 @@ const StockAnalysis = () => {
           <div className="max-w-8xl mx-auto">
             {/* Stats Overview */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-              <div className="bg-gradient-to-br from-white to-gray-50 rounded-2xl p-6 border border-gray-200 shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <div className="bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-800 rounded-2xl p-6 border border-gray-200 dark:border-gray-800 shadow-lg hover:shadow-xl dark:shadow-2xl dark:hover:shadow-3xl transition-shadow duration-300">
                 <div className="flex items-center justify-between mb-4">
-                  <div className="p-3 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl">
+                  <div className="p-3 bg-gradient-to-br from-green-500 to-emerald-500 dark:from-green-600 dark:to-emerald-600 rounded-xl">
                     <DollarSign className="w-6 h-6 text-white" />
                   </div>
-                  <span className="text-green-600 font-bold flex items-center gap-1">
+                  <span className="text-green-600 dark:text-green-400 font-bold flex items-center gap-1">
                     <ArrowUp className="w-4 h-4" />
                     +2.4%
                   </span>
                 </div>
-                <div className="text-3xl font-bold text-gray-900 mb-1">
+                <div className="text-3xl font-bold text-gray-900 dark:text-white mb-1">
                   ₹3,428.80
                 </div>
-                <div className="text-gray-600 font-medium">
+                <div className="text-gray-600 dark:text-gray-300 font-medium">
                   TCS Current Price
                 </div>
-                <div className="text-sm text-gray-500 mt-2">
+                <div className="text-sm text-gray-500 dark:text-gray-500 mt-2">
                   NSE: TCS | BSE: 532540
                 </div>
               </div>
 
-              <div className="bg-gradient-to-br from-white to-gray-50 rounded-2xl p-6 border border-gray-200 shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <div className="bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-800 rounded-2xl p-6 border border-gray-200 dark:border-gray-800 shadow-lg hover:shadow-xl dark:shadow-2xl dark:hover:shadow-3xl transition-shadow duration-300">
                 <div className="flex items-center justify-between mb-4">
-                  <div className="p-3 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl">
+                  <div className="p-3 bg-gradient-to-br from-blue-500 to-cyan-500 dark:from-blue-600 dark:to-cyan-600 rounded-xl">
                     <Users className="w-6 h-6 text-white" />
                   </div>
-                  <span className="text-green-600 font-bold">High Volume</span>
+                  <span className="text-green-600 dark:text-green-400 font-bold">
+                    High Volume
+                  </span>
                 </div>
-                <div className="text-3xl font-bold text-gray-900 mb-1">
+                <div className="text-3xl font-bold text-gray-900 dark:text-white mb-1">
                   4.2M
                 </div>
-                <div className="text-gray-600 font-medium">Trading Volume</div>
-                <div className="text-sm text-gray-500 mt-2">
+                <div className="text-gray-600 dark:text-gray-300 font-medium">
+                  Trading Volume
+                </div>
+                <div className="text-sm text-gray-500 dark:text-gray-500 mt-2">
                   Avg: 3.8M | Peak: 5.1M
                 </div>
               </div>
 
-              <div className="bg-gradient-to-br from-white to-gray-50 rounded-2xl p-6 border border-gray-200 shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <div className="bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-800 rounded-2xl p-6 border border-gray-200 dark:border-gray-800 shadow-lg hover:shadow-xl dark:shadow-2xl dark:hover:shadow-3xl transition-shadow duration-300">
                 <div className="flex items-center justify-between mb-4">
-                  <div className="p-3 bg-gradient-to-br from-purple-500 to-violet-500 rounded-xl">
+                  <div className="p-3 bg-gradient-to-br from-purple-500 to-violet-500 dark:from-purple-600 dark:to-violet-600 rounded-xl">
                     <Target className="w-6 h-6 text-white" />
                   </div>
-                  <span className="text-blue-600 font-bold">32.45</span>
+                  <span className="text-blue-600 dark:text-blue-400 font-bold">
+                    32.45
+                  </span>
                 </div>
-                <div className="text-3xl font-bold text-gray-900 mb-1">
+                <div className="text-3xl font-bold text-gray-900 dark:text-white mb-1">
                   ₹12.8T
                 </div>
-                <div className="text-gray-600 font-medium">Market Cap</div>
-                <div className="text-sm text-gray-500 mt-2">
+                <div className="text-gray-600 dark:text-gray-300 font-medium">
+                  Market Cap
+                </div>
+                <div className="text-sm text-gray-500 dark:text-gray-500 mt-2">
                   P/E: 32.45 | Industry: 28.5
                 </div>
               </div>
 
-              <div className="bg-gradient-to-br from-white to-gray-50 rounded-2xl p-6 border border-gray-200 shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <div className="bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-800 rounded-2xl p-6 border border-gray-200 dark:border-gray-800 shadow-lg hover:shadow-xl dark:shadow-2xl dark:hover:shadow-3xl transition-shadow duration-300">
                 <div className="flex items-center justify-between mb-4">
-                  <div className="p-3 bg-gradient-to-br from-amber-500 to-orange-500 rounded-xl">
+                  <div className="p-3 bg-gradient-to-br from-amber-500 to-orange-500 dark:from-amber-600 dark:to-orange-600 rounded-xl">
                     <Shield className="w-6 h-6 text-white" />
                   </div>
-                  <span className="text-green-600 font-bold">Low Risk</span>
+                  <span className="text-green-600 dark:text-green-400 font-bold">
+                    Low Risk
+                  </span>
                 </div>
-                <div className="text-3xl font-bold text-gray-900 mb-1">
+                <div className="text-3xl font-bold text-gray-900 dark:text-white mb-1">
                   0.89
                 </div>
-                <div className="text-gray-600 font-medium">Beta Value</div>
-                <div className="text-sm text-gray-500 mt-2">
+                <div className="text-gray-600 dark:text-gray-300 font-medium">
+                  Beta Value
+                </div>
+                <div className="text-sm text-gray-500 dark:text-gray-500 mt-2">
                   52W High: ₹4,120 | Low: ₹3,010
                 </div>
               </div>
@@ -399,23 +409,25 @@ const StockAnalysis = () => {
             {/* Main Charts Grid */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
               {/* Main Price Chart */}
-              <div className="bg-gradient-to-br from-white to-gray-50 rounded-2xl p-6 border border-gray-200 shadow-xl">
+              <div className="bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-800 rounded-2xl p-6 border border-gray-200 dark:border-gray-800 shadow-xl dark:shadow-2xl">
                 <div className="flex flex-col lg:flex-row lg:items-center justify-between mb-8">
                   <div>
                     <div className="flex items-center gap-3 mb-3">
                       <div className="p-2 bg-gradient-to-br from-blue-500 to-purple-500 rounded-lg">
                         <TrendingUp className="w-5 h-5 text-white" />
                       </div>
-                      <h2 className="text-2xl font-bold text-gray-900">
+                      <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
                         TCS Live Chart ({activeTimeframe})
                       </h2>
                     </div>
                     <div className="flex items-center gap-4 text-sm">
-                      <span className="text-green-600 font-bold flex items-center gap-2 px-3 py-1.5 bg-green-50 rounded-lg">
+                      <span className="text-green-600 dark:text-green-400 font-bold flex items-center gap-2 px-3 py-1.5 bg-green-50 dark:bg-green-900/30 rounded-lg">
                         <ArrowUp className="w-4 h-4" />
                         +2.4% Today • ₹3,428.80
                       </span>
-                      <span className="text-gray-600">NIFTY IT: +1.8%</span>
+                      <span className="text-gray-600 dark:text-gray-400">
+                        NIFTY IT: +1.8%
+                      </span>
                     </div>
                   </div>
                   <div className="flex gap-2 mt-4 lg:mt-0">
@@ -430,7 +442,7 @@ const StockAnalysis = () => {
                         className={`px-4 py-2.5 rounded-lg flex items-center gap-2 transition-all ${
                           activeChart === type
                             ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg"
-                            : "bg-gray-100 hover:bg-gray-200 text-gray-700"
+                            : "bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300"
                         }`}
                       >
                         <Icon className="w-4 h-4" />
@@ -446,17 +458,17 @@ const StockAnalysis = () => {
                       <LineChart data={stockPriceData}>
                         <CartesianGrid
                           strokeDasharray="3 3"
-                          stroke="#E5E7EB"
+                          stroke="#E5E7EB dark:#374151"
                           opacity={0.5}
                         />
                         <XAxis
                           dataKey="time"
-                          stroke="#6B7280"
+                          stroke="#6B7280 dark:#9CA3AF"
                           fontSize={12}
                           tickLine={false}
                         />
                         <YAxis
-                          stroke="#6B7280"
+                          stroke="#6B7280 dark:#9CA3AF"
                           fontSize={12}
                           tickLine={false}
                           domain={["dataMin - 10", "dataMax + 10"]}
@@ -507,11 +519,15 @@ const StockAnalysis = () => {
                       <AreaChart data={stockPriceData}>
                         <CartesianGrid
                           strokeDasharray="3 3"
-                          stroke="#E5E7EB"
+                          stroke="#E5E7EB dark:#374151"
                           opacity={0.5}
                         />
-                        <XAxis dataKey="time" stroke="#6B7280" fontSize={12} />
-                        <YAxis stroke="#6B7280" fontSize={12} />
+                        <XAxis
+                          dataKey="time"
+                          stroke="#6B7280 dark:#9CA3AF"
+                          fontSize={12}
+                        />
+                        <YAxis stroke="#6B7280 dark:#9CA3AF" fontSize={12} />
                         <Tooltip content={<CustomTooltip />} />
                         <defs>
                           <linearGradient
@@ -545,11 +561,15 @@ const StockAnalysis = () => {
                       <BarChart data={stockPriceData}>
                         <CartesianGrid
                           strokeDasharray="3 3"
-                          stroke="#E5E7EB"
+                          stroke="#E5E7EB dark:#374151"
                           opacity={0.5}
                         />
-                        <XAxis dataKey="time" stroke="#6B7280" fontSize={12} />
-                        <YAxis stroke="#6B7280" fontSize={12} />
+                        <XAxis
+                          dataKey="time"
+                          stroke="#6B7280 dark:#9CA3AF"
+                          fontSize={12}
+                        />
+                        <YAxis stroke="#6B7280 dark:#9CA3AF" fontSize={12} />
                         <Tooltip content={<CustomTooltip />} />
                         <Bar
                           dataKey="volume"
@@ -584,44 +604,58 @@ const StockAnalysis = () => {
 
                 {/* Chart Indicators */}
                 <div className="grid grid-cols-3 gap-4 mt-6">
-                  <div className="bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl p-4">
-                    <div className="text-sm text-blue-700 font-medium">RSI</div>
-                    <div className="text-2xl font-bold text-gray-900">58.2</div>
-                    <div className="text-xs text-green-600">Neutral</div>
+                  <div className="bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-900/30 dark:to-blue-800/30 rounded-xl p-4 border border-blue-200 dark:border-blue-800/30">
+                    <div className="text-sm text-blue-700 dark:text-blue-400 font-medium">
+                      RSI
+                    </div>
+                    <div className="text-2xl font-bold text-gray-900 dark:text-white">
+                      58.2
+                    </div>
+                    <div className="text-xs text-green-600 dark:text-green-400">
+                      Neutral
+                    </div>
                   </div>
-                  <div className="bg-gradient-to-r from-purple-50 to-purple-100 rounded-xl p-4">
-                    <div className="text-sm text-purple-700 font-medium">
+                  <div className="bg-gradient-to-r from-purple-50 to-purple-100 dark:from-purple-900/30 dark:to-purple-800/30 rounded-xl p-4 border border-purple-200 dark:border-purple-800/30">
+                    <div className="text-sm text-purple-700 dark:text-purple-400 font-medium">
                       MACD
                     </div>
-                    <div className="text-2xl font-bold text-gray-900">12.5</div>
-                    <div className="text-xs text-green-600">Bullish</div>
+                    <div className="text-2xl font-bold text-gray-900 dark:text-white">
+                      12.5
+                    </div>
+                    <div className="text-xs text-green-600 dark:text-green-400">
+                      Bullish
+                    </div>
                   </div>
-                  <div className="bg-gradient-to-r from-green-50 to-green-100 rounded-xl p-4">
-                    <div className="text-sm text-green-700 font-medium">
+                  <div className="bg-gradient-to-r from-green-50 to-green-100 dark:from-green-900/30 dark:to-green-800/30 rounded-xl p-4 border border-green-200 dark:border-green-800/30">
+                    <div className="text-sm text-green-700 dark:text-green-400 font-medium">
                       Support
                     </div>
-                    <div className="text-2xl font-bold text-gray-900">
+                    <div className="text-2xl font-bold text-gray-900 dark:text-white">
                       ₹3,380
                     </div>
-                    <div className="text-xs text-gray-600">Strong</div>
+                    <div className="text-xs text-gray-600 dark:text-gray-400">
+                      Strong
+                    </div>
                   </div>
                 </div>
               </div>
 
               {/* Sector Performance */}
-              <div className="bg-gradient-to-br from-white to-gray-50 rounded-2xl p-6 border border-gray-200 shadow-xl">
+              <div className="bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-800 rounded-2xl p-6 border border-gray-200 dark:border-gray-800 shadow-xl dark:shadow-2xl">
                 <div className="flex items-center justify-between mb-8">
                   <div className="flex items-center gap-3">
-                    <div className="p-2 bg-gradient-to-br from-green-500 to-emerald-500 rounded-lg">
+                    <div className="p-2 bg-gradient-to-br from-green-500 to-emerald-500 dark:from-green-600 dark:to-emerald-600 rounded-lg">
                       <Globe className="w-5 h-5 text-white" />
                     </div>
-                    <h2 className="text-2xl font-bold text-gray-900">
+                    <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
                       Sector Performance
                     </h2>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Filter className="w-5 h-5 text-blue-500" />
-                    <span className="text-sm text-gray-600">All Sectors</span>
+                    <Filter className="w-5 h-5 text-blue-500 dark:text-blue-400" />
+                    <span className="text-sm text-gray-600 dark:text-gray-400">
+                      All Sectors
+                    </span>
                   </div>
                 </div>
 
@@ -644,10 +678,11 @@ const StockAnalysis = () => {
                       </Pie>
                       <Tooltip
                         contentStyle={{
-                          backgroundColor: "white",
+                          backgroundColor: "white dark:#1F2937",
                           borderRadius: "12px",
-                          border: "1px solid #E5E7EB",
+                          border: "1px solid #E5E7EB dark:#374151",
                           boxShadow: "0 10px 25px rgba(0,0,0,0.1)",
+                          color: "#374151 dark:#F3F4F6",
                         }}
                         formatter={(value, name, props) => [
                           `${value}% ${props.payload.change}`,
@@ -662,7 +697,7 @@ const StockAnalysis = () => {
                   {sectorData.map((sector, index) => (
                     <div
                       key={index}
-                      className="bg-gradient-to-r from-gray-50 to-white rounded-xl p-4 border border-gray-200 hover:border-gray-300 transition-colors"
+                      className="bg-gradient-to-r from-gray-50 to-white dark:from-gray-900/50 dark:to-gray-800/50 rounded-xl p-4 border border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 transition-colors"
                     >
                       <div className="flex items-center justify-between mb-2">
                         <div className="flex items-center gap-2">
@@ -670,24 +705,24 @@ const StockAnalysis = () => {
                             className="w-3 h-3 rounded-full"
                             style={{ backgroundColor: sector.color }}
                           />
-                          <span className="font-medium text-gray-900">
+                          <span className="font-medium text-gray-900 dark:text-gray-200">
                             {sector.name}
                           </span>
                         </div>
                         <span
                           className={`text-sm font-bold ${
                             sector.change.startsWith("+")
-                              ? "text-green-600"
-                              : "text-red-600"
+                              ? "text-green-600 dark:text-green-400"
+                              : "text-red-600 dark:text-red-400"
                           }`}
                         >
                           {sector.change}
                         </span>
                       </div>
-                      <div className="text-2xl font-bold text-gray-900">
+                      <div className="text-2xl font-bold text-gray-900 dark:text-white">
                         {sector.value}%
                       </div>
-                      <div className="w-full bg-gray-200 rounded-full h-2 mt-2">
+                      <div className="w-full bg-gray-200 dark:bg-gray-800 rounded-full h-2 mt-2">
                         <div
                           className="h-2 rounded-full"
                           style={{
@@ -705,17 +740,17 @@ const StockAnalysis = () => {
             {/* Second Row - Volume and Technical Analysis */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
               {/* Volume Analysis */}
-              <div className="bg-gradient-to-br from-white to-gray-50 rounded-2xl p-6 border border-gray-200 shadow-xl">
+              <div className="bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-800 rounded-2xl p-6 border border-gray-200 dark:border-gray-800 shadow-xl dark:shadow-2xl">
                 <div className="flex items-center justify-between mb-8">
                   <div className="flex items-center gap-3">
-                    <div className="p-2 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-lg">
+                    <div className="p-2 bg-gradient-to-br from-cyan-500 to-blue-500 dark:from-cyan-600 dark:to-blue-600 rounded-lg">
                       <BarChart2 className="w-5 h-5 text-white" />
                     </div>
-                    <h2 className="text-2xl font-bold text-gray-900">
+                    <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
                       Volume Analysis
                     </h2>
                   </div>
-                  <div className="text-sm px-3 py-1.5 bg-blue-50 text-blue-700 rounded-lg font-medium">
+                  <div className="text-sm px-3 py-1.5 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 rounded-lg font-medium border border-blue-200 dark:border-blue-800/30">
                     Buy vs Sell Pressure
                   </div>
                 </div>
@@ -725,17 +760,22 @@ const StockAnalysis = () => {
                     <BarChart data={volumeData}>
                       <CartesianGrid
                         strokeDasharray="3 3"
-                        stroke="#E5E7EB"
+                        stroke="#E5E7EB dark:#374151"
                         opacity={0.5}
                       />
-                      <XAxis dataKey="name" stroke="#6B7280" fontSize={12} />
-                      <YAxis stroke="#6B7280" fontSize={12} />
+                      <XAxis
+                        dataKey="name"
+                        stroke="#6B7280 dark:#9CA3AF"
+                        fontSize={12}
+                      />
+                      <YAxis stroke="#6B7280 dark:#9CA3AF" fontSize={12} />
                       <Tooltip
                         contentStyle={{
-                          backgroundColor: "white",
+                          backgroundColor: "white dark:#1F2937",
                           borderRadius: "12px",
-                          border: "1px solid #E5E7EB",
+                          border: "1px solid #E5E7EB dark:#374151",
                           boxShadow: "0 10px 25px rgba(0,0,0,0.1)",
+                          color: "#374151 dark:#F3F4F6",
                         }}
                       />
                       <Legend />
@@ -755,7 +795,7 @@ const StockAnalysis = () => {
                         type="monotone"
                         dataKey="avg"
                         name="Average"
-                        stroke="#6B7280"
+                        stroke="#6B7280 dark:#9CA3AF"
                         strokeWidth={2}
                         strokeDasharray="3 3"
                         dot={false}
@@ -804,36 +844,44 @@ const StockAnalysis = () => {
 
                 <div className="grid grid-cols-3 gap-4 mt-6">
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-green-600">
+                    <div className="text-2xl font-bold text-green-600 dark:text-green-400">
                       4,200
                     </div>
-                    <div className="text-sm text-gray-600">Max Buy</div>
+                    <div className="text-sm text-gray-600 dark:text-gray-400">
+                      Max Buy
+                    </div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-gray-900">
+                    <div className="text-2xl font-bold text-gray-900 dark:text-white">
                       3,650
                     </div>
-                    <div className="text-sm text-gray-600">Daily Avg</div>
+                    <div className="text-sm text-gray-600 dark:text-gray-400">
+                      Daily Avg
+                    </div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-red-600">3,100</div>
-                    <div className="text-sm text-gray-600">Max Sell</div>
+                    <div className="text-2xl font-bold text-red-600 dark:text-red-400">
+                      3,100
+                    </div>
+                    <div className="text-sm text-gray-600 dark:text-gray-400">
+                      Max Sell
+                    </div>
                   </div>
                 </div>
               </div>
 
               {/* Technical Indicators Radar */}
-              <div className="bg-gradient-to-br from-white to-gray-50 rounded-2xl p-6 border border-gray-200 shadow-xl">
+              <div className="bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-800 rounded-2xl p-6 border border-gray-200 dark:border-gray-800 shadow-xl dark:shadow-2xl">
                 <div className="flex items-center justify-between mb-8">
                   <div className="flex items-center gap-3">
-                    <div className="p-2 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg">
+                    <div className="p-2 bg-gradient-to-br from-orange-500 to-red-500 dark:from-orange-600 dark:to-red-600 rounded-lg">
                       <Target className="w-5 h-5 text-white" />
                     </div>
-                    <h2 className="text-2xl font-bold text-gray-900">
+                    <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
                       Technical Indicators
                     </h2>
                   </div>
-                  <div className="text-sm px-3 py-1.5 bg-orange-50 text-orange-700 rounded-lg font-medium">
+                  <div className="text-sm px-3 py-1.5 bg-orange-50 dark:bg-orange-900/30 text-orange-700 dark:text-orange-400 rounded-lg font-medium border border-orange-200 dark:border-orange-800/30">
                     Real-time Analysis
                   </div>
                 </div>
@@ -846,15 +894,15 @@ const StockAnalysis = () => {
                       outerRadius="75%"
                       data={technicalData}
                     >
-                      <PolarGrid stroke="#E5E7EB" opacity={0.5} />
+                      <PolarGrid stroke="#E5E7EB dark:#374151" opacity={0.5} />
                       <PolarAngleAxis
                         dataKey="indicator"
-                        stroke="#6B7280"
+                        stroke="#6B7280 dark:#9CA3AF"
                         fontSize={12}
                         tickLine={false}
                       />
                       <PolarRadiusAxis
-                        stroke="#6B7280"
+                        stroke="#6B7280 dark:#9CA3AF"
                         fontSize={11}
                         angle={30}
                         domain={[0, 100]}
@@ -878,10 +926,11 @@ const StockAnalysis = () => {
                       />
                       <Tooltip
                         contentStyle={{
-                          backgroundColor: "white",
+                          backgroundColor: "white dark:#1F2937",
                           borderRadius: "12px",
-                          border: "1px solid #E5E7EB",
+                          border: "1px solid #E5E7EB dark:#374151",
                           boxShadow: "0 10px 25px rgba(0,0,0,0.1)",
+                          color: "#374151 dark:#F3F4F6",
                         }}
                       />
                       <Legend />
@@ -895,29 +944,29 @@ const StockAnalysis = () => {
                       key={index}
                       className={`p-3 rounded-xl border ${
                         indicator.status === "positive"
-                          ? "bg-gradient-to-r from-green-50 to-emerald-50 border-green-200"
+                          ? "bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/30 dark:to-emerald-900/30 border-green-200 dark:border-green-800/30"
                           : indicator.status === "negative"
-                          ? "bg-gradient-to-r from-red-50 to-pink-50 border-red-200"
-                          : "bg-gradient-to-r from-yellow-50 to-amber-50 border-yellow-200"
+                          ? "bg-gradient-to-r from-red-50 to-pink-50 dark:from-red-900/30 dark:to-pink-900/30 border-red-200 dark:border-red-800/30"
+                          : "bg-gradient-to-r from-yellow-50 to-amber-50 dark:from-yellow-900/30 dark:to-amber-900/30 border-yellow-200 dark:border-yellow-800/30"
                       }`}
                     >
                       <div className="flex items-center justify-between">
-                        <span className="font-medium text-gray-900">
+                        <span className="font-medium text-gray-900 dark:text-gray-200">
                           {indicator.indicator}
                         </span>
                         <span
                           className={`text-sm font-bold ${
                             indicator.status === "positive"
-                              ? "text-green-600"
+                              ? "text-green-600 dark:text-green-400"
                               : indicator.status === "negative"
-                              ? "text-red-600"
-                              : "text-yellow-600"
+                              ? "text-red-600 dark:text-red-400"
+                              : "text-yellow-600 dark:text-yellow-400"
                           }`}
                         >
                           {indicator.value}
                         </span>
                       </div>
-                      <div className="text-xs text-gray-500 mt-1">
+                      <div className="text-xs text-gray-500 dark:text-gray-400 mt-1">
                         Optimal: {indicator.optimal}
                       </div>
                     </div>
@@ -927,17 +976,17 @@ const StockAnalysis = () => {
             </div>
 
             {/* Market Sentiment */}
-            <div className="bg-gradient-to-br from-white to-gray-50 rounded-2xl p-6 border border-gray-200 shadow-xl mb-8">
+            <div className="bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-800 rounded-2xl p-6 border border-gray-200 dark:border-gray-800 shadow-xl dark:shadow-2xl mb-8">
               <div className="flex items-center justify-between mb-8">
                 <div className="flex items-center gap-3">
                   <div className="p-2 bg-gradient-to-br from-pink-500 to-rose-500 rounded-lg">
                     <Activity className="w-5 h-5 text-white" />
                   </div>
-                  <h2 className="text-2xl font-bold text-gray-900">
+                  <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
                     Market Sentiment
                   </h2>
                 </div>
-                <div className="flex items-center gap-2 text-green-600 font-medium">
+                <div className="flex items-center gap-2 text-green-600 dark:text-green-400 font-medium">
                   <AlertCircle className="w-5 h-5" />
                   Bullish Trend Detected
                 </div>
@@ -973,14 +1022,14 @@ const StockAnalysis = () => {
                     {performanceData.map((item, index) => (
                       <div
                         key={index}
-                        className="flex items-center justify-between p-4 bg-gradient-to-r from-gray-50 to-white rounded-xl border border-gray-200 hover:border-gray-300 transition-colors"
+                        className="flex items-center justify-between p-4 bg-gradient-to-r from-gray-50 to-white dark:from-gray-900/50 dark:to-gray-800/50 rounded-xl border border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 transition-colors"
                       >
                         <div className="flex items-center gap-4">
                           <div
                             className={`p-2 rounded-lg ${
                               item.change >= 0
-                                ? "bg-green-100 text-green-600"
-                                : "bg-red-100 text-red-600"
+                                ? "bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400"
+                                : "bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400"
                             }`}
                           >
                             {item.change >= 0 ? (
@@ -990,21 +1039,23 @@ const StockAnalysis = () => {
                             )}
                           </div>
                           <div>
-                            <div className="font-medium text-gray-900">
+                            <div className="font-medium text-gray-900 dark:text-gray-200">
                               {item.time}
                             </div>
-                            <div className="text-sm text-gray-600">NSE/BSE</div>
+                            <div className="text-sm text-gray-600 dark:text-gray-400">
+                              NSE/BSE
+                            </div>
                           </div>
                         </div>
                         <div className="text-right">
-                          <div className="text-2xl font-bold text-gray-900">
+                          <div className="text-2xl font-bold text-gray-900 dark:text-white">
                             ₹{item.value.toLocaleString()}
                           </div>
                           <div
                             className={`text-sm font-medium ${
                               item.change >= 0
-                                ? "text-green-600"
-                                : "text-red-600"
+                                ? "text-green-600 dark:text-green-400"
+                                : "text-red-600 dark:text-red-400"
                             }`}
                           >
                             {item.change >= 0 ? "+" : ""}

@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: "class", // ✅ REQUIRED for dark mode
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
@@ -18,8 +19,8 @@ module.exports = {
         // UI Colors
         "trading-light": "#F8FAFC",
         "trading-card": "#FFFFFF",
-        "trading-border": "#E2E8F0", // Added missing color
-        "trading-dark": "#475569", // Added missing color
+        "trading-border": "#E2E8F0",
+        "trading-dark": "#475569",
       },
       animation: {
         "pulse-slow": "pulse 3s ease-in-out infinite",
@@ -38,12 +39,28 @@ module.exports = {
           "100%": { transform: "translateX(-50%)" },
         },
         priceUp: {
-          "0%": { color: "#22C55E", transform: "translateY(-5px)", opacity: 0 },
-          "100%": { color: "#22C55E", transform: "translateY(0)", opacity: 1 },
+          "0%": {
+            color: "#22C55E",
+            transform: "translateY(-5px)",
+            opacity: 0,
+          },
+          "100%": {
+            color: "#22C55E",
+            transform: "translateY(0)",
+            opacity: 1,
+          },
         },
         priceDown: {
-          "0%": { color: "#EF4444", transform: "translateY(5px)", opacity: 0 },
-          "100%": { color: "#EF4444", transform: "translateY(0)", opacity: 1 },
+          "0%": {
+            color: "#EF4444",
+            transform: "translateY(5px)",
+            opacity: 0,
+          },
+          "100%": {
+            color: "#EF4444",
+            transform: "translateY(0)",
+            opacity: 1,
+          },
         },
       },
     },
