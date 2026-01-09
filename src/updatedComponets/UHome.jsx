@@ -4,7 +4,10 @@ import phone from "../assets/phone.png";
 const UHome = () => {
   return (
     <section
-      className="relative min-h-screen w-full overflow-hidden text-white"
+      className="
+        relative min-h-screen w-full overflow-hidden
+        text-gray-900 dark:text-white
+      "
       style={{
         background: `
           radial-gradient(70% 70% at 15% 15%, rgba(212,175,55,0.18), transparent 60%),
@@ -13,9 +16,21 @@ const UHome = () => {
         `,
       }}
     >
-      {/* GOLD DIAGONAL TEXTURE */}
+      {/* LIGHT MODE BACKGROUND */}
       <div
-        className="pointer-events-none absolute inset-0 opacity-[0.06]"
+        className="absolute inset-0 dark:hidden"
+        style={{
+          background: `
+            radial-gradient(70% 70% at 15% 15%, rgba(212,175,55,0.08), transparent 60%),
+            radial-gradient(60% 60% at 85% 30%, rgba(255,215,160,0.06), transparent 65%),
+            linear-gradient(180deg, #ffffff 0%, #f8fafc 45%, #eef2f7 100%)
+          `,
+        }}
+      />
+
+      {/* GOLD DIAGONAL TEXTURE (dark only) */}
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.06] dark:block hidden"
         style={{
           background:
             "linear-gradient(120deg, transparent 40%, rgba(212,175,55,0.45) 50%, transparent 60%)",
@@ -29,10 +44,12 @@ const UHome = () => {
         <div>
           <h1 className="text-4xl md:text-5xl font-bold leading-tight">
             Master the Markets <br />
-            <span className="text-white">with Certified Expertise.</span>
+            <span className="dark:text-white text-gray-900">
+              with Certified Expertise.
+            </span>
           </h1>
 
-          <p className="mt-6 text-gray-400 max-w-lg">
+          <p className="mt-6 text-gray-600 dark:text-gray-400 max-w-lg">
             Your path to professional trading, backed by SEBI-registered
             analysts and a thriving global community.
           </p>
@@ -49,9 +66,10 @@ const UHome = () => {
                 key={i}
                 className="
                   flex items-center gap-3 p-4 rounded-xl
-                  bg-white/5 backdrop-blur-md
-                  border border-[#D4AF37]/25
-                  hover:border-[#D4AF37]/50
+                  bg-white dark:bg-white/5
+                  backdrop-blur-md
+                  border border-[#D4AF37]/30
+                  hover:border-[#D4AF37]/60
                   transition-all
                 "
               >
@@ -65,7 +83,9 @@ const UHome = () => {
                 >
                   ★
                 </div>
-                <p className="text-sm text-gray-300">{item}</p>
+                <p className="text-sm text-gray-700 dark:text-gray-300">
+                  {item}
+                </p>
               </div>
             ))}
           </div>

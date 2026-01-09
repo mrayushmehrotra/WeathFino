@@ -51,7 +51,7 @@ export default function App() {
           path="/"
           element={
             <>
-              <Hero />
+              <UHome />
               <FeaturesSection />
               <MarketTicker />
               <ChartPage />
