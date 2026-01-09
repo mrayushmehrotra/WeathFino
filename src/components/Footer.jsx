@@ -1,6 +1,16 @@
 import React from "react";
 import WealthFino_Logo from "../assets/WealthFino_Logo.png";
 
+import {
+  Youtube,
+  X,
+  Instagram,
+  Send,
+  Mail,
+  Phone,
+  MessageCircle,
+} from "lucide-react";
+
 const Footer = () => {
   const year = new Date().getFullYear();
 
@@ -84,12 +94,54 @@ const Footer = () => {
             </h4>
 
             <ul className="space-y-4 text-sm text-slate-600 dark:text-gray-400">
-              <li className="flex items-center gap-3">
-                📧 info@krishnapathak.com
+              {/* Email */}
+              <li className="flex items-center gap-4 text-gray-700 dark:text-gray-300">
+                <span
+                  className="w-9 h-9 flex items-center justify-center rounded-lg 
+                   bg-gray-200 dark:bg-slate-800"
+                >
+                  <Mail className="w-4 h-4 text-blue-500" />
+                </span>
+                <a
+                  href="mailto:info@krishnapathak.com"
+                  className="hover:text-blue-600 dark:hover:text-white transition"
+                >
+                  info@krishnapathak.com
+                </a>
               </li>
-              <li className="flex items-center gap-3">📞 +91 9883455700</li>
-              <li className="flex items-center gap-3">
-                💬 WhatsApp Support - 9353523685
+
+              {/* Phone */}
+              <li className="flex items-center gap-4 text-gray-700 dark:text-gray-300">
+                <span
+                  className="w-9 h-9 flex items-center justify-center rounded-lg 
+                   bg-gray-200 dark:bg-slate-800"
+                >
+                  <Phone className="w-4 h-4 text-pink-500" />
+                </span>
+                <a
+                  href="tel:+919883455700"
+                  className="hover:text-pink-600 dark:hover:text-white transition"
+                >
+                  +91 9883455700
+                </a>
+              </li>
+
+              {/* WhatsApp */}
+              <li className="flex items-center gap-4 text-gray-700 dark:text-gray-300">
+                <span
+                  className="w-9 h-9 flex items-center justify-center rounded-lg 
+                   bg-gray-200 dark:bg-slate-800"
+                >
+                  <MessageCircle className="w-4 h-4 text-green-500" />
+                </span>
+                <a
+                  href="https://wa.me/919353523685"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-green-600 dark:hover:text-white transition"
+                >
+                  WhatsApp Support - 9353523685
+                </a>
               </li>
             </ul>
           </div>
@@ -129,10 +181,45 @@ const Footer = () => {
 
         {/* ================= SOCIAL ================= */}
         <div className="flex justify-center gap-8 text-slate-500 dark:text-gray-400 mb-6">
-          <span>▶️</span>
-          <span>✖</span>
-          <span>📷</span>
-          <span>✈️</span>
+          {/* YouTube */}
+          <a
+            href="https://www.youtube.com/@WealthFino"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 hover:text-red-500 transition-colors"
+          >
+            <Youtube size={22} />
+          </a>
+
+          <a
+            href="https://x.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 hover:text-white transition-colors"
+            aria-label="X"
+          >
+            <X size={22} />
+          </a>
+
+          {/* Instagram */}
+          <a
+            href="https://www.instagram.com/wealthfino.in/?igsh=Mm5zZGNtYTQ1amc4&utm_source=qr#"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 hover:text-pink-500 transition-colors"
+          >
+            <Instagram size={22} />
+          </a>
+
+          {/* Telegram */}
+          <a
+            href="https://t.me/WealthFino"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 hover:text-sky-400 transition-colors"
+          >
+            <Send size={22} />
+          </a>
         </div>
 
         {/* ================= COPYRIGHT ================= */}
