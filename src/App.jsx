@@ -40,6 +40,8 @@ import ContactPage from "./components/ContactPage";
 import Pricing from "./components/Pricing";
 import Charts from "./components/Charts";
 
+import MarketTop from "./components/MarketTop";
+
 export default function App() {
   return (
     // 🌍 GLOBAL THEME WRAPPER
@@ -51,7 +53,9 @@ export default function App() {
           path="/"
           element={
             <>
+              <MarketTop />
               <UHome />
+
               <FeaturesSection />
               <MarketTicker />
               <ChartPage />

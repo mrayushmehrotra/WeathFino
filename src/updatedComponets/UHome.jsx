@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import phone from "../assets/phone.png";
+import phone from "../assets/phone5.png";
 
 /* ================= ANIMATIONS ================= */
 
@@ -18,12 +18,28 @@ const fadeUp = {
 const UHome = () => {
   return (
     <section
-      className="relative min-h-screen w-full overflow-hidden text-white"
+      className="
+        relative min-h-screen w-full overflow-hidden
+        text-gray-900 dark:text-white
+
+        [--bg-start:#f9fafb]
+        [--bg-mid:#f3f4f6]
+        [--bg-end:#e5e7eb]
+
+        dark:[--bg-start:#0b1022]
+        dark:[--bg-mid:#070b18]
+        dark:[--bg-end:#05070f]
+      "
       style={{
         background: `
           radial-gradient(70% 70% at 15% 15%, rgba(212,175,55,0.18), transparent 60%),
           radial-gradient(60% 60% at 85% 30%, rgba(255,215,160,0.10), transparent 65%),
-          linear-gradient(180deg, #0b1022 0%, #070b18 45%, #05070f 100%)
+          linear-gradient(
+            180deg,
+            var(--bg-start) 0%,
+            var(--bg-mid) 45%,
+            var(--bg-end) 100%
+          )
         `,
       }}
     >
@@ -41,7 +57,7 @@ const UHome = () => {
       <div className="relative max-w-7xl mx-auto px-10 pt-12 grid md:grid-cols-2 gap-20 items-center">
         {/* ================= LEFT ================= */}
         <div>
-          {/* ===== PROFILE DATA CARDS ===== */}
+          {/* PROFILE CARDS */}
           <motion.div
             initial="hidden"
             animate="show"
@@ -59,29 +75,19 @@ const UHome = () => {
                 variants={fadeUp}
                 whileHover={{ y: -4 }}
                 className="
-                  flex items-center gap-4
-                  px-2 py-2
-                  rounded-2xl
-                  bg-gradient-to-br from-[#0d1224] to-[#060810]
+                  flex items-center gap-4 px-2 py-2 rounded-2xl
+                  bg-gradient-to-br from-white to-gray-100
+                  dark:from-[#0d1224] dark:to-[#060810]
                   border border-[#D4AF37]/30
                   shadow-[0_18px_40px_rgba(0,0,0,0.6)]
                 "
               >
-                {/* GOLD ICON */}
-                <div
-                  className="
-                    w-10 h-10 rounded-full
-                    bg-[#D4AF37]
-                    flex items-center justify-center
-                    text-black text-xl font-bold
-                    shrink-0
-                  "
-                >
+                {/* ICON */}
+                <div className="w-10 h-10 rounded-full bg-[#D4AF37] flex items-center justify-center text-black text-xl font-bold shrink-0">
                   ★
                 </div>
 
-                {/* TEXT */}
-                <p className="text-white text-lg font-medium leading-snug">
+                <p className="text-gray-900 dark:text-white text-lg font-medium">
                   {text}
                 </p>
               </motion.div>
@@ -96,7 +102,7 @@ const UHome = () => {
             className="text-4xl md:text-5xl font-bold leading-tight"
           >
             Research-Based Trade <br />
-            <span className="text-white/90"> Insights.</span>
+            <span className="opacity-90">Insights.</span>
           </motion.h1>
 
           {/* DESCRIPTION */}
@@ -104,13 +110,13 @@ const UHome = () => {
             variants={fadeUp}
             initial="hidden"
             animate="show"
-            className="mt-6 text-gray-400 max-w-lg"
+            className="mt-6 text-gray-600 dark:text-gray-400 max-w-lg"
           >
             Research-based recommendations on Equity and Stock Options by a SEBI
             Registered Research Analyst.
           </motion.p>
 
-          {/* CTA + STORE BUTTONS */}
+          {/* CTA + STORES */}
           <motion.div
             variants={fadeUp}
             initial="hidden"
@@ -119,8 +125,7 @@ const UHome = () => {
           >
             <button
               className="
-                w-fit
-                px-8 py-3 rounded-full
+                w-fit px-8 py-3 rounded-full
                 bg-gradient-to-r from-[#F3D98B] via-[#D4AF37] to-[#B8962E]
                 text-black font-semibold
                 shadow-[0_12px_35px_rgba(212,175,55,0.45)]
@@ -143,7 +148,7 @@ const UHome = () => {
               >
                 <img
                   src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
-                  alt="Get it on Google Play"
+                  alt="Google Play"
                   className="h-11 cursor-pointer"
                 />
               </a>

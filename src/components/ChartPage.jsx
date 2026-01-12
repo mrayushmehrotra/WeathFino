@@ -2,7 +2,10 @@ import TradingViewChart from "./TradingViewChart";
 
 const ChartPage = () => {
   return (
-    <div className="min-h-screen bg-[#05070d] flex items-center justify-center p-8">
+    <div
+      className="min-h-screen   bg-white 
+    dark:bg-[#05070d] text-black dark:text-whiteflex flex items-center justify-center p-20"
+    >
       {/* OUTER GLOW FRAME */}
       <div
         className="w-full max-w-[1600px] rounded-[22px] p-[3px]
@@ -17,16 +20,16 @@ const ChartPage = () => {
               Wealth<span className="text-green-400">Fino</span>
             </h1>
 
-            <div className="flex gap-3">
+            <div className="flex gap-3 mb-6">
               <img
-                src="/google-play.png"
-                alt="Google Play"
-                className="h-10 cursor-pointer"
+                src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                alt="App Store"
+                className="h-11"
               />
               <img
-                src="/app-store.png"
-                alt="App Store"
-                className="h-10 cursor-pointer"
+                src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                alt="Google Play"
+                className="h-11"
               />
             </div>
           </div>
