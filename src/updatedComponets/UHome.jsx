@@ -95,8 +95,8 @@ const UHome = () => {
             animate="show"
             className="text-4xl md:text-5xl font-bold leading-tight"
           >
-            Research-Based <br />
-            <span className="text-white/90">Trade Insights.</span>
+            Research-Based Trade <br />
+            <span className="text-white/90"> Insights.</span>
           </motion.h1>
 
           {/* DESCRIPTION */}
