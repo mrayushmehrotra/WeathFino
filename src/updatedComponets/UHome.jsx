@@ -95,8 +95,8 @@ const UHome = () => {
             animate="show"
             className="text-4xl md:text-5xl font-bold leading-tight"
           >
-            Master the Markets <br />
-            <span className="text-white/90">with Certified Expertise.</span>
+            Research-Based <br />
+            <span className="text-white/90">Trade Insights.</span>
           </motion.h1>
 
           {/* DESCRIPTION */}
@@ -106,8 +106,8 @@ const UHome = () => {
             animate="show"
             className="mt-6 text-gray-400 max-w-lg"
           >
-            Your path to professional trading, backed by SEBI-registered
-            analysts and a trusted trading ecosystem.
+            Research-based recommendations on Equity and Stock Options by a SEBI
+            Registered Research Analyst.
           </motion.p>
 
           {/* CTA + STORE BUTTONS */}
