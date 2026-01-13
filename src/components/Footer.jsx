@@ -1,6 +1,8 @@
 import React from "react";
 import WealthFino_Logo from "../assets/WealthFino_Logo.png";
 
+import { NavLink } from "react-router-dom";
+
 import {
   Youtube,
   X,
@@ -45,11 +47,17 @@ const Footer = () => {
                 alt="App Store"
                 className="h-11"
               />
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
-                alt="Google Play"
-                className="h-11"
-              />
+              <a
+                href="https://play.google.com/store/apps/details?id=com.wealthfino.mobile"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                  alt="Google Play"
+                  className="h-11 cursor-pointer"
+                />
+              </a>
             </div>
 
             {/* DISCLAIMER */}
@@ -70,20 +78,84 @@ const Footer = () => {
             <h4 className="font-semibold mb-5 text-slate-900 dark:text-white">
               Quick Links
             </h4>
-            <ul className="space-y-3 text-sm text-slate-600 dark:text-gray-400">
-              <li>Privacy Policy</li>
-              <li>Client Consent and Terms & Conditions</li>
-              <li>PMLA Policy</li>
-              <li>Terms & Conditions</li>
-              <li>Disclosure, USER & KYC Agreement</li>
-              <li>Disclaimer for Website</li>
-              <li>Redressal Of Grievance</li>
-              <li>Social Media Disclaimers</li>
-              <li>Legal & Risk Disclosure</li>
-              <li>Refund & Cancellation Policy</li>
-              <li>Internal Policy on Conflict of Interest</li>
-              <li>Investor Charter</li>
-              <li>Complaints Board</li>
+
+            <ul className="space-y-3 text-sm">
+              {[
+                { label: "Privacy Policy", path: "/policies/privacy-policy" },
+                {
+                  label: "Client Consent and Terms & Conditions",
+                  path: "/policies/client-term",
+                },
+                { label: "PMLA Policy", path: "/policies/pmla-policy" },
+                {
+                  label: "Terms & Conditions",
+                  path: "/policies/terms-conditions",
+                },
+                {
+                  label: "Disclosure, USER & KYC Agreement",
+                  path: "/policies/disclosure-user-kyc",
+                },
+                {
+                  label: "Disclaimer for Website",
+                  path: "/policies/website-disclaimer",
+                },
+                {
+                  label: "Redressal Of Grievance",
+                  path: "/policies/redressal-of-grievance",
+                },
+                {
+                  label: "Social Media Disclaimers",
+                  path: "/policies/social-media-disclaimers",
+                },
+                {
+                  label: "Legal & Risk Disclosure",
+                  path: "/policies/legal-risk-disclosure",
+                },
+                { label: "Refund Policy", path: "/policies/refund-policy" },
+                {
+                  label: "Cancellation Policy",
+                  path: "/policies/cancellation-policy",
+                },
+                {
+                  label: "Internal Policy on Conflict of Interest",
+                  path: "/policies/conflict-of-interest-policy",
+                },
+                {
+                  label: "Investor Charter",
+                  path: "/policies/investor-charter",
+                },
+                {
+                  label: "Complaints Board",
+                  path: "/policies/complaints-board",
+                },
+                { label: "Code of Conduct", path: "/policies/code-of-conduct" },
+                {
+                  label: "Data Deletion Policy",
+                  path: "/policies/data-deletion",
+                },
+                {
+                  label: "Pro Points Policy",
+                  path: "/policies/pro-points-policy",
+                },
+              ].map((item, index) => (
+                <li key={index}>
+                  <NavLink
+                    to={item.path}
+                    className={({ isActive }) =>
+                      `
+            block transition-colors duration-200
+            ${
+              isActive
+                ? "text-sky-600 dark:text-sky-400 font-semibold"
+                : "text-slate-600 dark:text-gray-400 hover:text-sky-600 dark:hover:text-sky-400"
+            }
+            `
+                    }
+                  >
+                    {item.label}
+                  </NavLink>
+                </li>
+              ))}
             </ul>
           </div>
 

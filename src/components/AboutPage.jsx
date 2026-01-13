@@ -1,5 +1,7 @@
 import React from "react";
 
+import sir_img from "../assets/Imagess/sir.jpeg";
+
 const AboutPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-950">
@@ -46,13 +48,17 @@ const AboutPage = () => {
         </section>
 
         {/* SEBI Registration Section */}
-        <section className="mb-16 bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 md:p-8">
-          <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-8 text-center">
-            Meet Krishna Pathak - Your SEBI Registered Research Analyst
-          </h2>
 
+        {/* <section className="mb-16 bg-white  dark:bg-gray-800 rounded-2xl shadow-lg p-4 md:p-4">
+         
           <div className="flex flex-col lg:flex-row gap-8 items-center">
             <div className="lg:w-2/3">
+              <h2 className="text-3xl font-bold ml-20 mb-2  text-gray-800 dark:text-white  ">
+                Meet Krishna Pathak -
+                  Your SEBI
+                 Registered  
+              </h2>
+              <br /> <br />
               <p className="text-gray-700 dark:text-gray-300 mb-6">
                 Krishna Pathak is a SEBI Registered Research Analyst and the
                 founder of WealthFino Capital, a platform dedicated to promoting
@@ -111,11 +117,122 @@ const AboutPage = () => {
             </div>
 
             <div className="lg:w-1/3 flex justify-center">
-              <div className="bg-gradient-to-br from-blue-500 to-indigo-700 dark:from-blue-600 dark:to-indigo-800 text-white rounded-xl p-6 text-center shadow-lg">
-                <div className="text-4xl font-bold mb-2">SEBI</div>
-                <div className="text-sm mb-4">Registered</div>
-                <div className="text-lg font-semibold">Research Analyst</div>
-                <div className="text-sm mt-4">INH300009914</div>
+              <div className="bg-gradient-to-br from-blue-500 to-indigo-700 dark:from-blue-600 dark:to-indigo-800 text-white rounded-2xl p-3 text-center shadow-lg">
+               
+
+                <img className="rounded-xl  " src={sir_img} alt="sir_img" />
+              </div>
+            </div>
+          </div>
+        </section> */}
+
+        <section className="mb-20 px-4">
+          <div className="max-w-6xl mx-auto">
+            <div
+              className="
+        rounded-3xl shadow-xl p-8 md:p-12
+        bg-white
+        dark:bg-gradient-to-br dark:from-gray-900 dark:to-gray-800
+        border border-gray-200
+        dark:border-gray-700/60
+      "
+            >
+              <div className="flex flex-col lg:flex-row items-center gap-10">
+                {/* IMAGE */}
+                <div className="lg:w-1/3 flex justify-center">
+                  <div
+                    className="
+              p-1.5 rounded-2xl
+              bg-gradient-to-br from-sky-400 to-blue-600
+              shadow-lg shadow-sky-400/20
+              dark:shadow-sky-500/30
+              transition-shadow duration-300
+            "
+                  >
+                    <div
+                      className="
+                p-1 rounded-xl
+                bg-white
+                dark:bg-gray-900
+              "
+                    >
+                      <div
+                        className="
+                  border rounded-lg overflow-hidden
+                  border-gray-200
+                  dark:border-gray-700/50
+                "
+                      >
+                        <img
+                          src={sir_img}
+                          alt="Krishna Pathak"
+                          className="
+                    rounded-lg max-w-xs
+                    transform hover:scale-[1.02]
+                    transition duration-700
+                  "
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* CONTENT */}
+                <div className="lg:w-2/3">
+                  <h2
+                    className="
+              text-3xl md:text-4xl font-bold mb-4
+              text-sky-600
+              dark:text-sky-400
+            "
+                  >
+                    Meet Krishna Pathak
+                  </h2>
+
+                  <h3
+                    className="
+              text-lg font-semibold mb-6
+              text-gray-700
+              dark:text-gray-300
+            "
+                  >
+                    SEBI Registered Research Analyst
+                  </h3>
+
+                  <p
+                    className="
+              leading-relaxed mb-8
+              text-gray-600
+              dark:text-gray-300
+            "
+                  >
+                    Krishna Pathak is a SEBI Registered Research Analyst and the
+                    founder of WealthFino Capital, dedicated to empowering
+                    retail investors through disciplined investing, financial
+                    education, and research-driven insights.
+                  </p>
+
+                  <div className="grid md:grid-cols-2 gap-5">
+                    {[
+                      "SEBI Registration No: INH300009914",
+                      "NISM Series XV – Research Analyst",
+                      "NSE Goal Planning Certified",
+                      "PGDM – Post Graduate Diploma in Management",
+                      "BSE Enlistment No – 5590",
+                      "Founder – WealthFino Capital",
+                      "PGP FinTech - IIM Nagpur",
+                    ].map((item, index) => (
+                      <div key={index} className="flex items-start gap-3">
+                        <span className="text-sky-500 dark:text-sky-400 text-xl">
+                          ✔
+                        </span>
+                        <span className="text-gray-700 dark:text-gray-200">
+                          {item}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
           </div>

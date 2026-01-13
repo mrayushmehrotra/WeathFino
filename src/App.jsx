@@ -61,7 +61,7 @@ export default function App() {
               {/* <About /> */}
               {/* <Services /> */}
               <FeatureSection />
-              <VideoSection/>
+              <VideoSection />
               <WhyChooseUs />
             </>
           }
@@ -105,7 +105,6 @@ export default function App() {
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/charts" element={<Charts />} />
-
       </Routes>
 
       <Footer />

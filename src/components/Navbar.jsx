@@ -7,7 +7,6 @@ import WealthFino_Logo from "../assets/WealthFino_Logo.png";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  // 🌙 Theme State
   const [darkMode, setDarkMode] = useState(() => {
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme) return savedTheme === "dark";
@@ -16,7 +15,6 @@ const Navbar = () => {
 
   const location = useLocation();
 
-  // Apply theme to <html>
   useEffect(() => {
     if (darkMode) {
       document.documentElement.classList.add("dark");
@@ -75,7 +73,6 @@ const Navbar = () => {
               </Link>
             ))}
 
-            {/* 🌙 THEME TOGGLE */}
             <button
               onClick={() => setDarkMode(!darkMode)}
               className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:scale-105 transition"
