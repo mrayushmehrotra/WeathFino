@@ -2,7 +2,6 @@ import { Routes, Route, Navigate } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-
 import Hero from "./components/Hero";
 import UHome from "./updatedComponets/UHome";
 import FeaturesSection from "./updatedComponets/FeaturesSection";
@@ -11,11 +10,9 @@ import About from "./components/About";
 import Services from "./components/Services";
 import WhyChooseUs from "./components/WhyChooseUs";
 import FeedbackPage from "./updatedComponets/FeedbackPage";
-
 import ChartPage from "./components/ChartPage";
 import HeatmapPage from "./components/HeatmapPage";
 import PoliciesLayout from "./components/PoliciesLayout";
-
 import InvestorCharter from "./pages/policies/InvestorCharter";
 import TermsConditions from "./pages/policies/TermsConditions";
 import PrivacyPolicy from "./pages/policies/PrivacyPolicy";
@@ -33,14 +30,14 @@ import CancellationPolicy from "./pages/policies/CancellationPolicy";
 import ConflictOfInterestPolicy from "./pages/policies/ConflictOfInterestPolicy";
 import ProPointsPolicy from "./pages/policies/ProPointsPolicy";
 import DataDeletionPolicy from "./pages/policies/DataDeletionPolicy";
-
 import AboutPage from "./components/AboutPage";
 import BlogPage from "./components/BlogPage";
 import ContactPage from "./components/ContactPage";
 import Pricing from "./components/Pricing";
 import Charts from "./components/Charts";
-
 import MarketTop from "./components/MarketTop";
+import MediaPresence from "./components/MediaPresence";
+import FeatureSection from "./components/FeatureSection";
 
 export default function App() {
   return (
@@ -55,13 +52,14 @@ export default function App() {
             <>
               <MarketTop />
               <UHome />
-
+              <MediaPresence />
               <FeaturesSection />
               <MarketTicker />
               <ChartPage />
               <HeatmapPage />
-              <About />
-              <Services />
+              {/* <About /> */}
+              {/* <Services /> */}
+              <FeatureSection />
               <WhyChooseUs />
             </>
           }

@@ -175,37 +175,7 @@ const WhyWealthUs = () => {
           })}
         </div>
 
-        {/* ================= STATS ================= */}
-        <div
-          className={`mt-24 grid grid-cols-2 md:grid-cols-4 gap-6 text-center transition-all duration-1000 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          }`}
-        >
-          {[
-            { label: "Active Users", value: "50K+" },
-            { label: "Success Rate", value: "94%" },
-            { label: "Years Experience", value: "8+" },
-            { label: "Expert Support", value: "24/7" },
-          ].map((stat, idx) => (
-            <div
-              key={idx}
-              className="
-                p-6 rounded-2xl
-                bg-white dark:bg-slate-900
-                border border-slate-200 dark:border-slate-800
-                shadow-sm dark:shadow-none
-                transition
-              "
-            >
-              <div className="text-4xl font-bold text-blue-600 dark:text-blue-400">
-                {isVisible ? stat.value : "0"}
-              </div>
-              <div className="mt-2 text-sm font-medium text-slate-600 dark:text-slate-400">
-                {stat.label}
-              </div>
-            </div>
-          ))}
-        </div>
+ 
       </div>
     </section>
   );

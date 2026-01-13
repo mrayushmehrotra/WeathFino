@@ -52,7 +52,7 @@ const Navbar = () => {
             <img
               src={WealthFino_Logo}
               alt="WealthFino Logo"
-              className="w-12 h-12"
+              className="w-12 h-12 rounded-xl"
             />
           </Link>
 
