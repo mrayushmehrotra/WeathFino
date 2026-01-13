@@ -325,42 +325,6 @@ const FeatureSection = () => {
 
       {/* Bottom padding area */}
       <div className="h-16"></div>
-
-      {/* Add CSS animations */}
-      <style jsx global>{`
-        @keyframes float {
-          0%,
-          100% {
-            transform: translateY(0) translateX(0);
-          }
-          50% {
-            transform: translateY(-20px) translateX(10px);
-          }
-        }
-
-        @keyframes shimmer {
-          0% {
-            background-position: -1000px 0;
-          }
-          100% {
-            background-position: 1000px 0;
-          }
-        }
-
-        .animate-float {
-          animation: float ease-in-out infinite;
-        }
-
-        .animate-shimmer {
-          background-size: 1000px 100%;
-          animation: shimmer 2s infinite linear;
-        }
-
-        /* Smooth transitions */
-        * {
-          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-        }
-      `}</style>
     </div>
   );
 };

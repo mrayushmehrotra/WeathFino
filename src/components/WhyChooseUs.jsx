@@ -146,34 +146,6 @@ const WhyWealthUs = () => {
           })}
         </div>
       </div>
-
-      {/* ANIMATIONS */}
-      <style jsx global>{`
-        @keyframes float {
-          0%,
-          100% {
-            transform: translateY(0);
-          }
-          50% {
-            transform: translateY(-20px);
-          }
-        }
-        @keyframes icon-float {
-          0%,
-          100% {
-            transform: translateY(0);
-          }
-          50% {
-            transform: translateY(-8px);
-          }
-        }
-        .animate-float {
-          animation: float 6s ease-in-out infinite;
-        }
-        .animate-icon-float {
-          animation: icon-float 3s ease-in-out infinite;
-        }
-      `}</style>
     </section>
   );
 };
