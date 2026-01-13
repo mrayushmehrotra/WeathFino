@@ -27,7 +27,7 @@ const FeatureCard = ({ title, subtitle, image, points, cta, isActive }) => {
     <div
       ref={cardRef}
       className={`
-        relative w-[220px] md:w-[400px] shrink-0
+        relative w-[320px] md:w-[420px] shrink-0
         rounded-3xl p-[3px]
         bg-gradient-to-b from-cyan-400 via-blue-500 to-purple-500
         shadow-[0_0_60px_rgba(99,102,241,0.35)]
@@ -37,23 +37,23 @@ const FeatureCard = ({ title, subtitle, image, points, cta, isActive }) => {
       `}
     >
       <div
-        className={`rounded-3xl bg-[#0b0f1a] p-6 border h-full flex flex-col transition-all duration-500 ${
+        className={`rounded-3xl bg-[#0b0f1a] p-8 border h-full flex flex-col transition-all duration-500 ${
           isActive ? "border-white/20 scale-100" : "border-white/5 scale-95"
         }`}
       >
-        {/* IMAGE */}
+        {/* IMAGE - Fixed container */}
         <div
-          className={`rounded-xl overflow-hidden mb-6 border bg-gradient-to-br transition-all duration-500 ${
+          className={`rounded-xl overflow-hidden mb-8 h-56 flex items-center justify-center border bg-gradient-to-br transition-all duration-500 ${
             isActive
               ? "border-white/20 from-blue-900/30 to-purple-900/30"
               : "border-white/10 from-blue-900/10 to-purple-900/10"
           }`}
         >
-          <div className="relative overflow-hidden">
+          <div className="relative w-full h-full overflow-hidden">
             <img
               src={image}
               alt={title}
-              className={`w-full h-40 object-cover transition-transform duration-700 ${
+              className={`w-full h-full object-cover transition-transform duration-700 ${
                 isActive ? "scale-100" : "scale-95"
               }`}
             />
@@ -62,7 +62,7 @@ const FeatureCard = ({ title, subtitle, image, points, cta, isActive }) => {
         </div>
 
         <h3
-          className={`text-2xl font-bold text-center mb-2 transition-all duration-300 ${
+          className={`text-2xl font-bold text-center mb-3 transition-all duration-300 ${
             isActive ? "text-white" : "text-slate-500"
           }`}
         >
@@ -70,14 +70,14 @@ const FeatureCard = ({ title, subtitle, image, points, cta, isActive }) => {
         </h3>
 
         <p
-          className={`text-center mb-6 transition-all duration-300 ${
+          className={`text-center mb-8 text-base transition-all duration-300 ${
             isActive ? "text-slate-300" : "text-slate-600"
           }`}
         >
           {subtitle}
         </p>
 
-        <ul className="space-y-3 text-sm mb-8">
+        <ul className="space-y-3 text-sm mb-10 flex-grow">
           {points.map((p, i) => (
             <li
               key={i}
@@ -102,11 +102,11 @@ const FeatureCard = ({ title, subtitle, image, points, cta, isActive }) => {
 
         <button
           className={`
-            mt-auto w-full py-3 rounded-full font-semibold
+            w-full py-4 rounded-full font-semibold text-base
             relative overflow-hidden transition-all duration-500
             ${
               isActive
-                ? "opacity-100 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 text-white"
+                ? "opacity-100 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 text-white hover:shadow-[0_0_40px_rgba(34,211,238,0.5)]"
                 : "opacity-0 bg-gray-800 text-gray-400 scale-95"
             }
           `}
@@ -131,7 +131,7 @@ const FeatureSection = () => {
     {
       title: "Community Engagement",
       subtitle: "Connect, discuss, and learn with a vibrant trading community.",
-      image: "/assets/Imagess/comunity.jpg",
+      image: "src/assets/Imagess/comunity.jpg",
       points: [
         "Safe & respectful environment",
         "Live discussions",
@@ -144,7 +144,7 @@ const FeatureSection = () => {
     {
       title: "Trade with Logic",
       subtitle: "Stay updated with research-based insights and market learning",
-      image: "/assets/Imagess/tradelogic1.jpg",
+      image: "src/assets/Imagess/tradelogic1.jpg",
       points: [
         "Define Clear Entry & Exit Rules",
         "Rely on Data, Not Emotions",
@@ -157,7 +157,7 @@ const FeatureSection = () => {
     {
       title: "Daily Market View",
       subtitle: "Improve your knowledge with daily educational content.",
-      image: "/assets/Imagess/marketview.jpg",
+      image: "src/assets/Imagess/marketview.jpg",
       points: [
         "Top Gainers & Losers",
         "Trends & Movers",
@@ -206,7 +206,7 @@ const FeatureSection = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#0a0a0f] py-20 overflow-hidden relative">
+    <div className="min-h-screen bg-[#0a0a0f] pt-16 pb-32 overflow-hidden relative">
       {/* Animated background particles */}
       <div className="absolute inset-0 overflow-hidden">
         {[...Array(15)].map((_, i) => (
@@ -226,14 +226,14 @@ const FeatureSection = () => {
       {/* HEADER */}
       <div
         ref={headerRef}
-        className={`text-center mb-16 transition-all duration-1000 ${
+        className={`text-center mb-20 transition-all duration-1000 ${
           headerVisible
             ? "opacity-100 translate-y-0"
             : "opacity-0 translate-y-10"
         }`}
       >
         <div className="inline-block px-10 py-4 rounded-lg bg-gradient-to-r from-blue-700 via-cyan-400 to-emerald-400 relative overflow-hidden">
-          <h1 className="text-3xl md:text-4xl font-bold text-black relative z-10">
+          <h1 className="text-xl md:text-2xl font-bold text-black relative z-10">
             WealthFino Mobile App
           </h1>
           <div className="absolute -inset-1 bg-gradient-to-r from-blue-700 via-cyan-400 to-emerald-400 rounded-lg blur-lg opacity-50 -z-10"></div>
@@ -244,10 +244,10 @@ const FeatureSection = () => {
       </div>
 
       {/* AUTOMATIC CARD ROTATION CONTAINER */}
-      <div className="flex justify-center items-center min-h-[500px]">
+      <div className="flex justify-center items-center min-h-[600px] mb-16">
         <div className="relative w-full max-w-6xl mx-auto px-4">
           {/* Cards Container - Centered */}
-          <div className="relative h-[480px] flex items-center justify-center">
+          <div className="relative h-[580px] flex items-center justify-center">
             {/* Cards */}
             {cards.map((card, index) => {
               const position = activeIndexes.indexOf(index);
@@ -272,6 +272,9 @@ const FeatureSection = () => {
           </div>
         </div>
       </div>
+
+      {/* Bottom padding area */}
+      <div className="h-16"></div>
 
       {/* Add CSS animations */}
       <style jsx global>{`
