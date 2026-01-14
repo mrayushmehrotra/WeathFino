@@ -179,7 +179,7 @@ const FeatureSection = () => {
     {
       title: "Community Engagement",
       subtitle: "Connect, discuss, and learn with a vibrant trading community.",
-      image: "/magess/comunity.jpg",
+      image: "/Imagess/comunity.jpg",
       points: [
         "Safe & respectful environment",
         "Live discussions",
