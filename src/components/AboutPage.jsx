@@ -1,6 +1,6 @@
 import React from "react";
 
-import sir_img from "../assets/Imagess/sir.jpeg";
+import sir_img from "/Imagess/sir.jpeg";
 
 const AboutPage = () => {
   return (

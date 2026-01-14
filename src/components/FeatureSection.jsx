@@ -179,7 +179,7 @@ const FeatureSection = () => {
     {
       title: "Community Engagement",
       subtitle: "Connect, discuss, and learn with a vibrant trading community.",
-      image: "src/assets/Imagess/comunity.jpg",
+      image: "/magess/comunity.jpg",
       points: [
         "Safe & respectful environment",
         "Live discussions",
@@ -192,7 +192,7 @@ const FeatureSection = () => {
     {
       title: "Trade with Logic",
       subtitle: "Stay updated with research-based insights and market learning",
-      image: "src/assets/Imagess/tradelogic1.jpg",
+      image: "/Imagess/tradelogic1.jpg",
       points: [
         "Define Clear Entry & Exit Rules",
         "Rely on Data, Not Emotions",
@@ -205,7 +205,7 @@ const FeatureSection = () => {
     {
       title: "Daily Market View",
       subtitle: "Improve your knowledge with daily educational content.",
-      image: "src/assets/Imagess/marketview.jpg",
+      image: "/Imagess/marketview.jpg",
       points: [
         "Top Gainers & Losers",
         "Trends & Movers",
@@ -322,9 +322,6 @@ const FeatureSection = () => {
           </div>
         </div>
       </div>
-
-      {/* Bottom padding area */}
-      <div className="h-16"></div>
     </div>
   );
 };
