@@ -5,20 +5,20 @@ const blogs = [
     category: "Buy • Sell • Hold",
     title: "Short-Term Stock to Watch: Triveni Turbine",
     desc: "Short-Term Stock to Watch: Triveni Turbine Current Market Price (CMP): ₹514 Triveni Turbine Ltd. is trading close to a major support zone, indicating a potential trend reversal...",
-    img: "/blog1.png",
+    img: "/blogs/bl1.jpeg",
     date: "29-08-2025",
   },
   {
     category: "Analysis • Strategy",
     title: "Short-Term Investment Opportunity – VODAFONE IDEA LTD.",
     desc: "Short-Term Investment Opportunity – VODAFONE IDEA LTD. Current Market Price (CMP): ₹6.58 • Add-on Accumulation Zone: ₹5 – ₹5.50 Potential Upside Target...",
-    img: "/blog2.png",
+    img: "/blogs/bl2.jpeg",
   },
   {
     category: "Buy • Sell • Hold",
     title: "Short-Term Target – DEEPAK NITRITE LTD",
     desc: "Current Market Price (CMP): ₹1765 Add-on Accumulation Zone: ₹1700 – ₹1720 🎯 Potential Upside Targets...",
-    img: "/blog3.png",
+    img: "/blogs/bl1.jpeg",
   },
 ];
 
