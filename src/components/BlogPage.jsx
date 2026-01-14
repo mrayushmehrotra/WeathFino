@@ -4,20 +4,20 @@ const blogs = [
   {
     category: "Buy • Sell • Hold",
     title: "Short-Term Stock to Watch: Triveni Turbine",
-    desc: "Short-Term Stock to Watch: Triveni Turbine Current Market Price (CMP): ₹514 Triveni Turbine Ltd. is trading close to a major support zone, indicating a potential trend reversal...",
+    desc: "Triveni Turbine Ltd. is trading close to a major support zone, indicating a potential short-term trend reversal with favorable risk-reward.",
     img: "/blogs/bl1.jpeg",
     date: "29-08-2025",
   },
   {
     category: "Analysis • Strategy",
-    title: "Short-Term Investment Opportunity – VODAFONE IDEA LTD.",
-    desc: "Short-Term Investment Opportunity – VODAFONE IDEA LTD. Current Market Price (CMP): ₹6.58 • Add-on Accumulation Zone: ₹5 – ₹5.50 Potential Upside Target...",
+    title: "Short-Term Investment Opportunity – Vodafone Idea Ltd.",
+    desc: "Vodafone Idea is showing accumulation near critical support levels with potential upside on volume confirmation.",
     img: "/blogs/bl2.jpeg",
   },
   {
     category: "Buy • Sell • Hold",
-    title: "Short-Term Target – DEEPAK NITRITE LTD",
-    desc: "Current Market Price (CMP): ₹1765 Add-on Accumulation Zone: ₹1700 – ₹1720 🎯 Potential Upside Targets...",
+    title: "Short-Term Target – Deepak Nitrite Ltd.",
+    desc: "Deepak Nitrite is consolidating with bullish structure and favorable momentum indicators for short-term traders.",
     img: "/blogs/bl1.jpeg",
   },
 ];
@@ -26,123 +26,125 @@ const BlogPage = () => {
   return (
     <div
       className="
-        min-h-screen px-6 py-16
+        min-h-screen px-16 py-20
         bg-white dark:bg-slate-950
         transition-colors duration-300
       "
     >
-      {/* ================= HEADER ================= */}
       <div className="max-w-7xl mx-auto">
+        {/* ================= HEADER ================= */}
         <h1
           className="
-            text-3xl font-semibold mb-10
-            text-slate-900 dark:text-white
-          "
+    text-center
+    text-4xl md:text-5xl font-extrabold
+    tracking-tight
+    text-transparent bg-clip-text
+    bg-gradient-to-r from-blue-600 via-cyan-500 to-emerald-500
+    dark:bg-gradient-to-r dark:from-cyan-400 dark:via-sky-400 dark:to-emerald-400
+    dark:drop-shadow-[0_0_18px_rgba(34,211,238,0.35)]
+    mb-16 pb-5
+  "
         >
-          Blogs
+          Market Blogs & Insights
         </h1>
 
         {/* ================= BLOG GRID ================= */}
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
           {blogs.map((blog, index) => (
             <div
               key={index}
               className="
-                rounded-2xl overflow-hidden flex flex-col
-                bg-white dark:bg-slate-900
-                border border-slate-200 dark:border-slate-800
-                shadow-lg dark:shadow-none
-                transition
+                group p-[3.5px] rounded-3xl
+                bg-gradient-to-r from-blue-500 via-cyan-400 to-emerald-400
+                hover:shadow-[0_0_30px_rgba(34,211,238,0.35)]
+                transition-all duration-500
               "
             >
-              {/* IMAGE */}
-              <div className="relative">
-                <img
-                  src={blog.img}
-                  alt={blog.title}
-                  className="w-full h-48 object-cover"
-                />
+              <article
+                className="
+                  rounded-3xl overflow-hidden
+                  bg-white dark:bg-slate-900
+                  h-full flex flex-col
+                  transition-transform duration-500
+                  group-hover:-translate-y-2
+                "
+              >
+                {/* IMAGE */}
+                <div className="relative">
+                  <img
+                    src={blog.img}
+                    alt={blog.title}
+                    className="w-full h-52 object-cover"
+                  />
 
-                {/* LABEL */}
-                <span
-                  className="
-                    absolute top-3 left-3
-                    bg-green-700 text-white
-                    text-xs px-3 py-1 rounded-full font-semibold
-                  "
-                >
-                  CHART EXPLANATION
-                </span>
-
-                {/* DATE */}
-                {blog.date && (
+                  {/* LABEL */}
                   <span
                     className="
-                      absolute top-3 right-3
-                      bg-green-100 dark:bg-green-500/20
-                      text-green-700 dark:text-green-400
+                      absolute top-4 left-4
+                      bg-green-600 text-white
                       text-xs px-3 py-1 rounded-full font-semibold
+                      shadow
                     "
                   >
-                    {blog.date}
+                    CHART EXPLANATION
                   </span>
-                )}
-              </div>
 
-              {/* CONTENT */}
-              <div className="p-6 flex flex-col flex-1">
-                <p
-                  className="
-                    text-sm font-medium
-                    text-slate-500 dark:text-slate-400
-                  "
-                >
-                  {blog.category}
-                </p>
+                  {/* DATE */}
+                  {blog.date && (
+                    <span
+                      className="
+                        absolute top-4 right-4
+                        bg-white/90 dark:bg-slate-800/80
+                        text-slate-800 dark:text-slate-200
+                        text-xs px-3 py-1 rounded-full font-semibold
+                        backdrop-blur
+                      "
+                    >
+                      {blog.date}
+                    </span>
+                  )}
+                </div>
 
-                <h2
-                  className="
-                    mt-2 text-lg font-semibold leading-snug
-                    text-slate-900 dark:text-white
-                  "
-                >
-                  {blog.title}
-                </h2>
+                {/* CONTENT */}
+                <div className="p-6 flex flex-col flex-1">
+                  <p className="text-sm font-medium text-slate-500 dark:text-slate-400">
+                    {blog.category}
+                  </p>
 
-                <p
-                  className="
-                    mt-3 text-sm leading-relaxed flex-1
-                    text-slate-600 dark:text-slate-300
-                  "
-                >
-                  {blog.desc}
-                </p>
+                  <h2 className="mt-2 text-lg font-semibold text-slate-900 dark:text-white leading-snug">
+                    {blog.title}
+                  </h2>
 
-                <button
-                  className="
-                    mt-6 w-fit px-6 py-2 rounded-full text-sm font-medium
-                    border border-slate-300 dark:border-slate-700
-                    text-slate-700 dark:text-slate-300
-                    hover:bg-slate-100 dark:hover:bg-slate-800
-                    transition
-                  "
-                >
-                  Read More
-                </button>
-              </div>
+                  <p className="mt-3 text-sm text-slate-600 dark:text-slate-300 leading-relaxed flex-1">
+                    {blog.desc}
+                  </p>
+
+                  <button
+                    className="
+                      mt-6 w-fit px-6 py-2 rounded-full text-sm font-medium
+                      bg-gradient-to-r from-blue-500 via-cyan-400 to-emerald-400
+                      text-white
+                      hover:shadow-[0_0_25px_rgba(34,211,238,0.45)]
+                      transition
+                    "
+                  >
+                    Read More →
+                  </button>
+                </div>
+              </article>
             </div>
           ))}
         </div>
       </div>
 
-      {/* ================= FLOATING BUTTONS ================= */}
+      {/* ================= FLOATING ACTION BUTTONS ================= */}
       <div className="fixed bottom-6 right-6 flex flex-col gap-4">
         <button
           className="
             w-12 h-12 rounded-full
-            bg-purple-600 text-white
+            bg-gradient-to-r from-blue-500 to-cyan-400
+            text-white shadow-lg
             flex items-center justify-center
-            shadow-lg
           "
         >
           📄
@@ -151,9 +153,9 @@ const BlogPage = () => {
         <button
           className="
             w-12 h-12 rounded-full
-            bg-green-500 text-white
+            bg-gradient-to-r from-emerald-400 to-green-500
+            text-white shadow-lg
             flex items-center justify-center
-            shadow-lg
           "
         >
           💬
