@@ -1,5 +1,5 @@
 import React from "react";
-import WealthFino_Logo from "../assets/WealthFino_Logo.png";
+import WealthFino_Logo from "/WealthFino_Logo.png";
 
 import { NavLink } from "react-router-dom";
 

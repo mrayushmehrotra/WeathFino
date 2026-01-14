@@ -3,57 +3,57 @@ import React from "react";
 
 const logos = [
   {
-    src: "src/assets/Media_Presence/media-presence-8.png",
+    src: "/Media_Presence/media-presence-8.png",
     alt: "MENAFN",
     link: "https://menafn.com/1109670065/DAM-Capital-Advisors-Near-Breakout-Level-SEBI-RA-Krishna-Pathak-Highlights-Bullish-Technical-Setup",
   },
   {
-    src: "src/assets/Media_Presence/media-presence-9.png",
+    src: "/Media_Presence/media-presence-9.png",
     alt: "BOROK Times",
     link: "https://boroktimes.com/krishna-pathak-29-is-transforming-stock-market-analysis-to-provide-better-insights-and-reliable-guidance-for-investors",
   },
   {
-    src: "src/assets/Media_Presence/media-presence-1.png",
+    src: "/Media_Presence/media-presence-1.png",
     alt: "Economic Times",
     link: "https://economictimes.indiatimes.com/markets/confidence-to-take-a-trade-comes-from-knowledge-of-the-subject-better-focus-on-learning/articleshow/105551518.cms",
   },
   {
-    src: "src/assets/Media_Presence/media-presence-10.png",
+    src: "/Media_Presence/media-presence-10.png",
     alt: "CNBC",
     link: "",
   },
   {
-    src: "src/assets/Media_Presence/media-presence-7.png",
+    src: "/Media_Presence/media-presence-7.png",
     alt: "inshorts",
     link: "https://shrts.in/VwRG8",
   },
   {
-    src: "src/assets/Media_Presence/media-presence-2.png",
+    src: "/Media_Presence/media-presence-2.png",
     alt: "Money Control",
     link: "",
   },
   {
-    src: "src/assets/Media_Presence/media-presence-4.png",
+    src: "/Media_Presence/media-presence-4.png",
     alt: "MSN",
     link: "https://www.msn.com/en-us/money/topstocks/bajaj-electricals-near-key-breakout-zone-sebi-ra-krishna-pathak-sees-strong-potential-upside/ar-AA1GyUjn",
   },
   {
-    src: "src/assets/Media_Presence/media-presence-11.png",
+    src: "/Media_Presence/media-presence-11.png",
     alt: "Asianet News",
     link: "https://newsable.asianetnews.com/markets/rec-stock-at-crucial-zone-sebi-ra-krishna-pathak-sees-buying-opportunity-multi-level-targets/articleshow-46fh1f0",
   },
   {
-    src: "src/assets/Media_Presence/media-presence-3.png",
+    src: "/Media_Presence/media-presence-3.png",
     alt: "GapUp by Rigi",
     link: "",
   },
   {
-    src: "src/assets/Media_Presence/media-presence-5.png",
+    src: "/Media_Presence/media-presence-5.png",
     alt: "Investing.com",
     link: "https://in.investing.com/news/stock-market-news/nifty-ends-lower-on-weekly-expiry-financials-autos-it-lead-broad-market-selloff-4873602",
   },
   {
-    src: "src/assets/Media_Presence/media-presence-6.png",
+    src: "/Media_Presence/media-presence-6.png",
     alt: "Stocktwits",
     link: "https://stocktwits.com/news-articles/markets/equity/asian-paints-eyes-reversal-from-support-sebi-ra-krishna-pathak-sees-accumulation-opportunity",
   },

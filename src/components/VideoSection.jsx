@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
-import video1 from "../assets/video/video_1.mp4";
-import video2 from "../assets/video/video_1.mp4";
-import video3 from "../assets/video/video_1.mp4";
+import video1 from "/video/video_1.mp4";
+import video2 from "/video/video_1.mp4";
+import video3 from "/video/video_1.mp4";
 
 const VideoSection = () => {
   const videos = [

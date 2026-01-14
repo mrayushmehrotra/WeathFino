@@ -169,7 +169,7 @@
 // export default FeaturesWhiteBlueAnimated;
 
 import { motion } from "framer-motion";
-import chartImg from "../assets/MeetingImg.png";
+import chartImg from "/MeetingImg.png";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },

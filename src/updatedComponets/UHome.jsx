@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import phone from "../assets/phone6.png";
+import phone from "/phone6.png";
 
 /* ================= ANIMATIONS ================= */
 
