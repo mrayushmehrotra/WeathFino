@@ -3,26 +3,16 @@ import WealthFino_Logo from "/WealthFino_Logo.png";
 
 import { NavLink } from "react-router-dom";
 
-import {
-  Youtube,
-  X,
-  Instagram,
-  Send,
-  Mail,
-  Phone,
-  MessageCircle,
-} from "lucide-react";
+import { Mail, Phone, MessageCircle } from "lucide-react";
 
 const Footer = () => {
   const year = new Date().getFullYear();
 
   return (
     <footer
-      className="
-        bg-white dark:bg-[#0E1116]
+      className="bg-white dark:bg-[#0E1116]
         text-slate-700 dark:text-[#D1D5DB]
-        transition-colors duration-300
-      "
+        transition-colors duration-300"
     >
       <div className="max-w-7xl mx-auto px-6 py-14">
         {/* ================= TOP GRID ================= */}
@@ -45,7 +35,7 @@ const Footer = () => {
               <img
                 src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
                 alt="App Store"
-                className="h-11"
+                className="h-10"
               />
               <a
                 href="https://play.google.com/store/apps/details?id=com.wealthfino.mobile"
@@ -55,7 +45,7 @@ const Footer = () => {
                 <img
                   src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
                   alt="Google Play"
-                  className="h-11 cursor-pointer"
+                  className="h-10 cursor-pointer"
                 />
               </a>
             </div>
@@ -253,45 +243,94 @@ const Footer = () => {
 
         {/* ================= SOCIAL ================= */}
         <div className="flex justify-center gap-8 text-slate-500 dark:text-gray-400 mb-6">
-          {/* YouTube */}
-          <a
-            href="https://www.youtube.com/@WealthFino"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-400 hover:text-red-500 transition-colors"
-          >
-            <Youtube size={22} />
-          </a>
+          <div class="flex items-center gap-4 mt-8 text-indigo-500">
+            <a href="https://www.youtube.com/" target="_blank" rel="noreferrer">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-youtube size-6 hover:text-indigo-500"
+                aria-hidden="true"
+              >
+                <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"></path>
+                <path d="m10 15 5-3-5-3z"></path>
+              </svg>
+            </a>
 
-          <a
-            href="https://x.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-400 hover:text-white transition-colors"
-            aria-label="X"
-          >
-            <X size={22} />
-          </a>
-
-          {/* Instagram */}
-          <a
-            href="https://www.instagram.com/wealthfino.in/?igsh=Mm5zZGNtYTQ1amc4&utm_source=qr#"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-400 hover:text-pink-500 transition-colors"
-          >
-            <Instagram size={22} />
-          </a>
-
-          {/* Telegram */}
-          <a
-            href="https://t.me/WealthFino"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-400 hover:text-sky-400 transition-colors"
-          >
-            <Send size={22} />
-          </a>
+            <a
+              href="#"
+              class="hover:-translate-y-0.5 transition-all duration-300"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M17 2H7a5 5 0 0 0-5 5v10a5 5 0 0 0 5 5h10a5 5 0 0 0 5-5V7a5 5 0 0 0-5-5"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M16 11.37a4 4 0 1 1-7.914 1.173A4 4 0 0 1 16 11.37m1.5-4.87h.01"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </a>
+            <a
+              href="#"
+              class="hover:-translate-y-0.5 transition-all duration-300"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6M6 9H2v12h4zM4 6a2 2 0 1 0 0-4 2 2 0 0 0 0 4"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </a>
+            <a
+              href="#"
+              class="hover:-translate-y-0.5 transition-all duration-300"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </a>
+          </div>
         </div>
 
         {/* ================= COPYRIGHT ================= */}
