@@ -49,113 +49,111 @@ const ContactPage = () => {
         <div className="grid lg:grid-cols-3 gap-8">
           {/* ===== CONTACT FORM ===== */}
           <div className="lg:col-span-2">
-            <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 border border-gray-100 dark:border-gray-700">
-              <div className="flex items-center gap-3 mb-8">
-                <div className="w-12 h-12 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center">
-                  <Send
-                    className="text-blue-600 dark:text-blue-400"
-                    size={24}
-                  />
-                </div>
-                <div>
-                  <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
-                    Send Your Message
-                  </h2>
-                  <p className="text-gray-600 dark:text-gray-400">
-                    We typically respond within 24 hours
-                  </p>
+            <div
+              className="rounded-3xl p-8 md:p-10 space-y-8
+      bg-white dark:bg-gradient-to-br dark:from-slate-900 dark:via-gray-900 dark:to-black
+      border border-gray-200 dark:border-white/10
+      shadow-xl dark:shadow-2xl
+      transition-all duration-300
+    "
+            >
+              {/* ================= Registered Address ================= */}
+              <div
+                className="
+        relative overflow-hidden rounded-2xl p-6
+        bg-gray-50 dark:bg-white/5
+        border border-gray-200 dark:border-white/10
+        backdrop-blur-xl
+        hover:border-indigo-500/40
+        transition-all duration-300
+      "
+              >
+                <div
+                  className="
+          absolute inset-0 opacity-0 hover:opacity-100 transition
+          bg-gradient-to-r from-indigo-500/10 to-purple-500/10
+        "
+                />
+
+                <div className="relative z-10 flex gap-4">
+                  <div
+                    className="
+            w-12 h-12 rounded-xl
+            flex items-center justify-center
+            bg-indigo-500/15 text-indigo-500
+            text-xl
+          "
+                  >
+                    📍
+                  </div>
+
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                      Registered Address
+                    </h3>
+
+                    <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-300">
+                      RS-39/43, 5/3C Golden Park,
+                      <br />
+                      Sankarpur West, Near Rabindranagar
+                      <br />
+                      Co-operative, Durgapur, West
+                      <br />
+                      Bengal – 713206
+                    </p>
+                  </div>
                 </div>
               </div>
 
-              <form className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                      First Name *
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition bg-gray-50 dark:bg-gray-700 dark:text-white"
-                    />
+              {/* ================= Correspondence Address ================= */}
+              <div
+                className="
+        relative overflow-hidden rounded-2xl p-6
+        bg-gray-50 dark:bg-white/5
+        border border-gray-200 dark:border-white/10
+        backdrop-blur-xl
+        hover:border-emerald-500/40
+        transition-all duration-300
+      "
+              >
+                <div
+                  className="
+          absolute inset-0 opacity-0 hover:opacity-100 transition
+          bg-gradient-to-r from-emerald-500/10 to-cyan-500/10
+        "
+                />
+
+                <div className="relative z-10 flex gap-4">
+                  <div
+                    className="
+            w-12 h-12 rounded-xl
+            flex items-center justify-center
+            bg-emerald-500/15 text-emerald-500
+            text-xl
+          "
+                  >
+                    📍
                   </div>
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                      Last Name *
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition bg-gray-50 dark:bg-gray-700 dark:text-white"
-                    />
+
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                      Correspondence Address
+                    </h3>
+
+                    <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-300">
+                      207, Jayanivas, Padukamandir Road
+                      <br />
+                      Bharat Housing Society,
+                      <br />
+                      Subramanyapura Below Digicomm
+                      <br />
+                      Semiconductor, BANGALORE,
+                      <br />
+                      KARNATAKA – 560061
+                    </p>
                   </div>
                 </div>
-
-                <div className="space-y-2">
-                  <label className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                    Email Address *
-                  </label>
-                  <input
-                    type="email"
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition bg-gray-50 dark:bg-gray-700 dark:text-white"
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <label className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                    Phone Number *
-                  </label>
-                  <input
-                    type="tel"
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition bg-gray-50 dark:bg-gray-700 dark:text-white"
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <label className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                    Subject *
-                  </label>
-                  <select className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition bg-gray-50 dark:bg-gray-700 dark:text-white">
-                    <option className="dark:bg-gray-800">Select a topic</option>
-                    <option className="dark:bg-gray-800">
-                      Investment Consultation
-                    </option>
-                    <option className="dark:bg-gray-800">
-                      Research Report Inquiry
-                    </option>
-                    <option className="dark:bg-gray-800">
-                      Account Support
-                    </option>
-                    <option className="dark:bg-gray-800">
-                      Partnership Opportunity
-                    </option>
-                    <option className="dark:bg-gray-800">
-                      Other Questions
-                    </option>
-                  </select>
-                </div>
-
-                <div className="space-y-2">
-                  <label className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                    Your Message *
-                  </label>
-                  <textarea
-                    rows={5}
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition bg-gray-50 dark:bg-gray-700 dark:text-white resize-none"
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full py-4 bg-gradient-to-r from-blue-600 to-blue-700 dark:from-blue-700 dark:to-blue-800 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-blue-800 dark:hover:from-blue-800 dark:hover:to-blue-900 transition-all duration-300 shadow-lg hover:shadow-xl"
-                >
-                  Send Message
-                  <ChevronRight className="inline ml-2" size={18} />
-                </button>
-              </form>
+              </div>
             </div>
           </div>
 
@@ -263,7 +261,7 @@ const ContactPage = () => {
                     </p>
                   </div>
                 </div>
-                <div className="flex items-center gap-3">
+                {/* <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center">
                     <Clock
                       className="text-green-600 dark:text-green-400"
@@ -278,7 +276,7 @@ const ContactPage = () => {
                       Quick reply guarantee
                     </p>
                   </div>
-                </div>
+                </div> */}
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center">
                     <Users
@@ -388,7 +386,7 @@ const ContactPage = () => {
         </div>
 
         {/* ================= QUICK ACTIONS ================= */}
-        <div className="mt-20 bg-gradient-to-r from-blue-600 to-blue-700 dark:from-blue-800 dark:to-blue-900 rounded-2xl p-8 md:p-12 text-white">
+        {/* <div className="mt-20 bg-gradient-to-r from-blue-600 to-blue-700 dark:from-blue-800 dark:to-blue-900 rounded-2xl p-8 md:p-12 text-white">
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center">
               <div className="text-4xl font-bold mb-2">24/7</div>
@@ -407,7 +405,7 @@ const ContactPage = () => {
               <p className="text-blue-100 dark:text-blue-200">SEBI Compliant</p>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
 
       {/* ================= FLOATING CONTACT ================= */}

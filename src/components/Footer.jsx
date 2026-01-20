@@ -451,20 +451,63 @@ const Footer = () => {
                     />
                   </svg>
                 </div>
+
                 <div>
                   <h4 className="font-semibold text-slate-900 dark:text-white">
-                    Registered Office
+                    Registered Address
                   </h4>
-                  <p className="text-xs text-slate-500 dark:text-gray-500">
+                  {/* <p className="text-xs text-slate-500 dark:text-gray-500">
                     Official business address
-                  </p>
+                  </p> */}
                 </div>
               </div>
 
               <div className="pl-11">
                 <p className="text-sm leading-relaxed text-slate-700 dark:text-gray-300">
-                 207,Jayanivas,Padukamandir Road  
-                 Bharat Housing Society, Subramanyapura Below Digicomm Semiconductor, BANGALORE, KARNATAKA, 560061
+                  RS-39/43, 5/3C Golden Park, Sankarpur West, Near Rabindranagar
+                  Co-operative, Durgapur, West Bengal - 713206
+                </p>
+              </div>
+            </div>
+            <div>
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
+                  <svg
+                    className="w-4 h-4 text-slate-600 dark:text-gray-400"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                    />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                    />
+                  </svg>
+                </div>
+
+                <div>
+                  <h4 className="font-semibold text-slate-900 dark:text-white">
+                    Correspondence Address
+                  </h4>
+                  {/* <p className="text-xs text-slate-500 dark:text-gray-500">
+                    Official business address
+                  </p> */}
+                </div>
+              </div>
+
+              <div className="pl-11">
+                <p className="text-sm leading-relaxed text-slate-700 dark:text-gray-300">
+                  207,Jayanivas,Padukamandir Road Bharat Housing Society,
+                  Subramanyapura Below Digicomm Semiconductor, BANGALORE,
+                  KARNATAKA, 560061
                 </p>
               </div>
             </div>
