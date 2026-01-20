@@ -463,11 +463,8 @@ const Footer = () => {
 
               <div className="pl-11">
                 <p className="text-sm leading-relaxed text-slate-700 dark:text-gray-300">
-                  RS-39/43, 5/3C Golden Park,
-                  <br />
-                  Sankarpur West, Near Rabindranagar Co-operative,
-                  <br />
-                  Durgapur, West Bengal - 713206
+                 207,Jayanivas,Padukamandir Road  
+                 Bharat Housing Society, Subramanyapura Below Digicomm Semiconductor, BANGALORE, KARNATAKA, 560061
                 </p>
               </div>
             </div>

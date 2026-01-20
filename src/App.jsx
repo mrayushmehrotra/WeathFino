@@ -42,7 +42,6 @@ import VideoSection from "./components/VideoSection";
 
 export default function App() {
   return (
-    // 🌍 GLOBAL THEME WRAPPER
     <div className="min-h-screen bg-trading-light dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
       <Navbar />
 
@@ -58,8 +57,6 @@ export default function App() {
               <MarketTicker />
               <ChartPage />
               <HeatmapPage />
-              {/* <About /> */}
-              {/* <Services /> */}
               <FeatureSection />
               <VideoSection />
               <WhyChooseUs />
