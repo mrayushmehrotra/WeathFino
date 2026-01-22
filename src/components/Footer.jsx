@@ -533,7 +533,7 @@ const Footer = () => {
               <div className="flex items-center gap-5">
                 {/* YouTube */}
                 <a
-                  href="https://www.youtube.com/"
+                  href="https://www.youtube.com/c/WealthFino"
                   target="_blank"
                   rel="noreferrer"
                   className="group relative w-10 h-10 flex items-center justify-center rounded-full transition-all duration-300 hover:scale-110"
@@ -559,7 +559,7 @@ const Footer = () => {
 
                 {/* Instagram */}
                 <a
-                  href="#"
+                  href="https://www.instagram.com/wealthfino.in"
                   className="group relative w-10 h-10 flex items-center justify-center rounded-full transition-all duration-300 hover:scale-110"
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-pink-500 to-purple-500 opacity-10 group-hover:opacity-20 rounded-full transition-opacity duration-300"></div>
@@ -589,23 +589,24 @@ const Footer = () => {
                   </svg>
                 </a>
 
-                {/* LinkedIn */}
+                {/* Facebook */}
                 <a
-                  href="#"
+                  href="https://www.facebook.com/WealthFino/"
                   className="group relative w-10 h-10 flex items-center justify-center rounded-full transition-all duration-300 hover:scale-110"
                 >
-                  <div className="absolute inset-0 bg-blue-500 opacity-10 group-hover:opacity-20 rounded-full transition-opacity duration-300"></div>
-                  <div className="absolute inset-0 border border-blue-200 dark:border-blue-800/30 rounded-full group-hover:border-blue-400 dark:group-hover:border-blue-600 transition-colors duration-300"></div>
+                  <div className="absolute inset-0 bg-blue-600 opacity-10 group-hover:opacity-20 rounded-full transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 border border-blue-200 dark:border-blue-800/30 rounded-full group-hover:border-blue-500 dark:group-hover:border-blue-600 transition-colors duration-300"></div>
+
                   <svg
                     width="20"
                     height="20"
                     viewBox="0 0 24 24"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
-                    className="text-slate-600 dark:text-gray-400 group-hover:text-blue-500 dark:group-hover:text-blue-400 transition-colors duration-300"
+                    className="text-slate-600 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300"
                   >
                     <path
-                      d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6M6 9H2v12h4zM4 6a2 2 0 1 0 0-4 2 2 0 0 0 0 4"
+                      d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
                       stroke="currentColor"
                       strokeWidth="2"
                       strokeLinecap="round"
@@ -613,24 +614,31 @@ const Footer = () => {
                     />
                   </svg>
                 </a>
-
-                {/* Twitter/X */}
+                {/* Telegram */}
                 <a
-                  href="#"
+                  href="https://t.me/WealthFino"
                   className="group relative w-10 h-10 flex items-center justify-center rounded-full transition-all duration-300 hover:scale-110"
                 >
-                  <div className="absolute inset-0 bg-slate-700 opacity-10 group-hover:opacity-20 rounded-full transition-opacity duration-300"></div>
-                  <div className="absolute inset-0 border border-slate-200 dark:border-gray-800 rounded-full group-hover:border-slate-400 dark:group-hover:border-gray-600 transition-colors duration-300"></div>
+                  <div className="absolute inset-0 bg-sky-500 opacity-10 group-hover:opacity-20 rounded-full transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 border border-sky-200 dark:border-sky-800/30 rounded-full group-hover:border-sky-400 dark:group-hover:border-sky-600 transition-colors duration-300"></div>
+
                   <svg
                     width="20"
                     height="20"
                     viewBox="0 0 24 24"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
-                    className="text-slate-600 dark:text-gray-400 group-hover:text-slate-900 dark:group-hover:text-white transition-colors duration-300"
+                    className="text-slate-600 dark:text-gray-400 group-hover:text-sky-500 dark:group-hover:text-sky-400 transition-colors duration-300"
                   >
                     <path
-                      d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2"
+                      d="M22 2L11 13"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M22 2L15 22l-4-9-9-4z"
                       stroke="currentColor"
                       strokeWidth="2"
                       strokeLinecap="round"
