@@ -98,7 +98,7 @@ export default function App() {
         </Route>
 
         <Route path="/about-us" element={<AboutPage />} />
-        <Route path="/blogs" element={<BlogPage />} />
+        <Route path="/blog" element={<BlogPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/charts" element={<Charts />} />
