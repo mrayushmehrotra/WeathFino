@@ -5,20 +5,20 @@ const blogs = [
     category: "Buy • Sell • Hold",
     title: "Short-Term Stock to Watch: Triveni Turbine",
     desc: "Triveni Turbine Ltd. is trading close to a major support zone, indicating a potential short-term trend reversal with favorable risk-reward.",
-    img: "/blogs/bl1.jpeg",
+    img: "/blogs_img/bl1.jpeg",
     date: "29-08-2025",
   },
   {
     category: "Analysis • Strategy",
     title: "Short-Term Investment Opportunity – Vodafone Idea Ltd.",
     desc: "Vodafone Idea is showing accumulation near critical support levels with potential upside on volume confirmation.",
-    img: "/blogs/bl2.jpeg",
+    img: "/blogs_img/bl2.jpeg",
   },
   {
     category: "Buy • Sell • Hold",
     title: "Short-Term Target – Deepak Nitrite Ltd.",
     desc: "Deepak Nitrite is consolidating with bullish structure and favorable momentum indicators for short-term traders.",
-    img: "/blogs/bl1.jpeg",
+    img: "/blogs_img/bl1.jpeg",
   },
 ];
 
