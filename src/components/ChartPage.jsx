@@ -3,21 +3,20 @@ import TradingViewChart from "./TradingViewChart";
 const ChartPage = () => {
   return (
     <div
-      className="min-h-screen   bg-white 
-    dark:bg-[#05070d] text-black dark:text-whiteflex flex items-center justify-center p-20"
+      className="min-h-screen bg-white 
+    dark:bg-[#05070d] text-black dark:text-white flex items-center justify-center p-20"
     >
       {/* OUTER GLOW FRAME */}
       <div
         className="w-full max-w-[1600px] rounded-[22px] p-[3px]
-        bg-gradient-to-b from-[#F3D98B] via-[#D4AF37] to-[#B8962E]
-        shadow-[0_0_60px_rgba(212,175,55,0.25)]"
+        shadow-[0_0_60px_rgba(156,119,33,0.5)]"
       >
         {/* INNER DARK CONTAINER */}
-        <div className="bg-[#05070d] rounded-[20px] p-6">
+        <div className=" rounded-[20px] p-6">
           {/* HEADER */}
           <div className="flex items-center justify-between mb-6">
-            <h1 className="text-2xl font-bold text-white" aria-label="WealthFino">
-              <span aria-hidden="true">Wealth</span><span className="text-[#D4AF37]" aria-hidden="true">Fino</span>
+            <h1 className="text-2xl font-bold text-black dark:text-white" aria-label="WealthFino">
+              <span aria-hidden="true">WealthFino</span>
             </h1>
 
             <div className="flex gap-3 mb-6">
@@ -37,7 +36,7 @@ const ChartPage = () => {
           {/* CHART HOLDER */}
           <div
             className="rounded-xl overflow-hidden border border-slate-700
-            h-[72vh] bg-black"
+            h-[72vh] "
           >
             <TradingViewChart />
           </div>

@@ -1,7 +1,18 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const TradingViewHeatmap = () => {
   const widgetRef = useRef(null);
+  const [theme, setTheme] = useState(
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+
+  useEffect(() => {
+    const observer = new MutationObserver(() => {
+      setTheme(document.documentElement.classList.contains("dark") ? "dark" : "light");
+    });
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     if (!widgetRef.current) return;
@@ -22,7 +33,7 @@ const TradingViewHeatmap = () => {
       blockSize: "market_cap_basic",
       blockColor: "change",
       locale: "en",
-      colorTheme: "dark",
+      colorTheme: theme,
       hasTopBar: true,
       isZoomEnabled: true,
       hasSymbolTooltip: true,
@@ -51,10 +62,10 @@ const TradingViewHeatmap = () => {
     return () => {
       observer.disconnect();
     };
-  }, []);
+  }, [theme]);
 
   return (
-    <div className="tradingview-widget-container w-full h-full">
+    <div key={theme} className="tradingview-widget-container w-full h-full">
       <div
         ref={widgetRef}
         className="tradingview-widget-container__widget w-full h-full"

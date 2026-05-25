@@ -33,7 +33,6 @@ import ConflictOfInterestPolicy from "./pages/policies/ConflictOfInterestPolicy"
 import ProPointsPolicy from "./pages/policies/ProPointsPolicy";
 import DataDeletionPolicy from "./pages/policies/DataDeletionPolicy";
 import AboutPage from "./components/AboutPage";
-import BlogPage from "./components/BlogPage";
 import ContactPage from "./components/ContactPage";
 import Pricing from "./components/Pricing";
 import Charts from "./components/Charts";
@@ -103,7 +102,6 @@ export default function App() {
         </Route>
 
         <Route path="/about-us" element={<AboutPage />} />
-        <Route path="/blog" element={<BlogPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/charts" element={<Charts />} />

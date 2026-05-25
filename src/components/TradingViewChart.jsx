@@ -1,7 +1,18 @@
-import { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const TradingViewChart = () => {
   const chartContainerRef = useRef(null);
+  const [theme, setTheme] = useState(
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+
+  useEffect(() => {
+    const observer = new MutationObserver(() => {
+      setTheme(document.documentElement.classList.contains("dark") ? "dark" : "light");
+    });
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     if (!chartContainerRef.current) return;
@@ -19,10 +30,10 @@ const TradingViewChart = () => {
       symbol: "BSE:RELIANCE",
       interval: "D",
       timezone: "Asia/Kolkata",
-      theme: "dark",
+      theme: theme,
       style: "1",
       locale: "en",
-      toolbar_bg: "#0f172a",
+      toolbar_bg: theme === "dark" ? "#0f172a" : "#f1f5f9",
       enable_publishing: false,
       allow_symbol_change: true,
       hide_top_toolbar: false,
@@ -37,11 +48,11 @@ const TradingViewChart = () => {
         chartContainerRef.current.innerHTML = "";
       }
     };
-  }, []);
+  }, [theme]);
 
   return (
-    <div className="w-full h-[calc(100vh-80px)] bg-black rounded-xl overflow-hidden border border-slate-800">
-      <div ref={chartContainerRef} className="w-full h-full" />
+    <div key={theme} className="tradingview-widget-container w-full h-full bg-slate-50 dark:bg-black rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800">
+      <div ref={chartContainerRef} className="tradingview-widget-container__widget w-full h-full" />
     </div>
   );
 };

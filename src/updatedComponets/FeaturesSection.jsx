@@ -200,9 +200,9 @@ const FeaturesWhiteBlueAnimated = () => {
             className="
               inline-block px-6 py-2 rounded-full
               bg-[#D4AF37]/15 dark:bg-[#D4AF37]/15
-              text-[#B8962E] dark:text-[#D4AF37]
-              font-semibold
-              text-4xl
+              text-[#7A5800] dark:text-[#D4AF37]
+              font-bold tracking-widest uppercase
+              text-sm md:text-base
             "
           >
             Our Features
@@ -218,9 +218,7 @@ const FeaturesWhiteBlueAnimated = () => {
 
             <span
               className="
-                bg-gradient-to-r
-                from-[#F3D98B] via-[#D4AF37] to-[#B8962E]
-                bg-clip-text text-transparent
+                text-[#5C4200] dark:text-[#D4AF37]
               "
             >
               Real-Time Market Insights
@@ -236,9 +234,8 @@ const FeaturesWhiteBlueAnimated = () => {
           transition={{ duration: 0.7, delay: 0.2 }}
           className="
             mt-14 rounded-[26px] p-[3px]
-            bg-gradient-to-r
-            from-[#F3D98B] via-[#D4AF37] to-[#B8962E]
-            shadow-[0_0_60px_rgba(212,175,55,0.35)]
+            bg-gradient-to-r from-[#9C7721] via-[#856315] to-[#7A5800] dark:from-[#F3D98B] dark:via-[#D4AF37] dark:to-[#B8962E]
+            shadow-[0_0_40px_rgba(156,119,33,0.3)] dark:shadow-[0_0_60px_rgba(212,175,55,0.35)]
           "
         >
           {/* INNER CARD */}
@@ -260,7 +257,7 @@ const FeaturesWhiteBlueAnimated = () => {
               <h3
                 className="
                   text-3xl md:text-4xl font-bold mb-6
-                  text-[#B8962E] dark:text-[#D4AF37]
+                  text-[#7A5800] dark:text-[#D4AF37]
                 "
               >
                 Real-Time Market Insights
@@ -284,7 +281,7 @@ const FeaturesWhiteBlueAnimated = () => {
                       text-slate-700 dark:text-slate-300
                     "
                   >
-                    <span className="text-[#B8962E] dark:text-[#D4AF37] font-bold">
+                    <span className="text-[#7A5800] dark:text-[#D4AF37] font-bold">
                       <CheckCircle className="w-5 h-5" />
                     </span>
                     {item}
@@ -298,7 +295,7 @@ const FeaturesWhiteBlueAnimated = () => {
                 whileTap={{ scale: 0.96 }}
                 className="
                   mt-10 px-10 py-4 rounded-full font-semibold
-                  text-black
+                  text-[#1F3864]
                   bg-gradient-to-r from-[#F3D98B] via-[#D4AF37] to-[#B8962E]
                   shadow-[0_8px_20px_rgba(212,175,55,0.25)] hover:shadow-[0_12px_25px_rgba(212,175,55,0.35)]
                   transition-all

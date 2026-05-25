@@ -130,7 +130,7 @@ const UHome = () => {
               className="
                 w-full sm:w-fit px-8 py-4 text-lg rounded-full border border-white/20 dark:border-[#D4AF37]/40
                 backdrop-blur-md bg-gradient-to-r from-[#F3D98B] via-[#D4AF37] to-[#B8962E]
-                text-black font-semibold tracking-wide
+                text-[#1F3864] font-semibold tracking-wide
                 shadow-[0_12px_35px_rgba(212,175,55,0.45)]
                 hover:shadow-[0_15px_45px_rgba(212,175,55,0.6)]
                 hover:scale-105 transition-all duration-500

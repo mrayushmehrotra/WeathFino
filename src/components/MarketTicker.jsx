@@ -2,6 +2,17 @@ import { useEffect, useState } from "react";
 
 const TickerTape = () => {
   const [isVisible, setIsVisible] = useState(true);
+  const [theme, setTheme] = useState(
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+
+  useEffect(() => {
+    const observer = new MutationObserver(() => {
+      setTheme(document.documentElement.classList.contains("dark") ? "dark" : "light");
+    });
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     // Load TradingView script only once
@@ -41,7 +52,7 @@ const TickerTape = () => {
             dark:border-[#D4AF37]/30 dark:bg-[#05070f]
           "
         >
-          <tv-ticker-tape symbols="BSE:RELI1!,BSE:HDFCAMC,BSE:ICIC1!,BSE:INFY,BSE:TCS,BSE:LT,BSE:HINDUNILVR,BSE:SBIN,BSE:BHARTIARTL,BSE:ITC,BSE:AXIS1!,BSE:BAJAJFINSV,BSE:KOTAKBANK,BSE:HCLTECH,BSE:MARUTI,BSE:TITAN"></tv-ticker-tape>
+          <tv-ticker-tape key={theme} theme={theme} transparent="true" symbols="BSE:RELI1!,BSE:HDFCAMC,BSE:ICIC1!,BSE:INFY,BSE:TCS,BSE:LT,BSE:HINDUNILVR,BSE:SBIN,BSE:BHARTIARTL,BSE:ITC,BSE:AXIS1!,BSE:BAJAJFINSV,BSE:KOTAKBANK,BSE:HCLTECH,BSE:MARUTI,BSE:TITAN"></tv-ticker-tape>
         </div>
       </div>
     </div>

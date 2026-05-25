@@ -7,7 +7,7 @@ const AboutPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-950">
       {/* Hero Section */}
-      <section className="py-12 md:py-20 bg-gradient-to-r from-blue-900 to-indigo-900 text-white dark:from-blue-950 dark:to-indigo-950">
+      <section className="py-12 md:py-20 bg-[#0b1022] text-white">
         <div className="container mx-auto px-4 md:px-8 max-w-6xl">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center">
             About Krishna Pathak

@@ -29,9 +29,9 @@ const FeatureCard = ({ title, subtitle, image, points, cta, isActive }) => {
       className={`
         relative w-[90vw] max-w-[340px] md:max-w-none md:w-[420px] shrink-0
         rounded-3xl p-[3px]
-        bg-gradient-to-b from-[#F3D98B] via-[#D4AF37] to-[#B8962E]
+        bg-gradient-to-b from-[#F3D98B] via-[#D4AF37] to-[#B8962E] dark:bg-gradient-to-b dark:from-[#F3D98B] dark:via-[#D4AF37] dark:to-[#B8962E]
         dark:shadow-[0_0_60px_rgba(212,175,55,0.35)]
-        light:shadow-[0_0_40px_rgba(212,175,55,0.2)]
+        shadow-[0_0_40px_rgba(212,175,55,0.25)]
         transition-all duration-700
         ${isActive ? "opacity-100 scale-100 z-10" : "opacity-30 scale-90 z-0"}
         ${isVisible ? "translate-y-0" : "translate-y-10"}
@@ -40,13 +40,13 @@ const FeatureCard = ({ title, subtitle, image, points, cta, isActive }) => {
       <div
         className={`
           rounded-3xl h-full flex flex-col transition-all duration-500
-          dark:bg-[#0b1022] light:bg-white
-          dark:border-white/20 light:border-gray-200
+          dark:bg-[#0b1022] bg-white
+          dark:border-white/20 border-gray-200
           ${isActive ? "border scale-100" : "border scale-95"}
           ${
             isActive
-              ? "dark:border-white/20 light:border-gray-300"
-              : "dark:border-white/5 light:border-gray-100"
+              ? "dark:border-white/20 border-gray-300"
+              : "dark:border-white/5 border-gray-100"
           }
           p-8
         `}
@@ -58,13 +58,13 @@ const FeatureCard = ({ title, subtitle, image, points, cta, isActive }) => {
             bg-gradient-to-br transition-all duration-500
             ${
               isActive
-                ? "dark:from-[#D4AF37]/20 dark:to-[#B8962E]/20 light:from-[#F3D98B]/30 light:to-[#D4AF37]/30"
-                : "dark:from-[#D4AF37]/5 dark:to-[#B8962E]/5 light:from-[#F3D98B]/10 light:to-[#D4AF37]/10"
+                ? "dark:from-[#D4AF37]/20 dark:to-[#B8962E]/20 from-[#F3D98B]/30 to-[#D4AF37]/30"
+                : "dark:from-[#D4AF37]/5 dark:to-[#B8962E]/5 from-[#F3D98B]/10 to-[#D4AF37]/10"
             }
             ${
               isActive
-                ? "dark:border-white/20 light:border-gray-300"
-                : "dark:border-white/10 light:border-gray-200"
+                ? "dark:border-white/20 border-gray-300"
+                : "dark:border-white/10 border-gray-200"
             }
           `}
         >
@@ -76,7 +76,7 @@ const FeatureCard = ({ title, subtitle, image, points, cta, isActive }) => {
                 isActive ? "scale-100" : "scale-95"
               }`}
             />
-            <div className="absolute inset-0 dark:bg-gradient-to-t dark:from-black/30 dark:to-transparent light:bg-gradient-to-t light:from-white/10 light:to-transparent"></div>
+            <div className="absolute inset-0 dark:bg-gradient-to-t dark:from-black/30 dark:to-transparent bg-gradient-to-t from-white/10 to-transparent"></div>
           </div>
         </div>
 
@@ -85,8 +85,8 @@ const FeatureCard = ({ title, subtitle, image, points, cta, isActive }) => {
             text-2xl font-bold text-center mb-3 transition-all duration-300
             ${
               isActive
-                ? "dark:text-white light:text-gray-900"
-                : "dark:text-slate-500 light:text-gray-500"
+                ? "dark:text-white text-gray-900"
+                : "dark:text-slate-500 text-gray-500"
             }
           `}
         >
@@ -98,8 +98,8 @@ const FeatureCard = ({ title, subtitle, image, points, cta, isActive }) => {
             text-center mb-8 text-base font-semibold transition-all duration-300
             ${
               isActive
-                ? "dark:text-slate-300 light:text-gray-600"
-                : "dark:text-slate-600 light:text-gray-400"
+                ? "dark:text-slate-300 text-gray-600"
+                : "dark:text-slate-600 text-gray-400"
             }
           `}
         >
@@ -119,8 +119,8 @@ const FeatureCard = ({ title, subtitle, image, points, cta, isActive }) => {
                 }
                 ${
                   isActive
-                    ? "dark:text-slate-200 light:text-gray-700"
-                    : "dark:text-slate-500 light:text-gray-400"
+                    ? "dark:text-slate-200 text-gray-700"
+                    : "dark:text-slate-500 text-gray-400"
                 }
               `}
               style={{ transitionDelay: `${i * 100}ms` }}
@@ -130,8 +130,8 @@ const FeatureCard = ({ title, subtitle, image, points, cta, isActive }) => {
                   transition-colors duration-300
                   ${
                     isActive
-                      ? "dark:text-[#D4AF37] light:text-[#B8962E]"
-                      : "dark:text-slate-600 light:text-gray-400"
+                      ? "dark:text-[#D4AF37] text-[#7A5800]"
+                      : "dark:text-slate-600 text-gray-400"
                   }
                 `}
               >
@@ -149,19 +149,19 @@ const FeatureCard = ({ title, subtitle, image, points, cta, isActive }) => {
             ${
               isActive
                 ? `
-                  opacity-100 text-black scale-100
+                  opacity-100 dark:text-[#1F3864] text-[#1F3864] scale-100
                   dark:bg-gradient-to-r dark:from-[#F3D98B] dark:via-[#D4AF37] dark:to-[#B8962E]
-                  light:bg-gradient-to-r light:from-[#F3D98B] light:via-[#D4AF37] light:to-[#B8962E]
+                  bg-gradient-to-r from-[#F3D98B] via-[#D4AF37] to-[#B8962E]
                   dark:hover:shadow-[0_0_40px_rgba(212,175,55,0.4)]
-                  light:hover:shadow-[0_0_40px_rgba(212,175,55,0.4)]
+                  hover:shadow-[0_0_40px_rgba(212,175,55,0.4)]
                 `
-                : "opacity-0 scale-95 dark:bg-gray-800 dark:text-gray-400 light:bg-gray-200 light:text-gray-500"
+                : "opacity-0 scale-95 dark:bg-gray-800 dark:text-gray-400 bg-gray-200 text-gray-500"
             }
           `}
         >
           <span className="relative font-bold text-lg z-10">{cta}</span>
           {isActive && (
-            <div className="absolute inset-0 bg-gradient-to-r from-[#F3D98B] via-[#D4AF37] to-[#B8962E] animate-shimmer"></div>
+            <div className="absolute inset-0 dark:bg-gradient-to-r dark:from-[#F3D98B] dark:via-[#D4AF37] dark:to-[#B8962E] bg-gradient-to-r from-[#F3D98B] via-[#D4AF37] to-[#B8962E] animate-shimmer opacity-30 dark:opacity-100"></div>
           )}
         </button>
       </div>
@@ -237,7 +237,7 @@ const FeatureSection = () => {
   }, []);
 
   return (
-    <div className="min-h-screen dark:bg-[#0b1022] light:bg-gray-50 pt-16 pb-32 overflow-hidden relative">
+    <div className="min-h-screen dark:bg-[#0b1022] bg-gray-50 pt-16 pb-32 overflow-hidden relative">
       {/* Animated background particles - Different for light/dark */}
       <div className="absolute inset-0 overflow-hidden">
         {[...Array(15)].map((_, i) => (
@@ -251,7 +251,7 @@ const FeatureSection = () => {
               animationDuration: `${10 + Math.random() * 20}s`,
             }}
           >
-            <div className="dark:bg-[#D4AF37]/30 light:bg-[#D4AF37]/40 w-full h-full"></div>
+            <div className="dark:bg-[#D4AF37]/30 bg-[#D4AF37]/40 w-full h-full"></div>
           </div>
         ))}
       </div>
@@ -268,15 +268,15 @@ const FeatureSection = () => {
         <div className="inline-block px-10 py-4 rounded-lg relative overflow-hidden">
           {/* Gradient background for dark/light */}
           <div className="absolute inset-0 rounded-lg -z-10">
-            <div className="dark:bg-gradient-to-r dark:from-[#F3D98B] dark:via-[#D4AF37] dark:to-[#B8962E] w-full h-full blur-lg opacity-50"></div>
-            <div className="absolute inset-0 dark:bg-gradient-to-r dark:from-[#F3D98B] dark:via-[#D4AF37] dark:to-[#B8962E] light:bg-gradient-to-r light:from-[#F3D98B] light:via-[#D4AF37] light:to-[#B8962E] rounded-lg"></div>
+            <div className="dark:bg-gradient-to-r dark:from-[#F3D98B] dark:via-[#D4AF37] dark:to-[#B8962E] bg-gradient-to-r from-[#F3D98B] via-[#D4AF37] to-[#B8962E] w-full h-full blur-lg opacity-50"></div>
+            <div className="absolute inset-0 dark:bg-gradient-to-r dark:from-[#F3D98B] dark:via-[#D4AF37] dark:to-[#B8962E] bg-gradient-to-r from-[#F3D98B] via-[#D4AF37] to-[#B8962E] rounded-lg"></div>
           </div>
 
-          <h1 className="text-2xl md:text-2xl font-bold relative z-10 dark:text-black light:text-white">
+          <h1 className="text-2xl md:text-2xl font-bold relative z-10 dark:text-black text-gray-900">
             WealthFino Mobile App
           </h1>
         </div>
-        <p className="mt-6 text-lg md:text-xl dark:text-white light:text-gray-800">
+        <p className="mt-6 text-lg md:text-xl dark:text-white text-gray-800">
           Research, Trade and Charts.
         </p>
       </div>

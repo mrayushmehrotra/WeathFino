@@ -64,7 +64,7 @@ const MediaPresence = () => {
     <section
       className="
         py-20 relative overflow-hidden
-        bg-[#D4AF37]/5 dark:bg-[#0b1022]
+        bg-[#D4AF37]/5 dark:bg-[#111]
         transition-colors duration-300
       "
     >
@@ -77,19 +77,19 @@ const MediaPresence = () => {
         viewport={{ once: true }}
       >
         <div className="inline-flex flex-col items-center mb-12">
-          <div className="w-24 h-1 bg-[#B8962E] dark:bg-[#D4AF37] rounded-full mb-2" />
+          <div className="w-32 h-1.5 bg-[#856315] dark:bg-[#D4AF37] rounded-full mb-4 shadow-sm" />
 
-          <h2 className="font-playfair text-4xl md:text-5xl font-extrabold pb-3 text-slate-900 dark:text-white">
-            <span className="bg-gradient-to-r from-[#F3D98B] via-[#D4AF37] to-[#B8962E] bg-clip-text text-transparent px-1">
+          <h2 className="font-playfair text-6xl md:text-7xl font-extrabold pb-3 text-slate-900 dark:text-white tracking-tight drop-shadow-sm">
+            <span className="bg-gradient-to-r from-black  to-[#1a1a1a] dark:from-white dark:via-[#D4AF37] dark:to-[#B8962E] bg-clip-text text-transparent px-1">
               Featured
             </span>{" "}
             In
           </h2>
 
-          <div className="w-24 h-1 bg-[#D4AF37] rounded-full mt-2 ml-auto" />
+          <div className="w-32 h-1.5 bg-[#856315] dark:bg-[#D4AF37] rounded-full mt-4 ml-auto shadow-sm" />
         </div>
 
-        <p className="text-xl md:text-2xl font-semibold max-w-2xl mx-auto text-slate-700 dark:text-slate-300">
+        <p className="text-2xl md:text-3xl font-medium max-w-4xl mx-auto text-slate-900 dark:text-slate-200 leading-relaxed">
           We're proud to be recognized by leading business & financial
           platforms. Our insights are making headlines—featured by the most
           trusted business and financial platforms.
@@ -97,9 +97,9 @@ const MediaPresence = () => {
       </motion.div>
 
       {/* ================= LOGO CAROUSEL ================= */}
-      <div className="relative w-full overflow-hidden">
+      <div className="relative w-full overflow-hidden mt-8">
         <motion.div
-          className="flex gap-10 pr-10 w-max"
+          className="flex gap-8 md:gap-12 pr-8 md:pr-12 w-max items-center"
           animate={{ x: ["0%", "-50%"] }}
           transition={{
             repeat: Infinity,
@@ -110,7 +110,7 @@ const MediaPresence = () => {
           {[...logos, ...logos].map((logo, idx) => (
             <div
               key={idx}
-              className="flex-shrink-0 bg-[#D4AF37]/5 dark:bg-[#D4AF37]/10 p-3   rounded-xl"
+              className="flex-shrink-0 bg-white/80 dark:bg-white/5 backdrop-blur-md p-5 md:p-8 rounded-2xl border border-slate-300 dark:border-white/10 shadow-md dark:shadow-none transition-transform hover:-translate-y-1"
             >
               {logo.link ? (
                 <a href={logo.link} target="_blank" rel="noopener noreferrer">
@@ -118,7 +118,7 @@ const MediaPresence = () => {
                     src={logo.src}
                     alt={logo.alt}
                     className="
-                      h-7 md:h-10 w-auto object-contain
+                      h-10 md:h-14 lg:h-16 w-auto object-contain
                       opacity-80 hover:opacity-100 
                       transition duration-500 cursor-pointer
                     "
@@ -129,7 +129,7 @@ const MediaPresence = () => {
                   src={logo.src}
                   alt={logo.alt}
                   className="
-                    h-7 md:h-10 w-auto object-contain
+                    h-10 md:h-14 lg:h-16 w-auto object-contain
                     opacity-70 hover:opacity-100
                     transition duration-500 cursor-pointer
                   "

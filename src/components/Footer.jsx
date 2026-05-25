@@ -404,7 +404,7 @@ const Footer = () => {
                       d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
                     />
                   </svg>
-                  <span className="text-xs font-medium text-[#B8962E] dark:text-[#D4AF37]">
+                  <span className="text-md font-extrabold text-slate-600 dark:text-white">
                     SEBI Registered
                   </span>
                 </div>
@@ -413,7 +413,7 @@ const Footer = () => {
               {/* Registration Details */}
               <div className="space-y-3">
                 <div>
-                  <p className="text-xs font-medium text-slate-500 dark:text-gray-500 uppercase tracking-wider mb-1">
+                  <p className="text-xs font-medium text-slate-800 dark:text-white uppercase tracking-wider mb-1">
                     SEBI Registration Number
                   </p>
                   <p className="text-sm font-mono text-slate-900 dark:text-white">
@@ -422,7 +422,7 @@ const Footer = () => {
                 </div>
 
                 <div>
-                  <p className="text-xs font-medium text-slate-500 dark:text-gray-500 uppercase tracking-wider mb-1">
+                  <p className="text-xs font-medium text-slate-800 dark:text-white uppercase tracking-wider mb-1">
                     BSE Enlistment Number
                   </p>
                   <p className="text-sm font-mono text-slate-900 dark:text-white">
@@ -529,7 +529,7 @@ const Footer = () => {
                 <h3 className="text-sm font-semibold text-slate-700 dark:text-gray-300 mb-1">
                   Stay Connected
                 </h3>
-                <p className="text-xs text-slate-500 dark:text-gray-500">
+                <p className="text-sm text-slate-500 dark:text-gray-100">
                   Follow us for updates and insights
                 </p>
               </div>

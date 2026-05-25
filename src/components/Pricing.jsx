@@ -76,7 +76,7 @@ const Pricing = () => {
                   className={`flex items-center gap-3 px-5 py-4 rounded-xl shadow ${
                     item.gold
                       ? "bg-gradient-to-r from-yellow-300 to-yellow-600 dark:from-yellow-500 dark:to-yellow-700"
-                      : "bg-gradient-to-r from-gray-700 to-black dark:from-gray-800 dark:to-gray-900 text-yellow-400 dark:text-yellow-300"
+                      : "bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-[#7A5800] dark:text-[#F3D98B]"
                   }`}
                 >
                   <CheckCircle className="w-6 h-6 text-black dark:text-white" />
@@ -84,7 +84,7 @@ const Pricing = () => {
                     className={`font-medium ${
                       item.gold
                         ? "text-black dark:text-white"
-                        : "text-yellow-400 dark:text-yellow-300"
+                        : "text-[#7A5800] dark:text-[#F3D98B]"
                     }`}
                   >
                     {item.text}
