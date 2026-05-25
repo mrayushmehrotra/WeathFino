@@ -7,10 +7,10 @@ const ProPointsPolicy = () => {
       <div className="max-w-5xl mx-auto space-y-8">
         {/* TITLE */}
         <div>
-          <h2 className="text-2xl font-bold tracking-wide mb-4">
+          <h1 className="text-2xl font-bold tracking-wide mb-4">
             Pro Points Policy — Redemption Scope, Non-Cash Nature & Monthly
             Expiry
-          </h2>
+          </h1>
         </div>
 
         {/* REDEMPTION SCOPE */}

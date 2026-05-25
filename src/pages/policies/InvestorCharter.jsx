@@ -248,7 +248,7 @@ export default function InvestorCharter() {
               rel="noreferrer"
               className="text-blue-600 underline"
             >
-              https://scores.sebi.gov.in
+              SEBI SCORES Grievance Redressal Platform
             </a>
 
             <p className="font-semibold mt-3">

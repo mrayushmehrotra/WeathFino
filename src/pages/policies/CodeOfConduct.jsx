@@ -32,18 +32,18 @@ export default function CodeOfConduct() {
           {/* CODE POINTS */}
           <div className="space-y-8">
             <div>
-              <h3 className="text-lg font-semibold text-slate-900 mb-2">
+              <h2 className="text-lg font-semibold text-slate-900 mb-2">
                 1. Honesty and Good Faith
-              </h3>
+              </h2>
               <p className="text-slate-700 ml-4">
                 I shall act honestly and in good faith.
               </p>
             </div>
 
             <div>
-              <h3 className="text-lg font-semibold text-slate-900 mb-2">
+              <h2 className="text-lg font-semibold text-slate-900 mb-2">
                 2. Diligence
-              </h3>
+              </h2>
               <p className="text-slate-700 ml-4">
                 I shall act with due skill, care and diligence and shall ensure
                 that the research report is prepared after thorough analysis.
@@ -51,9 +51,9 @@ export default function CodeOfConduct() {
             </div>
 
             <div>
-              <h3 className="text-lg font-semibold text-slate-900 mb-2">
+              <h2 className="text-lg font-semibold text-slate-900 mb-2">
                 3. Conflict of Interest
-              </h3>
+              </h2>
               <p className="text-slate-700 ml-4">
                 I shall effectively address conflict of interest which may
                 affect the impartiality of research analysis and research report
@@ -62,9 +62,9 @@ export default function CodeOfConduct() {
             </div>
 
             <div>
-              <h3 className="text-lg font-semibold text-slate-900 mb-2">
+              <h2 className="text-lg font-semibold text-slate-900 mb-2">
                 4. Insider Trading or front running
-              </h3>
+              </h2>
               <p className="text-slate-700 ml-4">
                 I shall not engage in insider trading or front running of my own
                 research report.
@@ -72,9 +72,9 @@ export default function CodeOfConduct() {
             </div>
 
             <div>
-              <h3 className="text-lg font-semibold text-slate-900 mb-2">
+              <h2 className="text-lg font-semibold text-slate-900 mb-2">
                 5. Confidentiality
-              </h3>
+              </h2>
               <p className="text-slate-700 ml-4">
                 I shall maintain confidentiality of report till the report is
                 made public.
@@ -82,9 +82,9 @@ export default function CodeOfConduct() {
             </div>
 
             <div>
-              <h3 className="text-lg font-semibold text-slate-900 mb-2">
+              <h2 className="text-lg font-semibold text-slate-900 mb-2">
                 6. Professional Standard
-              </h3>
+              </h2>
               <p className="text-slate-700 ml-4">
                 I am engaged in research analysis and shall observe high
                 professional standard while preparing research report.
@@ -92,9 +92,9 @@ export default function CodeOfConduct() {
             </div>
 
             <div>
-              <h3 className="text-lg font-semibold text-slate-900 mb-2">
+              <h2 className="text-lg font-semibold text-slate-900 mb-2">
                 7. Compliance
-              </h3>
+              </h2>
               <p className="text-slate-700 ml-4">
                 I shall comply with all regulatory requirements applicable to
                 the conduct of its business activities.
@@ -102,9 +102,9 @@ export default function CodeOfConduct() {
             </div>
 
             <div>
-              <h3 className="text-lg font-semibold text-slate-900 mb-2">
+              <h2 className="text-lg font-semibold text-slate-900 mb-2">
                 8. Responsibility of senior management
-              </h3>
+              </h2>
               <p className="text-slate-700 ml-4">
                 I shall bear primary responsibility of senior management for
                 ensuring the maintenance of appropriate standards of conduct and

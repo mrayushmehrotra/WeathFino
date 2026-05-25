@@ -442,7 +442,7 @@ export default function TermsConditions() {
                 rel="noreferrer"
                 className="text-blue-400 hover:underline"
               >
-                https://scores.sebi.gov.in
+                SEBI SCORES Grievance Redressal Platform
               </a>
             </p>
           </div>

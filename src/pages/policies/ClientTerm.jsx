@@ -550,17 +550,17 @@ export default function ClientTerm() {
                 <li>
                   <span className="font-semibold">Step 2:</span> If the
                   resolution is unsatisfactory, the client can also lodge
-                  grievances through SEBI's SCORES platform at
+                  grievances through SEBI's SCORES platform at{" "}
                   <span className="text-blue-600 underline underline-offset-2 hover:text-blue-400">
-                    scores.sebi.gov.in.
+                    <a href="https://scores.sebi.gov.in" target="_blank" rel="noreferrer">SEBI SCORES Grievance Redressal Platform</a>.
                   </span>
                 </li>
                 <li>
                   <span className="font-semibold">Step 3:</span> The client may
                   also consider the Online Dispute Resolution (ODR) through the
-                  Smart ODR portal at
+                  Smart ODR portal at{" "}
                   <span className="text-blue-600 underline underline-offset-2 hover:text-blue-400">
-                    https://smartodr.in.
+                    <a href="https://smartodr.in/login" target="_blank" rel="noreferrer">SEBI SMART ODR Portal</a>.
                   </span>
                 </li>
               </ul>
@@ -717,7 +717,7 @@ export default function ClientTerm() {
             report, commentary, website, mobile application, or other service
             offered by us (collectively, the "Services").
           </p>
-          <h4>Electronic Consent & Legal Validity — Disclaimer</h4>
+          <h3>Electronic Consent & Legal Validity — Disclaimer</h3>
 
           <p>By proceeding, I (the User/Client) hereby:</p>
 

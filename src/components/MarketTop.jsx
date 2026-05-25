@@ -1,82 +1,63 @@
-import { useEffect, useRef } from "react";
+import React, { useState } from "react";
+import { MARKET_STOCKS } from "../data/stocks";
+import { Pause, Play } from "lucide-react"
+import "./MarketTop.css";
 
-export default function TradingViewTicker() {
-  const containerRef = useRef(null);
-  const scriptLoadedRef = useRef(false);
-
-  useEffect(() => {
-    if (!containerRef.current || scriptLoadedRef.current) return;
-
-    const loadScript = () => {
-      // Clear previous content
-      if (containerRef.current) {
-        containerRef.current.innerHTML = "";
-      }
-
-      const script = document.createElement("script");
-      script.id = "tradingview-ticker-script";
-      script.src =
-        "https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js";
-      script.type = "text/javascript";
-      script.async = true;
-
-      script.innerHTML = JSON.stringify({
-        symbols: [
-          { proName: "BSE:RELIANCE", title: "Reliance Industries" },
-          { proName: "BSE:TCS", title: "Tata Consultancy Services" },
-          { proName: "BSE:HDFCBANK", title: "HDFC Bank" },
-          { proName: "BSE:INFY", title: "Infosys" },
-          { proName: "BSE:ICICIBANK", title: "ICICI Bank" },
-          { proName: "BSE:BHARTIARTL", title: "Bharti Airtel" },
-          { proName: "BSE:HINDUNILVR", title: "Hindustan Unilever" },
-          { proName: "BSE:LT", title: "Larsen & Toubro" },
-          { proName: "BSE:SBIN", title: "State Bank of India" },
-          { proName: "BSE:AXISBANK", title: "Axis Bank" },
-        ],
-        showSymbolLogo: true,
-        isTransparent: false,
-        displayMode: "regular",
-        colorTheme: "dark",
-        locale: "en",
-      });
-
-      if (containerRef.current) {
-        containerRef.current.appendChild(script);
-        scriptLoadedRef.current = true;
-      }
-    };
-
-    loadScript();
-
-    // Cleanup
-    return () => {
-      const existingScript = document.getElementById(
-        "tradingview-ticker-script"
-      );
-
-      if (existingScript && existingScript.parentNode) {
-        existingScript.parentNode.removeChild(existingScript);
-      }
-
-      if (containerRef.current) {
-        containerRef.current.innerHTML = "";
-      }
-
-      scriptLoadedRef.current = false;
-    };
-  }, []);
+export default function MarketTop() {
+  const [isPaused, setIsPaused] = useState(false);
 
   return (
-    <div className="tradingview-widget-container w-full">
-      <div
-        ref={containerRef}
-        className="tradingview-widget-container__widget"
-        style={{
-          height: "46px",
-          width: "100%",
-        }}
-      />
-      <div className="tradingview-widget-copyright"></div>
+    <div className="h-[48px] w-full overflow-hidden border-b border-gray-200 dark:border-white/10 bg-white dark:bg-[#0b0f16] flex font-sans transition-colors duration-100">
+      <button
+        type="button"
+        onClick={() => setIsPaused(!isPaused)}
+        aria-label={isPaused ? "Play marquee" : "Pause marquee"}
+        title={isPaused ? "Play marquee (P)" : "Pause marquee (P)"}
+        className="flex items-center justify-center px-3 text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white bg-gray-50 hover:bg-gray-200 dark:bg-[#0b0f16] dark:hover:bg-gray-800 z-10 border-r border-gray-200 dark:border-gray-800 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-500"
+      >
+        {isPaused ? (
+          <Play className="h-3.5 w-3.5" />
+        ) : (
+          <Pause className="h-3.5 w-3.5" />
+        )}
+      </button>
+
+      <div className="flex-1 overflow-hidden relative bg-white dark:bg-[#0b0f16]" aria-label="Live market marquee">
+        <div className={`flex whitespace-nowrap h-full items-center custom-marquee ${isPaused ? 'is-paused' : ''}`}>
+          {/* Double the list for seamless looping */}
+          {[...MARKET_STOCKS, ...MARKET_STOCKS].map((stock, i) => {
+            const isPositive = stock.chg.startsWith('+');
+            const colorClass = isPositive 
+              ? 'text-green-700 dark:text-green-400' 
+              : 'text-red-700 dark:text-red-400';
+
+            return (
+              <React.Fragment key={i}>
+                {/* Insert the static greeting items at the start of each block */}
+                {i % MARKET_STOCKS.length === 0 && (
+                  <>
+                    <span className="inline-flex items-center mx-4 font-medium text-gray-800 dark:text-gray-200">Good Morning</span>
+                    <span className="inline-flex items-center mx-4 font-medium text-gray-800 dark:text-gray-200">Welcome to Wealthfino</span>
+                  </>
+                )}
+
+                <span title={stock.title} className="inline-flex items-center gap-1.5 mx-3 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800/60 px-2 py-0.5 rounded transition-colors">
+                  <span className="font-bold text-gray-900 dark:text-gray-100">{stock.sym}</span>
+                  <span className="text-gray-700 dark:text-gray-300 ml-1 font-medium">{stock.px}</span>
+                  <span className={`font-bold ${colorClass}`}>
+                    {stock.chg} <span>{stock.pct}</span>
+                  </span>
+                </span>
+
+                {/* Insert the static closing item at the end of each block */}
+                {(i + 1) % MARKET_STOCKS.length === 0 && (
+                  <span className="inline-flex items-center mx-4 font-bold text-gray-700 dark:text-[#c7cdd6]">NIFTY 100 • 2026-05-25</span>
+                )}
+              </React.Fragment>
+            );
+          })}
+        </div>
+      </div>
     </div>
   );
 }

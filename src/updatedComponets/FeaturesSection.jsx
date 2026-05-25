@@ -326,7 +326,7 @@ const FeaturesWhiteBlueAnimated = () => {
               >
                 <img
                   src={chartImg}
-                  alt="Market Chart"
+                  alt=""
                   className="rounded-xl max-h-[320px]"
                 />
               </motion.div>

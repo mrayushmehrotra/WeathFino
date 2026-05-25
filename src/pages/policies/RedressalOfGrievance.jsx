@@ -116,7 +116,7 @@ export default function RedressalOfGrievance() {
             rel="noreferrer"
             className="text-blue-400 underline"
           >
-            https://scores.sebi.gov.in
+            SEBI SCORES Grievance Redressal Platform
           </a>
         </Section>
 
@@ -134,7 +134,7 @@ export default function RedressalOfGrievance() {
             rel="noreferrer"
             className="text-blue-400 underline"
           >
-            https://smartodr.in/login
+            SEBI SMART ODR Portal
           </a>
         </Section>
 

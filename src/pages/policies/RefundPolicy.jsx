@@ -122,7 +122,7 @@ export default function RefundPolicy() {
         {/* ================= DISCLAIMER ================= */}
         <div className="bg-slate-800/70 border border-amber-500/30 rounded-2xl p-6 space-y-4">
           <div className="flex items-center gap-3">
-            <h3 className="text-xl italic text-white">Disclaimer</h3>
+            <h2 className="text-xl italic text-white">Disclaimer</h2>
           </div>
 
           <p className="italic">

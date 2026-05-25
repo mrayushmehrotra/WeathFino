@@ -88,9 +88,9 @@ const ContactPage = () => {
                   </div>
 
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                    <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
                       Registered Address
-                    </h3>
+                    </h2>
 
                     <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-300">
                       RS-39/43, 5/3C Golden Park,
@@ -136,9 +136,9 @@ const ContactPage = () => {
                   </div>
 
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                    <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
                       Correspondence Address
-                    </h3>
+                    </h2>
 
                     <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-300">
                       207, Jayanivas, Padukamandir Road
@@ -170,9 +170,9 @@ const ContactPage = () => {
                     />
                   </div>
                   <div>
-                    <h3 className="font-bold text-gray-900 dark:text-white">
+                    <h2 className="font-bold text-gray-900 dark:text-white">
                       Phone Support
-                    </h3>
+                    </h2>
                     <p className="text-sm text-gray-600 dark:text-gray-400">
                       Direct assistance
                     </p>
@@ -195,9 +195,9 @@ const ContactPage = () => {
                     />
                   </div>
                   <div>
-                    <h3 className="font-bold text-gray-900 dark:text-white">
+                    <h2 className="font-bold text-gray-900 dark:text-white">
                       WhatsApp
-                    </h3>
+                    </h2>
                     <p className="text-sm text-gray-600 dark:text-gray-400">
                       Quick chat support
                     </p>
@@ -225,9 +225,9 @@ const ContactPage = () => {
                     />
                   </div>
                   <div>
-                    <h3 className="font-bold text-gray-900 dark:text-white">
+                    <h2 className="font-bold text-gray-900 dark:text-white">
                       Email
-                    </h3>
+                    </h2>
                     <p className="text-sm text-gray-600 dark:text-gray-400">
                       General inquiries
                     </p>
@@ -241,9 +241,9 @@ const ContactPage = () => {
 
             {/* Features */}
             <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6">
-              <h3 className="font-bold text-gray-900 dark:text-white mb-4">
+              <h2 className="font-bold text-gray-900 dark:text-white mb-4">
                 Why Choose Us
-              </h3>
+              </h2>
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center">

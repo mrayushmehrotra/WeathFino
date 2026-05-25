@@ -1,0 +1,186 @@
+REMEDIATION VERIFICATION CHECKLIST
+ACR-052  |  Krishna Kumar Pathak  |  krishnapathak.com
+Audit Date: 26 April 2026  |  WCAG 2.1 Level A & Level AA
+FOR DEVELOPER USE
+Complete this checklist after applying all fixes listed in the Remediation Guidance Notes document.
+Return signed copy to auditor for verification.
+HOW TO USE THIS CHECKLIST
+1.  Work through each issue row in the table on the following pages.
+2.  Read the "What was found" column to understand the original problem.
+3.  Apply the fix described in the "Fix required" column, referring to the Remediation Guidance Notes (RG) document for full code examples.
+4.  Re-test the fix using the self-check tools listed in the box below.
+5.  Once the fix is verified, write "Fixed" or "N/A" in the "Developer confirms" column and add your initials.
+6.  Complete the sign-off block at the end of this document and return the signed checklist to the auditor.
+Important: Do not mark an issue as fixed until you have re-tested it with at least one of the self-check tools listed below. Visual inspection alone is not sufficient.
+SELF-CHECK TOOLS — Use these to verify fixes before marking as confirmed
+axe DevTools — Browser extension (Chrome/Firefox). Scan each fixed page and confirm the previously reported violation no longer appears. Download: deque.com/axe/devtools
+NVDA Screen Reader — Free screen reader for Windows. Use with Chrome to verify alt text, form labels, heading structure, focus order, and status messages. Download: nvaccess.org
+HeadingsMap — Chrome/Firefox extension. Verify the heading hierarchy is correct after heading structure fixes (H1 present, no skipped levels, no widget headings). Available in browser extension stores.
+Chrome Accessibility Inspector — Built into Chrome DevTools (Elements > Accessibility tab). Check the accessible name, role, and value of any interactive element after SC 4.1.2 fixes.
+W3C Nu HTML Validator — Online validator at validator.w3.org/nu/ — paste the live page URL and confirm no errors remain after SC 4.1.1 parsing fixes.
+WCAG Colour Contrast Checker — Browser extension or webaim.org/resources/contrastchecker/ — verify each fixed colour pairing achieves the required 4.5:1 ratio (or 3:1 for large text) after SC 1.4.3 fixes.
+ISSUE VERIFICATION TABLE  —  13 confirmed failures require developer sign-off
+Issue ID
+Success Criterion
+What Was Found
+Fix Required(see RG reference)
+Developer Confirms(Fixed / N/A + Initials)
+A-01
+Level A
+SC 1.1.1
+Hero section phone image has alt="Trading App" — non-descriptive. The image shows the WealthFino app and should either be marked decorative or given a meaningful description.
+A decorative chart illustration on the Home page has been assigned alt="Market Chart". This is a decorative image and should have alt="" to be hidden from screen readers.
+Research Analyst profile photo on the About Us page has alt="Krishna Pathak" — insufficient. The alt text should describe the person and their role.
+App Store and Google Play badge images in the footer carry generic alt text that describes the platform name rather than the download action.
+The Download button in the main navigation links to the Google Play store but has no indication of what is being downloaded or for which platform.
+Set alt="" on all decorative images (the chart illustration). Do not omit the attribute — an empty string is required.
+Hero phone image — if informative: alt="WealthFino mobile app showing live trade alerts and portfolio dashboard". If purely decorative: alt="".
+Research Analyst photo: alt="Krishna Kumar Pathak, SEBI Registered Research Analyst and Founder of WealthFino Capital".
+App Store badge: alt="Download WealthFino on the App Store". Google Play badge: alt="Get WealthFino on Google Play".
+Nav Download button: add aria-label="Download WealthFino app on Google Play" to the anchor element.
+Self-check: navigate the page with NVDA — every informative image must announce a meaningful description; decorative images must be silent. See: RG Issue 01
+A-02
+Level A
+SC 1.3.1
+The live chart widget brand label is split across two separate heading elements reading "Wealth" and "Fino" individually. No single programmatic heading conveys the full name "WealthFino". The chart widget has no correctly associated label.
+Decorative checkbox emoji icons on the About Us page appear before each credential bullet point without aria-hidden="true". Screen readers announce the word "checkbox" before each item, creating a false interactive affordance.
+SEBI SCORES and ODR portal URLs on policy pages (Grievance Redressal, Investor Charter, Terms and Conditions) are pasted as raw hyperlinks with no descriptive anchor text.
+The Complaints Board page contains a data table coded with thead and tbody but has no <caption> element and no scope attributes on any column header. Screen readers cannot associate column headers with their data.
+Only two ARIA landmarks are present site-wide: navigation and contentinfo. No <main> landmark wraps the primary page content on any page.
+Chart heading: wrap the full brand name in a single heading element — <h2>WealthFino</h2> — or add aria-label="WealthFino" to the chart container element. Do not split the label across two elements.
+Decorative checkbox icons on About Us: add aria-hidden="true" to every decorative icon span — <span aria-hidden="true">&#10003;</span> — so screen readers skip them entirely.
+Replace every raw SEBI/ODR URL with a descriptive anchor: <a href="https://scores.sebi.gov.in">SEBI SCORES Complaint Portal</a> and <a href="https://smartodr.in/login">SEBI Smart ODR Portal</a>.
+Complaints Board table: add <caption>Trend of Annual Disposal of Complaints</caption> inside the <table> tag. Add scope="col" to every column header: <th scope="col">Sr No</th>.
+Add a <main id="main-content"> element wrapping the primary content area on every page template.
+Self-check: verify landmarks with HeadingsMap; run axe to confirm no "list" structure errors; check the table with NVDA table reading commands. See: RG Issue 02
+A-03
+Level A
+SC 2.1.2
+HOME PAGE — A KYC Client Consent Form modal opens when the user clicks "Get Started". The modal cannot be dismissed by pressing the Escape key.
+Keyboard Tab navigation becomes stuck inside the modal area. No input fields within the KYC form (PAN Number, Date of Birth, Phone Number, Email ID) are reachable by keyboard Tab navigation.
+Keyboard-only users who trigger this modal have no way to close it or interact with the form using the keyboard alone.
+Add Escape key handling so the modal closes when ESC is pressed: document.addEventListener("keydown", function(e) { if (e.key === "Escape") { closeModal(); } });
+The closeModal() function must: (1) hide the modal, (2) remove the overlay, (3) return focus to the element that triggered the modal.
+When the modal opens, move focus into it immediately: document.querySelector("#kyc-modal-close").focus();
+Ensure all form inputs (PAN Number, Date of Birth, Phone Number, Email ID) are native <input> elements or have tabindex="0" so they enter the natural tab order.
+Implement a focus trap: when Tab reaches the last focusable element in the modal, cycling Tab must return to the first focusable element inside the modal.
+On modal close, return focus to the trigger element: triggerElement.focus();
+Self-check: open modal with mouse, press ESC — modal must close and focus must return to the page. Re-open, Tab through all fields, confirm all are reachable. See: RG Issue 03
+A-04
+Level A
+SC 2.2.2
+HOME PAGE HEADER — A stock ticker scrolls continuously from right to left across the top of the page. No pause or stop button is provided anywhere adjacent to the ticker.
+HOME PAGE — A TradingView Ticker Tape widget is embedded below the header. It auto-scrolls live stock data continuously. No pause control is provided on the host page.
+HOME PAGE — Under the "WealthFino Mobile App" section a panel auto-advances between two sub-sections (Daily Market View and Community Engagement) without user interaction. No pause button is present.
+Stock ticker in header: add a visible pause/play button adjacent to the ticker. Example: <button id="ticker-pause" aria-label="Pause stock ticker" onclick="pauseTicker()">Pause</button>. The button label must toggle between "Pause" and "Resume" to reflect the current state.
+TradingView Ticker Tape widget: check the TradingView widget configuration for a built-in pause or speed option. If unavailable, add a custom pause button that sets animation-play-state: paused on the widget container.
+Auto-advancing Mobile App section: either (a) remove the auto-advance behaviour and let users switch tabs manually, or (b) add a visible Pause button that stops automatic switching when pressed.
+Self-check: load the page and confirm you can pause all three moving areas using only the keyboard (Tab to pause button, press Enter). See: RG Issue 04
+A-05
+Level A
+SC 2.4.1
+No "Skip to main content" link is present on any tested page of the site.
+All pages — Home, About Us, Blog, Charts, Pricing, Policies, and Contact — require keyboard users to Tab through the full navigation menu on every page visit before reaching any main content.
+Add a skip link as the very first focusable element inside <body> on every page template: <a href="#main-content" class="skip-link">Skip to main content</a>.
+Add the matching target ID to the main content wrapper: <main id="main-content">.
+Add CSS to make the skip link visible only on keyboard focus: .skip-link { position: absolute; top: -40px; left: 0; background: #1F3864; color: #FFFFFF; padding: 8px 16px; z-index: 9999; text-decoration: none; font-size: 14px; } .skip-link:focus { top: 0; }
+Self-check: press Tab once on any page — the skip link must appear at the top of the screen. Press Enter — focus must jump past the navigation to the main content area. See: RG Issue 05
+A-06
+Level A
+SC 2.4.4
+BLOG PAGE — Multiple "Read More" buttons appear on blog post cards. All buttons share identical visible label text "Read More" with no additional context. A screen reader user cannot tell which blog post each button leads to. These buttons also currently navigate nowhere when clicked.
+POLICY PAGES (Grievance Redressal, Investor Charter, Terms and Conditions) — SEBI SCORES and Smart ODR portal links are displayed as raw URL text. While clickable, the link text provides no description of where the link goes.
+Blog Read More buttons: add aria-label to each button including the post title. Example: <button aria-label="Read more about Short-Term Stock to Watch: Triveni Turbine">Read More</button>. Alternatively use visually hidden text: <button>Read More <span class="sr-only">about [Post Title]</span></button>.
+CSS for sr-only class: .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; }
+Fix the broken navigation so each Read More button links to its correct blog post URL.
+Raw URL links on policy pages: replace with descriptive anchor text: <a href="https://scores.sebi.gov.in">SEBI SCORES Complaint Portal</a> and <a href="https://smartodr.in/login">SEBI Smart ODR (Online Dispute Resolution) Portal</a>.
+Self-check: use NVDA links list (Insert+F7) on each page — every link must have a unique, meaningful label. See: RG Issue 06
+A-07
+Level A
+SC 4.1.1
+W3C Nu HTML Validator confirms a <style> element used as a direct child of a <form> element — this is not permitted by the HTML specification.
+The <form id="kyc-form"> element is not correctly closed. The validator reports an unclosed form element which causes unpredictable DOM construction.
+A <style> element appears as a direct child of <body> following a closing </div>. Inline style blocks must be placed inside <head>.
+A heading h4 (computed level 4) follows a heading h2 (computed level 2) skipping level h3 entirely — a structural parsing violation.
+Move all <style> blocks into the <head> section of every page. Remove any <style> elements that appear inside <body>, <form>, or other non-permitted parent elements.
+Locate and correctly close the <form id="kyc-form"> element. Ensure every opening <form> tag has a correctly positioned matching </form> closing tag.
+Fix the heading hierarchy: after any h2, the next lower heading level must be h3. Change the h4 that follows h2 to h3, or restructure content so heading levels are not skipped.
+Run the W3C Nu HTML Validator (validator.w3.org/nu/) on every page after making changes and resolve all remaining errors.
+Self-check: re-run axe DevTools after validator fixes and confirm the parsing errors no longer appear. See: RG Issue 07
+A-08
+Level A
+SC 4.1.2
+HOME / CHARTS PAGE — TradingView heatmap widget contains button elements with aria-checked="false" applied on elements that do not have a role of checkbox, radio, or switch. axe confirms 4 instances: "Elements must only use supported ARIA attributes."
+ABOUT US PAGE — Decorative checkmark emoji icons before each credential bullet point are not marked aria-hidden="true". Screen readers announce "checkbox" before each item, treating it as an interactive element.
+HOME PAGE — The KYC Client Consent Form modal has no role="dialog", no aria-modal="true", and no aria-labelledby pointing to the modal title. Screen readers do not identify it as a dialog when it opens.
+TradingView heatmap: remove aria-checked from button elements using JavaScript after the widget initialises: document.querySelectorAll('.tradingview-widget-container button[aria-checked]').forEach(btn => { btn.removeAttribute('aria-checked'); });
+About Us decorative icons: add aria-hidden="true" to every decorative icon element: <span aria-hidden="true">&#10003;</span>.
+KYC modal container: add role="dialog" aria-modal="true" aria-labelledby="kyc-modal-title" to the modal div element.
+Give the modal heading the matching ID: <h2 id="kyc-modal-title">Client Consent Form (KYC)</h2>.
+Self-check: open the page with NVDA — on modal open NVDA must announce the dialog role and title. Run axe — zero "Elements must only use supported ARIA attributes" errors. See: RG Issue 08
+AA-09
+Level AA
+SC 1.4.3
+HOME PAGE — Contrast Checker confirms 24 small-text elements and 7 large-text elements at 1:1 ratio (effectively invisible). Additional failures: 2 spans at 1.04:1, 15 spans at 3.42:1. "Start Now" and "Get Started" buttons have contrast ratio of 1.05:1 against the gradient background.
+HOME / CHARTS SECTION — Dark chart widget area shows black text (#000000) on a near-black background (#05070D), producing a contrast ratio of 1.04:1.
+ABOUT US PAGE — H1 heading "About Krishna Pathak" shows white text on navy background with contrast ratio of 1.05:1. Sub-heading paragraph text has contrast ratio of 1.18:1.
+PRICING PAGE — Yellow feature text on dark card backgrounds has contrast ratio of 1.53:1.
+BLOG PAGE — "Read More" button text has contrast ratio of 1:1 (white text on white background — invisible).
+POLICIES PAGE — Active sidebar link uses blue (#60A5FA) on dark background (#334155) with contrast ratio of 4.07:1, failing the 4.5:1 minimum for normal text.
+Requirement: 4.5:1 minimum for normal-size text. 3:1 minimum for large text (18pt/24px regular or 14pt bold and above). Use WebAIM Contrast Checker (webaim.org/resources/contrastchecker/) to test every colour pairing.
+Start Now / Get Started buttons: change button text to a dark colour (e.g. #1F3864 navy) or change the button background to a solid colour that achieves 4.5:1 against the text colour.
+Chart widget text: ensure text colour achieves at least 4.5:1 against the dark background — white (#FFFFFF) on #05070D achieves approximately 20:1.
+About Us H1 and sub-heading: verify exact colour values and darken the background or change the text colour to achieve 4.5:1 for normal text or 3:1 for large text.
+Pricing page yellow text: change to a darker amber such as #7A5800 which achieves approximately 5.8:1 against white.
+Blog Read More buttons: apply a contrasting text colour or a solid background fill to the button.
+Policy sidebar active link: change #60A5FA to a lighter shade achieving 4.5:1 against #334155. White (#FFFFFF) achieves approximately 9:1.
+Self-check: run axe DevTools with the colour contrast rule enabled on every tested page and confirm zero contrast failures remain. See: RG Issue 09
+AA-10
+Level AA
+SC 1.4.5
+HOME PAGE — The "Featured In" section displays a scrolling carousel of media brand logos (CNBC, Investing.com, StockTwits, MENAFN, Borok Times, The Economic Times, etc.) as raster image files containing text.
+No meaningful alt text was confirmed for these logo images. Text presented inside image files cannot be resized with browser text zoom and is inaccessible without alt text.
+Add descriptive alt text to every media logo image naming the organisation it represents: <img src="cnbc-logo.png" alt="CNBC">, <img src="investing-logo.png" alt="Investing.com">, <img src="economic-times-logo.png" alt="The Economic Times">. Apply the same pattern to all remaining logos.
+Where any logo is purely decorative (used only as a visual design element with no informational purpose) use alt="".
+Best practice: replace raster logo images with inline SVG versions where available. SVG logos scale cleanly at any zoom level and do not become blurry.
+Self-check: navigate the Featured In section with NVDA — each logo must announce the name of the organisation it represents. See: RG Issue 10
+AA-11
+Level AA
+SC 1.4.11
+HOME PAGE — The "Start Now" and "Get Started" buttons in the auto-advancing Daily Market View and Community Engagement cards have a button boundary contrast ratio of 1.05:1 against the adjacent gradient background.
+The visual edge of these buttons is not distinguishable from the surrounding background. Users who cannot perceive colour reliably cannot identify where these interactive elements begin and end.
+Requirement: interactive UI component boundaries (button borders or button backgrounds) must achieve at least 3:1 contrast against adjacent background colours.
+Option A — Add a solid border to each button in a colour that achieves 3:1 against the adjacent gradient: border: 2px solid #FFFFFF; (white border on the dark gradient).
+Option B — Replace the gradient button background with a solid colour that achieves 3:1 against the surrounding area. Test the exact gradient colour at the button position using the browser DevTools colour picker, then verify the contrast at webaim.org/resources/contrastchecker/.
+In your CSS, target the specific button classes for these cards: .daily-market-btn, .community-btn { border: 2px solid #FFFFFF; } — adjust the selector to match your actual class names.
+Self-check: use the WebAIM Contrast Checker inputting the button colour and the exact background colour adjacent to the button edge — must achieve 3:1. See: RG Issue 11
+AA-12
+Level AA
+SC 3.1.2
+LEGAL & RISK DISCLOSURE PAGE — The final line of the page body is written in Hindi. The surrounding HTML element has no lang="hi" attribute.
+The page-level language attribute is lang="en". Screen readers will attempt to read the Hindi text using English pronunciation rules, producing unintelligible output for any user relying on text-to-speech for this content.
+Find the HTML element containing the Hindi declaration on the Legal & Risk Disclosure page and add lang="hi" to it: <p lang="hi">Hindi text here</p>.
+If the Hindi text is inside a <div> or <section> that also contains English content, wrap only the Hindi portion in a scoped element: <span lang="hi">Hindi text here</span>.
+If your CMS uses a rich text editor, look for a language selector option when editing that paragraph — some editors allow setting the language of a text block directly.
+Self-check: use NVDA configured with a Hindi voice profile — the screen reader must switch to Hindi pronunciation for the marked passage and return to English for surrounding content. See: RG Issue 12
+AA-13
+Level AA
+SC 3.3.4
+HOME PAGE — The KYC Client Consent Form collects PAN Number, Date of Birth, Phone Number, and Email ID for client registration with a SEBI Registered Research Analyst. This constitutes a legal and financial submission.
+On clicking the final submit action there is no review step, no confirmation screen, and no opportunity for the user to verify or correct their entered data before it is processed and committed.
+Option A — Add a review / confirmation step before final submission: after the user fills all fields and clicks Submit, show a summary screen listing all entered values (PAN, name, date of birth, phone, email). Include an Edit button that returns them to the form and a Confirm & Submit button that completes the submission.
+Option B — Add a required confirmation checkbox at the bottom of the form before submission: <input type="checkbox" id="confirm" required> <label for="confirm">I confirm that the information I have provided is accurate and I consent to its use for KYC registration.</label>
+Option C — After submission, send a confirmation email containing the submitted data and a link to update or cancel the registration within a defined time window.
+Whichever option is chosen, ensure the form is fully keyboard accessible (see Issue A-03 / SC 2.1.2) so the review or confirmation step can be completed without a mouse.
+Self-check: submit the KYC form and confirm the user has an opportunity to review or confirm their data before it is finally committed. See: RG Issue 13
+DEVELOPER SIGN-OFF By completing and signing this checklist, the developer confirms that all issues marked as "Fixed" above have been remediated and re-tested using the tools listed in this document. Issues marked "N/A" have been reviewed and confirmed as not applicable to the current implementation.
+Developer Name
+Organisation / Company
+Date of Completion
+Tools Used for Verification
+Issues Fixed (count)
+      out of 13
+Issues Marked N/A (count)
+Outstanding Issues (count)
+Signature
+This checklist is part of the ACR-052 accessibility audit deliverables. It does not constitute a guarantee of full WCAG 2.1 conformance. Re-testing by the auditor is required before a conformance claim can be made.

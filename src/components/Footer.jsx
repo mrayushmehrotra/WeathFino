@@ -66,7 +66,7 @@ const Footer = () => {
                 >
                   <img
                     src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
-                    alt="App Store"
+                    alt="Download WealthFino on the App Store"
                     className="h-10"
                   />
                 </a>
@@ -79,7 +79,7 @@ const Footer = () => {
                 >
                   <img
                     src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
-                    alt="Google Play"
+                    alt="Get WealthFino on Google Play"
                     className="h-10"
                   />
                 </a>
@@ -213,6 +213,11 @@ const Footer = () => {
                   label: "Pro Points Policy",
                   path: "/policies/pro-points-policy",
                   icon: "⭐",
+                },
+                {
+                  label: "Accessibility Statement",
+                  path: "/policies/accessibility-statement",
+                  icon: "♿",
                 },
               ].map((item, index) => {
                 return (

@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
+import KYCModal from "../components/KYCModal";
 import phone from "/phone6.png";
 
 /* ================= ANIMATIONS ================= */
@@ -16,6 +17,7 @@ const fadeUp = {
 /* ================= COMPONENT ================= */
 
 const UHome = () => {
+  const [isKYCOpen, setIsKYCOpen] = useState(false);
   return (
     <section
       className="
@@ -54,7 +56,7 @@ const UHome = () => {
       />
 
       {/* ================= CONTENT ================= */}
-      <div className="relative max-w-7xl mx-auto px-10 pt-12 grid md:grid-cols-2 gap-20 items-center">
+      <div className="relative max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 pt-24 lg:pt-32 pb-24 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center min-h-[calc(100vh-100px)]">
         {/* ================= LEFT ================= */}
         <div>
           {/* PROFILE CARDS */}
@@ -75,11 +77,11 @@ const UHome = () => {
                 variants={fadeUp}
                 whileHover={{ y: -4 }}
                 className="
-                  flex items-center gap-4 px-2 py-2 rounded-2xl
-                  bg-gradient-to-br from-white to-gray-100
+                  flex items-center gap-4 px-4 py-3 rounded-2xl
+                  bg-gradient-to-br from-white to-gray-50
                   dark:from-[#0d1224] dark:to-[#060810]
                   border border-[#D4AF37]/30
-                  shadow-[0_18px_40px_rgba(0,0,0,0.6)]
+                  shadow-[0_18px_40px_rgba(0,0,0,0.08)] dark:shadow-[0_18px_40px_rgba(0,0,0,0.6)]
                 "
               >
                 {/* ICON */}
@@ -87,7 +89,7 @@ const UHome = () => {
                   ★
                 </div>
 
-                <p className="text-gray-900 dark:text-white text-lg font-medium">
+                <p className="text-gray-900 dark:text-white text-sm sm:text-base font-medium leading-tight">
                   {text}
                 </p>
               </motion.div>
@@ -99,7 +101,7 @@ const UHome = () => {
             variants={fadeUp}
             initial="hidden"
             animate="show"
-            className="text-4xl md:text-5xl font-bold leading-tight"
+            className="text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.1] tracking-tight mt-6"
           >
             Research-Based Trade <br />
             <span className="opacity-90">Insights.</span>
@@ -110,7 +112,7 @@ const UHome = () => {
             variants={fadeUp}
             initial="hidden"
             animate="show"
-            className="mt-6 text-gray-600 dark:text-gray-400 max-w-lg"
+            className="mt-6 text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-xl leading-relaxed"
           >
             Research-based recommendations on Equity and Stock Options by a SEBI
             Registered Research Analyst.
@@ -121,26 +123,22 @@ const UHome = () => {
             variants={fadeUp}
             initial="hidden"
             animate="show"
-            className="mt-12 flex flex-col gap-4"
+            className="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-6"
           >
             <button
               className="
-                w-fit px-8 py-3 rounded-full
+                w-full sm:w-fit px-8 py-4 text-lg rounded-full border-2 border-white dark:border-[#D4AF37]
                 bg-gradient-to-r from-[#F3D98B] via-[#D4AF37] to-[#B8962E]
                 text-black font-semibold
                 shadow-[0_12px_35px_rgba(212,175,55,0.45)]
                 hover:scale-105 transition
               "
+              onClick={() => setIsKYCOpen(true)}
             >
               Start Your Pro Journey
             </button>
 
-            <div className="flex gap-3">
-              <img
-                src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
-                alt="App Store"
-                className="h-11 cursor-pointer"
-              />
+            <div className="w-full flex justify-center sm:w-auto sm:justify-start">
               <a
                 href="https://play.google.com/store/apps/details?id=com.wealthfino.mobile"
                 target="_blank"
@@ -148,8 +146,8 @@ const UHome = () => {
               >
                 <img
                   src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
-                  alt="Google Play"
-                  className="h-11 cursor-pointer"
+                  alt="Get WealthFino on Google Play"
+                  className="h-14 md:h-16 cursor-pointer hover:scale-105 transition-transform"
                 />
               </a>
             </div>
@@ -161,24 +159,26 @@ const UHome = () => {
           initial={{ opacity: 0, x: 80 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.9, ease: "easeOut" }}
-          className="relative flex justify-center"
+          className="relative flex justify-center lg:justify-end"
         >
           <motion.img
             src={phone}
-            alt="Trading App"
-            animate={{ y: [0, -12, 0] }}
-            transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+            alt="WealthFino mobile app showing live trade alerts and portfolio dashboard"
+            animate={{ y: [0, -15, 0] }}
+            transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
             className="
-              w-[320px] md:w-[380px]
-              rotate-6
+              w-[280px] sm:w-[340px] md:w-[400px] lg:w-[460px] xl:w-[500px]
+              rotate-3 lg:rotate-6
               drop-shadow-[0_45px_90px_rgba(0,0,0,0.85)]
             "
           />
 
           {/* GOLD HALO */}
-          <div className="absolute -z-10 w-[460px] h-[460px] bg-[#D4AF37]/25 blur-[180px] rounded-full" />
+          <div className="absolute -z-10 w-full max-w-[500px] aspect-square bg-[#D4AF37]/25 blur-[120px] md:blur-[180px] rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
         </motion.div>
       </div>
+      
+      <KYCModal isOpen={isKYCOpen} onClose={() => setIsKYCOpen(false)} />
     </section>
   );
 };

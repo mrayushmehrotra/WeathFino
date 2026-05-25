@@ -123,10 +123,11 @@ const BlogPage = () => {
                     className="
                       mt-6 w-fit px-6 py-2 rounded-full text-sm font-medium
                       bg-gradient-to-r from-blue-500 via-cyan-400 to-emerald-400
-                      text-white
+                      text-slate-900
                       hover:shadow-[0_0_25px_rgba(34,211,238,0.45)]
                       transition
                     "
+                    aria-label={`Read more about ${blog.title}`}
                   >
                     Read More →
                   </button>

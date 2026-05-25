@@ -21,6 +21,7 @@ const policyLinks = [
   },
   { name: "Pro Points Policy", path: "pro-points-policy" },
   { name: "Data Deletion & Account Removal Policy", path: "data-deletion" },
+  { name: "Accessibility Statement", path: "accessibility-statement" },
 ];
 
 export default function PoliciesLayout() {
@@ -38,7 +39,7 @@ export default function PoliciesLayout() {
                   `block px-5 py-4 text-sm font-medium border-b border-slate-700 last:border-0 transition
                   ${
                     isActive
-                      ? "bg-slate-700 text-blue-400 border-l-4 border-blue-500"
+                      ? "bg-slate-700 text-white border-l-4 border-blue-500"
                       : "text-slate-300 hover:bg-slate-700/60"
                   }`
                 }

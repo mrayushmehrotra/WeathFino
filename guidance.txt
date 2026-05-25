@@ -1,0 +1,516 @@
+REMEDIATION
+GUIDANCE NOTES
+For Developer Reference
+Purpose: This document provides developer-facing remediation guidance for all confirmed WCAG 2.1 accessibility failures
+identified on krishnapathak.com. Each issue includes the evidence that confirmed it and a practical fix any developer can
+act on.
+Report Reference: ACR-052 - Krishna Kumar Pathak - krishnapathak.com
+
+Important Note
+These findings and suggested fixes are provided as guidance only. Developers should not apply recommendations blindly.
+All code examples are written in standard HTML/CSS/JavaScript. Apply the same principles using your site framework and
+theme settings where applicable.
+
+Summary of All Findings
+ID
+
+Success Criterion
+
+Level
+
+Page(s) Affected
+
+01
+
+1.1.1 - Non-text Content
+
+Level A
+
+Home | About Us |
+Footer
+
+02
+
+1.3.1 - Info and Relationships
+
+Level A
+
+All pages
+
+03
+
+2.1.2 - No Keyboard Trap
+
+Level A
+
+Home
+
+04
+
+2.2.2 - Pause, Stop, Hide
+
+Level A
+
+Home
+
+05
+
+2.4.1 - Bypass Blocks
+
+Level A
+
+All pages
+
+06
+
+2.4.4 - Link Purpose (In Context)
+
+Level A
+
+Blog | Policies | Footer
+
+07
+
+4.1.1 - Parsing
+
+Level A
+
+All pages
+
+08
+
+4.1.2 - Name, Role, Value
+
+Level A
+
+Home | Charts | About
+Us
+
+09
+
+1.4.3 - Contrast (Minimum)
+
+Level AA
+
+All pages
+
+10
+
+1.4.5 - Images of Text
+
+Level AA
+
+Home
+
+11
+
+1.4.11 - Non-text Contrast
+
+Level AA
+
+Home
+
+12
+
+3.1.2 - Language of Parts
+
+Level AA
+
+Legal & Risk Disclosure
+
+13
+
+3.3.4 - Error Prevention (Legal)
+
+Level AA
+
+Home
+
+14
+
+Advisory — Accessibility Statement
+
+Advisory
+
+All pages (footer)
+
+13 confirmed failures across WCAG 2.1 Level A and Level AA — 8 Level A and 5 Level AA — all require remediation before a
+conformance claim can be made.
+
+Section A - Level A Failures (8 issues)
+
+Issue 01 | 1.1.1 - Non-text Content | Level A | Home | About Us | Footer
+Evidence
+Alt text failures confirmed across multiple pages and in the site footer.
+HOME PAGE - The hero section phone image has alt="Trading App". This is non-descriptive. The image shows a phone running
+the WealthFino app and exists to illustrate the product, not convey information. If it is decorative, it should have alt="". If
+informative, the alt should describe what the phone is showing.
+HOME PAGE - A decorative chart illustration (market analysis image) has been assigned alt="Market Chart". This is a purely
+decorative illustration used as a visual aid. It should be marked as decorative with alt="".
+ABOUT US PAGE - The Research Analyst profile photo has alt="Krishna Pathak". This image is informational and should describe
+the person and their role, not just their name.
+FOOTER - App Store badge image has alt="App Store" and Google Play badge has alt="Google Play". Both are functional images
+inside links that take users to download the app. The alt text should describe the action, not just the platform name.
+NAV DOWNLOAD BUTTON - The Download button in the navigation bar links directly to the Google Play store. The visible text
+says only "Download" with no indication of what is being downloaded or for which platform.
+Evidence: Auditor observation and axe scan. Screenshots: HOME HERO BANNER WRONG ALT.png | DECORATIVE IMEAGE
+GIVEN ALT TRADING CHART.png | RESEARCH ANALYST IMAGE ALT TO BE MORE DESCRIPTIVE.png | DESCRIPTIVE ALT NEEDED
+FOR DAPP AND PLAYSTORE IN FOOTER.png | GOOGLE PLAY ALT FOR DOWNLOAD TO BE DESCRIPTIVE.png | DOWNLOAD
+BUTTON ALT.png
+Fix
+The rule: every image needs an alt attribute. Informative images need a meaningful description. Decorative images need alt=""
+(empty string — not a missing attribute).
+Hero phone image — if this is decorative: <img src="phone6.png" alt="">
+If it conveys information about the app: <img src="phone6.png" alt="WealthFino mobile app showing live trade alerts and
+portfolio dashboard">
+Decorative chart illustration — mark as decorative: <img src="MeetingImg.png" alt="">
+Research Analyst profile photo — add a full description: <img src="Imagess/sir.jpeg" alt="Krishna Kumar Pathak, SEBI
+Registered Research Analyst and Founder of WealthFino Capital">
+App Store badge — describe the action: <img src="app-store.svg" alt="Download WealthFino on the App Store">
+Google Play badge — describe the action: <img src="Google_Play_Store_badge_EN.svg" alt="Get WealthFino on Google Play">
+Nav Download button — add an aria-label that describes what is being downloaded: <a href="https://play.google.com/..." arialabel="Download WealthFino app on Google Play">Download</a>
+After changes, navigate with NVDA. Every informative image must announce a meaningful description. Decorative images
+should be silent.
+
+Issue 02 | 1.3.1 - Info and Relationships | Level A | All pages
+Evidence
+Semantic structure and programmatic relationship failures confirmed across multiple pages.
+HOME PAGE - The live chart widget brand label is split across two separate heading elements reading "Wealth" and "Fino"
+individually. No single programmatic heading conveys the full chart name "WealthFino". The chart widget therefore has no
+correctly associated label.
+ABOUT US PAGE - Decorative checkbox emoji icons (checkmark symbols) appear before every credential bullet point. These are
+not marked with aria-hidden="true". Screen readers announce the word "checkbox" before each item, creating a false
+interactive affordance for a purely decorative element.
+
+GRIEVANCE REDRESSAL / INVESTOR CHARTER / TERMS AND CONDITIONS - SEBI SCORES and ODR portal URLs are pasted as raw
+hyperlinks (e.g. https://scores.sebi.gov.in) with no descriptive anchor text. The links exist as clickable URLs but convey no
+semantic purpose beyond the raw URL string.
+COMPLAINTS BOARD PAGE - The data table is coded in HTML with thead and tbody but has no <caption> element and no scope
+attributes on any column headers. Screen readers can read the content sequentially but cannot announce the table name or
+associate columns with their headers programmatically.
+ALL PAGES - Only two ARIA landmarks are present across the site: navigation and contentinfo. No <main> landmark wraps the
+primary page content. Screen reader users navigating by landmark cannot jump directly to the main content area.
+Evidence: Screenshots: GIVE CHART A HEADING OR A LABEL AND NOT IN TWO PARTS CURRENTLY -WEALTH ,FINO.png | ABOUT
+US PAGE CHECKBOXES TO BE DISBALED FOR SCREEN READER.png | SCORES AND ODR LINKS TO BE ANCJHHORED
+DESCRIPTIVE.png | TABLE NO SCOPE AND CAPTION AND EMAIL AND PHONE.png | CURRENT LANDMARKS.png | HEADINGS
+HOME.png
+Fix
+Chart heading fix — wrap the full brand name in a single heading element so assistive technology reads it as one label:
+<h1>WealthFino</h1> or use aria-label="WealthFino" on the chart container. Do not split the label across two elements.
+Decorative checkbox icons — add aria-hidden="true" to every decorative icon element: <span ariahidden="true">&#10003;</span> so screen readers skip them entirely.
+Raw URL links on policy pages — replace every raw URL with a descriptive anchor: <a href="https://scores.sebi.gov.in">SEBI
+SCORES Complaint Portal</a> and <a href="https://smartodr.in/login">SEBI Smart ODR Portal</a>.
+Complaints table — add a <caption> element inside the <table> tag: <table><caption>Trend of Annual Disposal of
+Complaints</caption>... and add scope="col" to every column header: <th scope="col">Sr No</th>
+Main landmark — wrap the primary content area on every page in a <main> element: <main id="main-content">...</main>.
+This gives screen reader users a direct navigation target.
+
+Issue 03 | 2.1.2 - No Keyboard Trap | Level A | Home
+Evidence
+Keyboard trap confirmed on the Home page.
+HOME PAGE - When a user clicks "Get Started" a modal dialog opens with the title "Client Consent Form (KYC)". The modal
+cannot be dismissed by pressing the Escape key. Keyboard Tab navigation becomes stuck inside the modal area. No input fields
+within the KYC form (PAN Number, Date of Birth, Phone Number, Email ID) are reachable by keyboard Tab. Keyboard-only
+users who trigger this modal have no way to close it or interact with the form.
+Evidence: Auditor observation. Screenshots: WHEN CLICKED VERIFY THE ERROR MESSAGE ON KYC FORM.png | WHEN PAN IS
+ENTEREED ERROR MESSAGE SHOWS.png
+Fix
+Step 1 — Add Escape key handling so the modal closes when ESC is pressed:
+document.addEventListener("keydown", function(e) { if (e.key === "Escape") { closeModal(); } });
+The closeModal() function must: (1) hide the modal, (2) remove any overlay, (3) return focus to the element that triggered the
+modal.
+Step 2 — When the modal opens, move focus into it immediately: document.querySelector("#kyc-modal-close").focus();
+Step 3 — Ensure every input field in the KYC form (PAN Number, Date of Birth, Phone Number, Email ID) has tabindex="0" or is
+a native <input> element so it enters the natural tab order.
+Step 4 — Trap focus inside the modal while it is open. When Tab reaches the last focusable element in the modal, pressing Tab
+again should cycle back to the first focusable element inside the modal, not escape to the page behind it.
+Step 5 — On modal close, return focus to the element that opened the modal: triggerElement.focus();
+After fixing, test by: pressing Tab to open the modal, then pressing ESC to confirm the modal closes and focus returns to the
+page. Then re-open, Tab through every field, and confirm all inputs are reachable.
+
+Issue 04 | 2.2.2 - Pause, Stop, Hide | Level A | Home
+Evidence
+Three separate auto-moving content areas confirmed on the Home page with no pause, stop, or hide mechanism.
+HOME PAGE HEADER - A stock ticker scrolls continuously from right to left across the top of the page. No pause or stop button
+is provided. Users with attention or vestibular disorders, and those who need more time to read the content, cannot stop this
+motion.
+HOME PAGE - A TradingView Ticker Tape widget is embedded below the header. It auto-scrolls live stock data continuously. No
+pause control is provided by the host page.
+HOME PAGE - Under the "WealthFino Mobile App" section, a panel auto-advances between two sub-sections (Daily Market
+View and Community Engagement) without user interaction. No pause button is present.
+Evidence: Auditor observation. Screenshots: STIOCK TICKER NO PAUSE MECHANISM.png | MARQUU WITH NO PAUSE.png |
+NOP PAUSE BUTTON FOR SCROLLING SECTION.png | BUTTONS CONTRATS AND SAME SECTION TO BE NOT AUTOMOVING.png
+Fix
+The rule: any content that moves, scrolls, or auto-updates and starts automatically must give users a way to pause, stop, or
+hide it.
+Stock ticker in header — add a visible pause/play button adjacent to the ticker. Example:
+<button id="ticker-pause" aria-label="Pause stock ticker" onclick="pauseTicker()">Pause</button>
+In your JavaScript, pauseTicker() should halt the scrolling animation (e.g. clearInterval on the animation loop or set animationplay-state: paused on the element). The button label should toggle between "Pause" and "Resume" to reflect current state.
+TradingView Ticker Tape widget — check the TradingView widget configuration for a built-in speed or pause option. If none is
+available, wrap the widget in a container and add a custom pause button that hides/shows the widget or uses CSS animationplay-state to halt it.
+Auto-advancing Mobile App section — either: (a) remove the auto-advance behaviour and let users click to switch tabs
+manually, or (b) add a visible Pause button that stops the automatic switching when pressed.
+After changes, load the page and confirm you can pause all three moving areas using only keyboard (Tab to the pause button,
+press Enter).
+
+Issue 05 | 2.4.1 - Bypass Blocks | Level A | All pages
+Evidence
+No Skip to Main Content link is present on any tested page of the site.
+ALL PAGES - Home, About Us, Blog, Charts, Pricing, Policies, and Contact pages all require keyboard users to Tab through the
+full navigation menu on every page visit before reaching any main content. The navigation contains multiple links. Without a
+skip link, keyboard and screen reader users face significant friction on every page.
+Evidence: Auditor observation. Screenshot: CURRENT LANDMARKS.png
+Fix
+Add a skip link as the very first focusable element in the HTML of every page template.
+HTML — place this as the first element inside <body>:
+<a href="#main-content" class="skip-link">Skip to main content</a>
+Add the matching id to your main content wrapper:
+<main id="main-content">
+CSS — make the skip link visible only when focused (add to your stylesheet):
+.skip-link { position: absolute; top: -40px; left: 0; background: #1F3864; color: #FFFFFF; padding: 8px 16px; z-index: 9999; textdecoration: none; font-size: 14px; }
+.skip-link:focus { top: 0; }
+
+Test: press Tab once on any page. The skip link text should appear at the top of the screen. Press Enter. Focus must jump
+directly past the navigation to the main content area.
+
+Issue 06 | 2.4.4 - Link Purpose (In Context) | Level A | Blog | Policies | Footer
+Evidence
+Link purpose failures confirmed across multiple pages.
+BLOG PAGE - Multiple "Read More" buttons appear on blog post cards. All buttons share identical visible label text "Read
+More" with no additional context in their accessible name. A screen reader user hearing a list of links hears "Read More, Read
+More, Read More" repeatedly and cannot tell which blog post each button leads to. These buttons also currently navigate
+nowhere when clicked.
+GRIEVANCE REDRESSAL / INVESTOR CHARTER / TERMS AND CONDITIONS - SEBI SCORES and Smart ODR portal links are
+displayed as raw URLs in the page body (e.g. https://scores.sebi.gov.in). While these are clickable, the link text provides no
+description of where the link goes or what action it performs.
+Evidence: Screenshots: mULTIPLE READ MORE PRESENT AND NOT CLICKABLE AND GOES NO WHERE WHEN CLICKED.png |
+SCORES AND ODR LINKS TO BE ANCJHHORED DESCRIPTIVE.png | T&c PAGE SEBI LINK TO BEANCHORED DESCRIPTIVE.png |
+SCORES LINK INV CHARYTER DESCRIPTIVE.png
+Fix
+Blog Read More buttons — make each button purpose unique by including the post title in the accessible name. Use aria-label
+on each button:
+<button aria-label="Read more about Short-Term Stock to Watch: Triveni Turbine">Read More</button>
+Alternatively, add visually hidden text inside the button using a span with a screen-reader-only CSS class:
+<button>Read More <span class="sr-only">about Short-Term Stock to Watch: Triveni Turbine</span></button>
+CSS for screen-reader-only class: .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0);
+white-space: nowrap; }
+Also fix the broken navigation so each Read More button links to the correct blog post URL.
+Raw URL links on policy pages — replace every raw URL with descriptive anchor text:
+<a href="https://scores.sebi.gov.in">SEBI SCORES Complaint Portal</a>
+<a href="https://smartodr.in/login">SEBI Smart ODR (Online Dispute Resolution) Portal</a>
+After changes, use NVDA links list (Insert+F7) on each page and confirm every link has a unique and meaningful label.
+
+Issue 07 | 4.1.1 - Parsing | Level A | All pages
+Evidence
+HTML parsing errors confirmed via W3C Nu HTML Validator.
+HOME PAGE (KYC form area) - A <style> element is used as a direct child of a <form> element. The HTML specification does not
+permit <style> elements inside <form> elements. This causes the validator to report a parsing error.
+HOME PAGE - The <form id="kyc-form"> element is not correctly closed. The validator reports an unclosed <form> element,
+which can cause unpredictable behaviour in how the DOM is constructed.
+HOME PAGE - A <style> element appears as a direct child of <body> in a location that follows a closing </div>. Inline style
+blocks must be placed in <head>, not scattered through <body>.
+HOME PAGE - A heading h4 (computed level 4) follows a heading h2 (computed level 2) skipping h3 entirely. This is a structural
+parsing error that also affects heading hierarchy.
+Evidence: W3C Nu HTML Validator output. Screenshot: PARSING ISSUE.png
+Fix
+
+Step 1 — Move all <style> blocks into the <head> section of each page. Remove any <style> elements that appear inside
+<body>, <form>, or other non-permitted parent elements.
+Step 2 — Find and correctly close the <form id="kyc-form"> element. Make sure every opening <form> tag has a matching
+</form> closing tag in the right position.
+Step 3 — Fix the heading skip. After any h2, the next lower heading level must be h3. Change the h4 that follows the h2 to an
+h3, or restructure the content so heading levels are not skipped.
+Step 4 — Run the W3C Nu HTML Validator (https://validator.w3.org/nu/) on every page after making changes and resolve all
+remaining errors.
+Step 5 — Rerun axe DevTools after validator fixes and confirm the "Elements must only use supported ARIA attributes" count
+has not increased due to new markup issues.
+
+Issue 08 | 4.1.2 - Name, Role, Value | Level A | Home | Charts | About Us
+Evidence
+Name, role, and value failures confirmed across multiple pages and components.
+HOME / CHARTS PAGE - TradingView heatmap widget contains button elements that use aria-checked="false" on elements
+without a matching role of checkbox or switch. The aria-checked attribute is only valid on elements with role="checkbox",
+role="radio", or role="switch". Using it on plain button elements is invalid ARIA. axe confirms 4 instances of this error:
+"Elements must only use supported ARIA attributes".
+ABOUT US PAGE - Decorative checkmark emoji icons used before each credential bullet point are not marked with ariahidden="true". Screen readers announce the word "checkbox" before each item, treating the decorative icon as an interactive
+element.
+HOME PAGE - The KYC Client Consent Form modal dialog has no role="dialog", no aria-modal="true", and no aria-labelledby
+pointing to the modal title. Screen readers do not identify it as a dialog when it opens, so users are not informed that a modal
+has appeared or that focus has moved.
+Evidence: Screenshots: INCORRECT ARIA AS POINTED BY AXE SCAN.png | INCORRECT ARIA ATTRIBUTES USED AS CHECKBOX
+USED CURRENTLY.png | CHECKBOX WRONG ATTRIBUTE.png | ABOUT US PAGE CHECKBOXES TO BE DISBALED FOR SCREEN
+READER.png | AXESCAN RESLTS.png
+Fix
+TradingView heatmap aria-checked error — the aria-checked attribute on button elements in the TradingView widget is
+injected by the third-party widget script. You have two options:
+Option A — If you control the widget configuration, check the TradingView widget documentation for an option to suppress
+aria-checked on button elements or to assign a correct role.
+Option B — After the widget initialises, use JavaScript to correct the ARIA attributes: document.querySelectorAll('.tradingviewwidget-container button[aria-checked]').forEach(btn => { btn.removeAttribute('aria-checked'); });
+Decorative checkmark icons on About Us — add aria-hidden="true" to every decorative icon: <span ariahidden="true">&#10003;</span> so screen readers skip them.
+KYC modal dialog — add the correct ARIA attributes to the modal container element:
+<div id="kyc-modal" role="dialog" aria-modal="true" aria-labelledby="kyc-modal-title">
+Give the modal heading an ID that matches the aria-labelledby value:
+<h2 id="kyc-modal-title">Client Consent Form (KYC)</h2>
+After changes, test the modal with NVDA. On opening, NVDA should announce the dialog role and the title. Inside the dialog,
+Tab should reach all form fields.
+
+Section B - Level AA Failures (5 issues)
+
+Issue 09 | 1.4.3 - Contrast (Minimum) | Level AA | All pages
+
+Evidence
+Colour contrast failures confirmed via WCAG Contrast Checker tool and auditor inspection across multiple pages.
+HOME PAGE - The contrast checker confirms 24 small-text elements and 7 large-text elements with a contrast ratio of 1:1
+(effectively invisible). Additional failures include 2 spans at 1.04, 15 spans at 3.42, and individual elements at 4.16 and 4.23 —
+all failing the 4.5:1 minimum for normal text. The "Start Now" and "Get Started" buttons have contrast ratio of 1.05 against the
+gradient background.
+HOME / CHARTS SECTION - The dark chart widget area shows black text (#000000) on a near-black background (#05070D),
+producing a contrast ratio of 1.04:1.
+ABOUT US PAGE - The H1 heading "About Krishna Pathak" shows white text on a navy background with contrast ratio of 1.05.
+The sub-heading paragraph text has contrast ratio of 1.18.
+PRICING PAGE - Yellow feature text on dark card backgrounds has contrast ratio of 1.53. Multiple span elements fail at 2.54 and
+2.56.
+BLOG PAGE - "Read More" button text has contrast ratio of 1:1 (white text on white background).
+POLICIES PAGE - The selected navigation item (active sidebar link, e.g. Investor Charter) uses a blue colour (#60A5FA) on a dark
+background (#334155) with a contrast ratio of 4.07 for small text, failing the 4.5:1 minimum.
+Evidence: Screenshots: CONTRATS HOME.png | CONTRATS ISSUE HOME.png | CONTRATS HEADINGS HOME.png | CONTRATS
+ABOUT US PAGE.png | CONTRATS ABOUT US HEADINGS.png | CONTRAT ISSUE PRICING PAGE.png | CONTRATS ISSUE PRICING
+PAGE.png | BUTTONS CONTRATS AND SAME SECTION TO BE NOT AUTOMOVING.png | mULTIPLE READ MORE PRESENT AND
+NOT CLICKABLE AND GOES NO WHERE WHEN CLICKED.png | WHEN SELECTED BLUE FIELD HAS CONTRAT ISSUE ON LEFT PAGE
+SELECTION AREA.png
+Fix
+The contrast requirement: 4.5:1 minimum for normal-size text. 3:1 minimum for large text (18pt / 24px regular, or 14pt bold
+and above).
+Use WebAIM Contrast Checker (https://webaim.org/resources/contrastchecker/) to test every foreground and background
+colour pairing on the site.
+Start Now / Get Started buttons — the button text is currently invisible due to a near-identical foreground and background
+colour on the gradient. Either change the button text to a dark colour (e.g. #1F3864 navy) that contrasts against the gradient,
+or change the button background to a solid colour that achieves 4.5:1 against the text.
+Chart widget text — ensure the text colour inside the dark chart section is white or a light colour that achieves at least 4.5:1
+against the dark background. Example: white (#FFFFFF) on #05070D achieves approximately 20:1.
+About Us H1 heading — white text on navy background can pass if the navy is dark enough. Check the exact colour. If contrast
+is below 4.5:1 for normal text or below 3:1 for large text, darken the background or change the text colour.
+Pricing page yellow text — change the yellow text colour to a darker shade that achieves 4.5:1 against the card background.
+Dark amber such as #7A5800 on white gives approximately 5.8:1.
+Blog Read More buttons — fix the white-on-white colour combination. Apply a contrasting text colour or a background fill to
+the button.
+Policy sidebar selected item — change the active link colour from #60A5FA to a lighter shade that achieves 4.5:1 against the
+#334155 dark background. White (#FFFFFF) on #334155 achieves approximately 9:1.
+
+Issue 10 | 1.4.5 - Images of Text | Level AA | Home
+Evidence
+Images of text failure confirmed on the Home page.
+HOME PAGE - The "Featured In" section displays a scrolling row of media brand logos (CNBC, Investing.com, StockTwits,
+MENAFN, Borok Times, The Economic Times, etc.). These logos contain text rendered inside image files. No meaningful alt text
+has been confirmed for these logo images. Where text is presented as an image, it cannot be resized with browser text zoom
+and cannot be accessed by screen readers without alt text.
+Evidence: Screenshot: NOP PAUSE BUTTON FOR SCROLLING SECTION.png
+
+Fix
+For each media logo image in the Featured In section, add meaningful alt text that names the organisation:
+<img src="cnbc-logo.png" alt="CNBC">
+<img src="investing-logo.png" alt="Investing.com">
+<img src="stocktwits-logo.png" alt="StockTwits">
+<img src="menafn-logo.png" alt="MENAFN">
+<img src="economic-times-logo.png" alt="The Economic Times">
+Apply the same pattern to all remaining logos, naming the publication or platform shown.
+Where logos are genuinely decorative (e.g. a repeated background pattern with no informational content), use alt="".
+Best practice recommendation: replace raster logo images with inline SVG versions where available. SVG logos scale cleanly at
+any text size and do not become blurry at high zoom levels.
+
+Issue 11 | 1.4.11 - Non-text Contrast | Level AA | Home
+Evidence
+Non-text contrast failure confirmed on the Home page.
+HOME PAGE - The "Start Now" and "Get Started" buttons in the auto-advancing Daily Market View and Community
+Engagement cards have contrast ratio of 1.05. The button boundary (the visual edge where the button background meets the
+surrounding page gradient) does not achieve the required 3:1 contrast against the adjacent background. Users who cannot
+distinguish colours reliably cannot identify where these interactive elements begin and end.
+Evidence: Screenshot: BUTTONS CONTRATS AND SAME SECTION TO BE NOT AUTOMOVING.png
+Fix
+The non-text contrast requirement: interactive UI component boundaries — button borders, button backgrounds, input field
+borders, and focus indicators — must achieve at least 3:1 contrast against the adjacent background colour.
+For the Start Now and Get Started buttons sitting on a gradient background:
+Option A — Add a solid border to each button in a colour that achieves 3:1 against the adjacent background: border: 2px solid
+#FFFFFF; (white border on the gradient background) or border: 2px solid #1F3864; (navy border on a light area).
+Option B — Change the button background to a solid colour that achieves 3:1 against the gradient. Test the exact gradient
+colour at the point where the button sits using the colour picker in browser DevTools, then check contrast against your chosen
+button fill at https://webaim.org/resources/contrastchecker/.
+In your CSS, target the specific button classes for these cards. Example: .daily-market-btn, .community-btn { border: 2px solid
+#FFFFFF; }
+After changes, test using axe DevTools or the WebAIM Contrast Checker with the exact button fill and the background colour
+directly adjacent to the button edge.
+
+Issue 12 | 3.1.2 - Language of Parts | Level AA | Legal & Risk Disclosure
+Evidence
+Language of parts failure confirmed on the Legal & Risk Disclosure page.
+LEGAL & RISK DISCLOSURE PAGE - The final line of the page content is written in Hindi: a declaration that translates as a
+disclaimer of responsibility. The surrounding HTML element has no lang="hi" attribute. The page-level lang attribute is
+lang="en", so screen readers will attempt to read the Hindi text using English pronunciation rules, producing unintelligible
+output for any user relying on text-to-speech.
+Evidence: Screenshot: HINID ATTRICBUTE ON lERGAL DISCLISURE PAGE.png
+Fix
+
+Wrap the Hindi text in an element with the correct language attribute so screen readers switch to a Hindi voice engine for that
+passage.
+Find the element containing the Hindi declaration on the Legal & Risk Disclosure page and add lang="hi":
+<p lang="hi">&#x939;&#x92E; &#x915;&#x93F;&#x938;&#x940; &#x92D;&#x940; &#x91A;&#x940;&#x91C;&#x93C;
+&#x915;&#x940; &#x91C;&#x93C;&#x93F;&#x92E;&#x94D;&#x92E;&#x947;&#x926;&#x93E;&#x930;&#x940;
+&#x928;&#x939;&#x940;&#x902; &#x932;&#x947;&#x924;&#x947;...</p>
+If the Hindi text is inside a <div> or <section> that also contains English content, wrap only the Hindi portion in a <span
+lang="hi"> or <p lang="hi"> element:
+<span lang="hi">Hindi text here</span>
+If your CMS or framework uses a rich text editor, look for a language selector option when editing that paragraph. Some
+editors allow setting the language of a text block directly.
+After making the change, test with NVDA set to use a Hindi voice. The announcement should switch to Hindi pronunciation for
+the marked passage and return to English for surrounding content.
+
+Issue 13 | 3.3.4 - Error Prevention (Legal, Financial, Data) | Level AA | Home
+Evidence
+Error prevention failure confirmed on the Home page KYC form.
+HOME PAGE - The KYC Client Consent Form is a legal financial onboarding form. It collects PAN Number, Date of Birth, Phone
+Number, and Email ID for the purpose of client registration with a SEBI Registered Research Analyst. This constitutes a legal and
+financial submission. On clicking the final submit action, there is no review step, no confirmation screen, and no opportunity
+for the user to verify their entered data before it is processed. The form submits directly and irreversibly with no mechanism
+for the user to go back and check or correct their submission.
+Evidence: Screenshots: WHEN CLICKED VERIFY THE ERROR MESSAGE ON KYC FORM.png | WHEN PAN IS ENTEREED ERROR
+MESSAGE SHOWS.png
+Fix
+For any legal or financial form submission, users must be given the opportunity to review and correct their data before it is
+committed. Implement one of the following approaches:
+Option A — Add a confirmation/review step before final submission:
+After the user fills in all fields and clicks Submit, show a summary screen listing all the values they entered (PAN, name, date of
+birth, phone, email). Add an Edit button that returns them to the form and a Confirm & Submit button that completes the
+submission.
+Option B — Add a checkbox confirmation before submission:
+Add a required checkbox at the bottom of the form: <input type="checkbox" id="confirm" required> <label for="confirm">I
+confirm that the information I have provided is accurate and I consent to its use for KYC registration.</label>
+Option C — Allow users to correct data after submission:
+After submission, send a confirmation email that includes the submitted data and a link to update or cancel the registration
+within a defined time window.
+Whichever option you choose, also ensure the form is fully keyboard accessible (see Issue 03 — SC 2.1.2) so the review or
+confirmation step can be completed without a mouse.
+
+Section C - Advisory Note
+
+Issue 14 | Advisory — Accessibility Statement | Not a WCAG failure | All pages (footer)
+Observation
+
+No accessibility statement is present anywhere on the krishnapathak.com website. An accessibility statement is not a WCAG
+2.1 success criterion and its absence is not recorded as a failure in this audit. It is however strongly recommended as good
+practice and as a commitment to users with disabilities.
+An accessibility statement tells users: what the site aims to conform to, what is known not to meet that standard, how users
+can request accessible content or report a barrier, and who is responsible for accessibility on the site. Publishing one signals
+transparency and good faith to users and regulators alike.
+Recommendation
+Create an Accessibility Statement page and link to it from the footer of every page on the site. The auditor will provide you
+with a ready-to-use HTML template for this page — paste it directly into your site and update the fields marked with your
+name and contact details. No development work is required beyond adding the link in the footer.
+The statement should include: the WCAG 2.1 Level AA conformance target, a summary of known issues (referencing this
+report), a contact method for users to report barriers or request accessible content, and the date the statement was last
+reviewed.
+Suggested footer link text: <a href="/accessibility">Accessibility Statement</a>
+No remediation code is provided here. The auditor will share the ready-to-use HTML page separately.
+
+Confidential | ACR-052 | Krishna Kumar Pathak | krishnapathak.com | 26-Apr-2026 | Auditor: Venkatesh
+
+

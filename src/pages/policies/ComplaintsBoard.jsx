@@ -16,7 +16,7 @@ export default function ComplaintsBoard() {
 
         {/* ================= TABLE 1 ================= */}
         <Section title=" ">
-          <Table>
+          <Table caption="Complaints data for the current month">
             <thead>
               <Tr head>
                 <Th>Sr No</Th>
@@ -67,7 +67,7 @@ export default function ComplaintsBoard() {
 
         {/* ================= TABLE 2 ================= */}
         <Section title="Trend of monthly disposal of complaints">
-          <Table>
+          <Table caption="Trend of monthly disposal of complaints">
             <thead>
               <Tr head blue>
                 <Th>Sr No</Th>
@@ -129,7 +129,7 @@ export default function ComplaintsBoard() {
 
         {/* ================= TABLE 3 ================= */}
         <Section title="Trend of annual disposal of complaints">
-          <Table>
+          <Table caption="Trend of annual disposal of complaints">
             <thead>
               <Tr head yellow>
                 <Th>Sr No</Th>
@@ -201,10 +201,13 @@ function Section({ title, children }) {
   );
 }
 
-function Table({ children }) {
+function Table({ caption, children }) {
   return (
     <div className="overflow-x-auto bg-slate-900 rounded-xl border border-slate-700">
-      <table className="w-full text-sm">{children}</table>
+      <table className="w-full text-sm">
+        {caption && <caption className="sr-only">{caption}</caption>}
+        {children}
+      </table>
     </div>
   );
 }
@@ -220,7 +223,7 @@ function Tr({ children, head, alt, total, blue, yellow }) {
 }
 
 function Th({ children }) {
-  return <th className="px-4 py-3 text-left">{children}</th>;
+  return <th scope="col" className="px-4 py-3 text-left">{children}</th>;
 }
 
 function Td({ children, colSpan }) {

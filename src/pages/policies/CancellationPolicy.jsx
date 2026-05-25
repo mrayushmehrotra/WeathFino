@@ -72,7 +72,7 @@ export default function CancellationPolicy() {
         {/* ================= DISCLAIMER ================= */}
         <div className="bg-slate-800/80 border border-slate-700 rounded-2xl p-6 space-y-4">
           <div className="flex items-center gap-3">
-            <h3 className="text-xl  italic text-white">Disclaimer</h3>
+            <h2 className="text-xl italic text-white">Disclaimer</h2>
           </div>
 
           <p className="text-slate-300 italic">

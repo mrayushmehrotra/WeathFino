@@ -90,6 +90,7 @@ const Navbar = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary"
+              aria-label="Download WealthFino app on Google Play"
             >
               Download
             </a>

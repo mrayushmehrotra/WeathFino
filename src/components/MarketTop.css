@@ -1,0 +1,20 @@
+@keyframes custom-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.custom-marquee {
+  display: inline-flex;
+  animation: custom-marquee 15s linear infinite;
+  white-space: nowrap;
+}
+
+/* Pause on hover, or when manually paused via the is-paused class */
+.custom-marquee:hover,
+.custom-marquee.is-paused {
+  animation-play-state: paused !important;
+}

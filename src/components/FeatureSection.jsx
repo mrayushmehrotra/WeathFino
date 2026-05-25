@@ -27,7 +27,7 @@ const FeatureCard = ({ title, subtitle, image, points, cta, isActive }) => {
     <div
       ref={cardRef}
       className={`
-        relative w-[320px] md:w-[420px] shrink-0
+        relative w-[90vw] max-w-[340px] md:max-w-none md:w-[420px] shrink-0
         rounded-3xl p-[3px]
         bg-gradient-to-b from-cyan-400 via-blue-500 to-purple-500
         dark:shadow-[0_0_60px_rgba(99,102,241,0.35)]
@@ -284,7 +284,7 @@ const FeatureSection = () => {
             <div className="absolute inset-0 dark:bg-gradient-to-r dark:from-blue-700 dark:via-cyan-400 dark:to-emerald-400 light:bg-gradient-to-r light:from-blue-500 light:via-blue-400 light:to-cyan-400 rounded-lg"></div>
           </div>
 
-          <h1 className="text-xl md:text-2xl font-bold relative z-10 dark:text-black light:text-white">
+          <h1 className="text-2xl md:text-2xl font-bold relative z-10 dark:text-black light:text-white">
             WealthFino Mobile App
           </h1>
         </div>
@@ -306,10 +306,10 @@ const FeatureSection = () => {
                   key={index}
                   className={`absolute transition-all duration-700 ${
                     position === 0
-                      ? "left-1/4 -translate-x-1/2 z-20"
+                      ? "left-1/2 md:left-1/4 -translate-x-1/2 z-20 opacity-100 scale-100"
                       : position === 1
-                      ? "right-1/4 translate-x-1/2 z-10"
-                      : "opacity-0 scale-0"
+                      ? "left-1/2 md:left-auto md:right-1/4 -translate-x-1/2 md:translate-x-1/2 z-10 opacity-0 md:opacity-100 scale-75 md:scale-100 pointer-events-none md:pointer-events-auto"
+                      : "left-1/2 md:left-auto -translate-x-1/2 md:translate-x-0 opacity-0 scale-50 pointer-events-none"
                   }`}
                 >
                   <FeatureCard

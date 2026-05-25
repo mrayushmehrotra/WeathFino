@@ -1,6 +1,8 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const TickerTape = () => {
+  const [isVisible, setIsVisible] = useState(true);
+
   useEffect(() => {
     // Load TradingView script only once
     if (!document.getElementById("tv-ticker-script")) {
@@ -16,13 +18,21 @@ const TickerTape = () => {
   return (
     <div
       className="
-        w-full transition-colors duration-300
+        relative w-full transition-colors duration-300
         bg-gray-100 text-gray-900
         dark:bg-black dark:text-white
       "
     >
+      <button
+        onClick={() => setIsVisible(!isVisible)}
+        className="absolute right-4 -top-8 z-10 text-xs bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-200 px-3 py-1 rounded shadow-sm border border-slate-300 dark:border-slate-700"
+        aria-label={isVisible ? "Hide TradingView Tape" : "Show TradingView Tape"}
+      >
+        {isVisible ? "Hide Tape" : "Show Tape"}
+      </button>
+      
       {/* Ticker Tape */}
-      <div className="mt-2 pb-4 px-2">
+      <div className={`mt-2 pb-4 px-2 ${!isVisible ? 'hidden' : ''}`}>
         <div
           className="
             overflow-hidden rounded-md

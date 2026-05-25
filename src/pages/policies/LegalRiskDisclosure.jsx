@@ -623,7 +623,7 @@ export default function LegalRiskDisclosure() {
             </p>
           </div>
 
-          <p className="pt-2 text-center font-semibold text-white">
+          <p lang="hi" className="pt-2 text-center font-semibold text-white">
             "हम किसी भी चीज़ की ज़िम्मेदारी नहीं लेते — चाहे कोई भी कारण हो, कोई
             भी परिस्थिति हो, हमें कोई ज़िम्मेदारी नहीं है।"
           </p>

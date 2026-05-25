@@ -80,8 +80,8 @@ const UHomeLightBlue = () => {
           <div className="mt-12 flex flex-wrap gap-5 items-center">
             <button
               className="
-                px-8 py-3 rounded-full
-                bg-gradient-to-r from-blue-600 to-blue-700
+                px-8 py-3 rounded-full border-2 border-white dark:border-white/20
+                bg-gradient-to-r from-blue-700 to-blue-900
                 text-white font-semibold
                 shadow-[0_10px_30px_rgba(37,99,235,0.35)]
                 hover:shadow-[0_18px_50px_rgba(37,99,235,0.55)]
@@ -94,12 +94,12 @@ const UHomeLightBlue = () => {
             <div className="flex gap-3">
               <img
                 src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
-                alt="App Store"
+                alt="Download WealthFino on the App Store"
                 className="h-11"
               />
               <img
                 src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
-                alt="Google Play"
+                alt="Get WealthFino on Google Play"
                 className="h-11"
               />
             </div>
@@ -110,7 +110,7 @@ const UHomeLightBlue = () => {
         <div className="relative flex justify-center">
           <img
             src={phone}
-            alt="Trading App"
+            alt="WealthFino mobile app showing live trade alerts and portfolio dashboard"
             className="
               w-[320px] md:w-[380px]
               rotate-6

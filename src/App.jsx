@@ -1,4 +1,5 @@
 import { Routes, Route, Navigate } from "react-router-dom";
+import { useState } from "react";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -23,6 +24,7 @@ import DisclosureUserKYC from "./pages/policies/DisclosureUserKYC";
 import ComplaintsBoard from "./pages/policies/ComplaintsBoard";
 import PMLAPolicy from "./pages/policies/PMLAPolicy";
 import WebsiteDisclaimer from "./pages/policies/WebsiteDisclaimer";
+import AccessibilityStatement from "./pages/policies/AccessibilityStatement";
 import SocialMediaDisclaimers from "./pages/policies/SocialMediaDisclaimers";
 import LegalRiskDisclosure from "./pages/policies/LegalRiskDisclosure";
 import RefundPolicy from "./pages/policies/RefundPolicy";
@@ -39,12 +41,15 @@ import MarketTop from "./components/MarketTop";
 import MediaPresence from "./components/MediaPresence";
 import FeatureSection from "./components/FeatureSection";
 import VideoSection from "./components/VideoSection";
+import KYCModal from "./components/KYCModal";
 
 export default function App() {
   return (
     <div className="min-h-screen bg-trading-light dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:p-4 focus:bg-white focus:text-black focus:z-50">Skip to main content</a>
       <Navbar />
 
+      <main id="main-content">
       <Routes>
         <Route
           path="/"
@@ -95,6 +100,7 @@ export default function App() {
             path="redressal-of-grievance"
             element={<RedressalOfGrievance />}
           />
+          <Route path="accessibility-statement" element={<AccessibilityStatement />} />
         </Route>
 
         <Route path="/about-us" element={<AboutPage />} />
@@ -103,6 +109,7 @@ export default function App() {
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/charts" element={<Charts />} />
       </Routes>
+      </main>
 
       <Footer />
     </div>

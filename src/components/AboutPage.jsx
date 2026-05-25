@@ -165,7 +165,7 @@ const AboutPage = () => {
                       >
                         <img
                           src={sir_img}
-                          alt="Krishna Pathak"
+                          alt="Krishna Kumar Pathak, SEBI Registered Research Analyst and Founder of WealthFino Capital"
                           className="
                     rounded-lg max-w-xs
                     transform hover:scale-[1.02]
@@ -223,7 +223,7 @@ const AboutPage = () => {
                       "PGP FinTech - IIM Nagpur",
                     ].map((item, index) => (
                       <div key={index} className="flex items-start gap-3">
-                        <span className="text-sky-500 dark:text-sky-400 text-xl">
+                        <span className="text-sky-500 dark:text-sky-400 text-xl" aria-hidden="true">
                           ✔
                         </span>
                         <span className="text-gray-700 dark:text-gray-200">
@@ -257,9 +257,9 @@ const AboutPage = () => {
                     ✓
                   </span>
                 </div>
-                <h4 className="font-bold text-lg text-gray-800 dark:text-white mb-2">
+                <h3 className="font-bold text-lg text-gray-800 dark:text-white mb-2">
                   Equity Research
-                </h4>
+                </h3>
                 <p className="text-gray-700 dark:text-gray-300">
                   Based on publicly available information
                 </p>

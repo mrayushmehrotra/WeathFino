@@ -16,8 +16,8 @@ const ChartPage = () => {
         <div className="bg-[#05070d] rounded-[20px] p-6">
           {/* HEADER */}
           <div className="flex items-center justify-between mb-6">
-            <h1 className="text-2xl font-bold text-white">
-              Wealth<span className="text-green-400">Fino</span>
+            <h1 className="text-2xl font-bold text-white" aria-label="WealthFino">
+              <span aria-hidden="true">Wealth</span><span className="text-green-400" aria-hidden="true">Fino</span>
             </h1>
 
             <div className="flex gap-3 mb-6">

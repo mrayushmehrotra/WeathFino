@@ -1,4 +1,6 @@
+import React, { useState } from "react";
 import { CheckCircle } from "lucide-react";
+import KYCModal from "./KYCModal";
 
 const plans = [
   {
@@ -45,6 +47,7 @@ const plans = [
 ];
 
 const Pricing = () => {
+  const [isKYCOpen, setIsKYCOpen] = useState(false);
   return (
     <div className="bg-[#F3F8FF] dark:bg-gray-900 py-20 px-6">
       {/* Heading */}
@@ -122,7 +125,10 @@ const Pricing = () => {
                 <span className="absolute -top-4 left-6 bg-red-600 text-white text-xs px-4 py-1 rounded-full">
                   {plan.badge}
                 </span>
-                <button className="w-full border-2 border-black dark:border-gray-600 py-4 rounded-xl text-xl font-bold hover:bg-black dark:hover:bg-gray-700 hover:text-white transition dark:text-white">
+                <button 
+                  onClick={() => setIsKYCOpen(true)}
+                  className="w-full border-2 border-black dark:border-gray-600 py-4 rounded-xl text-xl font-bold hover:bg-black dark:hover:bg-gray-700 hover:text-white transition dark:text-white"
+                >
                   Buy Now
                 </button>
               </div>
@@ -130,6 +136,7 @@ const Pricing = () => {
           </div>
         ))}
       </div>
+      <KYCModal isOpen={isKYCOpen} onClose={() => setIsKYCOpen(false)} />
     </div>
   );
 };
