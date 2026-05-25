@@ -46,7 +46,6 @@ import KYCModal from "./components/KYCModal";
 export default function App() {
   return (
     <div className="min-h-screen bg-trading-light dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
-      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:p-4 focus:bg-white focus:text-black focus:z-50">Skip to main content</a>
       <Navbar />
 
       <main id="main-content">

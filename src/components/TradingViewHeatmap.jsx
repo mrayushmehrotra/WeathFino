@@ -31,6 +31,26 @@ const TradingViewHeatmap = () => {
     });
 
     widgetRef.current.appendChild(script);
+
+    // Observer to remove invalid aria-checked attributes from TradingView injected buttons
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.addedNodes.length) {
+          const buttons = document.querySelectorAll(
+            ".tradingview-widget-container button[aria-checked]"
+          );
+          buttons.forEach((btn) => {
+            btn.removeAttribute("aria-checked");
+          });
+        }
+      });
+    });
+
+    observer.observe(widgetRef.current, { childList: true, subtree: true });
+
+    return () => {
+      observer.disconnect();
+    };
   }, []);
 
   return (

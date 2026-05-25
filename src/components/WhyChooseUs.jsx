@@ -7,19 +7,19 @@ const features = [
     icon: TrendingUp,
     title: "Live Trade",
     desc: "Get real-time, research-backed trade insights with disciplined execution.",
-    gradient: "from-blue-500 via-cyan-500 to-sky-500",
+    gradient: "from-[#F3D98B] via-[#D4AF37] to-[#B8962E]",
   },
   {
     icon: Layers,
     title: "Model Portfolio",
     desc: "Professionally curated portfolios for smart sector allocation.",
-    gradient: "from-indigo-500 via-purple-500 to-blue-600",
+    gradient: "from-[#F3D98B] via-[#D4AF37] to-[#B8962E]",
   },
   {
     icon: Users,
     title: "Community",
     desc: "Learn, share, and grow with serious and disciplined investors.",
-    gradient: "from-sky-500 via-blue-500 to-cyan-500",
+    gradient: "from-[#F3D98B] via-[#D4AF37] to-[#B8962E]",
   },
 ];
 
@@ -61,17 +61,17 @@ const WhyWealthUs = () => {
       className="
         relative py-28 overflow-hidden
         bg-gradient-to-br
-        from-white via-blue-50 to-white
-        dark:from-slate-950 dark:via-slate-900 dark:to-slate-950
+        from-white via-[#F3D98B]/10 to-white
+        dark:from-[#0b1022] dark:via-[#05070f] dark:to-[#0b1022]
       "
     >
       {/* BACKGROUND BLOBS */}
-      <div className="absolute -top-40 -right-40 w-96 h-96 bg-blue-200/30 dark:bg-blue-500/20 rounded-full blur-3xl animate-float" />
-      <div className="absolute top-1/2 -left-40 w-96 h-96 bg-cyan-200/30 dark:bg-cyan-400/20 rounded-full blur-3xl animate-float delay-700" />
+      <div className="absolute -top-40 -right-40 w-96 h-96 bg-[#D4AF37]/20 dark:bg-[#D4AF37]/10 rounded-full blur-3xl animate-float" />
+      <div className="absolute top-1/2 -left-40 w-96 h-96 bg-[#F3D98B]/20 dark:bg-[#D4AF37]/10 rounded-full blur-3xl animate-float delay-700" />
 
       {/* SPARKLES */}
-      <Sparkles className="absolute top-10 left-10 w-6 h-6 text-blue-400/40 animate-float" />
-      <Sparkles className="absolute bottom-20 right-16 w-5 h-5 text-cyan-400/40 animate-float delay-1000" />
+      <Sparkles className="absolute top-10 left-10 w-6 h-6 text-[#D4AF37]/40 animate-float" />
+      <Sparkles className="absolute bottom-20 right-16 w-5 h-5 text-[#D4AF37]/40 animate-float delay-1000" />
 
       <div className="relative max-w-7xl mx-auto px-6">
         {/* HEADER */}
@@ -80,13 +80,13 @@ const WhyWealthUs = () => {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          <span className="inline-block px-6 py-2 rounded-full bg-blue-100 dark:bg-blue-500/10 border border-blue-200 dark:border-blue-500/30 text-blue-600 dark:text-blue-400 font-semibold">
+          <span className="inline-block px-6 py-2 rounded-full bg-[#D4AF37]/10 dark:bg-[#D4AF37]/10 border border-[#D4AF37]/30 dark:border-[#D4AF37]/30 text-[#B8962E] dark:text-[#D4AF37] font-semibold">
             Why Choose Us
           </span>
 
-          <h2 className="mt-6 text-5xl font-bold text-slate-900 dark:text-white">
+          <h2 className="font-playfair mt-6 text-5xl font-bold text-slate-900 dark:text-white">
             Why{" "}
-            <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#F3D98B] to-[#B8962E] bg-clip-text text-transparent">
               WealthFino
             </span>
             ?
@@ -118,11 +118,11 @@ const WhyWealthUs = () => {
                   onMouseLeave={handleMouseLeave}
                   className={`relative rounded-3xl p-[2px] bg-gradient-to-r ${item.gradient}`}
                 >
-                  <div className="rounded-3xl bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm p-8 shadow-lg hover:shadow-2xl transition-all duration-300">
+                  <div className="rounded-3xl bg-white/90 dark:bg-[#0b1022]/90 backdrop-blur-sm p-8 shadow-lg hover:shadow-2xl transition-all duration-300">
                     <div
                       className={`w-16 h-16 rounded-2xl flex items-center justify-center bg-gradient-to-r ${item.gradient} shadow-lg animate-icon-float`}
                     >
-                      <Icon className="w-8 h-8 text-white" />
+                      <Icon className="w-8 h-8 text-black" />
                     </div>
 
                     {/* ✅ FIXED TITLE */}

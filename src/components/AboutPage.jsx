@@ -1,5 +1,6 @@
-import React from "react";
 
+import React from "react";
+import { Check } from "lucide-react";
 import sir_img from "/Imagess/sir.jpeg";
 
 const AboutPage = () => {
@@ -223,8 +224,8 @@ const AboutPage = () => {
                       "PGP FinTech - IIM Nagpur",
                     ].map((item, index) => (
                       <div key={index} className="flex items-start gap-3">
-                        <span className="text-sky-500 dark:text-sky-400 text-xl" aria-hidden="true">
-                          ✔
+                        <span className="text-emerald-500 dark:text-emerald-400 text-xl" aria-hidden="true">
+                       <Check />
                         </span>
                         <span className="text-gray-700 dark:text-gray-200">
                           {item}
@@ -253,7 +254,7 @@ const AboutPage = () => {
             <div className="grid md:grid-cols-3 gap-6">
               <div className="bg-gray-50 dark:bg-gray-700/50 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
                 <div className="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mb-4">
-                  <span className="text-blue-600 dark:text-blue-400 font-bold">
+                  <span className="text-blue-600 dark:text-blue-400 font-bold" aria-hidden="true">
                     ✓
                   </span>
                 </div>
@@ -267,7 +268,7 @@ const AboutPage = () => {
 
               <div className="bg-gray-50 dark:bg-gray-700/50 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
                 <div className="w-10 h-10 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center mb-4">
-                  <span className="text-green-600 dark:text-green-400 font-bold">
+                  <span className="text-green-600 dark:text-green-400 font-bold" aria-hidden="true">
                     ✓
                   </span>
                 </div>
@@ -281,7 +282,7 @@ const AboutPage = () => {
 
               <div className="bg-gray-50 dark:bg-gray-700/50 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
                 <div className="w-10 h-10 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center mb-4">
-                  <span className="text-purple-600 dark:text-purple-400 font-bold">
+                  <span className="text-purple-600 dark:text-purple-400 font-bold" aria-hidden="true">
                     ✓
                   </span>
                 </div>

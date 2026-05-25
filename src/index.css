@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Skip to main content */
+.skip-link { position: absolute; top: -40px; left: 0; background: #1F3864; color: #FFFFFF; padding: 8px 16px; z-index: 9999; text-decoration: none; font-size: 14px; }
+.skip-link:focus { top: 0; }
+
 /* Custom utilities */
 .gradient-text {
   background: linear-gradient(to right, #22c55e, #06b6d4);

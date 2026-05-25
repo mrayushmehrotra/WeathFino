@@ -59,7 +59,7 @@ const VideoSection = () => {
       className="
         py-20 relative overflow-hidden
         bg-gray-50
-        dark:bg-[#0b0d12]
+        dark:bg-[#0b1022]
         transition-colors duration-300
       "
     >
@@ -69,7 +69,7 @@ const VideoSection = () => {
           <div
             className="
               inline-block px-10 py-4 rounded-xl
-              bg-gradient-to-r from-green-400 to-sky-400
+              bg-gradient-to-r from-[#F3D98B] via-[#D4AF37] to-[#B8962E]
             "
           >
             <h2 className="text-3xl md:text-4xl font-bold text-black">
@@ -144,10 +144,10 @@ const VideoSection = () => {
       isActive
         ? `
       p-[2px] md:p-[3px]
-      bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500
+      bg-gradient-to-r from-[#F3D98B] via-[#D4AF37] to-[#B8962E]
       shadow-[0_0_50px_-12px]
-      dark:shadow-[0_0_50px_-12px_rgba(99,102,241,0.6)]
-      light:shadow-[0_0_50px_-12px_rgba(59,130,246,0.4)]
+      dark:shadow-[0_0_50px_-12px_rgba(212,175,55,0.4)]
+      light:shadow-[0_0_50px_-12px_rgba(212,175,55,0.4)]
     `
         : `
       border border-gray-200

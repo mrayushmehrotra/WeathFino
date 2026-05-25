@@ -20,7 +20,7 @@ const TickerTape = () => {
       className="
         relative w-full transition-colors duration-300
         bg-gray-100 text-gray-900
-        dark:bg-black dark:text-white
+        dark:bg-[#0b1022] dark:text-white
       "
     >
       <button
@@ -38,7 +38,7 @@ const TickerTape = () => {
             overflow-hidden rounded-md
             border border-gray-300
             bg-white
-            dark:border-gray-800 dark:bg-black
+            dark:border-[#D4AF37]/30 dark:bg-[#05070f]
           "
         >
           <tv-ticker-tape symbols="BSE:RELI1!,BSE:HDFCAMC,BSE:ICIC1!,BSE:INFY,BSE:TCS,BSE:LT,BSE:HINDUNILVR,BSE:SBIN,BSE:BHARTIARTL,BSE:ITC,BSE:AXIS1!,BSE:BAJAJFINSV,BSE:KOTAKBANK,BSE:HCLTECH,BSE:MARUTI,BSE:TITAN"></tv-ticker-tape>

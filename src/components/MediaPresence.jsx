@@ -64,7 +64,7 @@ const MediaPresence = () => {
     <section
       className="
         py-20 relative overflow-hidden
-        bg-blue-50 dark:bg-black
+        bg-[#D4AF37]/5 dark:bg-[#0b1022]
         transition-colors duration-300
       "
     >
@@ -77,19 +77,19 @@ const MediaPresence = () => {
         viewport={{ once: true }}
       >
         <div className="inline-flex flex-col items-center mb-12">
-          <div className="w-24 h-1 bg-blue-800 dark:bg-blue-400 rounded-full mb-2" />
+          <div className="w-24 h-1 bg-[#B8962E] dark:bg-[#D4AF37] rounded-full mb-2" />
 
-          <h2 className="text-4xl md:text-5xl font-extrabold pb-3 text-slate-900 dark:text-white">
-            <span className="bg-gradient-to-r from-blue-700 via-cyan-400 to-emerald-400 bg-clip-text text-transparent px-1">
+          <h2 className="font-playfair text-4xl md:text-5xl font-extrabold pb-3 text-slate-900 dark:text-white">
+            <span className="bg-gradient-to-r from-[#F3D98B] via-[#D4AF37] to-[#B8962E] bg-clip-text text-transparent px-1">
               Featured
             </span>{" "}
             In
           </h2>
 
-          <div className="w-24 h-1 bg-emerald-400 rounded-full mt-2 ml-auto" />
+          <div className="w-24 h-1 bg-[#D4AF37] rounded-full mt-2 ml-auto" />
         </div>
 
-        <p className="text-base md:text-lg font-medium max-w-2xl mx-auto text-slate-700 dark:text-slate-300">
+        <p className="text-xl md:text-2xl font-semibold max-w-2xl mx-auto text-slate-700 dark:text-slate-300">
           We're proud to be recognized by leading business & financial
           platforms. Our insights are making headlines—featured by the most
           trusted business and financial platforms.
@@ -110,7 +110,7 @@ const MediaPresence = () => {
           {[...logos, ...logos].map((logo, idx) => (
             <div
               key={idx}
-              className="flex-shrink-0 bg-blue-50 p-3   rounded-xl"
+              className="flex-shrink-0 bg-[#D4AF37]/5 dark:bg-[#D4AF37]/10 p-3   rounded-xl"
             >
               {logo.link ? (
                 <a href={logo.link} target="_blank" rel="noopener noreferrer">

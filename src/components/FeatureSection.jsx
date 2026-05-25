@@ -29,9 +29,9 @@ const FeatureCard = ({ title, subtitle, image, points, cta, isActive }) => {
       className={`
         relative w-[90vw] max-w-[340px] md:max-w-none md:w-[420px] shrink-0
         rounded-3xl p-[3px]
-        bg-gradient-to-b from-cyan-400 via-blue-500 to-purple-500
-        dark:shadow-[0_0_60px_rgba(99,102,241,0.35)]
-        light:shadow-[0_0_40px_rgba(59,130,246,0.2)]
+        bg-gradient-to-b from-[#F3D98B] via-[#D4AF37] to-[#B8962E]
+        dark:shadow-[0_0_60px_rgba(212,175,55,0.35)]
+        light:shadow-[0_0_40px_rgba(212,175,55,0.2)]
         transition-all duration-700
         ${isActive ? "opacity-100 scale-100 z-10" : "opacity-30 scale-90 z-0"}
         ${isVisible ? "translate-y-0" : "translate-y-10"}
@@ -40,7 +40,7 @@ const FeatureCard = ({ title, subtitle, image, points, cta, isActive }) => {
       <div
         className={`
           rounded-3xl h-full flex flex-col transition-all duration-500
-          dark:bg-[#0b0f1a] light:bg-white
+          dark:bg-[#0b1022] light:bg-white
           dark:border-white/20 light:border-gray-200
           ${isActive ? "border scale-100" : "border scale-95"}
           ${
@@ -58,8 +58,8 @@ const FeatureCard = ({ title, subtitle, image, points, cta, isActive }) => {
             bg-gradient-to-br transition-all duration-500
             ${
               isActive
-                ? "dark:from-blue-900/30 dark:to-purple-900/30 light:from-blue-50 light:to-purple-50"
-                : "dark:from-blue-900/10 dark:to-purple-900/10 light:from-blue-50/50 light:to-purple-50/50"
+                ? "dark:from-[#D4AF37]/20 dark:to-[#B8962E]/20 light:from-[#F3D98B]/30 light:to-[#D4AF37]/30"
+                : "dark:from-[#D4AF37]/5 dark:to-[#B8962E]/5 light:from-[#F3D98B]/10 light:to-[#D4AF37]/10"
             }
             ${
               isActive
@@ -95,7 +95,7 @@ const FeatureCard = ({ title, subtitle, image, points, cta, isActive }) => {
 
         <p
           className={`
-            text-center mb-8 text-base transition-all duration-300
+            text-center mb-8 text-base font-semibold transition-all duration-300
             ${
               isActive
                 ? "dark:text-slate-300 light:text-gray-600"
@@ -106,7 +106,7 @@ const FeatureCard = ({ title, subtitle, image, points, cta, isActive }) => {
           {subtitle}
         </p>
 
-        <ul className="space-y-3 text-sm mb-10 flex-grow">
+        <ul className="space-y-3 text-base font-semibold mb-10 flex-grow">
           {points.map((p, i) => (
             <li
               key={i}
@@ -130,7 +130,7 @@ const FeatureCard = ({ title, subtitle, image, points, cta, isActive }) => {
                   transition-colors duration-300
                   ${
                     isActive
-                      ? "dark:text-cyan-400 light:text-blue-600"
+                      ? "dark:text-[#D4AF37] light:text-[#B8962E]"
                       : "dark:text-slate-600 light:text-gray-400"
                   }
                 `}
@@ -149,19 +149,19 @@ const FeatureCard = ({ title, subtitle, image, points, cta, isActive }) => {
             ${
               isActive
                 ? `
-                  opacity-100 text-white scale-100
-                  dark:bg-gradient-to-r dark:from-cyan-400 dark:via-blue-500 dark:to-purple-500
-                  light:bg-gradient-to-r light:from-blue-500 light:via-blue-600 light:to-purple-600
-                  dark:hover:shadow-[0_0_40px_rgba(34,211,238,0.5)]
-                  light:hover:shadow-[0_0_40px_rgba(37,99,235,0.4)]
+                  opacity-100 text-black scale-100
+                  dark:bg-gradient-to-r dark:from-[#F3D98B] dark:via-[#D4AF37] dark:to-[#B8962E]
+                  light:bg-gradient-to-r light:from-[#F3D98B] light:via-[#D4AF37] light:to-[#B8962E]
+                  dark:hover:shadow-[0_0_40px_rgba(212,175,55,0.4)]
+                  light:hover:shadow-[0_0_40px_rgba(212,175,55,0.4)]
                 `
                 : "opacity-0 scale-95 dark:bg-gray-800 dark:text-gray-400 light:bg-gray-200 light:text-gray-500"
             }
           `}
         >
-          <span className="relative z-10">{cta}</span>
+          <span className="relative font-bold text-lg z-10">{cta}</span>
           {isActive && (
-            <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 animate-shimmer"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-[#F3D98B] via-[#D4AF37] to-[#B8962E] animate-shimmer"></div>
           )}
         </button>
       </div>
@@ -171,7 +171,6 @@ const FeatureCard = ({ title, subtitle, image, points, cta, isActive }) => {
 
 /* ================= MAIN PAGE ================= */
 const FeatureSection = () => {
-  const [activeIndexes, setActiveIndexes] = useState([0, 1]);
   const [headerVisible, setHeaderVisible] = useState(false);
   const headerRef = useRef(null);
 
@@ -217,18 +216,7 @@ const FeatureSection = () => {
     },
   ];
 
-  // Rotate active cards every 5 seconds
-  useEffect(() => {
-    const rotateCards = () => {
-      setActiveIndexes((prev) => {
-        const nextIndexes = prev.map((index) => (index + 1) % cards.length);
-        return nextIndexes;
-      });
-    };
 
-    const interval = setInterval(rotateCards, 5000);
-    return () => clearInterval(interval);
-  }, [cards.length]);
 
   useEffect(() => {
     const headerObserver = new IntersectionObserver(
@@ -249,7 +237,7 @@ const FeatureSection = () => {
   }, []);
 
   return (
-    <div className="min-h-screen dark:bg-[#0a0a0f] light:bg-gray-50 pt-16 pb-32 overflow-hidden relative">
+    <div className="min-h-screen dark:bg-[#0b1022] light:bg-gray-50 pt-16 pb-32 overflow-hidden relative">
       {/* Animated background particles - Different for light/dark */}
       <div className="absolute inset-0 overflow-hidden">
         {[...Array(15)].map((_, i) => (
@@ -263,7 +251,7 @@ const FeatureSection = () => {
               animationDuration: `${10 + Math.random() * 20}s`,
             }}
           >
-            <div className="dark:bg-cyan-400/20 light:bg-blue-400/30 w-full h-full"></div>
+            <div className="dark:bg-[#D4AF37]/30 light:bg-[#D4AF37]/40 w-full h-full"></div>
           </div>
         ))}
       </div>
@@ -280,8 +268,8 @@ const FeatureSection = () => {
         <div className="inline-block px-10 py-4 rounded-lg relative overflow-hidden">
           {/* Gradient background for dark/light */}
           <div className="absolute inset-0 rounded-lg -z-10">
-            <div className="dark:bg-gradient-to-r dark:from-blue-700 dark:via-cyan-400 dark:to-emerald-400 w-full h-full blur-lg opacity-50"></div>
-            <div className="absolute inset-0 dark:bg-gradient-to-r dark:from-blue-700 dark:via-cyan-400 dark:to-emerald-400 light:bg-gradient-to-r light:from-blue-500 light:via-blue-400 light:to-cyan-400 rounded-lg"></div>
+            <div className="dark:bg-gradient-to-r dark:from-[#F3D98B] dark:via-[#D4AF37] dark:to-[#B8962E] w-full h-full blur-lg opacity-50"></div>
+            <div className="absolute inset-0 dark:bg-gradient-to-r dark:from-[#F3D98B] dark:via-[#D4AF37] dark:to-[#B8962E] light:bg-gradient-to-r light:from-[#F3D98B] light:via-[#D4AF37] light:to-[#B8962E] rounded-lg"></div>
           </div>
 
           <h1 className="text-2xl md:text-2xl font-bold relative z-10 dark:text-black light:text-white">
@@ -293,32 +281,15 @@ const FeatureSection = () => {
         </p>
       </div>
 
-      {/* AUTOMATIC CARD ROTATION CONTAINER */}
-      <div className="flex justify-center items-center min-h-[600px] mb-16">
-        <div className="relative w-full max-w-6xl mx-auto px-4">
-          {/* Cards Container - Centered */}
-          <div className="relative h-[580px] flex items-center justify-center">
-            {/* Cards */}
-            {cards.map((card, index) => {
-              const position = activeIndexes.indexOf(index);
-              return (
-                <div
-                  key={index}
-                  className={`absolute transition-all duration-700 ${
-                    position === 0
-                      ? "left-1/2 md:left-1/4 -translate-x-1/2 z-20 opacity-100 scale-100"
-                      : position === 1
-                      ? "left-1/2 md:left-auto md:right-1/4 -translate-x-1/2 md:translate-x-1/2 z-10 opacity-0 md:opacity-100 scale-75 md:scale-100 pointer-events-none md:pointer-events-auto"
-                      : "left-1/2 md:left-auto -translate-x-1/2 md:translate-x-0 opacity-0 scale-50 pointer-events-none"
-                  }`}
-                >
-                  <FeatureCard
-                    {...card}
-                    isActive={activeIndexes.includes(index)}
-                  />
-                </div>
-              );
-            })}
+      {/* CARDS CONTAINER */}
+      <div className="flex justify-center items-center mb-16 px-4">
+        <div className="w-full max-w-9xl mx-auto">
+          <div className="flex flex-col lg:flex-row flex-wrap items-center justify-center gap-8 xl:gap-10">
+            {cards.map((card, index) => (
+              <div key={index} className="flex justify-center w-full md:w-auto">
+                <FeatureCard {...card} isActive={true} />
+              </div>
+            ))}
           </div>
         </div>
       </div>

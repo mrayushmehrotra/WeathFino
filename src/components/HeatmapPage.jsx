@@ -3,23 +3,23 @@ import TradingViewHeatmap from "../components/TradingViewHeatmap";
 const HeatmapPage = () => {
   return (
     <div
-      className="min-h-screen bg-white 
-    dark:bg-[#05070d] text-black dark:text-whiteflex items-center justify-center p-20"
+      className="min-h-screen bg-[#D4AF37]/5 
+    dark:bg-[#0b1022] text-black dark:text-white flex items-center justify-center p-20"
     >
       {/* OUTER GLOW BORDER */}
       <div
         className="w-full max-w-[1600px] rounded-[22px] p-[3px]
-        bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500
-        shadow-[0_0_60px_rgba(56,189,248,0.35)] 
+        bg-gradient-to-r from-[#F3D98B] via-[#D4AF37] to-[#B8962E]
+        shadow-[0_0_60px_rgba(212,175,55,0.25)] 
          "
       >
         {/* INNER DARK FRAME */}
-        <div className="bg-[#05070d]  rounded-[20px] p-6">
+        <div className="bg-[#05070f] rounded-[20px] p-6">
           {/* TITLE */}
           <div className="flex justify-center mb-6">
             <div
-              className="px-10 py-3 rounded-lg text-2xl font-bold text-black
-              bg-gradient-to-r from-cyan-300 to-blue-400 shadow-lg"
+              className="px-10 py-3 rounded-lg font-playfair text-3xl tracking-wide font-bold text-black
+              bg-gradient-to-r from-[#F3D98B] via-[#D4AF37] to-[#B8962E] shadow-[0_8px_20px_rgba(212,175,55,0.35)]"
             >
               HEATMAP
             </div>

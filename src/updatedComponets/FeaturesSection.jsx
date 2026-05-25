@@ -169,6 +169,7 @@
 // export default FeaturesWhiteBlueAnimated;
 
 import { motion } from "framer-motion";
+import { CheckCircle } from "lucide-react";
 import chartImg from "/MeetingImg.png";
 
 const fadeUp = {
@@ -198,8 +199,8 @@ const FeaturesWhiteBlueAnimated = () => {
           <span
             className="
               inline-block px-6 py-2 rounded-full
-              bg-blue-100 dark:bg-blue-500/15
-              text-blue-600 dark:text-blue-400
+              bg-[#D4AF37]/15 dark:bg-[#D4AF37]/15
+              text-[#B8962E] dark:text-[#D4AF37]
               font-semibold
               text-4xl
             "
@@ -218,7 +219,7 @@ const FeaturesWhiteBlueAnimated = () => {
             <span
               className="
                 bg-gradient-to-r
-                from-blue-600 to-cyan-500
+                from-[#F3D98B] via-[#D4AF37] to-[#B8962E]
                 bg-clip-text text-transparent
               "
             >
@@ -236,8 +237,8 @@ const FeaturesWhiteBlueAnimated = () => {
           className="
             mt-14 rounded-[26px] p-[3px]
             bg-gradient-to-r
-            from-cyan-400 via-blue-500 to-purple-500
-            shadow-[0_0_60px_rgba(56,189,248,0.35)]
+            from-[#F3D98B] via-[#D4AF37] to-[#B8962E]
+            shadow-[0_0_60px_rgba(212,175,55,0.35)]
           "
         >
           {/* INNER CARD */}
@@ -245,7 +246,7 @@ const FeaturesWhiteBlueAnimated = () => {
             className="
               rounded-[24px] p-12
               grid grid-cols-1 lg:grid-cols-2 gap-14 items-center
-              bg-white dark:bg-gradient-to-br dark:from-slate-900 dark:via-black dark:to-slate-900
+              bg-white dark:bg-gradient-to-br dark:from-[#0b1022] dark:via-[#05070f] dark:to-[#0b1022]
               border border-slate-200 dark:border-white/5
             "
           >
@@ -259,7 +260,7 @@ const FeaturesWhiteBlueAnimated = () => {
               <h3
                 className="
                   text-3xl md:text-4xl font-bold mb-6
-                  text-blue-600 dark:text-blue-400
+                  text-[#B8962E] dark:text-[#D4AF37]
                 "
               >
                 Real-Time Market Insights
@@ -283,8 +284,8 @@ const FeaturesWhiteBlueAnimated = () => {
                       text-slate-700 dark:text-slate-300
                     "
                   >
-                    <span className="text-blue-600 dark:text-blue-400 font-bold">
-                      ✔
+                    <span className="text-[#B8962E] dark:text-[#D4AF37] font-bold">
+                      <CheckCircle className="w-5 h-5" />
                     </span>
                     {item}
                   </motion.li>
@@ -297,9 +298,9 @@ const FeaturesWhiteBlueAnimated = () => {
                 whileTap={{ scale: 0.96 }}
                 className="
                   mt-10 px-10 py-4 rounded-full font-semibold
-                  text-white
-                  bg-gradient-to-r from-blue-600 to-cyan-500
-                  shadow-lg hover:shadow-blue-500/30
+                  text-black
+                  bg-gradient-to-r from-[#F3D98B] via-[#D4AF37] to-[#B8962E]
+                  shadow-[0_8px_20px_rgba(212,175,55,0.25)] hover:shadow-[0_12px_25px_rgba(212,175,55,0.35)]
                   transition-all
                 "
               >
@@ -319,9 +320,9 @@ const FeaturesWhiteBlueAnimated = () => {
                 whileHover={{ scale: 1.03 }}
                 className="
                   relative rounded-2xl p-3
-                  bg-blue-50 dark:bg-blue-500/10
-                  border border-blue-200 dark:border-blue-500/30
-                  shadow-[0_0_30px_rgba(59,130,246,0.25)]
+                  bg-[#D4AF37]/5 dark:bg-[#D4AF37]/10
+                  border border-[#D4AF37]/30 dark:border-[#D4AF37]/30
+                  shadow-[0_0_30px_rgba(212,175,55,0.25)]
                 "
               >
                 <img

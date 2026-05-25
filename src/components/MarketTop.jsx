@@ -7,22 +7,22 @@ export default function MarketTop() {
   const [isPaused, setIsPaused] = useState(false);
 
   return (
-    <div className="h-[48px] w-full overflow-hidden border-b border-gray-200 dark:border-white/10 bg-white dark:bg-[#0b0f16] flex font-sans transition-colors duration-100">
+    <div className="h-[48px] w-full overflow-hidden border-b border-gray-200 dark:border-white/10 bg-white dark:bg-[#0b1022] flex font-sans transition-colors duration-100">
       <button
         type="button"
         onClick={() => setIsPaused(!isPaused)}
         aria-label={isPaused ? "Play marquee" : "Pause marquee"}
         title={isPaused ? "Play marquee (P)" : "Pause marquee (P)"}
-        className="flex items-center justify-center px-3 text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white bg-gray-50 hover:bg-gray-200 dark:bg-[#0b0f16] dark:hover:bg-gray-800 z-10 border-r border-gray-200 dark:border-gray-800 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-500"
+        className="flex items-center justify-center px-3 text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white bg-gray-50 hover:bg-gray-200 dark:bg-[#0b1022] dark:hover:bg-gray-800 z-10 border-r border-gray-200 dark:border-gray-800 transition-colors focus:outline-none focus:ring-2 focus:ring-[#D4AF37] dark:focus:ring-[#D4AF37]"
       >
         {isPaused ? (
-          <Play className="h-3.5 w-3.5" />
+          <Play aria-label="Play stock ticker" className="h-3.5 w-3.5" />
         ) : (
-          <Pause className="h-3.5 w-3.5" />
+          <Pause aria-label="Pause stock ticker" className="h-3.5 w-3.5" />
         )}
       </button>
 
-      <div className="flex-1 overflow-hidden relative bg-white dark:bg-[#0b0f16]" aria-label="Live market marquee">
+      <div className="flex-1 overflow-hidden relative bg-white dark:bg-[#0b1022]" aria-label="Live market marquee">
         <div className={`flex whitespace-nowrap h-full items-center custom-marquee ${isPaused ? 'is-paused' : ''}`}>
           {/* Double the list for seamless looping */}
           {[...MARKET_STOCKS, ...MARKET_STOCKS].map((stock, i) => {

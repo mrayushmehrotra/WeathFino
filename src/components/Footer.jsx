@@ -10,7 +10,7 @@ const Footer = () => {
 
   return (
     <footer
-      className="bg-white dark:bg-[#0E1116]
+      className="bg-white dark:bg-[#0b1022]
         text-slate-700 dark:text-[#D1D5DB]
         transition-colors duration-300"
     >
@@ -28,7 +28,7 @@ const Footer = () => {
                 className="w-16 h-16 rounded-2xl shadow-lg border border-slate-200 dark:border-gray-800 p-2 bg-white dark:bg-gray-900"
               />
               <div>
-                <h3 className="text-xl font-bold text-slate-900 dark:text-white">
+                <h3 className="font-playfair text-2xl font-bold text-slate-900 dark:text-white">
                   WealthFino
                 </h3>
                 <p className="text-sm text-slate-600 dark:text-gray-400 mt-1">
@@ -38,7 +38,7 @@ const Footer = () => {
             </div>
 
             {/* Description */}
-            <div className="bg-gradient-to-r from-slate-50/50 to-transparent dark:from-gray-900/30 dark:to-transparent rounded-2xl p-5 border border-slate-100 dark:border-gray-800">
+            <div className="bg-gradient-to-r from-slate-50/50 to-transparent dark:from-[#D4AF37]/5 dark:to-transparent rounded-2xl p-5 border border-slate-100 dark:border-[#D4AF37]/10">
               <p className="text-sm leading-relaxed text-slate-700 dark:text-gray-300">
                 Join our trading community for shared insights, interactive
                 learning, and a collaborative environment to enhance your
@@ -87,11 +87,11 @@ const Footer = () => {
             </div>
 
             {/* Disclaimer Card */}
-            <div className="rounded-2xl p-5 bg-gradient-to-br from-amber-50/50 to-orange-50/30 dark:from-amber-900/20 dark:to-orange-900/10 border border-amber-200 dark:border-amber-800/50">
+            <div className="rounded-2xl p-5 bg-gradient-to-br from-[#F3D98B]/10 to-[#D4AF37]/5 dark:from-[#D4AF37]/10 dark:to-[#B8962E]/5 border border-[#D4AF37]/30 dark:border-[#D4AF37]/30">
               <div className="flex items-center gap-3 mb-3">
-                <div className="w-8 h-8 rounded-lg bg-amber-100 dark:bg-amber-900/50 flex items-center justify-center">
+                <div className="w-8 h-8 rounded-lg bg-[#D4AF37]/20 dark:bg-[#D4AF37]/20 flex items-center justify-center">
                   <svg
-                    className="w-4 h-4 text-amber-600 dark:text-amber-400"
+                    className="w-4 h-4 text-[#B8962E] dark:text-[#D4AF37]"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -104,9 +104,9 @@ const Footer = () => {
                     />
                   </svg>
                 </div>
-                <h4 className="font-bold text-slate-900 dark:text-white">
+                <h3 className="font-bold text-slate-900 dark:text-white">
                   Important Disclaimer
-                </h4>
+                </h3>
               </div>
 
               <p className="text-xs leading-relaxed text-slate-700 dark:text-gray-300">
@@ -120,11 +120,11 @@ const Footer = () => {
           </div>
 
           {/* ================= QUICK LINKS ================= */}
-          <div className="bg-gradient-to-br from-white to-slate-50 dark:from-gray-900 dark:to-slate-900 rounded-2xl p-3 shadow-lg border border-slate-200 dark:border-gray-800">
+          <div className="bg-gradient-to-br from-white to-slate-50 dark:from-[#0b1022] dark:to-[#05070f] rounded-2xl p-3 shadow-lg border border-slate-200 dark:border-[#D4AF37]/20">
             <div className="flex items-center mb-2">
-              <h4 className="font-bold text-xl text-slate-900 dark:text-white">
+              <h3 className="font-playfair font-bold text-2xl text-slate-900 dark:text-white">
                 Quick Links
-              </h4>
+              </h3>
             </div>
 
             <div className="space-y-1">
@@ -228,7 +228,7 @@ const Footer = () => {
                       const baseClasses =
                         "flex items-center  p-2 rounded-xl transition-all duration-200 group";
                       const activeClasses = isActive
-                        ? "bg-gradient-to-r from-sky-50 to-blue-50 dark:from-sky-900/30 dark:to-blue-900/30 border border-sky-200 dark:border-sky-800 shadow-sm text-sky-700 dark:text-sky-300"
+                        ? "bg-gradient-to-r from-[#F3D98B]/10 to-[#D4AF37]/10 dark:from-[#D4AF37]/20 dark:to-[#B8962E]/20 border border-[#D4AF37]/50 shadow-sm text-[#B8962E] dark:text-[#D4AF37]"
                         : "hover:bg-slate-100/80 dark:hover:bg-gray-800/50 border border-transparent text-slate-700 dark:text-gray-300 hover:text-slate-900 dark:hover:text-white";
 
                       return `${baseClasses} ${activeClasses}`;
@@ -247,11 +247,11 @@ const Footer = () => {
           <div className="space-y-2">
             {/* Header with modern design */}
             <div className="relative">
-              <div className="absolute -left-1 top-1/2 -translate-y-1/2 w-1 h-10 bg-gradient-to-b from-blue-500 to-purple-600 rounded-full"></div>
+              <div className="absolute -left-1 top-1/2 -translate-y-1/2 w-1 h-10 bg-gradient-to-b from-[#F3D98B] via-[#D4AF37] to-[#B8962E] rounded-full"></div>
               <div className="pl-4">
-                <h4 className="font-bold text-2xl text-slate-900 dark:text-white mb-1">
+                <h3 className="font-playfair font-bold text-3xl text-slate-900 dark:text-white mb-1">
                   Get in Touch
-                </h4>
+                </h3>
                 <p className="text-sm text-slate-600 dark:text-gray-400">
                   Connect with us through multiple channels
                 </p>
@@ -263,17 +263,17 @@ const Footer = () => {
               {/* Email Card - Modern Gradient */}
               <a
                 href="mailto:info@krishnapathak.com"
-                className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-white to-slate-50 dark:from-gray-900 dark:to-slate-900 p-2 border border-slate-200 dark:border-gray-800 hover:border-blue-300 dark:hover:border-blue-700 transition-all duration-300 hover:shadow-xl"
+                className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-white to-slate-50 dark:from-gray-900 dark:to-[#05070f] p-2 border border-slate-200 dark:border-gray-800 hover:border-[#D4AF37] dark:hover:border-[#D4AF37] transition-all duration-300 hover:shadow-xl"
               >
                 {/* Background gradient effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/0 via-blue-500/5 to-blue-500/0 dark:from-blue-500/0 dark:via-blue-500/10 dark:to-blue-500/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-[#D4AF37]/0 via-[#D4AF37]/5 to-[#D4AF37]/0 dark:from-[#D4AF37]/0 dark:via-[#D4AF37]/10 dark:to-[#D4AF37]/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
 
                 <div className="relative flex items-center gap-2">
                   {/* Icon with modern glow */}
                   <div className="relative">
-                    <div className="absolute inset-0 bg-blue-500/20 blur-xl rounded-2xl"></div>
-                    <div className="relative w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center shadow-lg shadow-blue-500/30">
-                      <Mail className="w-5 h-5 text-white" />
+                    <div className="absolute inset-0 bg-[#D4AF37]/20 blur-xl rounded-2xl"></div>
+                    <div className="relative w-10 h-10 rounded-xl bg-gradient-to-br from-[#F3D98B] via-[#D4AF37] to-[#B8962E] flex items-center justify-center shadow-lg shadow-[#D4AF37]/30">
+                      <Mail className="w-5 h-5 text-black" />
                     </div>
                   </div>
 
@@ -283,7 +283,7 @@ const Footer = () => {
                         Email
                       </span>
                     </div>
-                    <p className="text font-medium text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                    <p className="text font-medium text-slate-900 dark:text-white group-hover:text-[#B8962E] dark:group-hover:text-[#D4AF37] transition-colors">
                       info@krishnapathak.com
                     </p>
                   </div>
@@ -293,17 +293,17 @@ const Footer = () => {
               {/* Phone Card - Modern Gradient */}
               <a
                 href="tel:+919883455700"
-                className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-white to-slate-50 dark:from-gray-900 dark:to-slate-900 p-2 border border-slate-200 dark:border-gray-800 hover:border-purple-300 dark:hover:border-purple-700 transition-all duration-300 hover:shadow-xl"
+                className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-white to-slate-50 dark:from-gray-900 dark:to-[#05070f] p-2 border border-slate-200 dark:border-gray-800 hover:border-[#D4AF37] dark:hover:border-[#D4AF37] transition-all duration-300 hover:shadow-xl"
               >
                 {/* Background gradient effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-500/0 via-purple-500/5 to-purple-500/0 dark:from-purple-500/0 dark:via-purple-500/10 dark:to-purple-500/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-[#D4AF37]/0 via-[#D4AF37]/5 to-[#D4AF37]/0 dark:from-[#D4AF37]/0 dark:via-[#D4AF37]/10 dark:to-[#D4AF37]/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
 
                 <div className="relative flex items-center gap-5">
                   {/* Icon with modern glow */}
                   <div className="relative">
-                    <div className="absolute inset-0 bg-purple-500/20 blur-xl rounded-2xl"></div>
-                    <div className="relative w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center shadow-lg shadow-purple-500/30">
-                      <Phone className="w-6 h-6 text-white" />
+                    <div className="absolute inset-0 bg-[#D4AF37]/20 blur-xl rounded-2xl"></div>
+                    <div className="relative w-10 h-10 rounded-xl bg-gradient-to-br from-[#F3D98B] via-[#D4AF37] to-[#B8962E] flex items-center justify-center shadow-lg shadow-[#D4AF37]/30">
+                      <Phone className="w-6 h-6 text-black" />
                     </div>
                   </div>
 
@@ -313,7 +313,7 @@ const Footer = () => {
                         Direct Call
                       </span>
                       <svg
-                        className="w-5 h-5 text-purple-500 opacity-0 group-hover:opacity-100 translate-x-[-10px] group-hover:translate-x-0 transition-all duration-300"
+                        className="w-5 h-5 text-[#D4AF37] opacity-0 group-hover:opacity-100 translate-x-[-10px] group-hover:translate-x-0 transition-all duration-300"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -326,7 +326,7 @@ const Footer = () => {
                         />
                       </svg>
                     </div>
-                    <p className="text-lg font-medium text-slate-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+                    <p className="text-lg font-medium text-slate-900 dark:text-white group-hover:text-[#B8962E] dark:group-hover:text-[#D4AF37] transition-colors">
                       +91 9883455700
                     </p>
                   </div>
@@ -338,19 +338,19 @@ const Footer = () => {
                 href="https://wa.me/919353523685"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-white to-slate-50 dark:from-gray-900 dark:to-slate-900 p-2 border border-slate-200 dark:border-gray-800 hover:border-green-300 dark:hover:border-green-700 transition-all duration-300 hover:shadow-xl"
+                className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-white to-slate-50 dark:from-gray-900 dark:to-[#05070f] p-2 border border-slate-200 dark:border-gray-800 hover:border-[#D4AF37] dark:hover:border-[#D4AF37] transition-all duration-300 hover:shadow-xl"
               >
                 {/* Background gradient effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-green-500/0 via-green-500/5 to-green-500/0 dark:from-green-500/0 dark:via-green-500/10 dark:to-green-500/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-[#D4AF37]/0 via-[#D4AF37]/5 to-[#D4AF37]/0 dark:from-[#D4AF37]/0 dark:via-[#D4AF37]/10 dark:to-[#D4AF37]/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
 
                 {/* Live indicator */}
 
                 <div className="relative flex items-center gap-5">
                   {/* Icon with modern glow */}
                   <div className="relative">
-                    <div className="absolute inset-0 bg-green-500/20 blur-xl rounded-2xl"></div>
-                    <div className="relative w-10 h-10 rounded-xl bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center shadow-lg shadow-green-500/30">
-                      <MessageCircle className="w-5 h-5 text-white" />
+                    <div className="absolute inset-0 bg-[#D4AF37]/20 blur-xl rounded-2xl"></div>
+                    <div className="relative w-10 h-10 rounded-xl bg-gradient-to-br from-[#F3D98B] via-[#D4AF37] to-[#B8962E] flex items-center justify-center shadow-lg shadow-[#D4AF37]/30">
+                      <MessageCircle className="w-5 h-5 text-black" />
                     </div>
                   </div>
 
@@ -360,7 +360,7 @@ const Footer = () => {
                         WhatsApp Support
                       </span>
                       <svg
-                        className="w-5 h-5 text-green-500 opacity-0 group-hover:opacity-100 translate-x-[-10px] group-hover:translate-x-0 transition-all duration-300"
+                        className="w-5 h-5 text-[#D4AF37] opacity-0 group-hover:opacity-100 translate-x-[-10px] group-hover:translate-x-0 transition-all duration-300"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -373,7 +373,7 @@ const Footer = () => {
                         />
                       </svg>
                     </div>
-                    <p className="text-lg font-medium text-slate-900 dark:text-white group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">
+                    <p className="text-lg font-medium text-slate-900 dark:text-white group-hover:text-[#B8962E] dark:group-hover:text-[#D4AF37] transition-colors">
                       9353523685
                     </p>
                   </div>
@@ -385,15 +385,15 @@ const Footer = () => {
           {/* ================= LEGAL ================= */}
           <div className="space-y-6">
             {/* SEBI Registration Card */}
-            <div className="rounded-2xl p-6 bg-gradient-to-br from-slate-50 to-white dark:from-[#1B2433] dark:to-gray-900 border border-slate-200 dark:border-gray-800 shadow-sm">
+            <div className="rounded-2xl p-6 bg-gradient-to-br from-slate-50 to-white dark:from-[#0b1022] dark:to-[#05070f] border border-slate-200 dark:border-[#D4AF37]/20 shadow-sm">
               {/* Name and Title */}
               <div className="mb-4">
                 <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-1">
                   Krishna Pathak
                 </h3>
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-800">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#D4AF37]/10 dark:bg-[#D4AF37]/10 border border-[#D4AF37]/30 dark:border-[#D4AF37]/30">
                   <svg
-                    className="w-3 h-3 text-blue-600 dark:text-blue-400"
+                    className="w-3 h-3 text-[#B8962E] dark:text-[#D4AF37]"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                   >
@@ -404,7 +404,7 @@ const Footer = () => {
                       d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
                     />
                   </svg>
-                  <span className="text-xs font-medium text-blue-700 dark:text-blue-300">
+                  <span className="text-xs font-medium text-[#B8962E] dark:text-[#D4AF37]">
                     SEBI Registered
                   </span>
                 </div>
@@ -458,9 +458,9 @@ const Footer = () => {
                 </div>
 
                 <div>
-                  <h4 className="font-semibold text-slate-900 dark:text-white">
+                  <h3 className="font-semibold text-slate-900 dark:text-white">
                     Registered Address
-                  </h4>
+                  </h3>
                   {/* <p className="text-xs text-slate-500 dark:text-gray-500">
                     Official business address
                   </p> */}
@@ -499,9 +499,9 @@ const Footer = () => {
                 </div>
 
                 <div>
-                  <h4 className="font-semibold text-slate-900 dark:text-white">
+                  <h3 className="font-semibold text-slate-900 dark:text-white">
                     Correspondence Address
-                  </h4>
+                  </h3>
                   {/* <p className="text-xs text-slate-500 dark:text-gray-500">
                     Official business address
                   </p> */}
@@ -526,9 +526,9 @@ const Footer = () => {
             <div className="flex flex-col items-center gap-4">
               {/* Header */}
               <div className="text-center mb-2">
-                <h4 className="text-sm font-semibold text-slate-700 dark:text-gray-300 mb-1">
+                <h3 className="text-sm font-semibold text-slate-700 dark:text-gray-300 mb-1">
                   Stay Connected
-                </h4>
+                </h3>
                 <p className="text-xs text-slate-500 dark:text-gray-500">
                   Follow us for updates and insights
                 </p>
