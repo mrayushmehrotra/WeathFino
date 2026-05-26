@@ -27,8 +27,8 @@ export default function MarketTop() {
           {/* Double the list for seamless looping */}
           {[...MARKET_STOCKS, ...MARKET_STOCKS].map((stock, i) => {
             const isPositive = stock.chg.startsWith('+');
-            const colorClass = isPositive 
-              ? 'text-green-700 dark:text-green-400' 
+            const colorClass = isPositive
+              ? 'text-green-700 dark:text-green-400'
               : 'text-red-700 dark:text-red-400';
 
             return (

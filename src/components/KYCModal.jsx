@@ -73,7 +73,7 @@ export default function KYCModal({ isOpen, onClose }) {
         role="dialog"
         aria-modal="true"
         aria-labelledby="kyc-modal-title"
-        className="relative w-full max-w-lg bg-white dark:bg-slate-900 rounded-xl shadow-2xl p-6 md:p-8"
+        className="relative w-full max-w-lg bg-white dark:bg-[#0b1022] rounded-xl border border-slate-200 dark:border-[#D4AF37]/30 shadow-[0_0_50px_rgba(212,175,55,0.15)] p-6 md:p-8"
       >
         <button
           ref={closeBtnRef}
@@ -87,7 +87,7 @@ export default function KYCModal({ isOpen, onClose }) {
           </svg>
         </button>
 
-        <h2 id="kyc-modal-title" className="text-2xl font-bold text-slate-900 dark:text-white mb-6">
+        <h2 id="kyc-modal-title" className="text-2xl font-bold text-[#7A5800] dark:text-[#D4AF37] mb-6">
           {step === 1 ? "Complete Your KYC" : "Review KYC Information"}
         </h2>
 
@@ -95,21 +95,22 @@ export default function KYCModal({ isOpen, onClose }) {
           {step === 1 && (
             <>
               <div>
-                <label htmlFor="kyc-pan" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">
+                <label htmlFor="kyc-pan" className="block text-sm font-bold text-slate-900 dark:text-white mb-1">
                   PAN Number
                 </label>
                 <input
                   ref={firstInputRef}
                   type="text"
                   id="kyc-pan"
+                  placeholder="enter your pan"
                   required
                   value={formData.pan}
                   onChange={(e) => setFormData({ ...formData, pan: e.target.value })}
-                  className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 dark:bg-slate-800 dark:border-slate-700 dark:text-white"
+                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#7A5800] dark:focus:ring-[#D4AF37] bg-slate-50 dark:bg-[#05070f] border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white"
                 />
               </div>
               <div>
-                <label htmlFor="kyc-dob" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">
+                <label htmlFor="kyc-dob" className="block text-sm font-bold text-slate-900 dark:text-white mb-1">
                   Date of Birth
                 </label>
                 <input
@@ -118,38 +119,40 @@ export default function KYCModal({ isOpen, onClose }) {
                   required
                   value={formData.dob}
                   onChange={(e) => setFormData({ ...formData, dob: e.target.value })}
-                  className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 dark:bg-slate-800 dark:border-slate-700 dark:text-white"
+                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#7A5800] dark:focus:ring-[#D4AF37] bg-slate-50 dark:bg-[#05070f] border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white"
                 />
               </div>
               <div>
-                <label htmlFor="kyc-phone" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">
+                <label htmlFor="kyc-phone" className="block text-sm font-bold text-slate-900 dark:text-white mb-1">
                   Phone Number
                 </label>
                 <input
                   type="tel"
                   id="kyc-phone"
+                  placeholder="+91xxxxxxxxxx"
                   required
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 dark:bg-slate-800 dark:border-slate-700 dark:text-white"
+                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#7A5800] dark:focus:ring-[#D4AF37] bg-slate-50 dark:bg-[#05070f] border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white"
                 />
               </div>
               <div>
-                <label htmlFor="kyc-email" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">
+                <label htmlFor="kyc-email" className="block text-sm font-bold text-slate-900 dark:text-white mb-1">
                   Email Address
                 </label>
                 <input
                   type="email"
                   id="kyc-email"
+                  placeholder="johndoe@gmail.com"
                   required
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 dark:bg-slate-800 dark:border-slate-700 dark:text-white"
+                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#7A5800] dark:focus:ring-[#D4AF37] bg-slate-50 dark:bg-[#05070f] border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white"
                 />
               </div>
               <button
                 type="submit"
-                className="w-full py-3 mt-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 focus:ring-2 focus:ring-blue-500"
+                className="w-full py-3 mt-4 text-black font-bold tracking-wide rounded-lg bg-gradient-to-r from-[#F3D98B] via-[#D4AF37] to-[#B8962E] hover:shadow-[0_8px_20px_rgba(212,175,55,0.3)] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#D4AF37] transition-all"
               >
                 Review Details
               </button>
@@ -158,11 +161,11 @@ export default function KYCModal({ isOpen, onClose }) {
 
           {step === 2 && (
             <>
-              <div className="bg-slate-50 dark:bg-slate-800 p-4 rounded-lg space-y-2 text-sm text-slate-800 dark:text-slate-200">
-                <p><strong>PAN:</strong> {formData.pan}</p>
-                <p><strong>DOB:</strong> {formData.dob}</p>
-                <p><strong>Phone:</strong> {formData.phone}</p>
-                <p><strong>Email:</strong> {formData.email}</p>
+              <div className="bg-[#D4AF37]/5 dark:bg-white/5 border border-[#D4AF37]/20 p-4 rounded-lg space-y-2 text-sm text-slate-900 dark:text-white">
+                <p><strong className="text-[#7A5800] dark:text-[#F3D98B]">PAN:</strong> {formData.pan}</p>
+                <p><strong className="text-[#7A5800] dark:text-[#F3D98B]">DOB:</strong> {formData.dob}</p>
+                <p><strong className="text-[#7A5800] dark:text-[#F3D98B]">Phone:</strong> {formData.phone}</p>
+                <p><strong className="text-[#7A5800] dark:text-[#F3D98B]">Email:</strong> {formData.email}</p>
               </div>
 
               <div className="flex items-start gap-2 mt-4">
@@ -172,9 +175,9 @@ export default function KYCModal({ isOpen, onClose }) {
                   required
                   checked={formData.confirm}
                   onChange={(e) => setFormData({ ...formData, confirm: e.target.checked })}
-                  className="mt-1 w-4 h-4 text-blue-600 rounded focus:ring-blue-500"
+                  className="mt-1 w-5 h-5 text-[#7A5800] dark:text-[#D4AF37] border-slate-300 dark:border-slate-700 rounded focus:ring-[#7A5800] dark:focus:ring-[#D4AF37]"
                 />
-                <label htmlFor="kyc-confirm" className="text-sm text-slate-600 dark:text-slate-400">
+                <label htmlFor="kyc-confirm" className="text-sm font-semibold text-slate-900 dark:text-white">
                   I confirm that the details provided above are accurate and I consent to WealthFino processing my KYC data.
                 </label>
               </div>
@@ -183,13 +186,13 @@ export default function KYCModal({ isOpen, onClose }) {
                 <button
                   type="button"
                   onClick={() => setStep(1)}
-                  className="w-1/3 py-3 border border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300 font-semibold rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800"
+                  className="w-1/3 py-3 border border-slate-300 dark:border-[#D4AF37]/30 text-slate-900 dark:text-white font-bold rounded-lg hover:bg-slate-100 dark:hover:bg-white/5 focus:outline-none focus:ring-2 focus:ring-[#D4AF37]"
                 >
                   Edit
                 </button>
                 <button
                   type="submit"
-                  className="w-2/3 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 focus:ring-2 focus:ring-blue-500"
+                  className="w-2/3 py-3 text-black font-bold tracking-wide rounded-lg bg-gradient-to-r from-[#F3D98B] via-[#D4AF37] to-[#B8962E] hover:shadow-[0_8px_20px_rgba(212,175,55,0.3)] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#D4AF37] transition-all"
                 >
                   Submit Final KYC
                 </button>

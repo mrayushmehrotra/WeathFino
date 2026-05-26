@@ -263,7 +263,7 @@ Evidence: Auditor observation. Screenshot: CURRENT LANDMARKS.png
 Fix
 Add a skip link as the very first focusable element in the HTML of every page template.
 HTML — place this as the first element inside <body>:
-<a href="#main-content" class="skip-link">Skip to main content</a>
+<a href="#main-content" class="skip-link"> content</a>
 Add the matching id to your main content wrapper:
 <main id="main-content">
 CSS — make the skip link visible only when focused (add to your stylesheet):

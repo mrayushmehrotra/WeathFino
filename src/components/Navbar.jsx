@@ -59,15 +59,15 @@ const Navbar = () => {
               <Link
                 key={item.label}
                 to={item.path}
-                className={`font-medium transition relative ${
+                className={`font-bold transition relative ${
                   isActive(item.path)
-                    ? "text-trading-blue"
-                    : "text-gray-600 dark:text-gray-300 hover:text-trading-blue"
+                    ? "text-[#5C4200] dark:text-[#F3D98B]"
+                    : "text-slate-900 dark:text-white hover:text-[#5C4200] dark:hover:text-[#F3D98B]"
                 }`}
               >
                 {item.label}
                 {isActive(item.path) && (
-                  <div className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-trading-green to-trading-cyan rounded-full" />
+                  <div className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-[#9C7721] via-[#856315] to-[#7A5800] dark:from-[#F3D98B] dark:via-[#D4AF37] dark:to-[#B8962E] rounded-full" />
                 )}
               </Link>
             ))}
@@ -88,7 +88,7 @@ const Navbar = () => {
               href="https://play.google.com/store/apps/details?id=com.wealthfino.mobile"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary"
+              className="px-6 py-2 rounded-lg font-semibold text-[#1F3864] bg-gradient-to-r from-[#F3D98B] via-[#D4AF37] to-[#B8962E] shadow-md hover:shadow-lg transition-all"
               aria-label="Download WealthFino app on Google Play"
             >
               Download
@@ -113,10 +113,10 @@ const Navbar = () => {
                   key={item.label}
                   to={item.path}
                   onClick={() => setIsOpen(false)}
-                  className={`block py-2 pl-4 border-l-2 transition ${
+                  className={`block py-2 pl-4 border-l-2 font-bold transition ${
                     isActive(item.path)
-                      ? "border-trading-blue text-trading-blue bg-blue-50 dark:bg-gray-800"
-                      : "border-transparent text-gray-600 dark:text-gray-300"
+                      ? "border-[#5C4200] dark:border-[#F3D98B] text-[#5C4200] dark:text-[#F3D98B] bg-[#D4AF37]/10"
+                      : "border-transparent text-slate-900 dark:text-white hover:text-[#5C4200] dark:hover:text-[#F3D98B]"
                   }`}
                 >
                   {item.label}

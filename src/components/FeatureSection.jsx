@@ -159,7 +159,7 @@ const FeatureCard = ({ title, subtitle, image, points, cta, isActive }) => {
             }
           `}
         >
-          <span className="relative font-bold text-lg z-10">{cta}</span>
+          <span className="relative text-black font-bold text-lg z-10">{cta}</span>
           {isActive && (
             <div className="absolute inset-0 dark:bg-gradient-to-r dark:from-[#F3D98B] dark:via-[#D4AF37] dark:to-[#B8962E] bg-gradient-to-r from-[#F3D98B] via-[#D4AF37] to-[#B8962E] animate-shimmer opacity-30 dark:opacity-100"></div>
           )}
