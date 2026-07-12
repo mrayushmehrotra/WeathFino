@@ -199,7 +199,7 @@ const FeaturesWhiteBlueAnimated = () => {
             className="
               inline-block px-6 py-2 rounded-full
               bg-[#D4AF37]/15 dark:bg-[#D4AF37]/15
-              text-black dark:text-white
+              text-gray-900 dark:text-gray-100
               font-bold tracking-widest uppercase
               text-sm md:text-base
             "
@@ -269,11 +269,11 @@ const FeaturesWhiteBlueAnimated = () => {
                     transition={{ delay: index * 0.15 }}
                     className="
                       flex items-start gap-3
-                      text-black dark:text-white
+                      text-gray-800 dark:text-gray-200
                     "
                   >
                     <span
-                      className="text-black dark:text-white"
+                      className="text-[#9C7721] dark:text-[#D4AF37] mt-0.5 flex-shrink-0"
                       aria-hidden="true"
                     >
                       <CheckCircle className="w-5 h-5" />
@@ -287,12 +287,12 @@ const FeaturesWhiteBlueAnimated = () => {
                 href="https://play.google.com/store/apps/details?id=com.wealthfino.mobile&hl=en_IN"
                 target="_blank"
                 rel="noopener noreferrer"
-                alt="Download the Wealthfino app on Play Store"
+                aria-label="Get Started — Download the Wealthfino app on Play Store"
                 whileHover={{ scale: 1.08 }}
                 whileTap={{ scale: 0.96 }}
                 className="
                   mt-10 px-10 py-4 rounded-full font-semibold inline-block
-                  text-black dark:text-white
+                  text-gray-900
                   bg-gradient-to-r from-[#F3D98B] via-[#D4AF37] to-[#B8962E]
                   shadow-[0_8px_20px_rgba(212,175,55,0.25)] hover:shadow-[0_12px_25px_rgba(212,175,55,0.35)]
                   transition-all

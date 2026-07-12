@@ -1,16 +1,69 @@
+import { useState, useEffect } from "react";
+
 export default function ComplaintsBoard() {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const cachedData = localStorage.getItem("complaintsData");
+      if (cachedData) {
+        setData(JSON.parse(cachedData));
+        setLoading(false);
+      }
+
+      try {
+        const response = await fetch("https://wealthfino-info.vercel.app/api/complaints");
+        if (!response.ok) {
+          throw new Error("Failed to fetch complaints data");
+        }
+        const result = await response.json();
+        
+        setData(result);
+        localStorage.setItem("complaintsData", JSON.stringify(result));
+      } catch (err) {
+        if (!cachedData) {
+          setError(err.message);
+        }
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-white dark:bg-black text-slate-800 dark:text-slate-200">
+        <p className="text-xl">Loading complaints data...</p>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-white dark:bg-black text-slate-800 dark:text-slate-200">
+        <p className="text-xl text-red-500">Error: {error}</p>
+      </div>
+    );
+  }
+
+  if (!data) return null;
+
   return (
-    <div className="min-h-screen rounded-2xl bg-white dark:bg-[#0b0f19] text-black dark:text-slate-200 py-16 px-4">
+    <div className="min-h-screen rounded-2xl bg-white dark:bg-black text-slate-800 dark:text-slate-200 py-16 px-4">
       <div className="max-w-7xl mx-auto space-y-14">
         {/* ================= HEADER ================= */}
         <div className="text-center space-y-4">
           <h1 className="text-2xl md:text-3xl font-bold text-black dark:text-white">
             ANNEXURE – B
           </h1>
-          <div className="border-t border-gray-200 dark:border-slate-700 max-w-xl mx-auto" />
-          <p className="text-lg text-black dark:text-slate-200 font-medium">
+          <div className="border-t border-slate-300 dark:border-slate-700 max-w-xl mx-auto" />
+          <p className="text-lg text-slate-700 dark:text-slate-300 font-medium">
             Data for the month ending –{" "}
-            <span className="text-black dark:text-white">December 2025</span>
+            <span className="text-black dark:text-white">{data.monthEnding || "N/A"}</span>
           </p>
         </div>
 
@@ -28,36 +81,30 @@ export default function ComplaintsBoard() {
               </Tr>
             </thead>
             <tbody>
-              <Tr>
-                <Td>1</Td>
-                <Td>Directly from Investors</Td>
-                <Td>0</Td>
-                <Td>0</Td>
-                <Td>0</Td>
-                <Td>0</Td>
-              </Tr>
-              <Tr alt>
-                <Td>2</Td>
-                <Td>SEBI (SCORES)</Td>
-                <Td>0</Td>
-                <Td>0</Td>
-                <Td>0</Td>
-                <Td>0</Td>
-              </Tr>
-              <Tr>
-                <Td>3</Td>
-                <Td>Other Sources (if any)</Td>
-                <Td>0</Td>
-                <Td>0</Td>
-                <Td>0</Td>
-                <Td>0</Td>
-              </Tr>
+              {data.currentMonth?.map((row, i) => (
+                <Tr key={row.id || i} alt={i % 2 !== 0}>
+                  <Td>{i + 1}</Td>
+                  <Td>{row.receivedFrom}</Td>
+                  <Td>{row.pendingLastMonth}</Td>
+                  <Td>{row.received}</Td>
+                  <Td>{row.resolved}</Td>
+                  <Td>{row.totalPending}</Td>
+                </Tr>
+              ))}
               <Tr total>
                 <Td colSpan={2}>GRAND TOTAL</Td>
-                <Td>0</Td>
-                <Td>0</Td>
-                <Td>0</Td>
-                <Td>0</Td>
+                <Td>
+                  {data.currentMonth?.reduce((sum, row) => sum + (Number(row.pendingLastMonth) || 0), 0) || 0}
+                </Td>
+                <Td>
+                  {data.currentMonth?.reduce((sum, row) => sum + (Number(row.received) || 0), 0) || 0}
+                </Td>
+                <Td>
+                  {data.currentMonth?.reduce((sum, row) => sum + (Number(row.resolved) || 0), 0) || 0}
+                </Td>
+                <Td>
+                  {data.currentMonth?.reduce((sum, row) => sum + (Number(row.totalPending) || 0), 0) || 0}
+                </Td>
               </Tr>
             </tbody>
           </Table>
@@ -79,47 +126,31 @@ export default function ComplaintsBoard() {
               </Tr>
             </thead>
             <tbody>
-              {[
-                ["Apr 24", 0, 1, 0, 0],
-                ["May 24", 1, 0, 1, 0],
-                ["Jun 24", 0, 0, 0, 0],
-                ["Jul 24", 0, 0, 0, 0],
-                ["Aug 24", 0, 0, 0, 0],
-                ["Sep 24", 0, 0, 0, 0],
-                ["Oct 24", 0, 0, 0, 0],
-                ["Nov 24", 0, 0, 0, 0],
-                ["Dec 24", 0, 0, 0, 0],
-                ["Jan 25", 0, 0, 0, 0],
-                ["Feb 25", 0, 0, 0, 0],
-                ["Mar 25", 0, 0, 0, 0],
-                ["Apr 25", 0, 0, 0, 0],
-                ["May 25", 0, 0, 0, 0],
-                ["Jun 25", 0, 0, 0, 0],
-                ["Jul 25", 0, 0, 0, 0],
-                ["Aug 25", 0, 0, 0, 0],
-                ["Sep 25", 0, 0, 0, 0],
-                ["Oct 25", 0, 0, 0, 0],
-                ["Nov 25", 0, 0, 0, 0],
-                ["Dec 25", 0, 0, 0, 0],
-                ["Jan 26", 0, 0, 0, 0],
-
-              ].map((row, i) => (
-                <Tr key={i} alt={i % 2 !== 0}>
+              {data.monthlyTrend?.map((row, i) => (
+                <Tr key={row.id || i} alt={i % 2 !== 0}>
                   <Td>{i + 1}</Td>
-                  <Td>{row[0]}</Td>
-                  <Td>{row[1]}</Td>
-                  <Td>{row[2]}</Td>
-                  <Td>{row[3]}</Td>
-                  <Td>{row[4]}</Td>
+                  <Td>{row.month}</Td>
+                  <Td>{row.carriedForward}</Td>
+                  <Td>{row.received}</Td>
+                  <Td>{row.resolved}</Td>
+                  <Td>{row.pending}</Td>
                 </Tr>
               ))}
 
               <Tr total>
                 <Td colSpan={2}>GRAND TOTAL</Td>
-                <Td>1</Td>
-                <Td>1</Td>
-                <Td>1</Td>
-                <Td>0</Td>
+                <Td>
+                  {data.monthlyTrend?.reduce((sum, row) => sum + (Number(row.carriedForward) || 0), 0) || 0}
+                </Td>
+                <Td>
+                  {data.monthlyTrend?.reduce((sum, row) => sum + (Number(row.received) || 0), 0) || 0}
+                </Td>
+                <Td>
+                  {data.monthlyTrend?.reduce((sum, row) => sum + (Number(row.resolved) || 0), 0) || 0}
+                </Td>
+                <Td>
+                  {data.monthlyTrend?.reduce((sum, row) => sum + (Number(row.pending) || 0), 0) || 0}
+                </Td>
               </Tr>
             </tbody>
           </Table>
@@ -141,44 +172,30 @@ export default function ComplaintsBoard() {
               </Tr>
             </thead>
             <tbody>
-              <Tr>
-                <Td>1</Td>
-                <Td>2022–2023</Td>
-                <Td>0</Td>
-                <Td>0</Td>
-                <Td>0</Td>
-                <Td>0</Td>
-              </Tr>
-              <Tr alt>
-                <Td>2</Td>
-                <Td>2023–2024</Td>
-                <Td>0</Td>
-                <Td>1</Td>
-                <Td>1</Td>
-                <Td>0</Td>
-              </Tr>
-              <Tr>
-                <Td>3</Td>
-                <Td>2024–2025</Td>
-                <Td>0</Td>
-                <Td>0</Td>
-                <Td>0</Td>
-                <Td>0</Td>
-              </Tr>
-              <Tr alt>
-                <Td>4</Td>
-                <Td>2025–2026</Td>
-                <Td>0</Td>
-                <Td>0</Td>
-                <Td>0</Td>
-                <Td>0</Td>
-              </Tr>
+              {data.annualTrend?.map((row, i) => (
+                <Tr key={row.id || i} alt={i % 2 !== 0}>
+                  <Td>{i + 1}</Td>
+                  <Td>{row.year}</Td>
+                  <Td>{row.carriedForward}</Td>
+                  <Td>{row.received}</Td>
+                  <Td>{row.resolved}</Td>
+                  <Td>{row.pending}</Td>
+                </Tr>
+              ))}
               <Tr total>
                 <Td colSpan={2}>GRAND TOTAL</Td>
-                <Td>0</Td>
-                <Td>1</Td>
-                <Td>1</Td>
-                <Td>0</Td>
+                <Td>
+                  {data.annualTrend?.reduce((sum, row) => sum + (Number(row.carriedForward) || 0), 0) || 0}
+                </Td>
+                <Td>
+                  {data.annualTrend?.reduce((sum, row) => sum + (Number(row.received) || 0), 0) || 0}
+                </Td>
+                <Td>
+                  {data.annualTrend?.reduce((sum, row) => sum + (Number(row.resolved) || 0), 0) || 0}
+                </Td>
+                <Td>
+                  {data.annualTrend?.reduce((sum, row) => sum + (Number(row.pending) || 0), 0) || 0}
+                </Td>
               </Tr>
             </tbody>
           </Table>
@@ -203,7 +220,7 @@ function Section({ title, children }) {
 
 function Table({ caption, children }) {
   return (
-    <div className="overflow-x-auto bg-white dark:bg-slate-900 rounded-xl border border-gray-200 dark:border-slate-700">
+    <div className="overflow-x-auto bg-white dark:bg-black rounded-xl border border-slate-300 dark:border-slate-700">
       <table className="w-full text-sm">
         {caption && <caption className="sr-only">{caption}</caption>}
         {children}
@@ -213,12 +230,12 @@ function Table({ caption, children }) {
 }
 
 function Tr({ children, head, alt, total, blue, yellow }) {
-  let cls = "border-b border-gray-200 dark:border-slate-700";
-  if (head && blue) cls += " bg-blue-200 text-black dark:text-slate-200 font-semibold";
-  else if (head && yellow) cls += " bg-yellow-200 text-black dark:text-slate-200 font-semibold";
-  else if (head) cls += " bg-emerald-200 text-black dark:text-slate-200 font-semibold";
-  else if (total) cls += " bg-gray-100 dark:bg-slate-800 font-bold";
-  else if (alt) cls += " bg-gray-50 dark:bg-slate-800/50";
+  let cls = "border-b border-slate-300 dark:border-slate-700";
+  if (head && blue) cls += " bg-blue-200 text-black font-semibold";
+  else if (head && yellow) cls += " bg-yellow-200 text-black font-semibold";
+  else if (head) cls += " bg-emerald-200 text-black font-semibold";
+  else if (total) cls += " bg-slate-100 dark:bg-black font-bold";
+  else if (alt) cls += " bg-slate-100/50 dark:bg-black/50";
   return <tr className={cls}>{children}</tr>;
 }
 
@@ -236,7 +253,7 @@ function Td({ children, colSpan }) {
 
 function FootNote() {
   return (
-    <div className="text-xs text-black dark:text-slate-200 space-y-1">
+    <div className="text-xs text-slate-600 dark:text-slate-400 space-y-1">
       <p>
         * Inclusive of complaints of previous months resolved in the current
         month.
@@ -247,7 +264,7 @@ function FootNote() {
 }
 function FootNote2() {
   return (
-    <div className="text-xs text-black dark:text-slate-200 space-y-1">
+    <div className="text-xs text-slate-600 dark:text-slate-400 space-y-1">
       <p>
         *Inclusive of complaints of previous years resolved in the current year.
       </p>

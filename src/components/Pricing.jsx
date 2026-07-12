@@ -76,8 +76,8 @@ const PricingSwitch = ({ onSwitch }) => {
           onClick={() => handleSwitch("0")}
           className={`relative z-10 w-fit sm:h-12 h-10 rounded-full sm:px-6 px-3 sm:py-2 py-1 font-medium transition-colors ${
             selected === "0"
-              ? "text-black"
-              : "text-gray-700 dark:text-gray-400 hover:text-black dark:hover:text-white"
+              ? "text-gray-900"
+              : "text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white"
           }`}
         >
           {selected === "0" && (
@@ -95,8 +95,8 @@ const PricingSwitch = ({ onSwitch }) => {
           onClick={() => handleSwitch("1")}
           className={`relative z-10 w-fit sm:h-12 h-10 flex-shrink-0 rounded-full sm:px-6 px-3 sm:py-2 py-1 font-medium transition-colors ${
             selected === "1"
-              ? "text-black"
-              : "text-gray-700 dark:text-gray-400 hover:text-black dark:hover:text-white"
+              ? "text-gray-900"
+              : "text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white"
           }`}
         >
           {selected === "1" && (
@@ -109,7 +109,7 @@ const PricingSwitch = ({ onSwitch }) => {
           )}
           <span className="relative flex items-center gap-2">
             Yearly
-            <span className="rounded-full bg-black/10 dark:bg-black/40 px-2 py-0.5 text-[10px] font-bold text-black dark:text-white uppercase tracking-wider">
+            <span className="rounded-full bg-black/10 dark:bg-black/60 px-2 py-0.5 text-[10px] font-bold text-gray-900 dark:text-white uppercase tracking-wider">
               Save 20%
             </span>
           </span>
@@ -189,7 +189,7 @@ export default function Pricing() {
           <TimelineContent
             as="span"
             animationNum={1}
-            className="border-2 border-dashed border-[#D4AF37] px-4 py-1 rounded-2xl bg-yellow-50 dark:bg-[#D4AF37]/10 text-[#7A5800] dark:text-[#D4AF37] capitalize inline-block mt-2 md:mt-0"
+            className="border-2 border-dashed border-[#D4AF37] px-4 py-1 rounded-2xl bg-yellow-50 dark:bg-[#D4AF37]/10 text-[#4A2E00] dark:text-[#D4AF37] capitalize inline-block mt-2 md:mt-0"
           >
             Learn The Why!
           </TimelineContent>
@@ -234,13 +234,13 @@ export default function Pricing() {
                     </span>
                   )}
                 </div>
-                <p className="text-sm text-gray-600 dark:text-gray-400 mb-6 font-medium h-10">
+                <p className="text-sm text-gray-600 dark:text-gray-300 mb-6 font-medium h-10">
                   {plan.description}
                 </p>
 
                 <div className="flex flex-col mb-8">
                   <span
-                    className={`line-through text-gray-600 dark:text-gray-400 text-lg mb-1 transition-opacity duration-300 ${!isYearly ? "opacity-0 select-none" : "opacity-100"}`}
+                    className={`line-through text-gray-600 dark:text-gray-300 text-lg mb-1 transition-opacity duration-300 ${!isYearly ? "opacity-0 select-none" : "opacity-100"}`}
                   >
                     {plan.oldPrice}
                   </span>
@@ -252,7 +252,7 @@ export default function Pricing() {
                         className="text-5xl"
                       />
                     </span>
-                    <span className="text-gray-600 dark:text-gray-400 ml-2 font-medium">
+                    <span className="text-gray-600 dark:text-gray-300 ml-2 font-medium">
                       /{isYearly ? "year" : "month"}
                     </span>
                   </div>
@@ -273,7 +273,7 @@ export default function Pricing() {
                   {plan.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-start">
                       <span
-                        className={`grid place-content-center mt-0.5 mr-3 rounded-full p-1 ${feature.gold ? "text-[#7A5800] dark:text-[#D4AF37] bg-yellow-50 dark:bg-yellow-900/20" : "text-gray-500 dark:text-gray-400 bg-gray-50 dark:bg-white/5"}`}
+                        className={`grid place-content-center mt-0.5 mr-3 rounded-full p-1 ${feature.gold ? "text-[#4A2E00] dark:text-[#D4AF37] bg-yellow-50 dark:bg-yellow-900/20" : "text-gray-500 dark:text-gray-300 bg-gray-50 dark:bg-white/5"}`}
                       >
                         <CheckCircle
                           size={16}
@@ -281,7 +281,7 @@ export default function Pricing() {
                         />
                       </span>
                       <span
-                        className={`text-sm ${feature.gold ? "text-gray-900 dark:text-white font-bold" : "text-gray-600 dark:text-gray-400"}`}
+                        className={`text-sm ${feature.gold ? "text-gray-900 dark:text-white font-bold" : "text-gray-700 dark:text-gray-300"}`}
                       >
                         {feature.text}
                       </span>

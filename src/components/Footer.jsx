@@ -31,7 +31,7 @@ const Footer = () => {
                 <h3 className="font-playfair text-2xl font-bold text-black dark:text-white">
                   WealthFino
                 </h3>
-                <p className="text-sm text-black dark:text-white mt-1">
+                <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
                   Smart Trading Community
                 </p>
               </div>
@@ -39,7 +39,7 @@ const Footer = () => {
 
             {/* Description */}
             <div className="bg-gradient-to-r from-slate-50/50 to-transparent dark:from-[#D4AF37]/5 dark:to-transparent rounded-2xl p-5 border border-slate-100 dark:border-[#D4AF37]/10">
-              <p className="text-sm leading-relaxed text-black dark:text-white">
+              <p className="text-sm leading-relaxed text-gray-700 dark:text-gray-300">
                 Join our trading community for shared insights, interactive
                 learning, and a collaborative environment to enhance your
                 financial knowledge.
@@ -98,7 +98,7 @@ const Footer = () => {
                 </h3>
               </div>
 
-              <p className="text-xs leading-relaxed text-black dark:text-white">
+              <p className="text-xs leading-relaxed text-gray-800 dark:text-gray-200">
                 Investment in securities market is subject to market risks. Read
                 all the related documents carefully before investing.
                 Registration granted by SEBI and certification from NISM is no
@@ -241,7 +241,7 @@ const Footer = () => {
                 <h3 className="font-playfair font-bold text-3xl text-black dark:text-white mb-1">
                   Get in Touch
                 </h3>
-                <p className="text-sm text-black dark:text-white">
+                <p className="text-sm text-gray-600 dark:text-gray-400">
                   Connect with us through multiple channels
                 </p>
               </div>
@@ -272,7 +272,7 @@ const Footer = () => {
                         Email
                       </span>
                     </div>
-                    <p className="text font-medium text-black dark:text-white group-hover:text-[#B8962E] dark:group-hover:text-[#D4AF37] transition-colors">
+                    <p className="text font-medium text-gray-800 dark:text-gray-200 group-hover:text-[#8B6914] dark:group-hover:text-[#D4AF37] transition-colors">
                       info@krishnapathak.com
                     </p>
                   </div>
@@ -315,7 +315,7 @@ const Footer = () => {
                         />
                       </svg>
                     </div>
-                    <p className="text-lg font-medium text-black dark:text-white group-hover:text-[#B8962E] dark:group-hover:text-[#D4AF37] transition-colors">
+                    <p className="text-lg font-medium text-gray-800 dark:text-gray-200 group-hover:text-[#8B6914] dark:group-hover:text-[#D4AF37] transition-colors">
                       +91 9883455700
                     </p>
                   </div>
@@ -362,7 +362,7 @@ const Footer = () => {
                         />
                       </svg>
                     </div>
-                    <p className="text-lg font-medium text-black dark:text-white group-hover:text-[#B8962E] dark:group-hover:text-[#D4AF37] transition-colors">
+                    <p className="text-lg font-medium text-gray-800 dark:text-gray-200 group-hover:text-[#8B6914] dark:group-hover:text-[#D4AF37] transition-colors">
                       9353523685
                     </p>
                   </div>
@@ -402,19 +402,19 @@ const Footer = () => {
               {/* Registration Details */}
               <div className="space-y-3">
                 <div>
-                  <p className="text-xs font-medium text-black dark:text-white uppercase tracking-wider mb-1">
+                  <p className="text-xs font-medium text-gray-600 dark:text-gray-400 uppercase tracking-wider mb-1">
                     SEBI Registration Number
                   </p>
-                  <p className="text-sm font-mono text-black dark:text-white">
+                  <p className="text-sm font-mono text-gray-900 dark:text-gray-100">
                     INH300009914
                   </p>
                 </div>
 
                 <div>
-                  <p className="text-xs font-medium text-black dark:text-white uppercase tracking-wider mb-1">
+                  <p className="text-xs font-medium text-gray-600 dark:text-gray-400 uppercase tracking-wider mb-1">
                     BSE Enlistment Number
                   </p>
-                  <p className="text-sm font-mono text-black dark:text-white">
+                  <p className="text-sm font-mono text-gray-900 dark:text-gray-100">
                     5590
                   </p>
                 </div>
@@ -457,7 +457,7 @@ const Footer = () => {
               </div>
 
               <div className="pl-11">
-                <p className="text-sm leading-relaxed text-black dark:text-white">
+                <p className="text-sm leading-relaxed text-gray-700 dark:text-gray-300">
                   RS-39/43, 5/3C Golden Park, Sankarpur West, Near Rabindranagar
                   Co-operative, Durgapur, West Bengal - 713206
                 </p>
@@ -498,7 +498,7 @@ const Footer = () => {
               </div>
 
               <div className="pl-11">
-                <p className="text-sm leading-relaxed text-black dark:text-white">
+                <p className="text-sm leading-relaxed text-gray-700 dark:text-gray-300">
                   207,Jayanivas,Padukamandir Road Bharat Housing Society,
                   Subramanyapura Below Digicomm Semiconductor, BANGALORE,
                   KARNATAKA, 560061
@@ -518,7 +518,7 @@ const Footer = () => {
                 <h3 className="text-sm font-semibold text-black dark:text-white mb-1">
                   Stay Connected
                 </h3>
-                <p className="text-sm text-black dark:text-white">
+                <p className="text-sm text-gray-600 dark:text-gray-400">
                   Follow us for updates and insights
                 </p>
               </div>
@@ -664,7 +664,7 @@ const Footer = () => {
 
           {/* Copyright */}
           <div className="text-center">
-            <p className="text-sm text-black dark:text-white">
+            <p className="text-sm text-gray-500 dark:text-gray-400">
               Copyright © {new Date().getFullYear()} WealthFino. All rights
               reserved.
             </p>

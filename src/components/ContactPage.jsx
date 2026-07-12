@@ -25,7 +25,7 @@ const ContactPage = () => {
                 Together
               </span>
             </h1>
-            <p className="text-xl text-white mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
               Reach out to our team for expert guidance, support, and research
               insights.
             </p>
@@ -171,15 +171,15 @@ const ContactPage = () => {
                     <h2 className="font-bold text-black dark:text-white">
                       Phone Support
                     </h2>
-                    <p className="text-sm text-black dark:text-white">
+                    <p className="text-sm text-gray-600 dark:text-gray-300">
                       Direct assistance
                     </p>
                   </div>
                 </div>
-                <p className="text-2xl font-bold text-black dark:text-white">
+                <p className="text-2xl font-bold text-gray-900 dark:text-white">
                   +91 9883455700
                 </p>
-                <p className="text-black dark:text-white text-sm mt-2">
+                <p className="text-sm text-gray-600 dark:text-gray-300 mt-2">
                   Mon-Fri, 9AM-6PM IST
                 </p>
               </div>
@@ -196,16 +196,16 @@ const ContactPage = () => {
                     <h2 className="font-bold text-black dark:text-white">
                       WhatsApp
                     </h2>
-                    <p className="text-sm text-black dark:text-white">
+                    <p className="text-sm text-gray-600 dark:text-gray-300">
                       Quick chat support
                     </p>
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <p className="font-medium text-black dark:text-white">
+                  <p className="font-medium text-gray-800 dark:text-gray-200">
                     Support: 9353523685
                   </p>
-                  <p className="font-medium text-black dark:text-white">
+                  <p className="font-medium text-gray-800 dark:text-gray-200">
                     Updates: 7353009208
                   </p>
                 </div>
@@ -226,12 +226,12 @@ const ContactPage = () => {
                     <h2 className="font-bold text-black dark:text-white">
                       Email
                     </h2>
-                    <p className="text-sm text-black dark:text-white">
+                    <p className="text-sm text-gray-600 dark:text-gray-300">
                       General inquiries
                     </p>
                   </div>
                 </div>
-                <p className="text-lg font-medium text-black dark:text-white break-all">
+                <p className="text-lg font-medium text-gray-800 dark:text-gray-200 break-all">
                   skrishna.sk4@gmail.com
                 </p>
               </div>
@@ -246,15 +246,15 @@ const ContactPage = () => {
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center">
                     <Shield
-                      className="text-black dark:text-white"
+                      className="text-blue-700 dark:text-blue-300"
                       size={18}
                     />
                   </div>
                   <div>
-                    <p className="font-medium text-black dark:text-white">
+                    <p className="font-medium text-gray-900 dark:text-white">
                       SEBI Registered
                     </p>
-                    <p className="text-sm text-black dark:text-white">
+                    <p className="text-sm text-gray-600 dark:text-gray-300">
                       Fully compliant & regulated
                     </p>
                   </div>
@@ -283,10 +283,10 @@ const ContactPage = () => {
                     />
                   </div>
                   <div>
-                    <p className="font-medium text-black dark:text-white">
+                    <p className="font-medium text-gray-900 dark:text-white">
                       Expert Support
                     </p>
-                    <p className="text-sm text-black dark:text-white">
+                    <p className="text-sm text-gray-600 dark:text-gray-300">
                       Professional team ready
                     </p>
                   </div>
@@ -302,7 +302,7 @@ const ContactPage = () => {
             <h2 className="text-3xl font-bold text-black dark:text-white mb-4">
               Regulatory Offices
             </h2>
-            <p className="text-black dark:text-white max-w-2xl mx-auto">
+            <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
               As a SEBI Registered Research Analyst, we maintain transparency
               with regulatory authorities.
             </p>
@@ -324,7 +324,7 @@ const ContactPage = () => {
                   <div className="w-20 h-1 bg-blue-600 dark:bg-blue-500 rounded-full"></div>
                 </div>
               </div>
-              <div className="space-y-3 text-black dark:text-white">
+              <div className="space-y-3 text-gray-700 dark:text-gray-300">
                 <p className="flex items-start gap-2">
                   <span className="font-medium min-w-16">Address:</span>
                   <span>
@@ -360,7 +360,7 @@ const ContactPage = () => {
                   <div className="w-20 h-1 bg-gray-600 dark:bg-gray-500 rounded-full"></div>
                 </div>
               </div>
-              <div className="space-y-3 text-black dark:text-white">
+              <div className="space-y-3 text-gray-700 dark:text-gray-300">
                 <p className="flex items-start gap-2">
                   <span className="font-medium min-w-16">Address:</span>
                   <span>

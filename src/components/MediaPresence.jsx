@@ -89,8 +89,8 @@ const MediaPresence = () => {
           <div className="w-32 h-1.5 bg-[#856315] dark:bg-[#D4AF37] rounded-full mt-4 ml-auto shadow-sm" />
         </div>
 
-        <p className="text-2xl md:text-3xl font-medium max-w-4xl mx-auto text-black dark:text-white leading-relaxed">
-          We're proud to be recognized by leading business & financial
+        <p className="text-lg md:text-xl font-normal max-w-4xl mx-auto text-gray-700 dark:text-gray-300 leading-relaxed">
+          We're proud to be recognized by leading business &amp; financial
           platforms. Our insights are making headlines—featured by the most
           trusted business and financial platforms.
         </p>
@@ -113,7 +113,7 @@ const MediaPresence = () => {
               className="flex-shrink-0 bg-white/80 dark:bg-white/5 backdrop-blur-md p-5 md:p-8 rounded-2xl border border-slate-300 dark:border-white/10 shadow-md dark:shadow-none transition-transform hover:-translate-y-1"
             >
               {logo.link ? (
-                <a href={logo.link} target="_blank" rel="noopener noreferrer">
+                <a href={logo.link} target="_blank" rel="noopener noreferrer" aria-label={`Read about ${logo.alt} feature`}>
                   <img
                     src={logo.src}
                     alt={logo.alt}

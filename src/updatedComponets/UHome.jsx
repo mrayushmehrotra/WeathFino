@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Star } from "lucide-react";
 
 import MembershipPopup from "../components/MembershipPopup";
-import phone from "/phone6.png";
+import phone from "/hero_real.png";
 
 /* ================= ANIMATIONS ================= */
 
@@ -187,12 +187,12 @@ const UHome = () => {
             src={phone}
             alt="WealthFino mobile app showing live trade alerts and
 portfolio dashboard"
-            animate={{ y: [0, -15, 0] }}
-            transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
-            className="
+                animate={{ y: [0, -15, 0] }}
+              transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
+              className="
               w-[280px] sm:w-[340px] md:w-[400px] lg:w-[460px] xl:w-[500px]
               rotate-3 lg:rotate-6
-              drop-shadow-[0_45px_90px_rgba(0,0,0,0.85)]
+              drop-shadow-[0_45px_90px_rgba(0,0,0,0.85)]g
             "
           />
 

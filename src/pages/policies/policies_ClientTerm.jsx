@@ -1,78 +1,84 @@
-import { useState, useEffect } from "react";
-
 export default function ClientTerm() {
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const cachedData = localStorage.getItem("clientConsentData");
-      if (cachedData) {
-        setData(JSON.parse(cachedData));
-        setLoading(false);
-      }
-
-      try {
-        const response = await fetch("https://wealthfino-info.vercel.app/api/client-consent");
-        if (!response.ok) {
-          throw new Error("Failed to fetch client consent data");
-        }
-        const result = await response.json();
-        
-        setData(result);
-        localStorage.setItem("clientConsentData", JSON.stringify(result));
-      } catch (err) {
-        if (!cachedData) {
-          setError(err.message);
-        }
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchData();
-  }, []);
-
-  if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-white dark:bg-black text-slate-800 dark:text-slate-200">
-        <p className="text-xl">Loading client consent data...</p>
-      </div>
-    );
-  }
-
-  if (error) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-white dark:bg-black text-slate-800 dark:text-slate-200">
-        <p className="text-xl text-red-500">Error: {error}</p>
-      </div>
-    );
-  }
-
   return (
-    <div className="min-h-screen rounded-2xl bg-white dark:bg-black  from-white dark:from-black to-white dark:to-black py-16 px-4">
+    <div className="min-h-screen rounded-2xl bg-white dark:bg-[#0b0f19] from-gray-50 to-white dark:from-slate-950 dark:to-slate-900 py-16 px-4">
       <div className="max-w-5xl mx-auto">
         {/* PAGE TITLE */}
         <h1 className="text-xl md:text-2xl font-bold text-black dark:text-white text-center mb-4">
           CLIENT CONSENT AND TERMS & CONDITIONS
         </h1>
 
-        {data && (
-          <p className="text-slate-700 dark:text-slate-300 text-center max-w-2xl mx-auto mb-10">
-            {data.headerText}
-          </p>
-        )}
-        <p className="  font-bold text-black dark:text-white text-center mb-4">
+        <p className="text-black dark:text-white text-center max-w-2xl mx-auto mb-10">
+          Research Recommendation Services are provided by Mr. Krishna Kumar
+          Pathak, a SEBI-Registered Research Analyst (Registration No.
+          INH300009914, BSE Enlistment No. 5590), in full compliance with the
+          SEBI (Research Analyst) Regulations, 2014.
+        </p>
+        <p className="font-bold text-black dark:text-white text-center mb-4">
           CLIENT AUTHORIZATION & MITC COMPLIANCE
         </p>
-        <hr className="border-slate-300 dark:border-slate-700 my-6" />
+        <hr className="border-gray-200 dark:border-slate-700 my-6" />
 
-        {data?.sections?.map((section, idx) => (
-          <SectionCard key={idx} title={section.title}>
-            <div dangerouslySetInnerHTML={{ __html: section.content }} />
-          </SectionCard>
-        ))}
+        {/* 1 */}
+        <SectionCard title="1. Acceptance of MITC & Terms and Conditions : ">
+          <p>
+            I, the Client/User confirm that I have read and understood the Most
+            Important Terms & Conditions (MITC) and Terms & Conditions of Mr.
+            Krishna Kumar Pathak, SEBI-Registered Research Analyst (Reg. No.
+            INH300009914). I voluntarily accept these terms and agree they are
+            legally binding. I understand they govern the research
+            recommendation services provided to me under SEBI regulations. I
+            agree to comply with all obligations and accept that I am solely
+            responsible for my actions based on the research recommendations
+            received.
+          </p>
+        </SectionCard>
+
+        {/* 2 */}
+        <SectionCard title="2. Digital Consent, KYC & Electronic Signature Declaration : ">
+          <p>
+            I, the Client/User, hereby provide my explicit and informed consent
+            to Mr. Krishna Kumar Pathak, SEBI-Registered Research Analyst ( Reg.
+            No. INH300009914), by verifying my identity through the One-Time
+            Password (OTP) sent to my registered mobile number or Aadhaar-linked
+            mobile number and affixing my electronic/digital signature
+            (finger-drawn, stylus, or signature capture) on the mobile
+            application, website, tablet interface, or any other authorized
+            digital platform. I authorize the collection, processing, and
+            verification of my KYC details, including but not limited to PAN,
+            Aadhaar (via UIDAI/ DigiLocker), name, date of birth, address,
+            registered mobile number, and email ID, and consent to verification
+            through NSE KRA, CVL KRA, NDML KRA, Karvy/KFintech KRA, DotEx KRA,
+            or any SEBI-registered/authorized and third party APIs service
+            provider. For regulatory, security, and audit purposes, I consent to
+            the capture and secure storage of my IP address, timestamp, device
+            type/details, OTP verification records, and electronic/digital
+            signature, which shall form part of the legal record of this
+            authorization. This consent constitutes a legally valid, binding,
+            and enforceable electronic agreement under the Indian Contract Act,
+            1872, Section 10A of the Information Technology Act, 2000, and is
+            compliant with the Digital Personal Data Protection (DPDP) Act,
+            2023, remaining effective until expressly revoked in writing
+          </p>
+        </SectionCard>
+
+        {/* 3 */}
+        <SectionCard title="3. Disclaimer & Risk Warning :">
+          <p>
+            Investment in securities market are subject to market risks. Read
+            all the related documents carefully before investing. "Registration
+            granted by SEBI & Certification from NISM in no way guarantee
+            performance of the intermediary or provide any assurance of returns
+            to Investors. Options trading is highly risky and may result in
+            significant losses. No Guarantee of Returns. Liability & Legal
+            Indemnity: By accessing our research services, Clients/Users
+            acknowledge and agree that Mr. Krishna Kumar Pathak, SEBI-Registered
+            Research Analyst (RA Reg. No. INH300009914, BSE Enlistment No.
+            5590), acts solely as a research service provider and shall not be
+            liable for any direct, indirect, incidental, or consequential loss,
+            damage, or financial outcome arising from investment decisions taken
+            based on the research recommendations provided
+          </p>
+        </SectionCard>
 
         {/* CLIENT CONFIRMATION */}
         <SectionCard title="CLIENT ACCEPTANCE, AGREEMENT & CONFIRMATION">
@@ -148,7 +154,7 @@ export default function ClientTerm() {
           CLIENT CONSENT AND TERMS & CONDITIONS
         </h1>
 
-        <p className="text-slate-700 dark:text-slate-300 text-center max-w-3xl mx-auto mb-10">
+        <p className="text-black dark:text-white text-center max-w-3xl mx-auto mb-10">
           All services are subject to the Terms and Conditions outlined in
           accordance with SEBI Circular No.
           SEBI/HO/MIRSD/MIRSD-PoD-1/P/CIR/2025/004, specifically as per
@@ -158,7 +164,7 @@ export default function ClientTerm() {
           By subscribing to the research services, clients acknowledge and agree
           to the following terms and conditions:
         </h2>
-        <hr className="border-slate-300 dark:border-slate-700 my-6" />
+        <hr className="border-gray-200 dark:border-slate-700 my-6" />
 
         {/* 4 */}
         <SectionCard title="1. Availing the Research Services">
@@ -390,7 +396,7 @@ export default function ClientTerm() {
             For any support-related grievances, including issues related to
             non-receipt of reports or deficiencies in service, clients must
             email their concerns to
-            <span className="text-blue-600 underline underline-offset-2 hover:text-blue-600 dark:text-blue-400">
+            <span className="text-blue-600 underline underline-offset-2 hover:text-blue-400">
               wealthfino@gmail.com
             </span>
             . If unresolved, grievances must be escalated to the designated
@@ -399,7 +405,7 @@ export default function ClientTerm() {
           </p>
           <p>
             <span className="font-semibold">Krishna Kumar Pathak:</span>{" "}
-            <span className="text-blue-600 underline underline-offset-2 hover:text-blue-600 dark:text-blue-400">
+            <span className="text-blue-600 underline underline-offset-2 hover:text-blue-400">
               Skrishna.sk4@gmail.com
             </span>
           </p>
@@ -407,7 +413,7 @@ export default function ClientTerm() {
           <p>
             For more details regarding grievance-related matters, please refer
             to the grievance redressal section of our website:
-            <span className="text-blue-600 underline underline-offset-2 hover:text-blue-600 dark:text-blue-400">
+            <span className="text-blue-600 underline underline-offset-2 hover:text-blue-400">
               https://krishnapathak.com/redressal-of-grievance/
             </span>
           </p>
@@ -526,7 +532,7 @@ export default function ClientTerm() {
                   should first contact the RA using the details on its website
                   or the following contact details:
                   <p className="mt-1">
-                    <span className="text-blue-600 underline underline-offset-2 hover:text-blue-600 dark:text-blue-400">
+                    <span className="text-blue-600 underline underline-offset-2 hover:text-blue-400">
                       wealthfino@gmail.com
                     </span>
                     (+91 98834 55700). If unresolved, grievances must be
@@ -535,7 +541,7 @@ export default function ClientTerm() {
                     or as per latest SEBI RA Regulations. For grievances and
                     dispute resolution, please contact-{" "}
                     <span className="font-semibold">Krishna Kumar Pathak:</span>{" "}
-                    <span className="text-blue-600 underline underline-offset-2 hover:text-blue-600 dark:text-blue-400">
+                    <span className="text-blue-600 underline underline-offset-2 hover:text-blue-400">
                       Skrishna.sk4@gmail.com
                     </span>{" "}
                     (+91 98834 55700).
@@ -545,7 +551,7 @@ export default function ClientTerm() {
                   <span className="font-semibold">Step 2:</span> If the
                   resolution is unsatisfactory, the client can also lodge
                   grievances through SEBI's SCORES platform at{" "}
-                  <span className="text-blue-600 underline underline-offset-2 hover:text-blue-600 dark:text-blue-400">
+                  <span className="text-blue-600 underline underline-offset-2 hover:text-blue-400">
                     <a href="https://scores.sebi.gov.in" target="_blank" rel="noreferrer">SEBI SCORES Grievance Redressal Platform</a>.
                   </span>
                 </li>
@@ -553,7 +559,7 @@ export default function ClientTerm() {
                   <span className="font-semibold">Step 3:</span> The client may
                   also consider the Online Dispute Resolution (ODR) through the
                   Smart ODR portal at{" "}
-                  <span className="text-blue-600 underline underline-offset-2 hover:text-blue-600 dark:text-blue-400">
+                  <span className="text-blue-600 underline underline-offset-2 hover:text-blue-400">
                     <a href="https://smartodr.in/login" target="_blank" rel="noreferrer">SEBI SMART ODR Portal</a>.
                   </span>
                 </li>
@@ -812,14 +818,14 @@ export default function ClientTerm() {
             <li>SEBI Registration No. INH300009914</li>
             <li>
               Email :{" "}
-              <span className="text-blue-600 underline underline-offset-2 hover:text-blue-600 dark:text-blue-400">
+              <span className="text-blue-600 underline underline-offset-2 hover:text-blue-400">
                 {" "}
                 <a href="">wealthfino@gmail.com</a>
               </span>
             </li>
             <li>
               Website :{" "}
-              <span className="text-blue-600 underline underline-offset-2 hover:text-blue-600 dark:text-blue-400">
+              <span className="text-blue-600 underline underline-offset-2 hover:text-blue-400">
                 https://krishnapathak.com
               </span>
             </li>
@@ -836,7 +842,7 @@ export default function ClientTerm() {
           </p>
           <p>
             For detailed information, kindly visit:{" "}
-            <span className="text-blue-600 underline underline-offset-2 hover:text-blue-600 dark:text-blue-400">
+            <span className="text-blue-600 underline underline-offset-2 hover:text-blue-400">
               {" "}
               www.krishnapathak.com
             </span>{" "}
@@ -898,7 +904,8 @@ function SectionCard({ title, children }) {
       <h2 className="text-xl md:text-2xl font-semibold text-black mb-4">
         {title}
       </h2>
-      <div className="space-y-4 text-slate-700 leading-relaxed">{children}</div>
+      <div className="space-y-4 text-black leading-relaxed">{children}</div>
     </div>
   );
 }
+
