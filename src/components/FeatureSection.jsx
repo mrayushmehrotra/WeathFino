@@ -48,13 +48,13 @@ const FeatureCard = ({ title, subtitle, image, points, cta, isActive }) => {
               ? "dark:border-white/20 border-gray-300"
               : "dark:border-white/5 border-gray-100"
           }
-          p-8
+          p-6 md:p-8
         `}
       >
         {/* IMAGE - Fixed container */}
         <div
           className={`
-            rounded-xl overflow-hidden mb-8 h-56 flex items-center justify-center border
+            rounded-xl overflow-hidden mb-8 h-48 md:h-56 flex items-center justify-center border
             bg-gradient-to-br transition-all duration-500
             ${
               isActive
@@ -80,26 +80,26 @@ const FeatureCard = ({ title, subtitle, image, points, cta, isActive }) => {
           </div>
         </div>
 
-        <h3
+        <h2
           className={`
             text-2xl font-bold text-center mb-3 transition-all duration-300
             ${
               isActive
-                ? "dark:text-white text-gray-900"
-                : "dark:text-slate-500 text-gray-500"
+                ? "dark:text-white text-black"
+                : "dark:text-white text-black"
             }
           `}
         >
           {title}
-        </h3>
+        </h2>
 
         <p
           className={`
             text-center mb-8 text-base font-semibold transition-all duration-300
             ${
               isActive
-                ? "dark:text-slate-300 text-gray-600"
-                : "dark:text-slate-600 text-gray-400"
+                ? "dark:text-white text-black"
+                : "dark:text-white text-black"
             }
           `}
         >
@@ -119,8 +119,8 @@ const FeatureCard = ({ title, subtitle, image, points, cta, isActive }) => {
                 }
                 ${
                   isActive
-                    ? "dark:text-slate-200 text-gray-700"
-                    : "dark:text-slate-500 text-gray-400"
+                    ? "dark:text-white text-black"
+                    : "dark:text-white text-black"
                 }
               `}
               style={{ transitionDelay: `${i * 100}ms` }}
@@ -130,8 +130,8 @@ const FeatureCard = ({ title, subtitle, image, points, cta, isActive }) => {
                   transition-colors duration-300
                   ${
                     isActive
-                      ? "dark:text-[#D4AF37] text-[#7A5800]"
-                      : "dark:text-slate-600 text-gray-400"
+                      ? "dark:text-white text-black"
+                      : "dark:text-white text-black"
                   }
                 `}
               >
@@ -144,22 +144,24 @@ const FeatureCard = ({ title, subtitle, image, points, cta, isActive }) => {
 
         <button
           className={`
-            w-full py-4 rounded-full font-semibold text-base
+            w-full py-3 md:py-4 rounded-full font-semibold text-base
             relative overflow-hidden transition-all duration-500
             ${
               isActive
                 ? `
-                  opacity-100 dark:text-[#1F3864] text-[#1F3864] scale-100
+                  opacity-100 dark:text-white text-black scale-100
                   dark:bg-gradient-to-r dark:from-[#F3D98B] dark:via-[#D4AF37] dark:to-[#B8962E]
                   bg-gradient-to-r from-[#F3D98B] via-[#D4AF37] to-[#B8962E]
+                  border-2 border-[#1F3864]/80 dark:border-white/80
                   dark:hover:shadow-[0_0_40px_rgba(212,175,55,0.4)]
                   hover:shadow-[0_0_40px_rgba(212,175,55,0.4)]
+                  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#1F3864]
                 `
-                : "opacity-0 scale-95 dark:bg-gray-800 dark:text-gray-400 bg-gray-200 text-gray-500"
+                : "opacity-0 scale-95 dark:bg-gray-800 dark:text-white bg-gray-200 text-black border-2 border-transparent"
             }
           `}
         >
-          <span className="relative text-black font-bold text-lg z-10">{cta}</span>
+           <span className="relative text-black dark:text-white font-bold text-lg z-10">{cta}</span>
           {isActive && (
             <div className="absolute inset-0 dark:bg-gradient-to-r dark:from-[#F3D98B] dark:via-[#D4AF37] dark:to-[#B8962E] bg-gradient-to-r from-[#F3D98B] via-[#D4AF37] to-[#B8962E] animate-shimmer opacity-30 dark:opacity-100"></div>
           )}
@@ -237,10 +239,10 @@ const FeatureSection = () => {
   }, []);
 
   return (
-    <div className="min-h-screen dark:bg-[#0b1022] bg-gray-50 pt-16 pb-32 overflow-hidden relative">
+    <div className="min-h-screen dark:bg-[#0b1022] bg-gray-50 pt-12 pb-20 md:pt-16 md:pb-32 overflow-hidden relative">
       {/* Animated background particles - Different for light/dark */}
       <div className="absolute inset-0 overflow-hidden">
-        {[...Array(15)].map((_, i) => (
+        {[...Array(8)].map((_, i) => (
           <div
             key={i}
             className="absolute w-[2px] h-[1px] rounded-full animate-float"
@@ -265,18 +267,18 @@ const FeatureSection = () => {
             : "opacity-0 translate-y-10"
         }`}
       >
-        <div className="inline-block px-10 py-4 rounded-lg relative overflow-hidden">
+        <div className="inline-block px-6 py-3 md:px-10 md:py-4 rounded-lg relative overflow-hidden">
           {/* Gradient background for dark/light */}
           <div className="absolute inset-0 rounded-lg -z-10">
             <div className="dark:bg-gradient-to-r dark:from-[#F3D98B] dark:via-[#D4AF37] dark:to-[#B8962E] bg-gradient-to-r from-[#F3D98B] via-[#D4AF37] to-[#B8962E] w-full h-full blur-lg opacity-50"></div>
             <div className="absolute inset-0 dark:bg-gradient-to-r dark:from-[#F3D98B] dark:via-[#D4AF37] dark:to-[#B8962E] bg-gradient-to-r from-[#F3D98B] via-[#D4AF37] to-[#B8962E] rounded-lg"></div>
           </div>
 
-          <h1 className="text-2xl md:text-2xl font-bold relative z-10 dark:text-black text-gray-900">
+          <h2 className="text-xl sm:text-2xl font-bold relative z-10 dark:text-white text-black">
             WealthFino Mobile App
-          </h1>
+          </h2>
         </div>
-        <p className="mt-6 text-lg md:text-xl dark:text-white text-gray-800">
+        <p className="mt-6 text-lg md:text-xl dark:text-white text-black">
           Research, Trade and Charts.
         </p>
       </div>
@@ -284,7 +286,7 @@ const FeatureSection = () => {
       {/* CARDS CONTAINER */}
       <div className="flex justify-center items-center mb-16 px-4">
         <div className="w-full max-w-9xl mx-auto">
-          <div className="flex flex-col lg:flex-row flex-wrap items-center justify-center gap-8 xl:gap-10">
+          <div className="flex flex-col lg:flex-row flex-wrap items-center justify-center gap-6 md:gap-8 xl:gap-10">
             {cards.map((card, index) => (
               <div key={index} className="flex justify-center w-full md:w-auto">
                 <FeatureCard {...card} isActive={true} />

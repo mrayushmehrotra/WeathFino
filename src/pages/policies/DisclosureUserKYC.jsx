@@ -2,15 +2,15 @@ import React from "react";
 
 export default function DisclosureUserKYC() {
   return (
-    <section className="min-h-screen rounded-2xl   from-[#0b0f14] to-[#111827] text-slate-200 py-1 px-4">
-      <div className="max-w-6xl mx-auto bg-[#0b0f19]   rounded-2xl shadow-xl p-6 md:p-10 space-y-10">
+    <section className="min-h-screen rounded-2xl from-gray-50 to-white dark:from-[#0b0f14] dark:to-[#111827] text-black dark:text-white py-1 px-4">
+      <div className="max-w-6xl mx-auto bg-white dark:bg-[#0b0f19] rounded-2xl shadow-xl p-6 md:p-10 space-y-10">
         {/* ================= HEADER ================= */}
-        <header className="space-y-4 border-b border-slate-700 pb-6">
-          <h1 className="text-2xl md:text-2xl font-bold text-white">
+        <header className="space-y-4 border-b border-gray-200 dark:border-slate-700 pb-6">
+          <h1 className="text-2xl md:text-2xl font-bold text-black dark:text-white">
             DISCLOSURE, USER & KYC AGREEMENT
           </h1>
 
-          <div className="space-y-1 text-slate-300 text-sm">
+          <div className="space-y-1 text-black/80 dark:text-white/80 text-sm">
             <p>
               <strong>Issued by:</strong> Krishna Kumar Pathak
             </p>
@@ -61,7 +61,7 @@ export default function DisclosureUserKYC() {
             </li>
             <li>Model portfolio strategies and educational resources</li>
           </ul>
-          <p className="text-slate-400">
+          <p>
             WealthFino<strong> does not offer </strong> portfolio management,
             execution services, or fund-based services.
           </p>
@@ -210,7 +210,7 @@ export default function DisclosureUserKYC() {
               Profit-makers incur 15%-50% of their profits in transaction costs
             </li>
           </ul>
-          <p className="text-slate-400">
+          <p className="text-black dark:text-white">
             Derivatives trading carries high risk and is not suitable for all
             investors.
           </p>
@@ -807,8 +807,8 @@ export default function DisclosureUserKYC() {
 function Section({ title, children }) {
   return (
     <section className="space-y-4">
-      <h2 className="text-xl md:text-2xl font-semibold text-white">{title}</h2>
-      <div className="text-slate-300 leading-relaxed">{children}</div>
+      <h2 className="text-xl md:text-2xl font-semibold text-black dark:text-white">{title}</h2>
+      <div className="text-black/80 dark:text-white/80 leading-relaxed">{children}</div>
     </section>
   );
 }

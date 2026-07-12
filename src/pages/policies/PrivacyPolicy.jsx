@@ -1,14 +1,14 @@
 export default function PrivacyPolicy() {
   return (
-    <div className="text-slate-200 rounded-2xl bg-[#0b0f19] rounded-2xl px-5 py-5 leading-relaxed space-y-10">
+    <div className="text-black dark:text-slate-200 rounded-2xl bg-white dark:bg-[#0b0f19] px-5 py-5 leading-relaxed space-y-10">
       {/* HEADER */}
-      <header className="  border-slate-700 pb-6 space-y-3">
-        <h1 className="text-3xl font-bold text-white">Privacy Policy</h1>
+      <header className="border-gray-200 dark:border-slate-700 pb-6 space-y-3">
+        <h1 className="text-3xl font-bold text-black dark:text-white">Privacy Policy</h1>
       </header>
 
       {/* 1. INTRODUCTION */}
       <section className="space-y-4">
-        <h2 className="text-xl font-semibold text-white">1. Introduction</h2>
+        <h2 className="text-xl font-semibold text-black dark:text-white">1. Introduction</h2>
         <p>
           This Privacy Policy explains howWealthFino, operated by Krishna Kumar
           Pathak (SEBI Registered Research Analyst,Reg. No. INH300009914, BSE
@@ -34,7 +34,7 @@ export default function PrivacyPolicy() {
 
       {/* 2. SCOPE */}
       <section className="space-y-4">
-        <h2 className="text-xl font-semibold text-white">2. Scope</h2>
+        <h2 className="text-xl font-semibold text-black dark:text-white">2. Scope</h2>
 
         <p>
           This Policy applies to all users, clients, vendors, and partners
@@ -53,14 +53,14 @@ export default function PrivacyPolicy() {
           <li>Record-keeping, disclosures, and regulatory reporting</li>
         </ul>
 
-        <p className="text-slate-400">
+        <p className="text-black dark:text-slate-200">
           We do not provide portfolio management or execution-based advisory.
         </p>
       </section>
 
       {/* 3. APPLICABILITY */}
       <section className="space-y-4">
-        <h2 className="text-xl font-semibold text-white">3. Applicability</h2>
+        <h2 className="text-xl font-semibold text-black dark:text-white">3. Applicability</h2>
 
         <p>This Privacy Policy applies to all individuals who:</p>
         <ul className="list-disc pl-6 space-y-2">
@@ -75,7 +75,7 @@ export default function PrivacyPolicy() {
 
       {/* 4. INFORMATION COLLECTED */}
       <section className="space-y-4">
-        <h2 className="text-xl font-semibold text-white">
+        <h2 className="text-xl font-semibold text-black dark:text-white">
           4. Information Collected
         </h2>
         <p>4.1 Principle of Collection</p>
@@ -175,7 +175,7 @@ export default function PrivacyPolicy() {
 
       {/* 5. PURPOSE OF PROCESSING */}
       <section className="space-y-4">
-        <h2 className="text-xl font-semibold text-white">
+        <h2 className="text-xl font-semibold text-black dark:text-white">
           5. Purpose of Processing
         </h2>
         <p>We process your data for:</p>
@@ -191,7 +191,7 @@ export default function PrivacyPolicy() {
 
       {/* 6. CONSENT & AUTHORIZATION */}
       <section className="space-y-4">
-        <h2 className="text-xl font-semibold text-white">
+        <h2 className="text-xl font-semibold text-black dark:text-white">
           6. Consent & Authorization
         </h2>
         <p>By using our services, you agree to:</p>
@@ -225,7 +225,7 @@ export default function PrivacyPolicy() {
 
       {/* 7. DATA SHARING */}
       <section className="space-y-4">
-        <h2 className="text-xl font-semibold text-white">
+        <h2 className="text-xl font-semibold text-black dark:text-white">
           7. Data Sharing & Disclosure
         </h2>
 
@@ -246,7 +246,7 @@ export default function PrivacyPolicy() {
 
       {/* 8. PAYMENT DATA */}
       <section className="space-y-4">
-        <h2 className="text-xl font-semibold text-white">
+        <h2 className="text-xl font-semibold text-black dark:text-white">
           8. Payment Data Compliance
         </h2>
 
@@ -267,7 +267,7 @@ export default function PrivacyPolicy() {
 
       {/* 9. DATA SECURITY */}
       <section className="space-y-4">
-        <h2 className="text-xl font-semibold text-white">9. Data Security</h2>
+        <h2 className="text-xl font-semibold text-black dark:text-white">9. Data Security</h2>
         <p>We adopt reasonable security practices including:</p>
         <p>SSL/TLS encryption, firewalls, intrusion detection</p>
         <p>Secure hosting with restricted access</p>
@@ -277,7 +277,7 @@ export default function PrivacyPolicy() {
 
       {/* 10. DATA BREACH */}
       <section className="space-y-4">
-        <h2 className="text-xl font-semibold text-white">
+        <h2 className="text-xl font-semibold text-black dark:text-white">
           10. Data Breach & Notification
         </h2>
         <p>In case of a breach:</p>
@@ -295,7 +295,7 @@ export default function PrivacyPolicy() {
 
       {/* 11. DATA RETENTION */}
       <section className="space-y-4">
-        <h2 className="text-xl font-semibold text-white">11. Data Retention</h2>
+        <h2 className="text-xl font-semibold text-black dark:text-white">11. Data Retention</h2>
 
         <ul className="list-disc pl-6 space-y-2">
           <li>
@@ -311,7 +311,7 @@ export default function PrivacyPolicy() {
 
       {/* 12. CHILDREN */}
       <section className="space-y-4">
-        <h2 className="text-xl font-semibold text-white">
+        <h2 className="text-xl font-semibold text-black dark:text-white">
           12. Children’s Data
         </h2>
 
@@ -323,7 +323,7 @@ export default function PrivacyPolicy() {
 
       {/* 13–16 */}
       <section className="space-y-4">
-        <h2 className="text-xl font-semibold text-white">
+        <h2 className="text-xl font-semibold text-black dark:text-white">
           13. Limitation of Liability
         </h2>
         <p>We are not liable for losses due to:</p>
@@ -335,7 +335,7 @@ export default function PrivacyPolicy() {
           <li>Use of services provided on “as is” basis</li>
         </ul>
 
-        <h2 className="text-xl font-semibold text-white mt-6">
+        <h2 className="text-xl font-semibold text-black dark:text-white mt-6">
           14. Third-Party Disclaimer
         </h2>
         <p>
@@ -344,7 +344,7 @@ export default function PrivacyPolicy() {
           practices. Use of such services is at user’s discretion
         </p>
 
-        <h2 className="text-xl font-semibold text-white mt-6">
+        <h2 className="text-xl font-semibold text-black dark:text-white mt-6">
           15. Indemnification
         </h2>
         <p>
@@ -353,7 +353,7 @@ export default function PrivacyPolicy() {
           breach of this Policy, or violation of laws.
         </p>
 
-        <h2 className="text-xl font-semibold text-white mt-6">
+        <h2 className="text-xl font-semibold text-black dark:text-white mt-6">
           16. Cross-Border Data Transfer
         </h2>
         <p>
@@ -365,11 +365,11 @@ export default function PrivacyPolicy() {
 
       {/* 17. GRIEVANCE OFFICER */}
       <section className="space-y-4">
-        <h2 className="text-xl font-semibold text-white">
+        <h2 className="text-xl font-semibold text-black dark:text-white">
           17. Grievance Officer
         </h2>
 
-        <div className="bg-slate-800 border border-slate-700 rounded-lg p-5 space-y-2">
+        <div className="bg-gray-100 dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-lg p-5 space-y-2">
           <p>In compliance with Rule 5(9) of the IT Rules, 2011:</p>
           <p>
             <b>Name:</b> Krishna Kumar Pathak
@@ -389,7 +389,7 @@ export default function PrivacyPolicy() {
 
       {/* 18–19 */}
       <section className="space-y-4">
-        <h2 className="text-xl font-semibold text-white">
+        <h2 className="text-xl font-semibold text-black dark:text-white">
           18. Updates & Amendments
         </h2>
         <p>
@@ -398,7 +398,7 @@ export default function PrivacyPolicy() {
           notified via website/app or email.
         </p>
 
-        <h2 className="text-xl font-semibold text-white mt-6">
+        <h2 className="text-xl font-semibold text-black dark:text-white mt-6">
           19. Governing Law & Jurisdiction
         </h2>
         <p>

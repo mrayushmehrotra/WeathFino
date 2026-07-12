@@ -42,7 +42,7 @@ const Services = () => {
           <h2
             className="
               text-4xl font-bold mb-4
-              text-slate-900 dark:text-white
+              text-black dark:text-white
             "
           >
             Comprehensive
@@ -51,7 +51,7 @@ const Services = () => {
 
           <p
             className="
-              text-slate-600 dark:text-slate-300
+              text-black dark:text-white
             "
           >
             End-to-end services for modern investors
@@ -88,7 +88,7 @@ const Services = () => {
               <h3
                 className="
                   text-xl font-bold mb-3
-                  text-slate-900 dark:text-white
+                  text-black dark:text-white
                 "
               >
                 {service.title}
@@ -97,7 +97,7 @@ const Services = () => {
               {/* DESCRIPTION */}
               <p
                 className="
-                  text-slate-600 dark:text-slate-300
+                  text-black dark:text-white
                 "
               >
                 {service.description}

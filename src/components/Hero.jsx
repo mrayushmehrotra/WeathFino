@@ -6,7 +6,7 @@ const UHomeLightBlue = () => {
     <section
       className="
         relative min-h-screen w-full overflow-hidden
-        text-gray-900 dark:text-gray-100
+        text-black dark:text-white
         transition-colors duration-300
         bg-gradient-to-b
         from-white via-slate-50 to-slate-100
@@ -23,16 +23,16 @@ const UHomeLightBlue = () => {
       <div className="relative max-w-7xl mx-auto px-10 pt-24 grid md:grid-cols-2 gap-20 items-center">
         {/* LEFT */}
         <div>
-          <h1 className="text-4xl md:text-5xl font-extrabold leading-tight text-gray-900 dark:text-white">
+          <h1 className="text-4xl md:text-5xl font-extrabold leading-tight text-black dark:text-white">
             Master the Markets <br />
             <span className="text-blue-700 dark:text-blue-400">
               with Certified Expertise.
             </span>
           </h1>
 
-          <p className="mt-6 max-w-lg text-gray-700 dark:text-gray-300 text-lg">
+          <p className="mt-6 max-w-lg text-black dark:text-white text-lg">
             Your path to professional trading, backed by
-            <span className="font-semibold text-gray-900 dark:text-gray-100">
+            <span className="font-semibold text-black dark:text-white">
               {" "}
               SEBI-registered analysts
             </span>{" "}
@@ -65,11 +65,12 @@ const UHomeLightBlue = () => {
                     text-white font-bold
                     flex items-center justify-center
                   "
+                  aria-hidden="true"
                 >
                   {i === 0 ? "✓" : i === 1 ? "★" : i === 2 ? "🌍" : "👨‍🏫"}
                 </div>
 
-                <p className="text-sm text-gray-800 dark:text-gray-200">
+                <p className="text-sm text-black dark:text-white">
                   {item}
                 </p>
               </div>
@@ -87,22 +88,12 @@ const UHomeLightBlue = () => {
                 hover:shadow-[0_18px_50px_rgba(37,99,235,0.55)]
                 transition-all duration-300
               "
+              onClick={() => window.open("https://play.google.com/store/apps/details?id=com.wealthfino.mobile&hl=en_IN", "_blank", "noopener noreferrer")}
             >
               Start Your Pro Journey
             </button>
 
-            <div className="flex gap-3">
-              <img
-                src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
-                alt="Download WealthFino on the App Store"
-                className="h-11"
-              />
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
-                alt="Get WealthFino on Google Play"
-                className="h-11"
-              />
-            </div>
+
           </div>
         </div>
 

@@ -2,15 +2,15 @@ import React from "react";
 
 export default function LegalRiskDisclosure() {
   return (
-    <section className="min-h-screen  rounded-2xl bg-[#0b0f19]  text-slate-200 py-1 ">
+    <section className="min-h-screen rounded-2xl bg-white dark:bg-[#0b0f19] text-black dark:text-slate-200 py-1">
       <div className="max-w-6xl mx-auto  backdrop-blur rounded-2xl shadow-xl p-6 md:p-10 space-y-8">
         {/* ================= HEADER ================= */}
-        <header className="space-y-3 border-b border-slate-700 pb-6">
-          <h1 className="text-xl md:text-2xl font-bold text-white">
+        <header className="space-y-3 border-b border-gray-200 dark:border-slate-700 pb-6">
+          <h1 className="text-xl md:text-2xl font-bold text-black dark:text-white">
             LEGAL & RISK DISCLOSURE
           </h1>
 
-          <div className="text-sm text-slate-300 space-y-1">
+          <div className="text-sm text-black dark:text-slate-200 space-y-1">
             <p>
               <strong>Issued by:</strong> Krishna Kumar Pathak
             </p>
@@ -253,17 +253,17 @@ export default function LegalRiskDisclosure() {
           </ul>
           <p>
             {" "}
-            <h2 className="text-xl md:text-2xl font-semibold text-white">
+            <h2 className="text-xl md:text-2xl font-semibold text-black dark:text-white">
               Fraud Protection, Payment Disclaimer & Liability Waiver
             </h2>
-            <p className="text-slate-300">
+            <p className="text-black dark:text-slate-200">
               Issued by{" "}
-              <span className="font-semibold text-white">
+              <span className="font-semibold text-black dark:text-white">
                 Krishna Kumar Pathak
               </span>{" "}
               – SEBI Registered Research Analyst (INH300009914)
             </p>
-            <p className="text-slate-300">
+            <p className="text-black dark:text-slate-200">
               Official Email:&nbsp;
               <a
                 href="mailto:info@krishnapathak.com"
@@ -279,9 +279,9 @@ export default function LegalRiskDisclosure() {
                 wealthfino@gmail.com
               </a>
             </p>
-            <p className="text-slate-300">
+            <p className="text-black dark:text-slate-200">
               Authorised Platforms:{" "}
-              <span className="font-medium text-white">
+              <span className="font-medium text-black dark:text-white">
                 Mobile App – “WealthFino”
               </span>{" "}
               | Website –{" "}
@@ -300,23 +300,23 @@ export default function LegalRiskDisclosure() {
         <section>
           {/* ===== 1. Official Payment Channels ===== */}
           <div className="space-y-3">
-            <h3 className="text-lg md:text-xl font-semibold text-white">
+            <h3 className="text-lg md:text-xl font-semibold text-black dark:text-white">
               1. Official Payment Channels Only
             </h3>
 
-            <p className="text-slate-300">
+            <p className="text-black dark:text-slate-200">
               All payments to Krishna Kumar Pathak or the brand WealthFino must
               be made
-              <strong className="text-white">
+              <strong className="text-black dark:text-white">
                 {" "}
                 only through the following authorised methods:
               </strong>
             </p>
 
-            <ul className="list-disc pl-6 space-y-2 text-slate-300">
+            <ul className="list-disc pl-6 space-y-2 text-black dark:text-slate-200">
               <li>
                 Via the official{" "}
-                <strong className="text-white">mobile app: WealthFino</strong>{" "}
+                <strong className="text-black dark:text-white">mobile app: WealthFino</strong>{" "}
                 (available on Play Store / App Store)
               </li>
 
@@ -363,16 +363,16 @@ export default function LegalRiskDisclosure() {
 
           {/* ===== 2. Right to Verify ===== */}
           <div className="space-y-3">
-            <h3 className="text-lg md:text-xl font-semibold text-white">
+            <h3 className="text-lg md:text-xl font-semibold text-black dark:text-white">
               2. Right to Verify Before Payment
             </h3>
 
-            <p className="text-slate-300">
+            <p className="text-black dark:text-slate-200">
               Before making any payment, the User has the full right and option
               to:
             </p>
 
-            <ul className="list-disc pl-6 space-y-2 text-slate-300">
+            <ul className="list-disc pl-6 space-y-2 text-black dark:text-slate-200">
               <li>Call and confirm the payment details</li>
               <li>Email to confirm via our official IDs</li>
               <li>
@@ -380,22 +380,22 @@ export default function LegalRiskDisclosure() {
               </li>
             </ul>
 
-            <p className="text-slate-400 font-medium">
+            <p className="text-black dark:text-slate-200 font-medium">
               If the User chooses not to verify and proceeds on their own, the
               responsibility lies solely with the{" "}
-              <strong className="text-white">User</strong>.
+              <strong className="text-black dark:text-white">User</strong>.
             </p>
           </div>
         </section>
 
         <section>
-          <h3 className="text-lg md:text-xl font-semibold text-white">
+          <h3 className="text-lg md:text-xl font-semibold text-black dark:text-white">
             3. No Liability for Fraudulent or Unauthorized Payments
           </h3>
 
           {/* a */}
           <div className="space-y-2">
-            <p className="font-semibold text-white">
+            <p className="font-semibold text-black dark:text-white">
               a. Unauthorized Use of Name or Brand:
             </p>
             <p>
@@ -413,7 +413,7 @@ export default function LegalRiskDisclosure() {
 
           {/* b */}
           <div className="space-y-2">
-            <p className="font-semibold text-white">
+            <p className="font-semibold text-black dark:text-white">
               b. Unauthorized Transactions:
             </p>
             <p>
@@ -430,7 +430,7 @@ export default function LegalRiskDisclosure() {
 
           {/* c */}
           <div className="space-y-2">
-            <p className="font-semibold text-white">
+            <p className="font-semibold text-black dark:text-white">
               c. No Legal Right to Claim or Complaint:
             </p>
             <p>
@@ -445,7 +445,7 @@ export default function LegalRiskDisclosure() {
 
           {/* d */}
           <div className="space-y-2">
-            <p className="font-semibold text-white">
+            <p className="font-semibold text-black dark:text-white">
               d. Official Communication and Payment Channels:
             </p>
             <p>
@@ -476,7 +476,7 @@ export default function LegalRiskDisclosure() {
 
           {/* e */}
           <div className="space-y-2">
-            <p className="font-semibold text-white">
+            <p className="font-semibold text-black dark:text-white">
               e. Disclaimer of Liability:
             </p>
             <p>
@@ -491,7 +491,7 @@ export default function LegalRiskDisclosure() {
 
           {/* f */}
           <div className="space-y-3">
-            <p className="font-semibold text-white">f. User Responsibility:</p>
+            <p className="font-semibold text-black dark:text-white">f. User Responsibility:</p>
             <p>
               By interacting with or using any services related to Krishna Kumar
               Pathak or WealthFino, users accept full responsibility to verify
@@ -501,7 +501,7 @@ export default function LegalRiskDisclosure() {
               frauds or impersonation acts.
             </p>
 
-            <p className="font-semibold text-white">
+            <p className="font-semibold text-black dark:text-white">
               g. Exclusion of Liability:
             </p>
             <p>
@@ -534,7 +534,7 @@ export default function LegalRiskDisclosure() {
         <section>
           {/* ===== Section 4 ===== */}
           <div className="space-y-3">
-            <h3 className="text-lg md:text-xl font-semibold text-white">
+            <h3 className="text-lg md:text-xl font-semibold text-black dark:text-white">
               4. User Assumes Full Liability
             </h3>
 
@@ -557,7 +557,7 @@ export default function LegalRiskDisclosure() {
 
           {/* ===== Section 5 ===== */}
           <div className="space-y-3">
-            <h3 className="text-lg md:text-xl font-semibold text-white">
+            <h3 className="text-lg md:text-xl font-semibold text-black dark:text-white">
               5. Legal Standing & Protection
             </h3>
 
@@ -579,11 +579,11 @@ export default function LegalRiskDisclosure() {
 
         {/* ================= FINAL ================= */}
         <section>
-          <h3 className="text-lg md:text-xl font-semibold text-white">
+          <h3 className="text-lg md:text-xl font-semibold text-black dark:text-white">
             Final Declaration
           </h3>
 
-          <p className="italic text-slate-200">
+          <p className="italic text-black dark:text-slate-200">
             "We do not take responsibility for any outcome — regardless of the
             cause, condition, or consequence."
           </p>
@@ -591,7 +591,7 @@ export default function LegalRiskDisclosure() {
           <p>
             Krishna Kumar Pathak (SEBI Registered Research Analyst –
             INH300009914) and the brand{" "}
-            <strong className="text-white">WealthFino</strong> shall not be held
+            <strong className="text-black dark:text-white">WealthFino</strong> shall not be held
             liable for any loss, error, financial damage, technical failure, or
             decisions made based on any content shared through our platforms.
           </p>
@@ -603,14 +603,14 @@ export default function LegalRiskDisclosure() {
           </p>
 
           <div className="pt-3">
-            <h4 className="text-base font-semibold text-white mb-2">
+            <h4 className="text-base font-semibold text-black dark:text-white mb-2">
               Important Payment Notice:
             </h4>
 
             <p>
               Payments should only be made through the official WealthFino
               mobile application or website.{" "}
-              <strong className="text-white">Do not</strong> transfer funds to
+              <strong className="text-black dark:text-white">Do not</strong> transfer funds to
               any unknown individual, unauthorized link, or third-party claiming
               to represent WealthFino.
             </p>
@@ -623,7 +623,7 @@ export default function LegalRiskDisclosure() {
             </p>
           </div>
 
-          <p lang="hi" className="pt-2 text-center font-semibold text-white">
+          <p lang="hi" className="pt-2 text-center font-semibold text-black dark:text-white">
             "हम किसी भी चीज़ की ज़िम्मेदारी नहीं लेते — चाहे कोई भी कारण हो, कोई
             भी परिस्थिति हो, हमें कोई ज़िम्मेदारी नहीं है।"
           </p>
@@ -638,12 +638,12 @@ export default function LegalRiskDisclosure() {
 function Section({ title, children }) {
   return (
     <section className="space-y-4">
-      <h2 className="text-xl md:text-2xl font-semibold text-white">{title}</h2>
-      <div className="text-slate-300 leading-relaxed space-y-3">{children}</div>
+      <h2 className="text-xl md:text-2xl font-semibold text-black dark:text-white">{title}</h2>
+      <div className="text-black dark:text-slate-200 leading-relaxed space-y-3">{children}</div>
     </section>
   );
 }
 
 function SubTitle({ text }) {
-  return <h3 className="font-semibold text-slate-100 mt-4">{text}</h3>;
+  return <h3 className="font-semibold text-black dark:text-slate-100 mt-4">{text}</h3>;
 }

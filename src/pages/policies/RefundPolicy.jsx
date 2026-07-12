@@ -13,14 +13,14 @@ import {
 
 export default function RefundPolicy() {
   return (
-    <section className="min-h-screen rounded-2xl bg-[#0b0f19]  from-black via-slate-900 to-black text-slate-200 py-5 px-4">
+    <section className="min-h-screen rounded-2xl bg-white dark:bg-[#0b0f19] from-gray-50 via-white to-gray-50 dark:from-black dark:via-slate-900 dark:to-black text-black dark:text-slate-200 py-5 px-4">
       <div className="max-w-6xl mx-auto space-y-12">
         {/* ================= HEADER ================= */}
         <div className="text-center space-y-4">
           
-          <h1 className="text-2xl font-bold text-white">Refund Policy</h1>
+          <h1 className="text-2xl font-bold text-black dark:text-white">Refund Policy</h1>
 
-          <p className="text-slate-400 max-w-2xl mx-auto">
+          <p className="text-black dark:text-slate-200 max-w-2xl mx-auto">
             This Refund Policy governs the conditions under which refunds may be
             granted for purchases made through our website and mobile
             application. By completing a purchase on our platform, you
@@ -120,9 +120,9 @@ export default function RefundPolicy() {
         </Section>
 
         {/* ================= DISCLAIMER ================= */}
-        <div className="bg-slate-800/70 border border-amber-500/30 rounded-2xl p-6 space-y-4">
+        <div className="bg-gray-100 dark:bg-slate-800/70 border border-amber-500/30 rounded-2xl p-6 space-y-4">
           <div className="flex items-center gap-3">
-            <h2 className="text-xl italic text-white">Disclaimer</h2>
+            <h2 className="text-xl italic text-black dark:text-white">Disclaimer</h2>
           </div>
 
           <p className="italic">
@@ -145,7 +145,7 @@ export default function RefundPolicy() {
 
 const Section = ({ title, children }) => (
   <section className="  ">
-    <h2 className="text-xl font-semibold text-white">{title}</h2>
+    <h2 className="text-xl font-semibold text-black dark:text-white">{title}</h2>
     <div className="space-y-3">{children}</div>
   </section>
 );

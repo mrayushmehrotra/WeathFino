@@ -36,9 +36,9 @@ const ChartCard = ({ title = "Asset", data = {}, color = "green" }) => {
     <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-6">
       <div className="flex justify-between items-center mb-6">
         <div>
-          <h3 className="text-xl font-bold text-gray-800">{title}</h3>
+          <h3 className="text-xl font-bold text-black">{title}</h3>
           <div className="flex items-center space-x-2 mt-2">
-            <span className="text-2xl font-bold text-gray-900">
+            <span className="text-2xl font-bold text-black">
               $
               {typeof mergedData.price === "number"
                 ? mergedData.price.toFixed(2)
@@ -58,7 +58,7 @@ const ChartCard = ({ title = "Asset", data = {}, color = "green" }) => {
             </span>
           </div>
         </div>
-        <div className="text-sm text-gray-500">
+        <div className="text-sm text-black">
           24H Volume: $
           {typeof mergedData.volume === "number"
             ? (mergedData.volume / 1000000).toFixed(1)
@@ -88,8 +88,8 @@ const ChartCard = ({ title = "Asset", data = {}, color = "green" }) => {
           { label: "Low", value: mergedData.low, key: "low" },
         ].map((item) => (
           <div key={item.key} className="text-center">
-            <div className="text-sm text-gray-500">{item.label}</div>
-            <div className="font-bold text-gray-900">
+            <div className="text-sm text-black">{item.label}</div>
+            <div className="font-bold text-black">
               ${typeof item.value === "number" ? item.value.toFixed(2) : "0.00"}
             </div>
           </div>

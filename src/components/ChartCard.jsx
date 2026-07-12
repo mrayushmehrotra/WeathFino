@@ -41,7 +41,7 @@ const ChartCard = ({
               className={`px-3 py-1 rounded-lg text-sm ${
                 timeframe === tf
                   ? "bg-trading-blue text-white"
-                  : "bg-gray-100 text-gray-600"
+                  : "bg-gray-100 text-black"
               }`}
             >
               {tf}

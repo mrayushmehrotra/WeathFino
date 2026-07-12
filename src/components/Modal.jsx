@@ -54,12 +54,12 @@ const Modal = ({ isOpen, onClose, title, children }) => {
         className="relative w-full max-w-4xl max-h-[90vh] overflow-hidden bg-white dark:bg-slate-900 rounded-2xl shadow-2xl flex flex-col"
       >
         <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-800">
-          <h2 id="modal-title" className="text-2xl font-bold text-gray-900 dark:text-white">
+          <h2 id="modal-title" className="text-2xl font-bold text-black dark:text-white">
             {title}
           </h2>
           <button
             onClick={onClose}
-            className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-500 dark:text-gray-400 transition-colors"
+            className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 text-black dark:text-white transition-colors"
             aria-label="Close Modal"
           >
             ✕

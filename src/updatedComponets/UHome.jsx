@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
-import KYCModal from "../components/KYCModal";
+
+import MembershipPopup from "../components/MembershipPopup";
 import phone from "/phone6.png";
 
 /* ================= ANIMATIONS ================= */
@@ -18,12 +19,11 @@ const fadeUp = {
 /* ================= COMPONENT ================= */
 
 const UHome = () => {
-  const [isKYCOpen, setIsKYCOpen] = useState(false);
   return (
     <section
       className="
         relative min-h-screen w-full overflow-hidden font-inter
-        text-gray-900 dark:text-white
+        text-black dark:text-white
 
         [--bg-start:#f9fafb]
         [--bg-mid:#f3f4f6]
@@ -90,11 +90,39 @@ const UHome = () => {
                   <Star className="w-5 h-5 fill-current" />
                 </div>
 
-                <p className="text-gray-900 dark:text-white text-sm sm:text-base font-medium leading-tight">
+                <p className="text-black dark:text-white text-sm sm:text-base font-medium leading-tight">
                   {text}
                 </p>
               </motion.div>
             ))}
+          </motion.div>
+
+          {/* CTA + STORES — MOBILE FIRST (visible on mobile, hidden on lg) */}
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            animate="show"
+            className="lg:hidden mb-8 flex flex-col sm:flex-row items-start sm:items-center gap-4"
+          >
+            <button
+              className="
+                w-full sm:w-fit px-6 py-3.5 text-base rounded-full border border-white/20 dark:border-[#D4AF37]/40
+                backdrop-blur-md bg-gradient-to-r from-[#F3D98B] via-[#D4AF37] to-[#B8962E]
+                text-black dark:text-white font-bold tracking-wide
+                shadow-[0_12px_35px_rgba(212,175,55,0.45)]
+                hover:shadow-[0_15px_45px_rgba(212,175,55,0.6)]
+                hover:scale-105 transition-all duration-500
+              "
+              onClick={() =>
+                window.open(
+                  "https://play.google.com/store/apps/details?id=com.wealthfino.mobile&hl=en_IN",
+                  "_blank",
+                  "noopener noreferrer",
+                )
+              }
+            >
+              Start Your Pro Journey
+            </button>
           </motion.div>
 
           {/* HEADING */}
@@ -113,46 +141,38 @@ const UHome = () => {
             variants={fadeUp}
             initial="hidden"
             animate="show"
-            className="font-inter mt-6 text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-xl leading-relaxed"
+            className="font-inter mt-6 text-lg md:text-xl text-black dark:text-white max-w-xl leading-relaxed"
           >
             Research-based recommendations on Equity and Stock Options by a SEBI
             Registered Research Analyst.
           </motion.p>
 
-          {/* CTA + STORES */}
+          {/* CTA + STORES — DESKTOP (hidden on mobile) */}
           <motion.div
             variants={fadeUp}
             initial="hidden"
             animate="show"
-            className="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-6"
+            className="hidden lg:flex mt-10 flex-col sm:flex-row items-start sm:items-center gap-6"
           >
             <button
               className="
                 w-full sm:w-fit px-8 py-4 text-lg rounded-full border border-white/20 dark:border-[#D4AF37]/40
                 backdrop-blur-md bg-gradient-to-r from-[#F3D98B] via-[#D4AF37] to-[#B8962E]
-                text-black font-bold tracking-wide
+                text-black dark:text-white font-bold tracking-wide
                 shadow-[0_12px_35px_rgba(212,175,55,0.45)]
                 hover:shadow-[0_15px_45px_rgba(212,175,55,0.6)]
                 hover:scale-105 transition-all duration-500
               "
-              onClick={() => setIsKYCOpen(true)}
+              onClick={() =>
+                window.open(
+                  "https://play.google.com/store/apps/details?id=com.wealthfino.mobile&hl=en_IN",
+                  "_blank",
+                  "noopener noreferrer",
+                )
+              }
             >
               Start Your Pro Journey
             </button>
-
-            <div className="w-full flex justify-center sm:w-auto sm:justify-start">
-              <a
-                href="https://play.google.com/store/apps/details?id=com.wealthfino.mobile"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
-                  alt="Get WealthFino on Google Play"
-                  className="h-14 md:h-16 cursor-pointer hover:scale-105 transition-transform"
-                />
-              </a>
-            </div>
           </motion.div>
         </div>
 
@@ -181,7 +201,7 @@ portfolio dashboard"
         </motion.div>
       </div>
 
-      <KYCModal isOpen={isKYCOpen} onClose={() => setIsKYCOpen(false)} />
+      <MembershipPopup />
     </section>
   );
 };

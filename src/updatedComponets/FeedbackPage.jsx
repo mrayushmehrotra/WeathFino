@@ -6,7 +6,7 @@ export default function FeedbackPage() {
         companies & design teams
       </h1>
       <div className="flex flex-wrap items-center justify-center gap-4">
-        <div className="flex flex-col items-center bg-white px-3 py-8 rounded-lg border border-gray-300/80 max-w-[272px] text-sm text-center text-gray-500">
+        <div className="flex flex-col items-center bg-white px-3 py-8 rounded-lg border border-gray-300/80 max-w-[272px] text-sm text-center text-black">
           <div className="relative mb-4">
             <img
               className="h-16 w-16 rounded-full"
@@ -33,12 +33,12 @@ export default function FeedbackPage() {
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud aliquip”
           </p>
-          <p className="text-lg text-gray-800 font-medium mt-5">
+          <p className="text-lg text-black font-medium mt-5">
             Donald Jackman
           </p>
           <p className="text-xs">Content Creator</p>
         </div>
-        <div className="flex flex-col items-center bg-white px-3 py-8 rounded-lg border border-gray-300/80 max-w-[272px] text-sm text-center text-gray-500">
+        <div className="flex flex-col items-center bg-white px-3 py-8 rounded-lg border border-gray-300/80 max-w-[272px] text-sm text-center text-black">
           <div className="relative mb-4">
             <img
               className="h-16 w-16 rounded-full"
@@ -65,12 +65,12 @@ export default function FeedbackPage() {
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud aliquip”
           </p>
-          <p className="text-lg text-gray-800 font-medium mt-5">
+          <p className="text-lg text-black font-medium mt-5">
             Richard Nelson
           </p>
           <p className="text-xs">Content Writer</p>
         </div>
-        <div className="flex flex-col items-center bg-white px-3 py-8 rounded-lg border border-gray-300/80 max-w-[272px] text-sm text-center text-gray-500">
+        <div className="flex flex-col items-center bg-white px-3 py-8 rounded-lg border border-gray-300/80 max-w-[272px] text-sm text-center text-black">
           <div className="relative mb-4">
             <img
               className="h-16 w-16 rounded-full"
@@ -97,7 +97,7 @@ export default function FeedbackPage() {
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud aliquip”
           </p>
-          <p className="text-lg text-gray-800 font-medium mt-5">
+          <p className="text-lg text-black font-medium mt-5">
             James Washington
           </p>
           <p className="text-xs">Content Marketing</p>

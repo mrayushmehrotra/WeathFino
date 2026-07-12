@@ -148,23 +148,23 @@ const StockAnalysis = () => {
     if (active && payload && payload.length) {
       return (
         <div className="bg-white dark:bg-gray-900/95 backdrop-blur-sm p-4 rounded-lg border border-gray-200 dark:border-gray-700 shadow-2xl">
-          <p className="text-gray-800 dark:text-gray-300 font-medium mb-2">
+          <p className="text-black dark:text-white font-medium mb-2">
             {label}
           </p>
           <div className="space-y-1">
-            <p className="text-gray-900 dark:text-white text-sm">
+            <p className="text-black dark:text-white text-sm">
               Price:{" "}
               <span className="text-green-600 dark:text-green-400 font-bold">
                 ₹{payload[0].value}
               </span>
             </p>
-            <p className="text-gray-600 dark:text-gray-400 text-sm">
+            <p className="text-black dark:text-white text-sm">
               Volume:{" "}
               <span className="text-blue-600 dark:text-blue-400">
                 {payload[1]?.value || payload[0].payload.volume}
               </span>
             </p>
-            <p className="text-gray-600 dark:text-gray-400 text-sm">
+            <p className="text-black dark:text-white text-sm">
               MA:{" "}
               <span className="text-purple-600 dark:text-purple-400">
                 ₹{payload[0].payload.movingAvg}
@@ -195,7 +195,7 @@ const StockAnalysis = () => {
             </h1>
 
             {/* Description */}
-            <p className="text-gray-300 dark:text-gray-300 text-xl leading-relaxed mb-12 max-w-3xl mx-auto">
+            <p className="text-black dark:text-white text-xl leading-relaxed mb-12 max-w-3xl mx-auto">
               Unlock powerful analytics for NSE and BSE listed stocks. Track
               real-time trends, technical patterns, and fundamental metrics to
               make informed investment decisions.
@@ -209,7 +209,7 @@ const StockAnalysis = () => {
               onClick={redirectToScanX}
               className="group flex items-center gap-4 bg-gray-900/60 dark:bg-gray-900/80 backdrop-blur-xl border-2 border-gray-700/50 dark:border-gray-800 rounded-2xl px-8 py-5 cursor-pointer hover:border-purple-500 transition-all duration-300 max-w-2xl mx-auto mb-12 hover:shadow-2xl hover:shadow-purple-500/20 dark:hover:shadow-purple-900/30"
             >
-              <Search className="text-gray-400 dark:text-gray-400 group-hover:text-purple-400 w-6 h-6 transition-colors" />
+              <Search className="text-black dark:text-white group-hover:text-purple-400 w-6 h-6 transition-colors" />
               <input
                 type="text"
                 placeholder="Search Stock by Name or Symbol"
@@ -253,12 +253,12 @@ const StockAnalysis = () => {
         </div>
       ) : (
         /* Charts Page - Modern Design */
-        <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950 text-gray-800 dark:text-gray-200 p-4 md:p-8">
+        <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950 text-black dark:text-white p-4 md:p-8">
           {/* Back Button */}
           <div className="max-w-8xl mx-auto mb-6">
             <button
               onClick={() => setShowCharts(false)}
-              className="group px-5 py-3 bg-gradient-to-r from-gray-100 to-gray-50 dark:from-gray-900 dark:to-gray-800 hover:from-gray-200 hover:to-gray-100 dark:hover:from-gray-800 dark:hover:to-gray-700 rounded-xl flex items-center gap-2 transition-all duration-300 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 shadow-sm hover:shadow-md dark:shadow-lg dark:hover:shadow-xl"
+              className="group px-5 py-3 bg-gradient-to-r from-gray-100 to-gray-50 dark:from-gray-900 dark:to-gray-800 hover:from-gray-200 hover:to-gray-100 dark:hover:from-gray-800 dark:hover:to-gray-700 rounded-xl flex items-center gap-2 transition-all duration-300 text-black dark:text-white border border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 shadow-sm hover:shadow-md dark:shadow-lg dark:hover:shadow-xl"
             >
               <ChevronRight className="w-5 h-5 transform rotate-180 group-hover:-translate-x-1 transition-transform" />
               Back to Home
@@ -277,7 +277,7 @@ const StockAnalysis = () => {
                     <h1 className="text-4xl font-bold bg-gradient-to-r from-gray-900 via-blue-800 to-purple-800 dark:from-gray-100 dark:via-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
                       Market Intelligence Dashboard
                     </h1>
-                    <p className="text-gray-600 dark:text-gray-400 mt-2 flex items-center gap-2">
+                    <p className="text-black dark:text-white mt-2 flex items-center gap-2">
                       <span className="flex items-center gap-1 text-green-600 dark:text-green-400 font-medium">
                         <Eye className="w-4 h-4" />
                         Real-time data streaming
@@ -288,7 +288,7 @@ const StockAnalysis = () => {
                 </div>
               </div>
               <div className="flex flex-wrap gap-3">
-                <button className="px-5 py-3 bg-gradient-to-r from-blue-50 to-blue-100 dark:from-gray-900 dark:to-gray-800 hover:from-blue-100 hover:to-blue-200 dark:hover:from-gray-800 dark:hover:to-gray-700 rounded-xl flex items-center gap-3 transition-all duration-300 border border-blue-200 dark:border-gray-800 text-blue-700 dark:text-gray-300 font-medium shadow-sm hover:shadow dark:shadow-lg dark:hover:shadow-xl">
+                <button className="px-5 py-3 bg-gradient-to-r from-blue-50 to-blue-100 dark:from-gray-900 dark:to-gray-800 hover:from-blue-100 hover:to-blue-200 dark:hover:from-gray-800 dark:hover:to-gray-700 rounded-xl flex items-center gap-3 transition-all duration-300 border border-blue-200 dark:border-gray-800 text-blue-700 dark:text-white font-medium shadow-sm hover:shadow dark:shadow-lg dark:hover:shadow-xl">
                   <RefreshCw className="w-5 h-5" />
                   Refresh Data
                 </button>
@@ -312,7 +312,7 @@ const StockAnalysis = () => {
                   className={`px-5 py-3 rounded-xl transition-all duration-300 font-medium border ${
                     activeTimeframe === timeframe
                       ? "bg-gradient-to-r from-purple-600 to-blue-600 text-white border-transparent shadow-lg"
-                      : "bg-white/80 dark:bg-gray-900/80 hover:bg-white dark:hover:bg-gray-800 text-gray-700 dark:text-gray-300 border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 hover:shadow-md"
+                      : "bg-white/80 dark:bg-gray-900/80 hover:bg-white dark:hover:bg-gray-800 text-black dark:text-white border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 hover:shadow-md"
                   }`}
                 >
                   {timeframe}
@@ -334,13 +334,13 @@ const StockAnalysis = () => {
                     +2.4%
                   </span>
                 </div>
-                <div className="text-3xl font-bold text-gray-900 dark:text-white mb-1">
+                <div className="text-3xl font-bold text-black dark:text-white mb-1">
                   ₹3,428.80
                 </div>
-                <div className="text-gray-600 dark:text-gray-300 font-medium">
+                <div className="text-black dark:text-white font-medium">
                   TCS Current Price
                 </div>
-                <div className="text-sm text-gray-500 dark:text-gray-500 mt-2">
+                <div className="text-sm text-black dark:text-white mt-2">
                   NSE: TCS | BSE: 532540
                 </div>
               </div>
@@ -354,13 +354,13 @@ const StockAnalysis = () => {
                     High Volume
                   </span>
                 </div>
-                <div className="text-3xl font-bold text-gray-900 dark:text-white mb-1">
+                <div className="text-3xl font-bold text-black dark:text-white mb-1">
                   4.2M
                 </div>
-                <div className="text-gray-600 dark:text-gray-300 font-medium">
+                <div className="text-black dark:text-white font-medium">
                   Trading Volume
                 </div>
-                <div className="text-sm text-gray-500 dark:text-gray-500 mt-2">
+                <div className="text-sm text-black dark:text-white mt-2">
                   Avg: 3.8M | Peak: 5.1M
                 </div>
               </div>
@@ -374,13 +374,13 @@ const StockAnalysis = () => {
                     32.45
                   </span>
                 </div>
-                <div className="text-3xl font-bold text-gray-900 dark:text-white mb-1">
+                <div className="text-3xl font-bold text-black dark:text-white mb-1">
                   ₹12.8T
                 </div>
-                <div className="text-gray-600 dark:text-gray-300 font-medium">
+                <div className="text-black dark:text-white font-medium">
                   Market Cap
                 </div>
-                <div className="text-sm text-gray-500 dark:text-gray-500 mt-2">
+                <div className="text-sm text-black dark:text-white mt-2">
                   P/E: 32.45 | Industry: 28.5
                 </div>
               </div>
@@ -394,13 +394,13 @@ const StockAnalysis = () => {
                     Low Risk
                   </span>
                 </div>
-                <div className="text-3xl font-bold text-gray-900 dark:text-white mb-1">
+                <div className="text-3xl font-bold text-black dark:text-white mb-1">
                   0.89
                 </div>
-                <div className="text-gray-600 dark:text-gray-300 font-medium">
+                <div className="text-black dark:text-white font-medium">
                   Beta Value
                 </div>
-                <div className="text-sm text-gray-500 dark:text-gray-500 mt-2">
+                <div className="text-sm text-black dark:text-white mt-2">
                   52W High: ₹4,120 | Low: ₹3,010
                 </div>
               </div>
@@ -416,7 +416,7 @@ const StockAnalysis = () => {
                       <div className="p-2 bg-gradient-to-br from-blue-500 to-purple-500 rounded-lg">
                         <TrendingUp className="w-5 h-5 text-white" />
                       </div>
-                      <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+                      <h2 className="text-2xl font-bold text-black dark:text-white">
                         TCS Live Chart ({activeTimeframe})
                       </h2>
                     </div>
@@ -425,7 +425,7 @@ const StockAnalysis = () => {
                         <ArrowUp className="w-4 h-4" />
                         +2.4% Today • ₹3,428.80
                       </span>
-                      <span className="text-gray-600 dark:text-gray-400">
+                      <span className="text-black dark:text-white">
                         NIFTY IT: +1.8%
                       </span>
                     </div>
@@ -442,7 +442,7 @@ const StockAnalysis = () => {
                         className={`px-4 py-2.5 rounded-lg flex items-center gap-2 transition-all ${
                           activeChart === type
                             ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg"
-                            : "bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300"
+                            : "bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-black dark:text-white"
                         }`}
                       >
                         <Icon className="w-4 h-4" />
@@ -608,7 +608,7 @@ const StockAnalysis = () => {
                     <div className="text-sm text-blue-700 dark:text-blue-400 font-medium">
                       RSI
                     </div>
-                    <div className="text-2xl font-bold text-gray-900 dark:text-white">
+                    <div className="text-2xl font-bold text-black dark:text-white">
                       58.2
                     </div>
                     <div className="text-xs text-green-600 dark:text-green-400">
@@ -619,7 +619,7 @@ const StockAnalysis = () => {
                     <div className="text-sm text-purple-700 dark:text-purple-400 font-medium">
                       MACD
                     </div>
-                    <div className="text-2xl font-bold text-gray-900 dark:text-white">
+                    <div className="text-2xl font-bold text-black dark:text-white">
                       12.5
                     </div>
                     <div className="text-xs text-green-600 dark:text-green-400">
@@ -630,10 +630,10 @@ const StockAnalysis = () => {
                     <div className="text-sm text-green-700 dark:text-green-400 font-medium">
                       Support
                     </div>
-                    <div className="text-2xl font-bold text-gray-900 dark:text-white">
+                    <div className="text-2xl font-bold text-black dark:text-white">
                       ₹3,380
                     </div>
-                    <div className="text-xs text-gray-600 dark:text-gray-400">
+                    <div className="text-xs text-black dark:text-white">
                       Strong
                     </div>
                   </div>
@@ -647,13 +647,13 @@ const StockAnalysis = () => {
                     <div className="p-2 bg-gradient-to-br from-green-500 to-emerald-500 dark:from-green-600 dark:to-emerald-600 rounded-lg">
                       <Globe className="w-5 h-5 text-white" />
                     </div>
-                    <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+                    <h2 className="text-2xl font-bold text-black dark:text-white">
                       Sector Performance
                     </h2>
                   </div>
                   <div className="flex items-center gap-2">
                     <Filter className="w-5 h-5 text-blue-500 dark:text-blue-400" />
-                    <span className="text-sm text-gray-600 dark:text-gray-400">
+                    <span className="text-sm text-black dark:text-white">
                       All Sectors
                     </span>
                   </div>
@@ -705,7 +705,7 @@ const StockAnalysis = () => {
                             className="w-3 h-3 rounded-full"
                             style={{ backgroundColor: sector.color }}
                           />
-                          <span className="font-medium text-gray-900 dark:text-gray-200">
+                          <span className="font-medium text-black dark:text-white">
                             {sector.name}
                           </span>
                         </div>
@@ -719,7 +719,7 @@ const StockAnalysis = () => {
                           {sector.change}
                         </span>
                       </div>
-                      <div className="text-2xl font-bold text-gray-900 dark:text-white">
+                      <div className="text-2xl font-bold text-black dark:text-white">
                         {sector.value}%
                       </div>
                       <div className="w-full bg-gray-200 dark:bg-gray-800 rounded-full h-2 mt-2">
@@ -746,7 +746,7 @@ const StockAnalysis = () => {
                     <div className="p-2 bg-gradient-to-br from-cyan-500 to-blue-500 dark:from-cyan-600 dark:to-blue-600 rounded-lg">
                       <BarChart2 className="w-5 h-5 text-white" />
                     </div>
-                    <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+                    <h2 className="text-2xl font-bold text-black dark:text-white">
                       Volume Analysis
                     </h2>
                   </div>
@@ -847,15 +847,15 @@ const StockAnalysis = () => {
                     <div className="text-2xl font-bold text-green-600 dark:text-green-400">
                       4,200
                     </div>
-                    <div className="text-sm text-gray-600 dark:text-gray-400">
+                    <div className="text-sm text-black dark:text-white">
                       Max Buy
                     </div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-gray-900 dark:text-white">
+                    <div className="text-2xl font-bold text-black dark:text-white">
                       3,650
                     </div>
-                    <div className="text-sm text-gray-600 dark:text-gray-400">
+                    <div className="text-sm text-black dark:text-white">
                       Daily Avg
                     </div>
                   </div>
@@ -863,7 +863,7 @@ const StockAnalysis = () => {
                     <div className="text-2xl font-bold text-red-600 dark:text-red-400">
                       3,100
                     </div>
-                    <div className="text-sm text-gray-600 dark:text-gray-400">
+                    <div className="text-sm text-black dark:text-white">
                       Max Sell
                     </div>
                   </div>
@@ -877,7 +877,7 @@ const StockAnalysis = () => {
                     <div className="p-2 bg-gradient-to-br from-orange-500 to-red-500 dark:from-orange-600 dark:to-red-600 rounded-lg">
                       <Target className="w-5 h-5 text-white" />
                     </div>
-                    <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+                    <h2 className="text-2xl font-bold text-black dark:text-white">
                       Technical Indicators
                     </h2>
                   </div>
@@ -951,7 +951,7 @@ const StockAnalysis = () => {
                       }`}
                     >
                       <div className="flex items-center justify-between">
-                        <span className="font-medium text-gray-900 dark:text-gray-200">
+                        <span className="font-medium text-black dark:text-white">
                           {indicator.indicator}
                         </span>
                         <span
@@ -966,7 +966,7 @@ const StockAnalysis = () => {
                           {indicator.value}
                         </span>
                       </div>
-                      <div className="text-xs text-gray-500 dark:text-gray-400 mt-1">
+                      <div className="text-xs text-black dark:text-white mt-1">
                         Optimal: {indicator.optimal}
                       </div>
                     </div>
@@ -982,7 +982,7 @@ const StockAnalysis = () => {
                   <div className="p-2 bg-gradient-to-br from-pink-500 to-rose-500 rounded-lg">
                     <Activity className="w-5 h-5 text-white" />
                   </div>
-                  <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+                  <h2 className="text-2xl font-bold text-black dark:text-white">
                     Market Sentiment
                   </h2>
                 </div>
@@ -1039,16 +1039,16 @@ const StockAnalysis = () => {
                             )}
                           </div>
                           <div>
-                            <div className="font-medium text-gray-900 dark:text-gray-200">
+                            <div className="font-medium text-black dark:text-white">
                               {item.time}
                             </div>
-                            <div className="text-sm text-gray-600 dark:text-gray-400">
+                            <div className="text-sm text-black dark:text-white">
                               NSE/BSE
                             </div>
                           </div>
                         </div>
                         <div className="text-right">
-                          <div className="text-2xl font-bold text-gray-900 dark:text-white">
+                          <div className="text-2xl font-bold text-black dark:text-white">
                             ₹{item.value.toLocaleString()}
                           </div>
                           <div
@@ -1079,12 +1079,12 @@ const StockAnalysis = () => {
                   Powered by ScanX Analytics
                 </h3>
               </div>
-              <p className="text-gray-300 max-w-2xl mx-auto">
+              <p className="text-black max-w-2xl mx-auto">
                 All charts update in real-time with institutional-grade data.
                 Advanced algorithms provide actionable insights for informed
                 investment decisions.
               </p>
-              <div className="flex flex-wrap justify-center gap-6 mt-6 text-gray-400 text-sm">
+              <div className="flex flex-wrap justify-center gap-6 mt-6 text-black text-sm">
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                   Real-time Data Stream
@@ -1098,7 +1098,7 @@ const StockAnalysis = () => {
                   AI-Powered Predictions
                 </div>
               </div>
-              <p className="text-gray-500 text-sm mt-8">
+              <p className="text-black text-sm mt-8">
                 Last updated: Today, 3:30 PM IST • Data latency: &lt;100ms
               </p>
             </div>

@@ -5,14 +5,14 @@ export default function InvestorCharter() {
     <div className="space-y-10">
       {/* PAGE TITLE */}
       <div className="text-center">
-        <h1 className="text-3xl font-bold text-white tracking-wide">
+        <h1 className="text-3xl font-bold text-black dark:text-white tracking-wide">
           ANNEXURE - A
         </h1>
-        <div className="mt-4 h-px bg-slate-600" />
+        <div className="mt-4 h-px bg-gray-300 dark:bg-slate-600" />
       </div>
 
       {/* VISION & MISSION */}
-      <section className="bg-green-200 border border-green-400 rounded-xl p-6 text-slate-900">
+      <section className="bg-green-200 border border-green-400 rounded-xl p-6 text-black">
         <h2 className="text-xl font-semibold mb-4">
           Vision and Mission Statements for investors.
         </h2>
@@ -38,7 +38,7 @@ export default function InvestorCharter() {
       </section>
 
       {/* BUSINESS TRANSACTED */}
-      <section className="bg-blue-200 border border-blue-400 rounded-xl p-6 text-slate-900">
+      <section className="bg-blue-200 border border-blue-400 rounded-xl p-6 text-black">
         <h2 className="text-xl font-semibold mb-4">
           Details of business transacted by the Research Analyst with respect to
           the investors.
@@ -63,7 +63,7 @@ export default function InvestorCharter() {
       </section>
 
       {/* SERVICES PROVIDED */}
-      <section className="bg-amber-200  border border-indigo-400 rounded-xl p-6 text-slate-900">
+      <section className="bg-amber-200  border border-indigo-400 rounded-xl p-6 text-black">
         <h2 className="text-xl font-semibold mb-6">
           Details of services provided to investors (No Indicative Timelines).
         </h2>
@@ -74,20 +74,20 @@ export default function InvestorCharter() {
             <div>
               <div className="flex items-center gap-3 mb-4">
                 <CheckCircle className="text-emerald-600" size={24} />
-                <h3 className="text-lg font-semibold  text-slate-800">
+                <h3 className="text-lg font-semibold  text-black">
                   Onboarding of clients
                 </h3>
               </div>
               <ul className="space-y-2 ml-9">
                 <li className="flex items-start gap-2">
                   <div className="w-1.5 h-1.5 rounded-full bg-slate-600 mt-2 flex-shrink-0"></div>
-                  <span className="text-slate-700">
+                  <span className="text-black">
                     Sharing of terms and conditions of research services
                   </span>
                 </li>
                 <li className="flex items-start gap-2">
                   <div className="w-1.5 h-1.5 rounded-full bg-slate-600 mt-2 flex-shrink-0"></div>
-                  <span className="text-slate-700">
+                  <span className="text-black">
                     Completing KYC of fee paying clients
                   </span>
                 </li>
@@ -98,14 +98,14 @@ export default function InvestorCharter() {
             <div>
               <div className="flex items-center gap-3 mb-4">
                 <CheckCircle className="text-emerald-600" size={24} />
-                <h3 className="text-lg font-semibold text-slate-800">
+                <h3 className="text-lg font-semibold text-black">
                   Disclosure to clients:
                 </h3>
               </div>
               <ul className="space-y-3 ml-9">
                 <li className="flex items-start gap-2">
                   <div className="w-1.5 h-1.5 rounded-full bg-slate-600 mt-2 flex-shrink-0"></div>
-                  <span className="text-slate-800">
+                  <span className="text-black">
                     To disclose, information that is material for the client to
                     make an informed decision, including details of its business
                     activity, disciplinary history, the terms and conditions of
@@ -115,14 +115,14 @@ export default function InvestorCharter() {
                 </li>
                 <li className="flex items-start gap-2">
                   <div className="w-1.5 h-1.5 rounded-full bg-slate-600 mt-2 flex-shrink-0"></div>
-                  <span className="text-slate-800">
+                  <span className="text-black">
                     To disclose the extent of use of Artificial Intelligence
                     tools in providing research services
                   </span>
                 </li>
                 <li className="flex items-start gap-2">
                   <div className="w-1.5 h-1.5 rounded-full bg-slate-600 mt-2 flex-shrink-0"></div>
-                  <span className="text-slate-800">
+                  <span className="text-black">
                     To disclose, while distributing a third party research
                     report, any material conflict of interest of such third
                     party research provider or provide web address that directs
@@ -131,7 +131,7 @@ export default function InvestorCharter() {
                 </li>
                 <li className="flex items-start gap-2">
                   <div className="w-1.5 h-1.5 rounded-full bg-slate-600 mt-2 flex-shrink-0"></div>
-                  <span className="text-slate-800">
+                  <span className="text-black">
                     To disclose any conflict of interest of the activities of
                     providing research services with other activities of the
                     research analyst.
@@ -143,7 +143,7 @@ export default function InvestorCharter() {
             <div className="space-y-4">
               <div className="flex items-center gap-3">
                 <CheckCircle className="text-emerald-600" size={24} />
-                <h3 className="text-lg font-semibold text-slate-800">
+                <h3 className="text-lg font-semibold text-black">
                   To distribute research reports and recommendations to the
                   clients without discrimination.
                 </h3>
@@ -151,7 +151,7 @@ export default function InvestorCharter() {
 
               <div className="flex items-center gap-3">
                 <CheckCircle className="text-emerald-600" size={24} />
-                <h3 className="text-lg font-semibold text-slate-800">
+                <h3 className="text-lg font-semibold text-black">
                   To maintain confidentiality w.r.t publication of the research
                   report until made available in the public domain.
                 </h3>
@@ -159,7 +159,7 @@ export default function InvestorCharter() {
 
               <div className="flex items-center gap-3">
                 <CheckCircle className="text-emerald-600" size={24} />
-                <h3 className="text-lg font-semibold text-slate-800">
+                <h3 className="text-lg font-semibold text-black">
                   To respect data privacy rights of clients and take measures to
                   protect unauthorized use of their personal information.
                 </h3>
@@ -167,7 +167,7 @@ export default function InvestorCharter() {
 
               <div className="flex items-center gap-3">
                 <CheckCircle className="text-emerald-600" size={24} />
-                <h3 className="text-lg font-semibold text-slate-800">
+                <h3 className="text-lg font-semibold text-black">
                   To disclose the timelines for the services provided by the
                   research analyst to clients and ensure adherence to the said
                   timelines.
@@ -176,7 +176,7 @@ export default function InvestorCharter() {
 
               <div className="flex items-center gap-3">
                 <CheckCircle className="text-emerald-600" size={24} />
-                <h3 className="text-lg font-semibold text-slate-800">
+                <h3 className="text-lg font-semibold text-black">
                   To provide clear guidance and adequate caution notice to
                   clients when providing recommendations for dealing in complex
                   and high-risk financial products/services.
@@ -185,14 +185,14 @@ export default function InvestorCharter() {
 
               <div className="flex items-center gap-3">
                 <CheckCircle className="text-emerald-600" size={24} />
-                <h3 className="text-lg font-semibold text-slate-800">
+                <h3 className="text-lg font-semibold text-black">
                   To treat all clients with honesty and integrity.
                 </h3>
               </div>
 
               <div className="flex items-center gap-3">
                 <CheckCircle className="text-emerald-600" size={24} />
-                <h3 className="text-lg font-semibold text-slate-800">
+                <h3 className="text-lg font-semibold text-black">
                   To ensure confidentiality of information shared by clients
                   unless such information is required to be provided in
                   furtherance of discharging legal obligations or a client has
@@ -204,7 +204,7 @@ export default function InvestorCharter() {
         </div>
       </section>
 
-      <section className="bg-green-200 border border-green-300 rounded-xl p-6 md:p-8 space-y-5 text-slate-900">
+      <section className="bg-green-200 border border-green-300 rounded-xl p-6 md:p-8 space-y-5 text-black">
         <div className="space-y-4 border border-green-500 rounded-lg p-4 bg-green-100">
           <h2 className="text-xl md:text-2xl font-semibold">
             Details of grievance redressal mechanism and how to access it
@@ -297,7 +297,7 @@ export default function InvestorCharter() {
       </section>
 
       {/* RIGHTS OF INVESTORS */}
-      <section className="bg-amber-200 border border-amber-400 rounded-xl p-6 text-slate-900">
+      <section className="bg-amber-200 border border-amber-400 rounded-xl p-6 text-black">
         <h2 className="text-xl font-semibold mb-4">Rights of Investors</h2>
 
         <ul className="space-y-3 border border-amber-500 rounded-lg p-4 bg-amber-100">
@@ -329,7 +329,7 @@ export default function InvestorCharter() {
       </section>
 
       {/* INVESTOR RESPONSIBILITIES */}
-      <section className="bg-rose-200 border border-rose-400 rounded-xl p-6 text-slate-900">
+      <section className="bg-rose-200 border border-rose-400 rounded-xl p-6 text-black">
         <h2 className="text-xl font-semibold mb-4">
           Expectations of Investors (Responsibilities)
         </h2>

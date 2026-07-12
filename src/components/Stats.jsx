@@ -17,7 +17,7 @@ const Stats = () => {
             By The
             <span className="gradient-text"> Numbers</span>
           </h2>
-          <p className="text-gray-600">
+          <p className="text-black">
             Quantifiable results and performance metrics
           </p>
         </div>
@@ -29,7 +29,7 @@ const Stats = () => {
               <div className="text-5xl font-bold gradient-text mb-4">
                 {stat.value}
               </div>
-              <div className="text-gray-700 font-medium">{stat.label}</div>
+              <div className="text-black font-medium">{stat.label}</div>
             </div>
           ))}
         </div>
@@ -39,7 +39,7 @@ const Stats = () => {
           <div className="flex justify-between items-center mb-8">
             <div>
               <h3 className="text-2xl font-bold">Performance Benchmark</h3>
-              <p className="text-gray-600">5-Year Comparison</p>
+              <p className="text-black">5-Year Comparison</p>
             </div>
             <div className="flex space-x-4">
               <div className="flex items-center">
@@ -61,7 +61,7 @@ const Stats = () => {
                   className="w-full bg-gradient-to-t from-secondary to-accent rounded-t-lg transition-all duration-500 hover:opacity-80"
                   style={{ height: `${height}%` }}
                 ></div>
-                <div className="text-sm text-gray-500 mt-2">{2019 + i}</div>
+                <div className="text-sm text-black mt-2">{2019 + i}</div>
               </div>
             ))}
           </div>

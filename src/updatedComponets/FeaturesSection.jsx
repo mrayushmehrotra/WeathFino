@@ -40,7 +40,7 @@
 //           <h2
 //             className="
 //               mt-6 text-2xl md:text-4xl font-extrabold
-//               text-slate-900 dark:text-white
+//               text-black dark:text-white
 //             "
 //           >
 //             <div className="mb-6">Equity & Stock Option Research </div>
@@ -80,7 +80,7 @@
 //             <h3
 //               className="
 //                 text-3xl md:text-4xl font-bold mb-6
-//                 text-slate-900 dark:text-blue-600
+//                 text-black dark:text-blue-600
 //               "
 //             >
 //               Real-Time Market Insights
@@ -101,7 +101,7 @@
 //                   transition={{ delay: index * 0.15 }}
 //                   className="
 //                     flex items-start gap-3
-//                     text-slate-700 dark:text-slate-900
+//                     text-black dark:text-black
 //                   "
 //                 >
 //                   <span className="text-blue-600 dark:text-blue-400 font-bold">
@@ -170,7 +170,6 @@
 
 import { motion } from "framer-motion";
 import { CheckCircle } from "lucide-react";
-import chartImg from "/MeetingImg.png";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -200,7 +199,7 @@ const FeaturesWhiteBlueAnimated = () => {
             className="
               inline-block px-6 py-2 rounded-full
               bg-[#D4AF37]/15 dark:bg-[#D4AF37]/15
-              text-[#7A5800] dark:text-[#D4AF37]
+              text-black dark:text-white
               font-bold tracking-widest uppercase
               text-sm md:text-base
             "
@@ -211,18 +210,10 @@ const FeaturesWhiteBlueAnimated = () => {
           <h2
             className="
               mt-6 text-2xl md:text-4xl font-extrabold
-              text-slate-900 dark:text-white
+              text-black dark:text-white
             "
           >
-            <div className="mb-6">Equity & Stock Option Research</div>
-
-            <span
-              className="
-                text-[#5C4200] dark:text-[#D4AF37]
-              "
-            >
-              Real-Time Market Insights
-            </span>
+            Equity & Stock Option Research
           </h2>
         </motion.div>
 
@@ -257,7 +248,7 @@ const FeaturesWhiteBlueAnimated = () => {
               <h3
                 className="
                   text-3xl md:text-4xl font-bold mb-6
-                  text-[#7A5800] dark:text-[#D4AF37]
+                  text-black dark:text-white
                 "
               >
                 Real-Time Market Insights
@@ -278,10 +269,13 @@ const FeaturesWhiteBlueAnimated = () => {
                     transition={{ delay: index * 0.15 }}
                     className="
                       flex items-start gap-3
-                      text-slate-700 dark:text-slate-300
+                      text-black dark:text-white
                     "
                   >
-                    <span className="text-[#7A5800] dark:text-[#D4AF37] font-bold">
+                    <span
+                      className="text-black dark:text-white"
+                      aria-hidden="true"
+                    >
                       <CheckCircle className="w-5 h-5" />
                     </span>
                     {item}
@@ -289,20 +283,23 @@ const FeaturesWhiteBlueAnimated = () => {
                 ))}
               </ul>
 
-              {/* CTA */}
-              <motion.button
+              <motion.a
+                href="https://play.google.com/store/apps/details?id=com.wealthfino.mobile&hl=en_IN"
+                target="_blank"
+                rel="noopener noreferrer"
+                alt="Download the Wealthfino app on Play Store"
                 whileHover={{ scale: 1.08 }}
                 whileTap={{ scale: 0.96 }}
                 className="
-                  mt-10 px-10 py-4 rounded-full font-semibold
-                  text-[#1F3864]
+                  mt-10 px-10 py-4 rounded-full font-semibold inline-block
+                  text-black dark:text-white
                   bg-gradient-to-r from-[#F3D98B] via-[#D4AF37] to-[#B8962E]
                   shadow-[0_8px_20px_rgba(212,175,55,0.25)] hover:shadow-[0_12px_25px_rgba(212,175,55,0.35)]
                   transition-all
                 "
               >
                 Get Started
-              </motion.button>
+              </motion.a>
             </motion.div>
 
             {/* RIGHT IMAGE */}
@@ -323,7 +320,7 @@ const FeaturesWhiteBlueAnimated = () => {
                 "
               >
                 <img
-                  src={chartImg}
+                  src="/MeetingImg.png"
                   alt=""
                   className="rounded-xl max-h-[320px]"
                 />

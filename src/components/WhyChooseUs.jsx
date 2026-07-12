@@ -80,19 +80,19 @@ const WhyWealthUs = () => {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          <span className="inline-block px-6 py-2 rounded-full bg-[#D4AF37]/10 dark:bg-[#D4AF37]/10 border border-[#D4AF37]/30 dark:border-[#D4AF37]/30 text-[#7A5800] dark:text-[#D4AF37] font-semibold">
+            <span className="inline-block px-6 py-2 rounded-full bg-[#D4AF37]/10 dark:bg-[#D4AF37]/10 border border-[#D4AF37]/30 dark:border-[#D4AF37]/30 text-black dark:text-white font-semibold">
             Why Choose Us
           </span>
 
-          <h2 className="font-playfair mt-6 text-5xl font-bold text-slate-900 dark:text-white">
+          <h2 className="font-playfair mt-6 text-5xl font-bold text-black dark:text-white">
             Why{" "}
-            <span className="text-[#5C4200] dark:text-[#D4AF37]">
+            <span className="text-black dark:text-white">
               WealthFino
             </span>
             ?
           </h2>
 
-          <p className="mt-6 text-xl text-slate-900 dark:text-slate-200">
+          <p className="mt-6 text-xl text-black dark:text-white">
             Research-backed strategies under SEBI RA guidelines with disciplined
             investing principles.
           </p>
@@ -122,17 +122,17 @@ const WhyWealthUs = () => {
                     <div
                       className={`w-16 h-16 rounded-2xl flex items-center justify-center bg-gradient-to-r ${item.gradient} shadow-lg animate-icon-float`}
                     >
-                      <Icon className="w-8 h-8 text-white dark:text-[#1F3864]" />
+                      <Icon className="w-8 h-8 text-black dark:text-white" />
                     </div>
 
                     {/* ✅ FIXED TITLE */}
                     <h3
-                      className={`mt-8 text-2xl font-bold text-[#5C4200] dark:text-[#D4AF37]`}
+                      className={`mt-8 text-2xl font-bold text-black dark:text-white`}
                     >
                       {item.title}
                     </h3>
 
-                    <p className="mt-4 text-slate-900 dark:text-slate-200">
+                    <p className="mt-4 text-black dark:text-white">
                       {item.desc}
                     </p>
 

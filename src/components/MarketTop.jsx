@@ -13,7 +13,7 @@ export default function MarketTop() {
         onClick={() => setIsPaused(!isPaused)}
         aria-label={isPaused ? "Play marquee" : "Pause marquee"}
         title={isPaused ? "Play marquee (P)" : "Pause marquee (P)"}
-        className="flex items-center justify-center px-3 text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white bg-gray-50 hover:bg-gray-200 dark:bg-[#0b1022] dark:hover:bg-gray-800 z-10 border-r border-gray-200 dark:border-gray-800 transition-colors focus:outline-none focus:ring-2 focus:ring-[#D4AF37] dark:focus:ring-[#D4AF37]"
+        className="flex items-center justify-center px-3 text-black hover:text-black dark:text-white dark:hover:text-white bg-gray-50 hover:bg-gray-200 dark:bg-[#0b1022] dark:hover:bg-gray-800 z-10 border-r border-gray-200 dark:border-gray-800 transition-colors focus:outline-none focus:ring-2 focus:ring-[#D4AF37] dark:focus:ring-[#D4AF37]"
       >
         {isPaused ? (
           <Play aria-label="Play stock ticker" className="h-3.5 w-3.5" />
@@ -36,14 +36,14 @@ export default function MarketTop() {
                 {/* Insert the static greeting items at the start of each block */}
                 {i % MARKET_STOCKS.length === 0 && (
                   <>
-                    <span className="inline-flex items-center mx-4 font-medium text-gray-800 dark:text-gray-200">Good Morning</span>
-                    <span className="inline-flex items-center mx-4 font-medium text-gray-800 dark:text-gray-200">Welcome to Wealthfino</span>
+                    <span className="inline-flex items-center mx-4 font-medium text-black dark:text-white">Good Morning</span>
+                    <span className="inline-flex items-center mx-4 font-medium text-black dark:text-white">Welcome to Wealthfino</span>
                   </>
                 )}
 
                 <span title={stock.title} className="inline-flex items-center gap-1.5 mx-3 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800/60 px-2 py-0.5 rounded transition-colors">
-                  <span className="font-bold text-gray-900 dark:text-gray-100">{stock.sym}</span>
-                  <span className="text-gray-700 dark:text-gray-300 ml-1 font-medium">{stock.px}</span>
+                  <span className="font-bold text-black dark:text-white">{stock.sym}</span>
+                  <span className="text-black dark:text-white ml-1 font-medium">{stock.px}</span>
                   <span className={`font-bold ${colorClass}`}>
                     {stock.chg} <span>{stock.pct}</span>
                   </span>
@@ -51,7 +51,7 @@ export default function MarketTop() {
 
                 {/* Insert the static closing item at the end of each block */}
                 {(i + 1) % MARKET_STOCKS.length === 0 && (
-                  <span className="inline-flex items-center mx-4 font-bold text-gray-700 dark:text-[#c7cdd6]">NIFTY 100 • 2026-05-25</span>
+                  <span className="inline-flex items-center mx-4 font-bold text-black dark:text-[#c7cdd6]">NIFTY 100 • 2026-05-25</span>
                 )}
               </React.Fragment>
             );

@@ -6,7 +6,7 @@ import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import UHome from "./updatedComponets/UHome";
 import FeaturesSection from "./updatedComponets/FeaturesSection";
-import MarketTicker from "./components/MarketTicker";
+
 import About from "./components/About";
 import Services from "./components/Services";
 import WhyChooseUs from "./components/WhyChooseUs";
@@ -35,7 +35,8 @@ import DataDeletionPolicy from "./pages/policies/DataDeletionPolicy";
 import AboutPage from "./components/AboutPage";
 import ContactPage from "./components/ContactPage";
 import Pricing from "./components/Pricing";
-import Charts from "./components/Charts";
+import Calculators from "./pages/Calculators";
+
 import MarketTop from "./components/MarketTop";
 import MediaPresence from "./components/MediaPresence";
 import FeatureSection from "./components/FeatureSection";
@@ -44,7 +45,8 @@ import KYCModal from "./components/KYCModal";
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-trading-light dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+    <div className="min-h-screen bg-trading-light dark:bg-gray-900 text-black dark:text-white transition-colors duration-300">
+      <a className="skip-link" href="#main-content">Skip to main content</a>
       <Navbar />
 
       <main id="main-content">
@@ -57,7 +59,7 @@ export default function App() {
               <UHome />
               <MediaPresence />
               <FeaturesSection />
-              <MarketTicker />
+
               <ChartPage />
               <HeatmapPage />
               <FeatureSection />
@@ -104,7 +106,8 @@ export default function App() {
         <Route path="/about-us" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/pricing" element={<Pricing />} />
-        <Route path="/charts" element={<Charts />} />
+        <Route path="/calculators" element={<Calculators />} />
+
       </Routes>
       </main>
 

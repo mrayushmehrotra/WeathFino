@@ -2,15 +2,15 @@ import React from "react";
 
 const SocialMediaDisclaimers = () => {
   return (
-    <section className="from-[#0b0f14] to-[#111827] text-gray-200 py-2 ">
-      <div className="max-w-6xl mx-auto  bg-[#0b0f19]  rounded-2xl shadow-xl p-6 md:p-10">
+    <section className="from-gray-50 to-white dark:from-[#0b0f14] dark:to-[#111827] text-black dark:text-white py-2">
+      <div className="max-w-6xl mx-auto bg-white dark:bg-[#0b0f19] rounded-2xl shadow-xl p-6 md:p-10">
         {/* TITLE */}
-        <h1 className="text-2xl md:text-2xl font-bold text-white mb-6">
+        <h1 className="text-2xl md:text-2xl font-bold text-black dark:text-white mb-6">
           SOCIAL MEDIA DISCLAIMERS
         </h1>
 
         {/* CONTENT */}
-        <ol className="list-decimal pl-6 space-y-5 text-gray-300 leading-relaxed">
+        <ol className="list-decimal pl-6 space-y-5 text-black dark:text-white leading-relaxed">
           <li>
             1. Krishna Kumar Pathak (Individual) is registered with SEBI as
             Individual Research Analyst, BSE Enlistment No: 5590 vide

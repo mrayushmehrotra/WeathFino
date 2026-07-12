@@ -2,9 +2,9 @@ import React from "react";
 
 export default function AccessibilityStatement() {
   return (
-    <div className="min-h-screen bg-[#0b0f14] text-slate-200 py-16 px-4">
-      <div className="max-w-4xl mx-auto space-y-8 bg-slate-900 p-8 rounded-xl shadow-lg border border-slate-700">
-        <h1 className="text-3xl font-bold text-white mb-6 border-b border-slate-700 pb-4">
+    <div className="min-h-screen bg-white dark:bg-[#0b0f14] text-black dark:text-white py-16 px-4">
+      <div className="max-w-4xl mx-auto space-y-8 bg-white dark:bg-slate-900 p-8 rounded-xl shadow-lg border border-gray-200 dark:border-slate-700">
+        <h1 className="text-3xl font-bold text-black dark:text-white mb-6 border-b border-gray-200 dark:border-slate-700 pb-4">
           Accessibility Statement
         </h1>
         
@@ -12,7 +12,7 @@ export default function AccessibilityStatement() {
           We are committed to ensuring digital accessibility for people with disabilities. We are continually improving the user experience for everyone, and applying the relevant accessibility standards.
         </p>
 
-        <h2 className="text-2xl font-semibold text-white mt-8 mb-4">
+        <h2 className="text-2xl font-semibold text-black dark:text-white mt-8 mb-4">
           Measures to support accessibility
         </h2>
         <p>We take the following measures to ensure accessibility of the WealthFino website:</p>
@@ -22,7 +22,7 @@ export default function AccessibilityStatement() {
           <li>Assign clear accessibility goals and responsibilities.</li>
         </ul>
 
-        <h2 className="text-2xl font-semibold text-white mt-8 mb-4">
+        <h2 className="text-2xl font-semibold text-black dark:text-white mt-8 mb-4">
           Conformance status
         </h2>
         <p>
@@ -30,7 +30,7 @@ export default function AccessibilityStatement() {
           This website is partially conformant with WCAG 2.1 level AA. Partially conformant means that some parts of the content do not fully conform to the accessibility standard.
         </p>
 
-        <h2 className="text-2xl font-semibold text-white mt-8 mb-4">
+        <h2 className="text-2xl font-semibold text-black dark:text-white mt-8 mb-4">
           Feedback
         </h2>
         <p>

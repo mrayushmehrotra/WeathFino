@@ -1,16 +1,16 @@
 export default function ComplaintsBoard() {
   return (
-    <div className="min-h-screen rounded-2xl bg-[#0b0f19]   text-slate-200 py-16 px-4">
+    <div className="min-h-screen rounded-2xl bg-white dark:bg-[#0b0f19] text-black dark:text-slate-200 py-16 px-4">
       <div className="max-w-7xl mx-auto space-y-14">
         {/* ================= HEADER ================= */}
         <div className="text-center space-y-4">
-          <h1 className="text-2xl md:text-3xl font-bold text-white">
+          <h1 className="text-2xl md:text-3xl font-bold text-black dark:text-white">
             ANNEXURE – B
           </h1>
-          <div className="border-t border-slate-700 max-w-xl mx-auto" />
-          <p className="text-lg text-slate-300 font-medium">
+          <div className="border-t border-gray-200 dark:border-slate-700 max-w-xl mx-auto" />
+          <p className="text-lg text-black dark:text-slate-200 font-medium">
             Data for the month ending –{" "}
-            <span className="text-white">December 2025</span>
+            <span className="text-black dark:text-white">December 2025</span>
           </p>
         </div>
 
@@ -195,7 +195,7 @@ export default function ComplaintsBoard() {
 function Section({ title, children }) {
   return (
     <div className="space-y-6">
-      <h2 className="text-xl md:text-2xl font-semibold text-white">{title}</h2>
+      <h2 className="text-xl md:text-2xl font-semibold text-black dark:text-white">{title}</h2>
       {children}
     </div>
   );
@@ -203,7 +203,7 @@ function Section({ title, children }) {
 
 function Table({ caption, children }) {
   return (
-    <div className="overflow-x-auto bg-slate-900 rounded-xl border border-slate-700">
+    <div className="overflow-x-auto bg-white dark:bg-slate-900 rounded-xl border border-gray-200 dark:border-slate-700">
       <table className="w-full text-sm">
         {caption && <caption className="sr-only">{caption}</caption>}
         {children}
@@ -213,12 +213,12 @@ function Table({ caption, children }) {
 }
 
 function Tr({ children, head, alt, total, blue, yellow }) {
-  let cls = "border-b border-slate-700";
-  if (head && blue) cls += " bg-blue-200 text-slate-900 font-semibold";
-  else if (head && yellow) cls += " bg-yellow-200 text-slate-900 font-semibold";
-  else if (head) cls += " bg-emerald-200 text-slate-900 font-semibold";
-  else if (total) cls += " bg-slate-800 font-bold";
-  else if (alt) cls += " bg-slate-800/50";
+  let cls = "border-b border-gray-200 dark:border-slate-700";
+  if (head && blue) cls += " bg-blue-200 text-black dark:text-slate-200 font-semibold";
+  else if (head && yellow) cls += " bg-yellow-200 text-black dark:text-slate-200 font-semibold";
+  else if (head) cls += " bg-emerald-200 text-black dark:text-slate-200 font-semibold";
+  else if (total) cls += " bg-gray-100 dark:bg-slate-800 font-bold";
+  else if (alt) cls += " bg-gray-50 dark:bg-slate-800/50";
   return <tr className={cls}>{children}</tr>;
 }
 
@@ -236,7 +236,7 @@ function Td({ children, colSpan }) {
 
 function FootNote() {
   return (
-    <div className="text-xs text-slate-400 space-y-1">
+    <div className="text-xs text-black dark:text-slate-200 space-y-1">
       <p>
         * Inclusive of complaints of previous months resolved in the current
         month.
@@ -247,7 +247,7 @@ function FootNote() {
 }
 function FootNote2() {
   return (
-    <div className="text-xs text-slate-400 space-y-1">
+    <div className="text-xs text-black dark:text-slate-200 space-y-1">
       <p>
         *Inclusive of complaints of previous years resolved in the current year.
       </p>

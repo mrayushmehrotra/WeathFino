@@ -25,6 +25,12 @@ module.exports = {
         "trading-card": "#FFFFFF",
         "trading-border": "#E2E8F0",
         "trading-dark": "#475569",
+
+        // Dark mode surfaces (used by calculators)
+        "dark": "#030712",
+        "dark-surface": "#111827",
+        "dark-card": "#1F2937",
+        "dark-border": "#374151",
       },
       animation: {
         "pulse-slow": "pulse 3s ease-in-out infinite",

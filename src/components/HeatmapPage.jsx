@@ -16,7 +16,8 @@ const HeatmapPage = () => {
           {/* TITLE */}
           <div className="flex justify-center mb-6">
             <div
-              className="px-10 py-3 rounded-lg  text-3xl  font-bold text-[black] dark:text-black
+              className="px-10 py-3 rounded-lg  text-3xl  font-bold            text-black
+              dark:text-white
               bg-gradient-to-r from-[#F3D98B] via-[#D4AF37] to-[#B8962E] shadow-[0_8px_20px_rgba(212,175,55,0.35)]"
             >
               HEATMAP

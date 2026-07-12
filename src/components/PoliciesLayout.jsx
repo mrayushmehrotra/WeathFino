@@ -26,21 +26,21 @@ const policyLinks = [
 
 export default function PoliciesLayout() {
   return (
-    <div className="min-h-screen bg-slate-900 py-10">
+    <div className="min-h-screen bg-gray-100 dark:bg-slate-900 py-10">
       <div className="max-w-7xl mx-auto grid grid-cols-12 gap-6 px-4">
         {/* LEFT SIDEBAR */}
         <aside className="col-span-12 md:col-span-4 lg:col-span-3">
-          <div className="bg-slate-800 border border-slate-700 rounded-xl overflow-hidden">
+          <div className="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl overflow-hidden">
             {policyLinks.map((item) => (
               <NavLink
                 key={item.path}
                 to={item.path}
                 className={({ isActive }) =>
-                  `block px-5 py-4 text-sm font-medium border-b border-slate-700 last:border-0 transition
+                  `block px-5 py-4 text-sm font-medium border-b border-gray-200 dark:border-slate-700 last:border-0 transition
                   ${
                     isActive
-                      ? "bg-slate-700 text-white border-l-4 border-blue-500"
-                      : "text-slate-300 hover:bg-slate-700/60"
+                      ? "bg-blue-50 dark:bg-slate-700 text-blue-700 dark:text-white border-l-4 border-blue-500"
+                      : "text-black dark:text-slate-300 hover:bg-gray-100 dark:hover:bg-slate-700/60"
                   }`
                 }
               >
@@ -51,8 +51,8 @@ export default function PoliciesLayout() {
         </aside>
 
         {/* RIGHT CONTENT */}
-        <main className="col-span-12 md:col-span-8 lg:col-span-9">
-          <div className="bg-slate-800 border border-slate-700 rounded-xl p-5 h-[84vh] overflow-y-auto">
+        <main id="main-content" className="col-span-12 md:col-span-8 lg:col-span-9">
+          <div className="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl p-5 h-[84vh] overflow-y-auto">
             <Outlet />
           </div>
         </main>

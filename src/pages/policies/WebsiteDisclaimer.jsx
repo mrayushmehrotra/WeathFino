@@ -2,17 +2,17 @@ import React from "react";
 
 const WebsiteDisclaimer = () => {
   return (
-    <section className="  from-[#0b0f14] to-[#111827] text-gray-200 py-2">
-      <div className="max-w-6xl mx-auto  bg-[#0b0f19]  backdrop-blur rounded-2xl shadow-xl p-6 md:p-10">
+    <section className="from-gray-50 to-white dark:from-[#0b0f14] dark:to-[#111827] text-black dark:text-white py-2">
+      <div className="max-w-6xl mx-auto bg-white dark:bg-[#0b0f19] backdrop-blur rounded-2xl shadow-xl p-6 md:p-10">
         {/* TITLE */}
-        <h1 className="text-xl md:text-2xl font-bold text-white mb-3">
+        <h1 className="text-xl md:text-2xl font-bold text-black dark:text-white mb-3">
           DISCLAIMER FOR WEBSITE
         </h1>
 
         {/* MAIN DISCLAIMER POINTS */}
-        <ul className="list-disc pl-6 space-y-4 text-gray-300 leading-relaxed">
+        <ul className="list-disc pl-6 space-y-4 text-black dark:text-white leading-relaxed">
           <li>
-            <strong className="text-white">Krishna Kumar Pathak</strong> is
+            <strong className="text-black dark:text-white">Krishna Kumar Pathak</strong> is
             registered with SEBI as an Individual Research Analyst vide
             Registration No. <strong>INH300009914</strong> dated 22-06-2022 and
             provides Research Analyst services to its clients
@@ -154,10 +154,10 @@ const WebsiteDisclaimer = () => {
         </ul>
 
         {/* FINAL DISCLAIMER */}
-        <div className="mt-10 border-t border-slate-700 pt-6">
+        <div className="mt-10 border-t border-gray-200 dark:border-slate-700 pt-6">
           <h2 className="italic ">Disclaimer:</h2>
 
-          <p className="text-gray-300 leading-relaxed mb-4">
+          <p className="text-black dark:text-white leading-relaxed mb-4">
             <strong>
               Krishna Kumar Pathak and WealthFino shall not be liable
             </strong>
@@ -167,7 +167,7 @@ const WebsiteDisclaimer = () => {
             reputational harm—arising from:
           </p>
 
-          <ul className="list-disc pl-6 space-y-2 text-gray-300">
+          <ul className="list-disc pl-6 space-y-2 text-black dark:text-white">
             <li>
               Reliance on any research report, opinion, or recommendation;
             </li>
@@ -183,7 +183,7 @@ const WebsiteDisclaimer = () => {
             </li>
           </ul>
 
-          <p className="mt-4 text-sm text-gray-400  ">
+          <p className="mt-4 text-sm text-black dark:text-white  ">
             The sole responsibility for all investment decisions lies with the
             user.
             <strong>

@@ -1,22 +1,22 @@
 export default function ClientTerm() {
   return (
-    <div className="min-h-screen rounded-2xl bg-[#0b0f19]  from-slate-950 to-slate-900 py-16 px-4">
+    <div className="min-h-screen rounded-2xl bg-white dark:bg-[#0b0f19] from-gray-50 to-white dark:from-slate-950 dark:to-slate-900 py-16 px-4">
       <div className="max-w-5xl mx-auto">
         {/* PAGE TITLE */}
-        <h1 className="text-xl md:text-2xl font-bold text-white text-center mb-4">
+        <h1 className="text-xl md:text-2xl font-bold text-black dark:text-white text-center mb-4">
           CLIENT CONSENT AND TERMS & CONDITIONS
         </h1>
 
-        <p className="text-slate-300 text-center max-w-2xl mx-auto mb-10">
+        <p className="text-black dark:text-white text-center max-w-2xl mx-auto mb-10">
           Research Recommendation Services are provided by Mr. Krishna Kumar
           Pathak, a SEBI-Registered Research Analyst (Registration No.
           INH300009914, BSE Enlistment No. 5590), in full compliance with the
           SEBI (Research Analyst) Regulations, 2014.
         </p>
-        <p className="  font-bold text-white text-center mb-4">
+        <p className="font-bold text-black dark:text-white text-center mb-4">
           CLIENT AUTHORIZATION & MITC COMPLIANCE
         </p>
-        <hr className="border-slate-700 my-6" />
+        <hr className="border-gray-200 dark:border-slate-700 my-6" />
 
         {/* 1 */}
         <SectionCard title="1. Acceptance of MITC & Terms and Conditions : ">
@@ -150,21 +150,21 @@ export default function ClientTerm() {
         </SectionCard>
 
         {/* SEBI CONDITIONS */}
-        <h1 className="text-3xl md:text-4xl font-bold text-white text-center mb-4">
+        <h1 className="text-3xl md:text-4xl font-bold text-black dark:text-white text-center mb-4">
           CLIENT CONSENT AND TERMS & CONDITIONS
         </h1>
 
-        <p className="text-slate-300 text-center max-w-3xl mx-auto mb-10">
+        <p className="text-black dark:text-white text-center max-w-3xl mx-auto mb-10">
           All services are subject to the Terms and Conditions outlined in
           accordance with SEBI Circular No.
           SEBI/HO/MIRSD/MIRSD-PoD-1/P/CIR/2025/004, specifically as per
           Annexure-B.
         </p>
-        <h2 className="text-1xl md:text-2xl font-bold text-white text-center mb-4">
+        <h2 className="text-1xl md:text-2xl font-bold text-black dark:text-white text-center mb-4">
           By subscribing to the research services, clients acknowledge and agree
           to the following terms and conditions:
         </h2>
-        <hr className="border-slate-700 my-6" />
+        <hr className="border-gray-200 dark:border-slate-700 my-6" />
 
         {/* 4 */}
         <SectionCard title="1. Availing the Research Services">
@@ -901,10 +901,10 @@ export default function ClientTerm() {
 function SectionCard({ title, children }) {
   return (
     <div className="bg-white rounded-2xl shadow-lg p-6 md:p-8 mb-10">
-      <h2 className="text-xl md:text-2xl font-semibold text-slate-900 mb-4">
+      <h2 className="text-xl md:text-2xl font-semibold text-black mb-4">
         {title}
       </h2>
-      <div className="space-y-4 text-slate-700 leading-relaxed">{children}</div>
+      <div className="space-y-4 text-black leading-relaxed">{children}</div>
     </div>
   );
 }

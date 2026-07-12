@@ -12,25 +12,25 @@ import {
 
 export default function TermsConditions() {
   return (
-    <section className="  from-[#0b0f14] to-[#111827] text-slate-200 ">
-      <div className="max-w-6xl mx-auto  bg-[#0b0f19]  backdrop-blur rounded-2xl shadow-xl p-6 md:p-10 space-y-10">
+    <section className="from-gray-50 to-white dark:from-[#0b0f14] dark:to-[#111827] text-black dark:text-white">
+      <div className="max-w-6xl mx-auto bg-white dark:bg-[#0b0f19] backdrop-blur rounded-2xl shadow-xl p-6 md:p-10 space-y-10">
         {/* ================= HEADER ================= */}
-        <header className="space-y-3 border-b border-slate-700 pb-6">
-          <h1 className="text-xl md:text-2xl font-bold text-white">
+        <header className="space-y-3 border-b border-gray-200 dark:border-slate-700 pb-6">
+          <h1 className="text-xl md:text-2xl font-bold text-black dark:text-white">
             TERMS AND CONDITIONS FOR RESEARCH ANALYST SERVICES
           </h1>
 
-          <div className="text-sm text-slate-400 space-y-1">
+          <div className="text-sm text-black dark:text-white space-y-1">
             <p>
-              <strong className="text-slate-200">Research Analyst:</strong>{" "}
+              <strong className="text-black dark:text-white">Research Analyst:</strong>{" "}
               Krishna Kumar Pathak
             </p>
             <p>
-              <strong className="text-slate-200">SEBI Registration No.:</strong>{" "}
+              <strong className="text-black dark:text-white">SEBI Registration No.:</strong>{" "}
               INH300009914
             </p>
             <p>
-              <strong className="text-slate-200">BSE Enlistment No.:</strong>{" "}
+              <strong className="text-black dark:text-white">BSE Enlistment No.:</strong>{" "}
               5590
             </p>
           </div>
@@ -138,7 +138,7 @@ export default function TermsConditions() {
 
           <br />
           <p>4.2. No Portfolio Management or Distribution </p>
-          <p className="text-slate-400">
+          <p className="text-black dark:text-white">
             The RA does not offer portfolio management, execution, trading,
             investment, or distribution services. All services are
             research-based, non-discretionary, and do not include handling or
@@ -418,7 +418,7 @@ export default function TermsConditions() {
             If you have any complaints, queries, or grievances regarding
             services, you may contact:
           </p>
-          <div className="bg-slate-800 border border-slate-700 rounded-lg p-5 space-y-2">
+          <div className="bg-gray-100 dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-lg p-5 space-y-2">
             <p>
               <strong>Name:</strong> Krishna Kumar Pathak
             </p>
@@ -546,7 +546,7 @@ export default function TermsConditions() {
 
         {/* ================= FOOTER ================= */}
         {/* Add here code */}
-        <div className="max-w-4xl mx-auto p-6  rounded-xl shadow-lg border border-gray-200">
+        <div className="max-w-4xl mx-auto p-6 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700">
           <p className="italic">Disclaimer:</p>
           <p className="italic">
             These Terms and Conditions are in compliance with SEBI (Research
@@ -564,8 +564,8 @@ export default function TermsConditions() {
 function Section({ title, children }) {
   return (
     <section className="space-y-4">
-      <h2 className="text-xl md:text-2xl font-semibold text-white">{title}</h2>
-      <div className="text-slate-300 leading-relaxed">{children}</div>
+      <h2 className="text-xl md:text-2xl font-semibold text-black dark:text-white">{title}</h2>
+      <div className="text-black dark:text-white leading-relaxed">{children}</div>
     </section>
   );
 }

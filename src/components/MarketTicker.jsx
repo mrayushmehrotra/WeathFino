@@ -31,21 +31,21 @@ const TickerTape = () => {
     <div
       className="
         relative w-full transition-colors duration-300
-        bg-gray-100 text-gray-900
+        bg-gray-100 text-black
         dark:bg-[#0b1022] dark:text-white
       "
     >
       <div className="absolute right-4 -top-8 z-10 flex gap-2">
         <button
           onClick={() => setIsPaused(!isPaused)}
-          className="text-xs bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-200 px-3 py-1 rounded shadow-sm border border-slate-300 dark:border-slate-700"
+          className="text-xs bg-slate-200 dark:bg-slate-800 text-black dark:text-white px-3 py-1 rounded shadow-sm border border-slate-300 dark:border-slate-700"
           aria-label={isPaused ? "Resume Ticker Tape" : "Pause Ticker Tape"}
         >
           {isPaused ? "Resume" : "Pause"}
         </button>
         <button
           onClick={() => setIsVisible(!isVisible)}
-          className="text-xs bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-200 px-3 py-1 rounded shadow-sm border border-slate-300 dark:border-slate-700"
+          className="text-xs bg-slate-200 dark:bg-slate-800 text-black dark:text-white px-3 py-1 rounded shadow-sm border border-slate-300 dark:border-slate-700"
           aria-label={isVisible ? "Hide TradingView Tape" : "Show TradingView Tape"}
         >
           {isVisible ? "Hide Tape" : "Show Tape"}
@@ -68,7 +68,7 @@ const TickerTape = () => {
             <tv-ticker-tape key={theme} theme={theme} transparent="true" symbols="BSE:RELI1!,BSE:HDFCAMC,BSE:ICIC1!,BSE:INFY,BSE:TCS,BSE:LT,BSE:HINDUNILVR,BSE:SBIN,BSE:BHARTIARTL,BSE:ITC,BSE:AXIS1!,BSE:BAJAJFINSV,BSE:KOTAKBANK,BSE:HCLTECH,BSE:MARUTI,BSE:TITAN"></tv-ticker-tape>
           )}
           {isPaused && (
-            <div className="h-10 flex items-center justify-center text-sm font-semibold text-slate-500 dark:text-slate-400">
+            <div className="h-10 flex items-center justify-center text-sm font-semibold text-black dark:text-white">
               Ticker Tape Paused
             </div>
           )}

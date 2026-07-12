@@ -21,16 +21,16 @@ const ContactPage = () => {
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
               Let's Connect & Grow
-              <span className="block text-blue-200 dark:text-blue-300 mt-2">
+              <span className="block text-white mt-2">
                 Together
               </span>
             </h1>
-            <p className="text-xl text-blue-100 dark:text-blue-200 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-white mb-8 max-w-2xl mx-auto">
               Reach out to our team for expert guidance, support, and research
               insights.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <button className="px-8 py-3 bg-white dark:bg-gray-800 text-blue-600 dark:text-blue-400 font-semibold rounded-full hover:bg-blue-50 dark:hover:bg-gray-700 transition-all duration-300 flex items-center gap-2">
+              <button className="px-8 py-3 bg-white dark:bg-gray-800 text-black dark:text-white font-semibold rounded-full hover:bg-blue-50 dark:hover:bg-gray-700 transition-all duration-300 flex items-center gap-2">
                 <Phone size={18} />
                 Call Now
               </button>
@@ -61,9 +61,8 @@ const ContactPage = () => {
               <div
                 className="
         relative overflow-hidden rounded-2xl p-6
-        bg-gray-50 dark:bg-white/5
-        border border-gray-200 dark:border-white/10
-        backdrop-blur-xl
+        bg-white dark:bg-[#151515]
+        border border-gray-300 dark:border-gray-700
         hover:border-indigo-500/40
         transition-all duration-300
       "
@@ -88,11 +87,11 @@ const ContactPage = () => {
                   </div>
 
                   <div>
-                    <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                    <h2 className="text-lg font-semibold text-black dark:text-white mb-2">
                       Registered Address
                     </h2>
 
-                    <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-300">
+                    <p className="text-base leading-relaxed text-black dark:text-white">
                       RS-39/43, 5/3C Golden Park,
                       <br />
                       Sankarpur West, Near Rabindranagar
@@ -109,9 +108,8 @@ const ContactPage = () => {
               <div
                 className="
         relative overflow-hidden rounded-2xl p-6
-        bg-gray-50 dark:bg-white/5
-        border border-gray-200 dark:border-white/10
-        backdrop-blur-xl
+        bg-white dark:bg-[#151515]
+        border border-gray-300 dark:border-gray-700
         hover:border-emerald-500/40
         transition-all duration-300
       "
@@ -136,11 +134,11 @@ const ContactPage = () => {
                   </div>
 
                   <div>
-                    <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                    <h2 className="text-lg font-semibold text-black dark:text-white mb-2">
                       Correspondence Address
                     </h2>
 
-                    <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-300">
+                    <p className="text-base leading-relaxed text-black dark:text-white">
                       207, Jayanivas, Padukamandir Road
                       <br />
                       Bharat Housing Society,
@@ -165,23 +163,23 @@ const ContactPage = () => {
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-14 h-14 rounded-xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center">
                     <Phone
-                      className="text-blue-600 dark:text-blue-400"
+                      className="text-black dark:text-white"
                       size={24}
                     />
                   </div>
                   <div>
-                    <h2 className="font-bold text-gray-900 dark:text-white">
+                    <h2 className="font-bold text-black dark:text-white">
                       Phone Support
                     </h2>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">
+                    <p className="text-sm text-black dark:text-white">
                       Direct assistance
                     </p>
                   </div>
                 </div>
-                <p className="text-2xl font-bold text-gray-900 dark:text-white">
+                <p className="text-2xl font-bold text-black dark:text-white">
                   +91 9883455700
                 </p>
-                <p className="text-gray-500 dark:text-gray-400 text-sm mt-2">
+                <p className="text-black dark:text-white text-sm mt-2">
                   Mon-Fri, 9AM-6PM IST
                 </p>
               </div>
@@ -190,28 +188,28 @@ const ContactPage = () => {
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-14 h-14 rounded-xl bg-green-100 dark:bg-green-900/30 flex items-center justify-center">
                     <MessageCircle
-                      className="text-green-600 dark:text-green-400"
+                      className="text-black dark:text-white"
                       size={24}
                     />
                   </div>
                   <div>
-                    <h2 className="font-bold text-gray-900 dark:text-white">
+                    <h2 className="font-bold text-black dark:text-white">
                       WhatsApp
                     </h2>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">
+                    <p className="text-sm text-black dark:text-white">
                       Quick chat support
                     </p>
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <p className="font-medium text-gray-900 dark:text-white">
+                  <p className="font-medium text-black dark:text-white">
                     Support: 9353523685
                   </p>
-                  <p className="font-medium text-gray-900 dark:text-white">
+                  <p className="font-medium text-black dark:text-white">
                     Updates: 7353009208
                   </p>
                 </div>
-                <button className="mt-4 w-full py-2 bg-green-500 dark:bg-green-600 text-white rounded-lg hover:bg-green-600 dark:hover:bg-green-700 transition">
+                <button className="mt-4 w-full py-2 bg-green-700 dark:bg-green-800 text-white rounded-lg hover:bg-green-800 dark:hover:bg-green-900 transition">
                   Start Chat
                 </button>
               </div>
@@ -220,20 +218,20 @@ const ContactPage = () => {
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-14 h-14 rounded-xl bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center">
                     <Mail
-                      className="text-purple-600 dark:text-purple-400"
+                      className="text-black dark:text-white"
                       size={24}
                     />
                   </div>
                   <div>
-                    <h2 className="font-bold text-gray-900 dark:text-white">
+                    <h2 className="font-bold text-black dark:text-white">
                       Email
                     </h2>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">
+                    <p className="text-sm text-black dark:text-white">
                       General inquiries
                     </p>
                   </div>
                 </div>
-                <p className="text-lg font-medium text-gray-900 dark:text-white break-all">
+                <p className="text-lg font-medium text-black dark:text-white break-all">
                   skrishna.sk4@gmail.com
                 </p>
               </div>
@@ -241,22 +239,22 @@ const ContactPage = () => {
 
             {/* Features */}
             <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6">
-              <h2 className="font-bold text-gray-900 dark:text-white mb-4">
+              <h2 className="font-bold text-black dark:text-white mb-4">
                 Why Choose Us
               </h2>
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center">
                     <Shield
-                      className="text-blue-600 dark:text-blue-400"
+                      className="text-black dark:text-white"
                       size={18}
                     />
                   </div>
                   <div>
-                    <p className="font-medium text-gray-900 dark:text-white">
+                    <p className="font-medium text-black dark:text-white">
                       SEBI Registered
                     </p>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">
+                    <p className="text-sm text-black dark:text-white">
                       Fully compliant & regulated
                     </p>
                   </div>
@@ -264,15 +262,15 @@ const ContactPage = () => {
                 {/* <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center">
                     <Clock
-                      className="text-green-600 dark:text-green-400"
+                      className="text-black dark:text-white"
                       size={18}
                     />
                   </div>
                   <div>
-                    <p className="font-medium text-gray-900 dark:text-white">
+                    <p className="font-medium text-black dark:text-white">
                       24/7 Response
                     </p>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">
+                    <p className="text-sm text-black dark:text-white">
                       Quick reply guarantee
                     </p>
                   </div>
@@ -280,15 +278,15 @@ const ContactPage = () => {
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center">
                     <Users
-                      className="text-purple-600 dark:text-purple-400"
+                      className="text-black dark:text-white"
                       size={18}
                     />
                   </div>
                   <div>
-                    <p className="font-medium text-gray-900 dark:text-white">
+                    <p className="font-medium text-black dark:text-white">
                       Expert Support
                     </p>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">
+                    <p className="text-sm text-black dark:text-white">
                       Professional team ready
                     </p>
                   </div>
@@ -301,10 +299,10 @@ const ContactPage = () => {
         {/* ================= SEBI OFFICES ================= */}
         <div className="mt-20">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+            <h2 className="text-3xl font-bold text-black dark:text-white mb-4">
               Regulatory Offices
             </h2>
-            <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            <p className="text-black dark:text-white max-w-2xl mx-auto">
               As a SEBI Registered Research Analyst, we maintain transparency
               with regulatory authorities.
             </p>
@@ -315,18 +313,18 @@ const ContactPage = () => {
               <div className="flex items-start gap-4 mb-6">
                 <div className="w-12 h-12 rounded-lg bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center flex-shrink-0">
                   <MapPin
-                    className="text-blue-600 dark:text-blue-400"
+                    className="text-black dark:text-white"
                     size={20}
                   />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
+                  <h3 className="text-xl font-bold text-black dark:text-white mb-2">
                     Eastern Regional Office
                   </h3>
                   <div className="w-20 h-1 bg-blue-600 dark:bg-blue-500 rounded-full"></div>
                 </div>
               </div>
-              <div className="space-y-3 text-gray-700 dark:text-gray-300">
+              <div className="space-y-3 text-black dark:text-white">
                 <p className="flex items-start gap-2">
                   <span className="font-medium min-w-16">Address:</span>
                   <span>
@@ -340,7 +338,7 @@ const ContactPage = () => {
                 </p>
                 <p className="flex items-center gap-2">
                   <span className="font-medium min-w-16">Email:</span>
-                  <span className="text-blue-600 dark:text-blue-400">
+                  <span className="text-black dark:text-white">
                     sebiero@sebi.gov.in
                   </span>
                 </p>
@@ -351,18 +349,18 @@ const ContactPage = () => {
               <div className="flex items-start gap-4 mb-6">
                 <div className="w-12 h-12 rounded-lg bg-gray-100 dark:bg-gray-700 flex items-center justify-center flex-shrink-0">
                   <MapPin
-                    className="text-gray-600 dark:text-gray-400"
+                    className="text-black dark:text-white"
                     size={20}
                   />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
+                  <h3 className="text-xl font-bold text-black dark:text-white mb-2">
                     SEBI Head Office
                   </h3>
                   <div className="w-20 h-1 bg-gray-600 dark:bg-gray-500 rounded-full"></div>
                 </div>
               </div>
-              <div className="space-y-3 text-gray-700 dark:text-gray-300">
+              <div className="space-y-3 text-black dark:text-white">
                 <p className="flex items-start gap-2">
                   <span className="font-medium min-w-16">Address:</span>
                   <span>
@@ -376,7 +374,7 @@ const ContactPage = () => {
                 </p>
                 <p className="flex items-center gap-2">
                   <span className="font-medium min-w-16">Helpline:</span>
-                  <span className="text-green-600 dark:text-green-400 font-medium">
+                  <span className="text-black dark:text-white font-medium">
                     1800 22 7575
                   </span>
                 </p>
@@ -416,9 +414,9 @@ const ContactPage = () => {
             Call Support
           </span>
         </button>
-        <button className="w-14 h-14 rounded-full bg-green-500 dark:bg-green-600 text-white flex items-center justify-center shadow-xl hover:bg-green-600 dark:hover:bg-green-700 transition-all hover:scale-110 group">
+        <button className="w-14 h-14 rounded-full bg-green-700 dark:bg-green-800 text-white flex items-center justify-center shadow-xl hover:bg-green-800 dark:hover:bg-green-900 transition-all hover:scale-110 group">
           <MessageCircle size={22} />
-          <span className="absolute right-full mr-3 bg-green-500 dark:bg-green-600 text-white px-3 py-1 rounded-lg text-sm font-medium whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
+          <span className="absolute right-full mr-3 bg-green-700 dark:bg-green-800 text-white px-3 py-1 rounded-lg text-sm font-medium whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
             WhatsApp
           </span>
         </button>

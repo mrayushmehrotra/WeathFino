@@ -13,7 +13,7 @@ const MarketIndicator = ({ status, symbol, price, change }) => {
         ></div>
         <div>
           <div className="font-bold text-trading-navy">{symbol}</div>
-          <div className="text-sm text-gray-500">{status}</div>
+          <div className="text-sm text-black">{status}</div>
         </div>
       </div>
       <div className="text-right">

@@ -2,10 +2,10 @@ import React from "react";
 
 const PMLAPolicy = () => {
   return (
-    <section className="  bg-[#0b0f19] rounded-2xl text-gray-200 py-2 px-2">
+    <section className="bg-white dark:bg-[#0b0f19] rounded-2xl text-black dark:text-slate-200 py-2 px-2">
       <div className="max-w-6xl mx-auto backdrop-blur rounded-2xl shadow-xl p-6 md:p-10">
         {/* TITLE */}
-        <h1 className="text-xl md:text-2xl font-bold text-white mb-8">
+        <h1 className="text-xl md:text-2xl font-bold text-black dark:text-white mb-8">
           PMLA (Anti Money Laundering) Policy
         </h1>
 
@@ -363,7 +363,7 @@ const PMLAPolicy = () => {
               Director, Financial Intelligence Unit-India (FIU-IND) at the
               following address:
             </p>
-            <p className="font-semibold text-white">
+            <p className="font-semibold text-black dark:text-white">
               Director, Financial Intelligence Unit – India (FIU-IND)
             </p>
             <p>6th Floor, Hotel Samrat</p>
@@ -491,9 +491,9 @@ const PMLAPolicy = () => {
         </Section>
 
         {/* DISCLAIMER */}
-        <div className="mt-10 border-t border-slate-700 pt-6">
+        <div className="mt-10 border-t border-gray-200 dark:border-slate-700 pt-6">
           <p className="italic"> Disclaimer : </p>
-          <p className="text-sm text-gray-400 italic">
+          <p className="text-sm text-black dark:text-slate-200 italic">
             This PMLA Policy is in line with applicable SEBI regulations and
             Indian laws including the Prevention of Money Laundering Act, 2002.
             The policy is subject to change as per regulatory requirements.
@@ -510,9 +510,9 @@ export default PMLAPolicy;
 
 const Section = ({ title, children }) => (
   <div className="mb-8">
-    <h2 className="text-xl md:text-2xl font-semibold text-white mb-3">
+    <h2 className="text-xl md:text-2xl font-semibold text-black dark:text-white mb-3">
       {title}
     </h2>
-    <div className="text-gray-300 leading-relaxed">{children}</div>
+    <div className="text-black dark:text-slate-200 leading-relaxed">{children}</div>
   </div>
 );

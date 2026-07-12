@@ -11,7 +11,7 @@ const Footer = () => {
   return (
     <footer
       className="bg-white dark:bg-[#0b1022]
-        text-slate-700 dark:text-[#D1D5DB]
+        text-black dark:text-white
         transition-colors duration-300"
     >
       <div className="max-w-7xl mx-auto px-6 py-14">
@@ -28,10 +28,10 @@ const Footer = () => {
                 className="w-16 h-16 rounded-2xl shadow-lg border border-slate-200 dark:border-gray-800 p-2 bg-white dark:bg-gray-900"
               />
               <div>
-                <h3 className="font-playfair text-2xl font-bold text-slate-900 dark:text-white">
+                <h3 className="font-playfair text-2xl font-bold text-black dark:text-white">
                   WealthFino
                 </h3>
-                <p className="text-sm text-slate-600 dark:text-gray-400 mt-1">
+                <p className="text-sm text-black dark:text-white mt-1">
                   Smart Trading Community
                 </p>
               </div>
@@ -39,7 +39,7 @@ const Footer = () => {
 
             {/* Description */}
             <div className="bg-gradient-to-r from-slate-50/50 to-transparent dark:from-[#D4AF37]/5 dark:to-transparent rounded-2xl p-5 border border-slate-100 dark:border-[#D4AF37]/10">
-              <p className="text-sm leading-relaxed text-slate-700 dark:text-gray-300">
+              <p className="text-sm leading-relaxed text-black dark:text-white">
                 Join our trading community for shared insights, interactive
                 learning, and a collaborative environment to enhance your
                 financial knowledge.
@@ -48,7 +48,7 @@ const Footer = () => {
 
             {/* App Downloads */}
             <div>
-              {/* <h4 className="text-sm font-semibold mb-4 text-slate-900 dark:text-white flex items-center gap-2">
+              {/* <h4 className="text-sm font-semibold mb-4 text-black dark:text-white flex items-center gap-2">
                 <svg
                   className="w-4 h-4"
                   fill="currentColor"
@@ -71,18 +71,7 @@ const Footer = () => {
                   />
                 </a>
 
-                <a
-                  href="https://play.google.com/store/apps/details?id=com.wealthfino.mobile"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-3 rounded-xl transition-all duration-300 shadow-md hover:shadow-lg border border-slate-200 dark:border-gray-700 hover:border-slate-300 dark:hover:border-gray-600 bg-white dark:bg-gray-900"
-                >
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
-                    alt="Get WealthFino on Google Play"
-                    className="h-10"
-                  />
-                </a>
+
               </div>
             </div>
 
@@ -104,12 +93,12 @@ const Footer = () => {
                     />
                   </svg>
                 </div>
-                <h3 className="font-bold text-slate-900 dark:text-white">
+                <h3 className="font-bold text-black dark:text-white">
                   Important Disclaimer
                 </h3>
               </div>
 
-              <p className="text-xs leading-relaxed text-slate-700 dark:text-gray-300">
+              <p className="text-xs leading-relaxed text-black dark:text-white">
                 Investment in securities market is subject to market risks. Read
                 all the related documents carefully before investing.
                 Registration granted by SEBI and certification from NISM is no
@@ -122,7 +111,7 @@ const Footer = () => {
           {/* ================= QUICK LINKS ================= */}
           <div className="bg-gradient-to-br from-white to-slate-50 dark:from-[#0b1022] dark:to-[#05070f] rounded-2xl p-3 shadow-lg border border-slate-200 dark:border-[#D4AF37]/20">
             <div className="flex items-center mb-2">
-              <h3 className="font-playfair font-bold text-2xl text-slate-900 dark:text-white">
+              <h3 className="font-playfair font-bold text-2xl text-black dark:text-white">
                 Quick Links
               </h3>
             </div>
@@ -228,8 +217,8 @@ const Footer = () => {
                       const baseClasses =
                         "flex items-center  p-2 rounded-xl transition-all duration-200 group";
                       const activeClasses = isActive
-                        ? "bg-gradient-to-r from-[#F3D98B]/10 to-[#D4AF37]/10 dark:from-[#D4AF37]/20 dark:to-[#B8962E]/20 border border-[#D4AF37]/50 shadow-sm text-[#B8962E] dark:text-[#D4AF37]"
-                        : "hover:bg-slate-100/80 dark:hover:bg-gray-800/50 border border-transparent text-slate-700 dark:text-gray-300 hover:text-slate-900 dark:hover:text-white";
+                        ? "bg-gradient-to-r from-[#F3D98B]/10 to-[#D4AF37]/10 dark:from-[#D4AF37]/20 dark:to-[#B8962E]/20 border border-[#D4AF37]/50 shadow-sm text-black dark:text-white"
+                        : "hover:bg-slate-100/80 dark:hover:bg-gray-800/50 border border-transparent text-black dark:text-white hover:text-black dark:hover:text-white";
 
                       return `${baseClasses} ${activeClasses}`;
                     }}
@@ -249,10 +238,10 @@ const Footer = () => {
             <div className="relative">
               <div className="absolute -left-1 top-1/2 -translate-y-1/2 w-1 h-10 bg-gradient-to-b from-[#F3D98B] via-[#D4AF37] to-[#B8962E] rounded-full"></div>
               <div className="pl-4">
-                <h3 className="font-playfair font-bold text-3xl text-slate-900 dark:text-white mb-1">
+                <h3 className="font-playfair font-bold text-3xl text-black dark:text-white mb-1">
                   Get in Touch
                 </h3>
-                <p className="text-sm text-slate-600 dark:text-gray-400">
+                <p className="text-sm text-black dark:text-white">
                   Connect with us through multiple channels
                 </p>
               </div>
@@ -273,17 +262,17 @@ const Footer = () => {
                   <div className="relative">
                     <div className="absolute inset-0 bg-[#D4AF37]/20 blur-xl rounded-2xl"></div>
                     <div className="relative w-10 h-10 rounded-xl bg-gradient-to-br from-[#F3D98B] via-[#D4AF37] to-[#B8962E] flex items-center justify-center shadow-lg shadow-[#D4AF37]/30">
-                      <Mail className="w-5 h-5 text-black" />
+                      <Mail className="w-5 h-5 text-[#1F3864]" />
                     </div>
                   </div>
 
                   <div className="flex-1">
                     <div className="flex items-center justify-between mb-1">
-                      <span className="text-sm font-semibold text-slate-700 dark:text-gray-300 uppercase tracking-wider">
+                      <span className="text-sm font-semibold text-black dark:text-white uppercase tracking-wider">
                         Email
                       </span>
                     </div>
-                    <p className="text font-medium text-slate-900 dark:text-white group-hover:text-[#B8962E] dark:group-hover:text-[#D4AF37] transition-colors">
+                    <p className="text font-medium text-black dark:text-white group-hover:text-[#B8962E] dark:group-hover:text-[#D4AF37] transition-colors">
                       info@krishnapathak.com
                     </p>
                   </div>
@@ -303,13 +292,13 @@ const Footer = () => {
                   <div className="relative">
                     <div className="absolute inset-0 bg-[#D4AF37]/20 blur-xl rounded-2xl"></div>
                     <div className="relative w-10 h-10 rounded-xl bg-gradient-to-br from-[#F3D98B] via-[#D4AF37] to-[#B8962E] flex items-center justify-center shadow-lg shadow-[#D4AF37]/30">
-                      <Phone className="w-6 h-6 text-black" />
+                      <Phone className="w-6 h-6 text-[#1F3864]" />
                     </div>
                   </div>
 
                   <div className="flex-1">
                     <div className="flex items-center justify-between mb-1">
-                      <span className="text-sm font-semibold text-slate-700 dark:text-gray-300 uppercase tracking-wider">
+                      <span className="text-sm font-semibold text-black dark:text-white uppercase tracking-wider">
                         Direct Call
                       </span>
                       <svg
@@ -326,7 +315,7 @@ const Footer = () => {
                         />
                       </svg>
                     </div>
-                    <p className="text-lg font-medium text-slate-900 dark:text-white group-hover:text-[#B8962E] dark:group-hover:text-[#D4AF37] transition-colors">
+                    <p className="text-lg font-medium text-black dark:text-white group-hover:text-[#B8962E] dark:group-hover:text-[#D4AF37] transition-colors">
                       +91 9883455700
                     </p>
                   </div>
@@ -350,13 +339,13 @@ const Footer = () => {
                   <div className="relative">
                     <div className="absolute inset-0 bg-[#D4AF37]/20 blur-xl rounded-2xl"></div>
                     <div className="relative w-10 h-10 rounded-xl bg-gradient-to-br from-[#F3D98B] via-[#D4AF37] to-[#B8962E] flex items-center justify-center shadow-lg shadow-[#D4AF37]/30">
-                      <MessageCircle className="w-5 h-5 text-black" />
+                      <MessageCircle className="w-5 h-5 text-[#1F3864]" />
                     </div>
                   </div>
 
                   <div className="flex-1">
                     <div className="flex items-center justify-between ">
-                      <span className="text-sm font-semibold text-slate-700 dark:text-gray-300 uppercase tracking-wider">
+                      <span className="text-sm font-semibold text-black dark:text-white uppercase tracking-wider">
                         WhatsApp Support
                       </span>
                       <svg
@@ -373,7 +362,7 @@ const Footer = () => {
                         />
                       </svg>
                     </div>
-                    <p className="text-lg font-medium text-slate-900 dark:text-white group-hover:text-[#B8962E] dark:group-hover:text-[#D4AF37] transition-colors">
+                    <p className="text-lg font-medium text-black dark:text-white group-hover:text-[#B8962E] dark:group-hover:text-[#D4AF37] transition-colors">
                       9353523685
                     </p>
                   </div>
@@ -388,7 +377,7 @@ const Footer = () => {
             <div className="rounded-2xl p-6 bg-gradient-to-br from-slate-50 to-white dark:from-[#0b1022] dark:to-[#05070f] border border-slate-200 dark:border-[#D4AF37]/20 shadow-sm">
               {/* Name and Title */}
               <div className="mb-4">
-                <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-1">
+                <h3 className="text-lg font-semibold text-black dark:text-white mb-1">
                   Krishna Pathak
                 </h3>
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#D4AF37]/10 dark:bg-[#D4AF37]/10 border border-[#D4AF37]/30 dark:border-[#D4AF37]/30">
@@ -404,7 +393,7 @@ const Footer = () => {
                       d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
                     />
                   </svg>
-                  <span className="text-md font-extrabold text-slate-600 dark:text-white">
+                  <span className="text-md font-extrabold text-black dark:text-white">
                     SEBI Registered
                   </span>
                 </div>
@@ -413,19 +402,19 @@ const Footer = () => {
               {/* Registration Details */}
               <div className="space-y-3">
                 <div>
-                  <p className="text-xs font-medium text-slate-800 dark:text-white uppercase tracking-wider mb-1">
+                  <p className="text-xs font-medium text-black dark:text-white uppercase tracking-wider mb-1">
                     SEBI Registration Number
                   </p>
-                  <p className="text-sm font-mono text-slate-900 dark:text-white">
+                  <p className="text-sm font-mono text-black dark:text-white">
                     INH300009914
                   </p>
                 </div>
 
                 <div>
-                  <p className="text-xs font-medium text-slate-800 dark:text-white uppercase tracking-wider mb-1">
+                  <p className="text-xs font-medium text-black dark:text-white uppercase tracking-wider mb-1">
                     BSE Enlistment Number
                   </p>
-                  <p className="text-sm font-mono text-slate-900 dark:text-white">
+                  <p className="text-sm font-mono text-black dark:text-white">
                     5590
                   </p>
                 </div>
@@ -437,7 +426,7 @@ const Footer = () => {
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
                   <svg
-                    className="w-4 h-4 text-slate-600 dark:text-gray-400"
+                    className="w-4 h-4 text-black dark:text-white"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -458,17 +447,17 @@ const Footer = () => {
                 </div>
 
                 <div>
-                  <h3 className="font-semibold text-slate-900 dark:text-white">
+                  <h3 className="font-semibold text-black dark:text-white">
                     Registered Address
                   </h3>
-                  {/* <p className="text-xs text-slate-500 dark:text-gray-500">
+                  {/* <p className="text-xs text-black dark:text-white">
                     Official business address
                   </p> */}
                 </div>
               </div>
 
               <div className="pl-11">
-                <p className="text-sm leading-relaxed text-slate-700 dark:text-gray-300">
+                <p className="text-sm leading-relaxed text-black dark:text-white">
                   RS-39/43, 5/3C Golden Park, Sankarpur West, Near Rabindranagar
                   Co-operative, Durgapur, West Bengal - 713206
                 </p>
@@ -478,7 +467,7 @@ const Footer = () => {
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
                   <svg
-                    className="w-4 h-4 text-slate-600 dark:text-gray-400"
+                    className="w-4 h-4 text-black dark:text-white"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -499,17 +488,17 @@ const Footer = () => {
                 </div>
 
                 <div>
-                  <h3 className="font-semibold text-slate-900 dark:text-white">
+                  <h3 className="font-semibold text-black dark:text-white">
                     Correspondence Address
                   </h3>
-                  {/* <p className="text-xs text-slate-500 dark:text-gray-500">
+                  {/* <p className="text-xs text-black dark:text-white">
                     Official business address
                   </p> */}
                 </div>
               </div>
 
               <div className="pl-11">
-                <p className="text-sm leading-relaxed text-slate-700 dark:text-gray-300">
+                <p className="text-sm leading-relaxed text-black dark:text-white">
                   207,Jayanivas,Padukamandir Road Bharat Housing Society,
                   Subramanyapura Below Digicomm Semiconductor, BANGALORE,
                   KARNATAKA, 560061
@@ -526,10 +515,10 @@ const Footer = () => {
             <div className="flex flex-col items-center gap-4">
               {/* Header */}
               <div className="text-center mb-2">
-                <h3 className="text-sm font-semibold text-slate-700 dark:text-gray-300 mb-1">
+                <h3 className="text-sm font-semibold text-black dark:text-white mb-1">
                   Stay Connected
                 </h3>
-                <p className="text-sm text-slate-500 dark:text-gray-100">
+                <p className="text-sm text-black dark:text-white">
                   Follow us for updates and insights
                 </p>
               </div>
@@ -541,6 +530,7 @@ const Footer = () => {
                   href="https://www.youtube.com/c/WealthFino"
                   target="_blank"
                   rel="noreferrer"
+                  aria-label="Visit WealthFino on YouTube"
                   className="group relative w-10 h-10 flex items-center justify-center rounded-full transition-all duration-300 hover:scale-110"
                 >
                   <div className="absolute inset-0 bg-red-500 opacity-10 group-hover:opacity-20 rounded-full transition-opacity duration-300"></div>
@@ -555,16 +545,21 @@ const Footer = () => {
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="text-slate-600 dark:text-gray-400 group-hover:text-red-500 dark:group-hover:text-red-400 transition-colors duration-300"
+                    className="text-black dark:text-white group-hover:text-red-500 dark:group-hover:text-red-400 transition-colors duration-300"
+                    aria-hidden="true"
                   >
                     <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"></path>
                     <path d="m10 15 5-3-5-3z"></path>
                   </svg>
+                  <span className="sr-only">Visit WealthFino on YouTube</span>
                 </a>
 
                 {/* Instagram */}
                 <a
                   href="https://www.instagram.com/wealthfino.in"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Visit WealthFino on Instagram"
                   className="group relative w-10 h-10 flex items-center justify-center rounded-full transition-all duration-300 hover:scale-110"
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-pink-500 to-purple-500 opacity-10 group-hover:opacity-20 rounded-full transition-opacity duration-300"></div>
@@ -575,7 +570,8 @@ const Footer = () => {
                     viewBox="0 0 24 24"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
-                    className="text-slate-600 dark:text-gray-400 group-hover:text-pink-500 dark:group-hover:text-pink-400 transition-colors duration-300"
+                    className="text-black dark:text-white group-hover:text-pink-500 dark:group-hover:text-pink-400 transition-colors duration-300"
+                    aria-hidden="true"
                   >
                     <path
                       d="M17 2H7a5 5 0 0 0-5 5v10a5 5 0 0 0 5 5h10a5 5 0 0 0 5-5V7a5 5 0 0 0-5-5"
@@ -592,11 +588,15 @@ const Footer = () => {
                       strokeLinejoin="round"
                     />
                   </svg>
+                  <span className="sr-only">Visit WealthFino on Instagram</span>
                 </a>
 
                 {/* Facebook */}
                 <a
                   href="https://www.facebook.com/WealthFino/"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Visit WealthFino on Facebook"
                   className="group relative w-10 h-10 flex items-center justify-center rounded-full transition-all duration-300 hover:scale-110"
                 >
                   <div className="absolute inset-0 bg-blue-600 opacity-10 group-hover:opacity-20 rounded-full transition-opacity duration-300"></div>
@@ -608,7 +608,8 @@ const Footer = () => {
                     viewBox="0 0 24 24"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
-                    className="text-slate-600 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300"
+                    className="text-black dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300"
+                    aria-hidden="true"
                   >
                     <path
                       d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
@@ -618,14 +619,19 @@ const Footer = () => {
                       strokeLinejoin="round"
                     />
                   </svg>
+                  <span className="sr-only">Visit WealthFino on Facebook</span>
                 </a>
                 {/* Telegram */}
                 <a
                   href="https://t.me/WealthFino"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Join WealthFino on Telegram"
                   className="group relative w-10 h-10 flex items-center justify-center rounded-full transition-all duration-300 hover:scale-110"
                 >
                   <div className="absolute inset-0 bg-sky-500 opacity-10 group-hover:opacity-20 rounded-full transition-opacity duration-300"></div>
                   <div className="absolute inset-0 border border-sky-200 dark:border-sky-800/30 rounded-full group-hover:border-sky-400 dark:group-hover:border-sky-600 transition-colors duration-300"></div>
+                  <span className="sr-only">Join WealthFino on Telegram</span>
 
                   <svg
                     width="20"
@@ -633,7 +639,8 @@ const Footer = () => {
                     viewBox="0 0 24 24"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
-                    className="text-slate-600 dark:text-gray-400 group-hover:text-sky-500 dark:group-hover:text-sky-400 transition-colors duration-300"
+                    className="text-black dark:text-white group-hover:text-sky-500 dark:group-hover:text-sky-400 transition-colors duration-300"
+                    aria-hidden="true"
                   >
                     <path
                       d="M22 2L11 13"
@@ -657,7 +664,7 @@ const Footer = () => {
 
           {/* Copyright */}
           <div className="text-center">
-            <p className="text-sm text-slate-600 dark:text-gray-400">
+            <p className="text-sm text-black dark:text-white">
               Copyright © {new Date().getFullYear()} WealthFino. All rights
               reserved.
             </p>

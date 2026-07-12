@@ -1,15 +1,15 @@
 export default function RedressalOfGrievance() {
   return (
-    <div className="min-h-screen rounded-2xl bg-[#0b0f19]   from-slate-950 to-slate-900 py-5 px-4">
-      <div className="max-w-6xl mx-auto text-slate-200 space-y-12">
+    <div className="min-h-screen rounded-2xl bg-white dark:bg-[#0b0f19] from-gray-50 to-white dark:from-slate-950 dark:to-slate-900 py-5 px-4">
+      <div className="max-w-6xl mx-auto text-black dark:text-white space-y-12">
         {/* PAGE TITLE */}
         <header className="space-y-4">
-          <h1 className="text-xl md:text-2xl font-bold text-white">
+          <h1 className="text-xl md:text-2xl font-bold text-black dark:text-white">
             REDRESSAL OF GRIEVANCE / ESCALATION MATRIX
           </h1>
 
           <p>Grievance Redressal Process</p>
-          <p className="text-slate-400 max-w-4xl">
+          <p className="text-black dark:text-white max-w-4xl">
             We value your trust and are committed to resolving all concerns in a
             fair and timely manner. If you have any grievance or feedback
             regarding our services, you may follow the steps below:
@@ -17,7 +17,7 @@ export default function RedressalOfGrievance() {
         </header>
 
         {/* DIVIDER */}
-        <div className="border-t border-slate-700" />
+        <div className="border-t border-gray-200 dark:border-slate-700" />
 
         {/* STEP 1 */}
         <Section title="Step 1: Contact Your Assigned Representative">
@@ -81,7 +81,7 @@ export default function RedressalOfGrievance() {
             you may escalate the matter to:
           </p>
 
-          <div className="bg-slate-800 border border-slate-700 rounded-lg p-5 space-y-2">
+          <div className="bg-gray-100 dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-lg p-5 space-y-2">
             <p>Mr. Krishna Pathak (Compliance Officer)</p>
             <p>
               <b>Email:</b>{" "}
@@ -140,20 +140,23 @@ export default function RedressalOfGrievance() {
 
         {/* CONTACT TABLE */}
         <section className="space-y-6">
-          <h2 className="text-2xl font-semibold text-white">
+          <h2 className="text-2xl font-semibold text-black dark:text-white">
             Grievance Redressal Contact Details
           </h2>
 
           <div className="overflow-x-auto bg-white rounded-xl shadow-lg">
-            <table className="min-w-full text-sm text-slate-800">
-              <thead className="bg-blue-100 text-slate-900">
+            <table className="min-w-full text-sm text-black dark:text-white">
+              <caption className="sr-only">
+                Grievance Redressal Contact Details
+              </caption>
+              <thead className="bg-blue-100 text-black">
                 <tr>
-                  <th className="px-4 py-3 text-left">Designation</th>
-                  <th className="px-4 py-3 text-left">Contact Person</th>
-                  <th className="px-4 py-3 text-left">Address</th>
-                  <th className="px-4 py-3 text-left">Contact No.</th>
-                  <th className="px-4 py-3 text-left">Email ID</th>
-                  <th className="px-4 py-3 text-left">Working Hours</th>
+                  <th scope="col" className="px-4 py-3 text-left">Designation</th>
+                  <th scope="col" className="px-4 py-3 text-left">Contact Person</th>
+                  <th scope="col" className="px-4 py-3 text-left">Address</th>
+                  <th scope="col" className="px-4 py-3 text-left">Contact No.</th>
+                  <th scope="col" className="px-4 py-3 text-left">Email ID</th>
+                  <th scope="col" className="px-4 py-3 text-left">Working Hours</th>
                 </tr>
               </thead>
 
@@ -228,8 +231,8 @@ export default function RedressalOfGrievance() {
 function Section({ title, children }) {
   return (
     <section className="   rounded-xl  md:p-2 space-y-2">
-      <h2 className="text-xl md:text-xl font-semibold text-white">{title}</h2>
-      <div className="space-y-1 text-slate-300 leading-relaxed">{children}</div>
+      <h2 className="text-xl md:text-xl font-semibold text-black dark:text-white">{title}</h2>
+      <div className="space-y-1 text-black dark:text-white leading-relaxed">{children}</div>
     </section>
   );
 }

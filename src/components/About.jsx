@@ -16,7 +16,7 @@ const About = () => {
             <h2
               className="
                 text-4xl font-bold mb-6
-                text-slate-900 dark:text-white
+                text-black dark:text-white
               "
             >
               Trust-Driven
@@ -27,7 +27,7 @@ const About = () => {
             <p
               className="
                 mb-8 text-lg
-                text-slate-600 dark:text-slate-300
+                text-black dark:text-white
               "
             >
               We combine institutional expertise with cutting-edge technology to
@@ -52,7 +52,7 @@ const About = () => {
 
                   <span
                     className="
-                      text-slate-700 dark:text-slate-300
+                      text-black dark:text-white
                     "
                   >
                     {feature}
@@ -92,7 +92,7 @@ const About = () => {
 
                 <div
                   className="
-                    text-slate-600 dark:text-slate-400
+                    text-black dark:text-white
                   "
                 >
                   {stat.label}

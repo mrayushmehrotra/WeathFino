@@ -64,7 +64,7 @@ const TradingTools = () => {
             <span className="text-trading-navy">Trade With</span>{" "}
             <span className="gradient-text">Institutional Power</span>
           </h2>
-          <p className="text-gray-600 text-xl max-w-3xl mx-auto">
+          <p className="text-black text-xl max-w-3xl mx-auto">
             Everything professional traders need, built into one seamless
             platform.
           </p>
@@ -78,12 +78,12 @@ const TradingTools = () => {
               <h3 className="text-2xl font-bold text-trading-navy mb-4">
                 {tool.title}
               </h3>
-              <p className="text-gray-600 mb-6">{tool.description}</p>
+              <p className="text-black mb-6">{tool.description}</p>
               <ul className="space-y-2">
                 {tool.features.map((feature) => (
                   <li
                     key={feature}
-                    className="flex items-center text-sm text-gray-500"
+                    className="flex items-center text-sm text-black"
                   >
                     <div className="w-1.5 h-1.5 bg-trading-cyan rounded-full mr-2"></div>
                     {feature}

@@ -63,7 +63,7 @@ const MediaPresence = () => {
   return (
     <section
       className="
-        py-20 relative overflow-hidden
+        py-12 md:py-20 relative overflow-hidden
         bg-[#D4AF37]/5 dark:bg-[#111]
         transition-colors duration-300
       "
@@ -79,8 +79,8 @@ const MediaPresence = () => {
         <div className="inline-flex flex-col items-center mb-12">
           <div className="w-32 h-1.5 bg-[#856315] dark:bg-[#D4AF37] rounded-full mb-4 shadow-sm" />
 
-          <h2 className="font-playfair text-6xl md:text-7xl font-extrabold pb-3 text-slate-900 dark:text-white tracking-tight drop-shadow-sm">
-            <span className="bg-gradient-to-r from-black  to-[#1a1a1a] dark:from-white dark:via-[#D4AF37] dark:to-[#B8962E] bg-clip-text text-transparent px-1">
+          <h2 className="font-playfair text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold pb-3 text-black dark:text-white tracking-tight drop-shadow-sm">
+            <span className="text-black dark:text-white px-1">
               Featured
             </span>{" "}
             In
@@ -89,7 +89,7 @@ const MediaPresence = () => {
           <div className="w-32 h-1.5 bg-[#856315] dark:bg-[#D4AF37] rounded-full mt-4 ml-auto shadow-sm" />
         </div>
 
-        <p className="text-2xl md:text-3xl font-medium max-w-4xl mx-auto text-slate-900 dark:text-slate-200 leading-relaxed">
+        <p className="text-2xl md:text-3xl font-medium max-w-4xl mx-auto text-black dark:text-white leading-relaxed">
           We're proud to be recognized by leading business & financial
           platforms. Our insights are making headlines—featured by the most
           trusted business and financial platforms.

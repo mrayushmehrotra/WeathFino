@@ -36,7 +36,7 @@ const Testimonials = () => {
             Trusted by
             <span className="gradient-text"> Industry Leaders</span>
           </h2>
-          <p className="text-gray-600">
+          <p className="text-black">
             Hear from investors who transformed their wealth management
           </p>
         </div>
@@ -59,7 +59,7 @@ const Testimonials = () => {
                     className={`w-5 h-5 ${
                       i < testimonials[activeIndex].rating
                         ? "text-yellow-400"
-                        : "text-gray-300"
+                        : "text-black"
                     }`}
                   >
                     ★
@@ -68,16 +68,16 @@ const Testimonials = () => {
               </div>
 
               {/* Quote */}
-              <p className="text-gray-700 text-lg italic mb-6">
+              <p className="text-black text-lg italic mb-6">
                 "{testimonials[activeIndex].content}"
               </p>
 
               {/* Author */}
               <div>
-                <div className="font-bold text-gray-900">
+                <div className="font-bold text-black">
                   {testimonials[activeIndex].name}
                 </div>
-                <div className="text-gray-600">
+                <div className="text-black">
                   {testimonials[activeIndex].role}
                 </div>
               </div>
@@ -100,10 +100,10 @@ const Testimonials = () => {
 
         {/* Trust Badges */}
         <div className="mt-16 text-center">
-          <p className="text-gray-600 mb-8">Featured in leading publications</p>
+          <p className="text-black mb-8">Featured in leading publications</p>
           <div className="flex flex-wrap justify-center gap-8">
             {["Forbes", "Bloomberg", "WSJ", "FT", "CNBC"].map((name) => (
-              <div key={name} className="text-gray-700 font-medium">
+              <div key={name} className="text-black font-medium">
                 {name}
               </div>
             ))}
