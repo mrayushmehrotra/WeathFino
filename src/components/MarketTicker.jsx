@@ -61,6 +61,8 @@ const TickerTape = () => {
             bg-white
             dark:border-[#D4AF37]/30 dark:bg-[#05070f]
             ${isPaused ? "[&_tv-ticker-tape]:pointer-events-none" : ""}
+            [&_tv-ticker-tape]:filter [&_tv-ticker-tape]:brightness-[0.6] [&_tv-ticker-tape]:contrast-[1.3] [&_tv-ticker-tape]:saturate-[1.2]
+            dark:[&_tv-ticker-tape]:brightness-[1.5] dark:[&_tv-ticker-tape]:contrast-[1.1] dark:[&_tv-ticker-tape]:saturate-[1.3]
           `}
           style={isPaused ? { opacity: 0.8 } : {}}
         >

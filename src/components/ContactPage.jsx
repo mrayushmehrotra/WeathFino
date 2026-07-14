@@ -4,12 +4,11 @@ import {
   Mail,
   MapPin,
   MessageCircle,
-  Send,
   Clock,
   Users,
   Shield,
-  ChevronRight,
 } from "lucide-react";
+import StaticContactForm from "./StaticContactForm";
 
 const ContactPage = () => {
   return (
@@ -44,10 +43,12 @@ const ContactPage = () => {
         <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white dark:from-gray-900 to-transparent"></div>
       </div>
 
+  
+
       {/* ================= MAIN CONTENT ================= */}
       <div className="container mx-auto px-6 py-16">
         <div className="grid lg:grid-cols-3 gap-8">
-          {/* ===== CONTACT FORM ===== */}
+          {/* ===== ADDRESSES ===== */}
           <div className="lg:col-span-2">
             <div
               className="rounded-3xl p-8 md:p-10 space-y-8
@@ -153,8 +154,10 @@ const ContactPage = () => {
                 </div>
               </div>
             </div>
-          </div>
+             <StaticContactForm />
 
+          </div>
+  
           {/* ===== CONTACT INFO ===== */}
           <div className="space-y-8">
             {/* Contact Cards */}
@@ -203,7 +206,7 @@ const ContactPage = () => {
                 </div>
                 <div className="space-y-2">
                   <p className="font-medium text-gray-800 dark:text-gray-200">
-                    Support: 9353523685
+                    Support: 8105057080
                   </p>
                   <p className="font-medium text-gray-800 dark:text-gray-200">
                     Updates: 7353009208
@@ -259,22 +262,6 @@ const ContactPage = () => {
                     </p>
                   </div>
                 </div>
-                {/* <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center">
-                    <Clock
-                      className="text-black dark:text-white"
-                      size={18}
-                    />
-                  </div>
-                  <div>
-                    <p className="font-medium text-black dark:text-white">
-                      24/7 Response
-                    </p>
-                    <p className="text-sm text-black dark:text-white">
-                      Quick reply guarantee
-                    </p>
-                  </div>
-                </div> */}
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center">
                     <Users
@@ -295,7 +282,8 @@ const ContactPage = () => {
             </div>
           </div>
         </div>
-
+          {/* ================= STATIC CONTACT FORM ================= */}
+     
         {/* ================= SEBI OFFICES ================= */}
         <div className="mt-20">
           <div className="text-center mb-12">
@@ -382,28 +370,6 @@ const ContactPage = () => {
             </div>
           </div>
         </div>
-
-        {/* ================= QUICK ACTIONS ================= */}
-        {/* <div className="mt-20 bg-gradient-to-r from-blue-600 to-blue-700 dark:from-blue-800 dark:to-blue-900 rounded-2xl p-8 md:p-12 text-white">
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="text-4xl font-bold mb-2">24/7</div>
-              <p className="text-blue-100 dark:text-blue-200">
-                Support Availability
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold mb-2">30 min</div>
-              <p className="text-blue-100 dark:text-blue-200">
-                Average Response Time
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold mb-2">100%</div>
-              <p className="text-blue-100 dark:text-blue-200">SEBI Compliant</p>
-            </div>
-          </div>
-        </div> */}
       </div>
 
       {/* ================= FLOATING CONTACT ================= */}

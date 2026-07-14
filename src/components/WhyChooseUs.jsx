@@ -80,19 +80,19 @@ const WhyWealthUs = () => {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-            <span className="inline-block px-6 py-2 rounded-full bg-[#D4AF37]/10 dark:bg-[#D4AF37]/10 border border-[#D4AF37]/30 dark:border-[#D4AF37]/30 text-black dark:text-white font-semibold">
+            <span className="inline-block px-6 py-2 rounded-full bg-[#D4AF37]/10 dark:bg-[#D4AF37]/10 border border-[#D4AF37]/30 dark:border-[#D4AF37]/30 text-[#4A2E00] dark:text-[#D4AF37] font-bold">
             Why Choose Us
           </span>
 
-          <h2 className="font-playfair mt-6 text-5xl font-bold text-black dark:text-white">
+          <h2 className="font-playfair mt-6 text-5xl font-bold text-gray-900 dark:text-white">
             Why{" "}
-            <span className="text-black dark:text-white">
+            <span className="text-gray-900 dark:text-white">
               WealthFino
             </span>
             ?
           </h2>
 
-          <p className="mt-6 text-xl text-black dark:text-white">
+          <p className="mt-6 text-xl text-gray-800 dark:text-gray-200">
             Research-backed strategies under SEBI RA guidelines with disciplined
             investing principles.
           </p>
@@ -127,12 +127,12 @@ const WhyWealthUs = () => {
 
                     {/* ✅ FIXED TITLE */}
                     <h3
-                      className={`mt-8 text-2xl font-bold text-black dark:text-white`}
+                      className={`mt-8 text-2xl font-bold text-gray-900 dark:text-white`}
                     >
                       {item.title}
                     </h3>
 
-                    <p className="mt-4 text-black dark:text-white">
+                    <p className="mt-4 text-gray-800 dark:text-gray-200">
                       {item.desc}
                     </p>
 

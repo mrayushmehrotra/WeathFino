@@ -363,7 +363,7 @@ const Footer = () => {
                       </svg>
                     </div>
                     <p className="text-lg font-medium text-gray-800 dark:text-gray-200 group-hover:text-[#8B6914] dark:group-hover:text-[#D4AF37] transition-colors">
-                      9353523685
+                      8105057080
                     </p>
                   </div>
                 </div>
@@ -664,10 +664,10 @@ const Footer = () => {
 
           {/* Copyright */}
           <div className="text-center">
-            <p className="text-sm text-gray-500 dark:text-gray-400">
+            <h2 className="text-sm text-black dark:text-gray-400">
               Copyright © {new Date().getFullYear()} WealthFino. All rights
               reserved.
-            </p>
+            </h2>
           </div>
         </div>
       </div>

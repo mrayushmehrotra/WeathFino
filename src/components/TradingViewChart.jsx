@@ -1,11 +1,12 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, memo } from "react";
 
-const TradingViewChart = () => {
-  const chartContainerRef = useRef(null);
+const TradingViewWidget = () => {
+  const container = useRef();
   const [theme, setTheme] = useState(
     document.documentElement.classList.contains("dark") ? "dark" : "light"
   );
 
+  // Listen for global theme changes
   useEffect(() => {
     const observer = new MutationObserver(() => {
       setTheme(document.documentElement.classList.contains("dark") ? "dark" : "light");
@@ -15,46 +16,59 @@ const TradingViewChart = () => {
   }, []);
 
   useEffect(() => {
-    if (!chartContainerRef.current) return;
-
-    // Prevent duplicate widget
-    chartContainerRef.current.innerHTML = "";
+    // Clear container to prevent duplicate widgets on theme change
+    if (container.current) {
+      container.current.innerHTML = "";
+    }
 
     const script = document.createElement("script");
-    script.src =
-      "https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js";
+    script.src = "https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js";
+    script.type = "text/javascript";
     script.async = true;
 
+    // Use width and height as 100% to ensure it contains the entire width/height of the parent
     script.innerHTML = JSON.stringify({
-      autosize: true,
-      symbol: "BSE:RELIANCE",
-      interval: "D",
-      timezone: "Asia/Kolkata",
-      theme: theme,
-      style: "1",
-      locale: "en",
-      toolbar_bg: theme === "dark" ? "#0f172a" : "#f1f5f9",
-      enable_publishing: false,
       allow_symbol_change: true,
+      calendar: false,
+      details: false,
+      hide_side_toolbar: true,
       hide_top_toolbar: false,
       hide_legend: false,
-      save_image: false,
+      hide_volume: false,
+      hotlist: false,
+      interval: "D",
+      locale: "en",
+      save_image: true,
+      style: "1",
+      symbol: "BSE:SENSEX",
+      theme: theme,
+      timezone: "Etc/UTC",
+      gridColor: "rgba(255, 224, 178, 0)",
+      watchlist: [],
+      withdateranges: false,
+      compareSymbols: [],
+      studies: [],
+      autosize: true, // Also keeps it responsive
+      width: "100%",
+      height: "100%",
     });
 
-    chartContainerRef.current.appendChild(script);
-
-    return () => {
-      if (chartContainerRef.current) {
-        chartContainerRef.current.innerHTML = "";
-      }
-    };
+    container.current.appendChild(script);
   }, [theme]);
 
   return (
-    <div key={theme} className="tradingview-widget-container w-full h-full bg-slate-50 dark:bg-black rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800">
-      <div ref={chartContainerRef} className="tradingview-widget-container__widget w-full h-full" />
+    <div 
+      className="tradingview-widget-container w-full h-full min-h-[400px] md:min-h-[500px] lg:min-h-[600px] bg-slate-50 dark:bg-black rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800"
+    >
+      <div className="tradingview-widget-container__widget w-full h-full" ref={container}></div>
+      <div className="tradingview-widget-copyright hidden">
+        <a href="https://www.tradingview.com/symbols/BSE-SENSEX/" rel="noopener nofollow" target="_blank">
+          <span className="blue-text">SENSEX chart</span>
+        </a>
+        <span className="trademark"> by TradingView</span>
+      </div>
     </div>
   );
 };
 
-export default TradingViewChart;
+export default memo(TradingViewWidget);

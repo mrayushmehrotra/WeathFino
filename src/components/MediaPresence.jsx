@@ -129,7 +129,7 @@ const MediaPresence = () => {
                   src={logo.src}
                   alt={logo.alt}
                   className="
-                    h-10 md:h-14 lg:h-16 w-auto object-contain
+                    h-10 md:h-14 mix-blend-difference  lg:h-16 w-auto object-contain
                     opacity-70 hover:opacity-100
                     transition duration-500 cursor-pointer
                   "
