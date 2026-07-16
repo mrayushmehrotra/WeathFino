@@ -10,6 +10,7 @@ const ConnectModal = () => {
     email: "",
     agreed: false
   });
+  const [errors, setErrors] = useState({});
 
   useEffect(() => {
     // Show modal after 3 seconds on the main page
@@ -19,13 +20,32 @@ const ConnectModal = () => {
     return () => clearTimeout(timer);
   }, []);
 
+  const validateForm = () => {
+    const newErrors = {};
+    
+    if (formData.mobile.length !== 10) {
+      newErrors.mobile = "Please enter exactly 10 digits.";
+    }
+    
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      newErrors.email = "Please enter a valid email address.";
+    }
+    
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
   const handleFormSubmit = (e) => {
     e.preventDefault();
     if (!formData.agreed) {
       alert("Please agree to the Terms and Conditions.");
       return;
     }
-    const message = `*New Contact Request*%0A*Name:* ${formData.username}%0A*Mobile:* ${formData.mobile}%0A*Email:* ${formData.email}%0A*Agreed to Terms:* Yes`;
+    if (!validateForm()) {
+      return;
+    }
+    const message = `*New Contact Request*%0A*Name:* ${formData.username}%0A*Mobile:* +91 ${formData.mobile}%0A*Email:* ${formData.email}%0A*Agreed to Terms:* Yes`;
     window.open(`https://wa.me/9883455700?text=${message}`, '_blank');
     setIsOpen(false);
   };
@@ -61,14 +81,22 @@ const ConnectModal = () => {
             <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
               Mobile Number
             </label>
-            <input
-              type="tel"
-              required
-              value={formData.mobile}
-              onChange={(e) => setFormData({ ...formData, mobile: e.target.value })}
-              className="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-black border border-gray-200 dark:border-white/10 text-gray-900 dark:text-white focus:ring-2 focus:ring-[#D4AF37] focus:border-transparent transition-all outline-none"
-              placeholder="+91 98765 43210"
-            />
+            <div className={`flex items-center w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-black border ${errors.mobile ? 'border-red-500' : 'border-gray-200 dark:border-white/10'} text-gray-900 dark:text-white focus-within:ring-2 focus-within:ring-[#D4AF37] focus-within:border-transparent transition-all`}>
+              <span className="text-gray-500 font-medium mr-3 border-r border-gray-300 dark:border-white/10 pr-3">+91</span>
+              <input
+                type="tel"
+                required
+                value={formData.mobile}
+                onChange={(e) => {
+                  const onlyNumbers = e.target.value.replace(/\D/g, '').slice(0, 10);
+                  setFormData({ ...formData, mobile: onlyNumbers });
+                  if (errors.mobile) setErrors({ ...errors, mobile: null });
+                }}
+                className="w-full bg-transparent outline-none"
+                placeholder="9876543210"
+              />
+            </div>
+            {errors.mobile && <p className="text-red-500 text-xs mt-1">{errors.mobile}</p>}
           </div>
         </div>
         <div>
@@ -79,10 +107,14 @@ const ConnectModal = () => {
             type="email"
             required
             value={formData.email}
-            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-            className="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-black border border-gray-200 dark:border-white/10 text-gray-900 dark:text-white focus:ring-2 focus:ring-[#D4AF37] focus:border-transparent transition-all outline-none"
+            onChange={(e) => {
+              setFormData({ ...formData, email: e.target.value });
+              if (errors.email) setErrors({ ...errors, email: null });
+            }}
+            className={`w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-black border ${errors.email ? 'border-red-500' : 'border-gray-200 dark:border-white/10'} text-gray-900 dark:text-white focus:ring-2 focus:ring-[#D4AF37] focus:border-transparent transition-all outline-none`}
             placeholder="john@example.com"
           />
+          {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
         </div>
         <div className="flex items-start gap-3">
           <input

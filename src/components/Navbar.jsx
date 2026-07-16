@@ -41,12 +41,12 @@ const Navbar = () => {
 
   const menuItems = [
     { label: "Home", path: "/" },
-
     { label: "Calculators", path: "/calculators" },
     { label: "About", path: "/about-us" },
     { label: "Pricing", path: "/pricing" },
     { label: "Policies", path: "/policies" },
     { label: "Contact", path: "/contact" },
+    { label: "Sitemap", path: "/sitemap" },
   ];
 
   const isActive = (path) => {

@@ -35,7 +35,7 @@ const TradingViewHeatmap = () => {
       locale: "en",
       colorTheme: theme,
       hasTopBar: true,
-      isZoomEnabled: true,
+      isZoomEnabled: false,
       hasSymbolTooltip: true,
       width: "100%",
       height: "100%",
@@ -65,10 +65,23 @@ const TradingViewHeatmap = () => {
   }, [theme]);
 
   return (
-    <div key={theme} className="tradingview-widget-container w-full h-full">
+    <div key={theme} className="tradingview-widget-container relative w-full h-full" style={{ touchAction: "none", WebkitTextSizeAdjust: "none", textSizeAdjust: "none" }}>
       <div
         ref={widgetRef}
         className="tradingview-widget-container__widget w-full h-full"
+      />
+      {/* Transparent overlay to block browser zoom / pinch gestures */}
+      <div
+        role="link"
+        tabIndex={0}
+        title="Open on TradingView"
+        style={{ touchAction: "none", userSelect: "none", WebkitUserSelect: "none", cursor: "pointer" }}
+        className="absolute inset-0 z-10 bg-transparent"
+        onClick={() => window.open("https://www.tradingview.com/", "_blank", "noopener,noreferrer")}
+        onKeyDown={(e) => { if (e.key === "Enter") window.open("https://www.tradingview.com/", "_blank", "noopener,noreferrer"); }}
+        onWheel={(e) => e.preventDefault()}
+        onTouchStart={(e) => { if (e.touches.length > 1) e.preventDefault(); }}
+        onTouchMove={(e) => { if (e.touches.length > 1) e.preventDefault(); }}
       />
     </div>
   );

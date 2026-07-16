@@ -1,5 +1,5 @@
-import { Routes, Route, Navigate } from "react-router-dom";
-import { useState } from "react";
+import { Routes, Route, Navigate, useLocation } from "react-router-dom";
+import { useState, useEffect, useRef } from "react";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -36,6 +36,7 @@ import AboutPage from "./components/AboutPage";
 import ContactPage from "./components/ContactPage";
 import Pricing from "./components/Pricing";
 import Calculators from "./pages/Calculators";
+import SitemapPage from "./components/SitemapPage";
 
 import MarketTop from "./components/MarketTop";
 import MediaPresence from "./components/MediaPresence";
@@ -44,12 +45,28 @@ import VideoSection from "./components/VideoSection";
 import KYCModal from "./components/KYCModal";
 
 export default function App() {
+  const location = useLocation();
+  const skipLinkRef = useRef(null);
+  const isFirstMount = useRef(true);
+
+  // On every route change (not initial load), move focus to the skip link
+  // so it becomes the first focusable element on each new page.
+  useEffect(() => {
+    if (isFirstMount.current) {
+      isFirstMount.current = false;
+      return;
+    }
+    if (skipLinkRef.current) {
+      skipLinkRef.current.focus();
+    }
+  }, [location.pathname]);
+
   return (
     <div className="min-h-screen bg-trading-light dark:bg-gray-900 text-black dark:text-white transition-colors duration-300">
-      <a className="skip-link" href="#main-content">Skip to main content</a>
+      <a ref={skipLinkRef} className="skip-link" href="#main-content">Skip to main content</a>
       <Navbar />
 
-      <main id="main-content">
+      <main id="main-content" tabIndex={-1} className="outline-none">
       <Routes>
         <Route
           path="/"
@@ -107,6 +124,7 @@ export default function App() {
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/calculators" element={<Calculators />} />
+        <Route path="/sitemap" element={<SitemapPage />} />
 
       </Routes>
       </main>

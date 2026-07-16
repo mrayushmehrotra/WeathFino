@@ -58,9 +58,24 @@ const TradingViewWidget = () => {
 
   return (
     <div 
-      className="tradingview-widget-container w-full h-full min-h-[400px] md:min-h-[500px] lg:min-h-[600px] bg-slate-50 dark:bg-black rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800"
+      style={{ touchAction: "none", WebkitTextSizeAdjust: "none", textSizeAdjust: "none" }}
+      className="tradingview-widget-container relative w-full h-full min-h-[400px] md:min-h-[500px] lg:min-h-[600px] bg-slate-50 dark:bg-black rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800"
     >
       <div className="tradingview-widget-container__widget w-full h-full" ref={container}></div>
+      {/* Transparent overlay to block browser zoom / pinch gestures */}
+      <div
+        aria-hidden="true"
+        role="link"
+        tabIndex={0}
+        title="Open on TradingView"
+        style={{ touchAction: "none", userSelect: "none", WebkitUserSelect: "none", cursor: "pointer" }}
+        className="absolute inset-0 z-10 bg-transparent"
+        onClick={() => window.open("https://www.tradingview.com/symbols/BSE-SENSEX/", "_blank", "noopener,noreferrer")}
+        onKeyDown={(e) => { if (e.key === "Enter") window.open("https://www.tradingview.com/symbols/BSE-SENSEX/", "_blank", "noopener,noreferrer"); }}
+        onWheel={(e) => e.preventDefault()}
+        onTouchStart={(e) => { if (e.touches.length > 1) e.preventDefault(); }}
+        onTouchMove={(e) => { if (e.touches.length > 1) e.preventDefault(); }}
+      />
       <div className="tradingview-widget-copyright hidden">
         <a href="https://www.tradingview.com/symbols/BSE-SENSEX/" rel="noopener nofollow" target="_blank">
           <span className="blue-text">SENSEX chart</span>
